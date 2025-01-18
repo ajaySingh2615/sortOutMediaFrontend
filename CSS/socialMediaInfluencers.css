@@ -63,12 +63,11 @@ body {
 .smm-marq {
   font-size: 1.1rem; /* Large and readable text */
   font-weight: bold;
-  color: #ff4c61; /* Vibrant red color */
+  color: #000; /* Vibrant red color */
   text-transform: uppercase; /* Convert text to uppercase for emphasis */
   letter-spacing: 1px; /* Add spacing between letters */
   background: linear-gradient(90deg, #ff4c61, #ff9f45, #ffe347, #ff4c61);
   background-size: 200% auto; /* Gradient effect animation */
-  -webkit-background-clip: text; /* Clip background to text */
   animation: gradientScroll 5s linear infinite; /* Smooth gradient animation */
   padding: 20px 0;
 }
@@ -102,9 +101,9 @@ marquee.smm-marq {
 /* Heading Styles */
 .heading-main {
   font-size: 3.5rem; /* Larger font size for a more prominent heading */
-  font-weight: 700; /* Bold font weight for emphasis */
+  font-weight: 900; /* Bold font weight for emphasis */
   line-height: 1.1; /* Adjust line height for better readability */
-  color: #222; /* Slightly darker color for better contrast */
+  color: #ff4c61; /* Slightly darker color for better contrast */
   margin-bottom: 20px;
   margin-top: 40px; /* Increase top margin for better spacing */
   letter-spacing: -0.9px; /* Small letter-spacing for sleek look */
