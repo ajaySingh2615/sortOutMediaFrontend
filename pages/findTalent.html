@@ -579,7 +579,9 @@
         // Fetch and display data on page load
         async function fetchData() {
           try {
-            const response = await fetch("http://localhost:3000/fetch-data");
+            const response = await fetch(
+              "https://sortoutmediabackend.onrender.com/fetch-data"
+            );
             const data = await response.json();
             console.log("Fetched Data:", data);
             originalData = data;

@@ -88,10 +88,13 @@ form.addEventListener("submit", async (event) => {
     showFullPageSpinner();
 
     try {
-      const response = await fetch("http://localhost:3000/submit-data", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://sortoutmediabackend.onrender.com/submit-data",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       hideFullPageSpinner();
 
