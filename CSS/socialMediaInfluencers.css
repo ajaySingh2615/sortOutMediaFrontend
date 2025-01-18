@@ -60,62 +60,43 @@ body {
 
 /* Marquee Text */
 /* Modern Marquee Text Styling */
-/* Modern Marquee Text Styling */
-/* Modern Marquee Text Styling */
-/* Modern Marquee Text Styling */
-/* Advanced Scrolling Text with Glow and Smooth Transition */
 .smm-marq {
-  font-size: 1.5rem; /* Larger font size */
+  font-size: 1.1rem; /* Large and readable text */
   font-weight: bold;
-  color: #000000; /* Black text */
-  text-transform: uppercase; /* All caps for emphasis */
-  letter-spacing: 2px; /* Slight spacing between characters */
-  white-space: nowrap; /* Prevent line breaks */
-  display: inline-block;
-  position: relative;
-  animation: scrollText 15s ease-in-out infinite; /* Smooth scroll with ease */
-  padding-right: 100%; /* Extra space for the scrolling */
-  text-shadow: 0 0 10px rgba(255, 0, 0, 0.8); /* Subtle red glow effect */
-  box-sizing: border-box; /* Prevent text overflow */
+  color: #ff4c61; /* Vibrant red color */
+  text-transform: uppercase; /* Convert text to uppercase for emphasis */
+  letter-spacing: 1px; /* Add spacing between letters */
+  background: linear-gradient(90deg, #ff4c61, #ff9f45, #ffe347, #ff4c61);
+  background-size: 200% auto; /* Gradient effect animation */
+  -webkit-background-clip: text; /* Clip background to text */
+  animation: gradientScroll 5s linear infinite; /* Smooth gradient animation */
+  padding: 20px 0;
 }
 
-/* Keyframes for the scrolling text */
-@keyframes scrollText {
+/* Padding for elements in the marquee */
+.pdr-60 {
+  margin-right: 5px; /* Space between repeating items */
+}
+
+/* Gradient Animation */
+@keyframes gradientScroll {
   0% {
-    transform: translateX(100%); /* Start off-screen on the right */
-    opacity: 0.5; /* Slight opacity at start */
-    text-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 25px rgba(255, 0, 0, 0.6); /* Glow effect */
-  }
-  25% {
-    opacity: 1; /* Full opacity as it moves */
-    text-shadow: 0 0 15px rgba(255, 0, 0, 1), 0 0 25px rgba(255, 0, 0, 0.8); /* Stronger glow */
-  }
-  50% {
-    transform: translateX(0); /* Center of the screen */
-    opacity: 1;
-    text-shadow: 0 0 15px rgba(255, 0, 0, 1), 0 0 30px rgba(255, 0, 0, 0.8); /* Maximum glow */
-  }
-  75% {
-    opacity: 0.5; /* Slightly faded */
-    text-shadow: 0 0 15px rgba(255, 0, 0, 0.6), 0 0 25px rgba(255, 0, 0, 0.4); /* Glow fades */
+    background-position: 0% 50%;
   }
   100% {
-    transform: translateX(-100%); /* Off-screen on the left */
-    opacity: 0.5; /* Faded at the end */
-    text-shadow: 0 0 15px rgba(255, 0, 0, 0.6), 0 0 25px rgba(255, 0, 0, 0.4); /* Faded glow */
+    background-position: 100% 50%;
   }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .smm-marq {
-    font-size: 1.2rem; /* Smaller font size on mobile */
-  }
-}
-
-.pdr-60 {
-  padding-right: 60px;
-  padding-left: 60px;
+/* Optional: Adjust marquee spacing and behavior */
+marquee.smm-marq {
+  width: 100%;
+  padding: 10px 0; /* Add padding for better appearance */
+  overflow: hidden; /* Hide overflow text outside the marquee */
+  background-color: #000; /* Contrast background for better visibility */
+  border-top: 2px solid #ff4c61; /* Top border for emphasis */
+  border-bottom: 2px solid #ff4c61; /* Bottom border for emphasis */
+  box-shadow: 0 5px 15px rgba(255, 76, 97, 0.5); /* Subtle glow effect */
 }
 
 /* Heading Styles */
