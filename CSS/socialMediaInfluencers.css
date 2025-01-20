@@ -213,13 +213,11 @@ marquee.smm-marq {
   padding: 50px 0;
 }
 
-/* Container Styling */
 .smm-engage-container {
   padding-left: 10px;
   padding-right: 10px;
 }
 
-/* Heading Styling */
 .smm-heading-main {
 }
 
@@ -282,17 +280,6 @@ marquee.smm-marq {
 }
 
 /* Styles for Section 03 */
-/* .container {
-  padding: 40px 20px;
-} */
-
-/* .heading-main {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
-} */
-
 .center {
   text-align: center;
 }
@@ -348,11 +335,6 @@ p.heading-title {
   font-weight: 600;
   color: #fff;
 }
-
-/* p {
-  font-size: 1rem;
-  color: #6c757d;
-} */
 
 @keyframes spin {
   0% {
