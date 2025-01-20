@@ -34,6 +34,7 @@ body {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+  padding: 50px 0;
 }
 
 /* Responsive Containers */
@@ -100,7 +101,7 @@ marquee.smm-marq {
 
 /* Heading Styles */
 .heading-main {
-  font-size: 3.5rem; /* Larger font size for a more prominent heading */
+  font-size: 2.5rem; /* Larger font size for a more prominent heading */
   font-weight: 900; /* Bold font weight for emphasis */
   line-height: 1.1; /* Adjust line height for better readability */
   color: #ff4c61; /* Slightly darker color for better contrast */
@@ -207,8 +208,6 @@ marquee.smm-marq {
 }
 
 /* Engaged Section */
-/* Section Styling */
-/* Section Styling */
 .smm-engage-section {
   background-color: #f5f5f5; /* Light grey background */
   padding: 50px 0;
@@ -231,7 +230,6 @@ marquee.smm-marq {
 .smm-paragraph {
 }
 
-/* Column Styling for Left and Right Content */
 .smm-col-left {
   text-align: left;
 }
@@ -246,9 +244,6 @@ marquee.smm-marq {
   align-items: center;
 }
 
-/* Image Styling */
-/* Styling for GIF */
-/* Styling for GIF */
 .smm-image {
   max-width: 120%; /* Ensure the image is responsive */
   width: 140%; /* Adjust the width to make the GIF bigger */
@@ -260,7 +255,6 @@ marquee.smm-marq {
   margin: 0 auto; /* Center the image */
 }
 
-/* Hover Effect on Image */
 .smm-image:hover {
   transform: scale(1.1); /* Increase the zoom effect for more impact */
 }
@@ -284,5 +278,87 @@ marquee.smm-marq {
   .smm-engage-container {
     padding-left: 15px;
     padding-right: 15px;
+  }
+}
+
+/* Styles for Section 03 */
+/* .container {
+  padding: 40px 20px;
+} */
+
+/* .heading-main {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+} */
+
+.center {
+  text-align: center;
+}
+
+.smm_box {
+  background: #ff4c61; /* Card background */
+  color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center; /* Center align text */
+  display: flex; /* Use Flexbox */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.smm_box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.infobox-icon-wrap {
+  margin-bottom: 15px; /* Space below icon */
+  display: flex; /* Ensure Lordicon is centered */
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Full width of the card */
+  height: 100px; /* Fixed height for consistent layout */
+}
+
+.lord-icon {
+  width: 60px; /* Icon size */
+  height: 60px;
+}
+
+.infobox-icon-wrap {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #6c757d, #495057);
+  border-radius: 50%;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1),
+    -2px -2px 6px rgba(255, 255, 255, 0.5);
+}
+
+p.heading-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* p {
+  font-size: 1rem;
+  color: #6c757d;
+} */
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
