@@ -205,3 +205,84 @@ marquee.smm-marq {
     box-shadow: 0 0 20px rgba(255, 99, 132, 0.5); /* Light glow effect on mobile */
   }
 }
+
+/* Engaged Section */
+/* Section Styling */
+/* Section Styling */
+.smm-engage-section {
+  background-color: #f5f5f5; /* Light grey background */
+  padding: 50px 0;
+}
+
+/* Container Styling */
+.smm-engage-container {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* Heading Styling */
+.smm-heading-main {
+}
+
+.smm-heading-title-md {
+}
+
+/* Paragraph Styling */
+.smm-paragraph {
+}
+
+/* Column Styling for Left and Right Content */
+.smm-col-left {
+  text-align: left;
+}
+
+.smm-col-right {
+  text-align: center;
+}
+
+.smm-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Image Styling */
+/* Styling for GIF */
+/* Styling for GIF */
+.smm-image {
+  max-width: 120%; /* Ensure the image is responsive */
+  width: 140%; /* Adjust the width to make the GIF bigger */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Slight rounded corners for images */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for hover */
+  background-color: transparent; /* Ensure the background is transparent */
+  display: block; /* Remove any inline element spacing */
+  margin: 0 auto; /* Center the image */
+}
+
+/* Hover Effect on Image */
+.smm-image:hover {
+  transform: scale(1.1); /* Increase the zoom effect for more impact */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .smm-heading-main {
+    font-size: 2rem; /* Adjust font size for mobile */
+    text-align: center; /* Center-align heading for mobile */
+  }
+
+  .smm-heading-title-md {
+    font-size: 1.2rem;
+    text-align: center; /* Center-align subtitle for mobile */
+  }
+
+  .smm-col-right img {
+    width: 80%; /* Smaller width for mobile */
+  }
+
+  .smm-engage-container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
