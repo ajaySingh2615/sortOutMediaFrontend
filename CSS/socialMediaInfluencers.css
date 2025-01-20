@@ -395,8 +395,6 @@ p.heading-title {
   margin: 0;
 }
 
-/* Adding breathing space (padding) at the bottom of the cards */
-/* Ensure the cards have breathing space at the bottom */
 .boost-red,
 .boost-bl {
   margin-bottom: 30px; /* Increase space at the bottom of the cards */
@@ -411,7 +409,7 @@ p.heading-title {
   display: flex;
   justify-content: center; /* Horizontally center the icon */
   align-items: center; /* Vertically center the icon */
-  height: 60px; /* Give it a fixed height to ensure centering */
+  height: 80px; /* Give it a fixed height to ensure centering */
   margin-bottom: 15px; /* Space between icon and text */
 }
 
@@ -426,4 +424,81 @@ lord-icon {
   margin-top: 10px;
   font-size: 16px;
   font-weight: 500;
+}
+
+/* VIRAL SECTION */
+/* Heading Styles */
+/* Heading Styles */
+.heading-main-viral {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #fff;
+  text-align: center;
+}
+
+.heading-main-viral span {
+  color: #fb0000;
+  font-size: 60px;
+}
+
+/* Card Section Styling */
+.smm-bx {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  margin: 10px 0;
+  color: #000;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.smm-bx:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.smm-bx-left,
+.smm-bx-center,
+.smm-bx-right,
+.smm-bx-b-left,
+.smm-bx-b-right {
+  padding: 20px;
+}
+
+.smm-bx .heading-title {
+  font-size: 22px;
+  margin-top: 15px;
+  font-weight: 600;
+}
+
+.smm-bx p {
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-top: 10px;
+  color: #000;
+  text-align: center;
+}
+
+/* Icon Styling */
+.smm-bx i {
+  font-size: 50px;
+  color: #fb0000;
+  margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .smm-bx {
+    margin-bottom: 20px;
+  }
+
+  .col-md-4 {
+    margin-bottom: 20px;
+  }
 }
