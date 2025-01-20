@@ -344,3 +344,86 @@ p.heading-title {
     transform: rotate(360deg);
   }
 }
+
+/* Services Section */
+/* Boost Red Card */
+.service-heading {
+  margin-bottom: 50px;
+}
+.boost-red {
+  background-color: #ff4d4d; /* Red color */
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boost-red:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(255, 77, 77, 0.5);
+}
+
+/* Boost Blue Card */
+.boost-bl {
+  background-color: #4d94ff; /* Blue color */
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.boost-bl:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(77, 148, 255, 0.5);
+}
+
+.infobox-icon-wrap i {
+  font-size: 28px;
+  color: #ff4d4d; /* Default icon color */
+}
+
+.boost-bl .infobox-icon-wrap i {
+  color: #4d94ff; /* Icon color for blue card */
+}
+
+/* Text Styling */
+.boost-red p,
+.boost-bl p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+
+/* Adding breathing space (padding) at the bottom of the cards */
+/* Ensure the cards have breathing space at the bottom */
+.boost-red,
+.boost-bl {
+  margin-bottom: 30px; /* Increase space at the bottom of the cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Center the icons in the infobox */
+.infobox-icon-wrap {
+  display: flex;
+  justify-content: center; /* Horizontally center the icon */
+  align-items: center; /* Vertically center the icon */
+  height: 60px; /* Give it a fixed height to ensure centering */
+  margin-bottom: 15px; /* Space between icon and text */
+}
+
+/* Set the icon size */
+lord-icon {
+  width: 60px; /* Adjust the width */
+  height: 60px; /* Adjust the height */
+}
+
+/* Adjust text styling */
+.white {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
