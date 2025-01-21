@@ -28,28 +28,10 @@ body {
 
 /* Container with responsive widths */
 .container {
-  min-width: 1200px;
-  width: 1170px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 50px 0;
+  padding: 50px 0px;
 }
-
-/* Responsive Containers */
-@media (max-width: 1200px) {
-  .container {
-    min-width: 992px;
-    width: 970px;
-  }
-}
-
-@media (max-width: 992px) {
-  .container {
-    min-width: 768px;
-    width: 750px;
-  }
+.col-md-12 {
+  padding: 0px;
 }
 
 /* Row Layout */
@@ -215,6 +197,96 @@ marquee.smm-marq {
   .wd-100:hover {
     transform: scale(1.02); /* More subtle zoom effect on mobile */
     box-shadow: 0 0 20px rgba(255, 99, 132, 0.5); /* Light glow effect on mobile */
+  }
+}
+
+/* Responsive for moblie */
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  /* Row Layout Adjustments */
+  .row {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the start */
+    gap: 15px; /* Add spacing between items */
+  }
+
+  /* Marquee Text Adjustments */
+  .smm-marq {
+    font-size: 0.9rem; /* Smaller text for better fit */
+    padding: 15px 0; /* Adjust padding */
+    letter-spacing: 0.5px; /* Slightly tighter spacing */
+  }
+
+  /* Headings Adjustments */
+  .heading-main {
+    font-size: 2.5rem; /* Reduce font size for headings */
+    margin-top: 20px; /* Adjust top margin */
+  }
+
+  .secondary-heading-main {
+    font-size: 2rem; /* Adjust secondary heading size */
+  }
+
+  .heading-title-md {
+    font-size: 1.4rem; /* Smaller title size */
+    margin-bottom: 15px; /* Adjust margin */
+  }
+
+  /* Paragraph Styles Adjustments */
+  .p-lg {
+    font-size: 1.2rem; /* Smaller paragraph text */
+    margin-bottom: 15px; /* Reduce bottom margin */
+    max-width: 100%; /* Allow full width */
+    padding: 0 10px; /* Add side padding */
+  }
+
+  /* Button Adjustments */
+  .btn-primary {
+    padding: 14px 24px; /* Reduce padding */
+    font-size: 1rem; /* Adjust font size */
+    border-radius: 6px; /* Slightly smaller radius */
+  }
+
+  /* Image Adjustments */
+  .wd-100 {
+    border-radius: 10px; /* Smaller corner radius */
+  }
+
+  .wd-100:hover {
+    transform: scale(1.02); /* Subtle zoom */
+    box-shadow: 0 4px 10px rgba(255, 99, 132, 0.4); /* Light glow */
+  }
+
+  /* Marquee Container for Smaller Screens */
+  marquee.smm-marq {
+    padding: 8px 0; /* Adjust padding */
+    border-top: 1px solid #ff4c61; /* Thinner border */
+    border-bottom: 1px solid #ff4c61; /* Thinner border */
+  }
+}
+
+/* Extra Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .heading-main {
+    font-size: 2rem; /* Further reduce heading size */
+  }
+
+  .secondary-heading-main {
+    font-size: 1.6rem; /* Reduce secondary heading size */
+  }
+
+  .btn-primary {
+    padding: 12px 20px; /* Smaller buttons */
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  .smm-marq {
+    font-size: 0.8rem; /* Adjust marquee font size */
+    padding: 10px 0; /* Reduce padding */
+  }
+
+  .p-lg {
+    font-size: 1rem; /* Smaller paragraph text */
   }
 }
 
@@ -836,5 +908,157 @@ i {
 
   .faqpara {
     font-size: 14px;
+  }
+}
+
+/* PRICING SECTION */
+/* Styling for pricing section */
+/* Pricing Section Styles */
+/* Pricing Section Styles */
+/* Pricing Section Styles */
+/* General Styles for the pricing section */
+/* General Styles */
+.pricing-section {
+  background-color: #fef9f9; /* Light red-ish background for the section */
+  padding: 60px 0;
+  border-radius: 12px;
+}
+
+.pricing-section h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #b22222; /* Dark red color for heading */
+  text-align: center;
+}
+
+.pricing-section p {
+  font-size: 1.2rem;
+  color: #777;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* Pricing Card Styles */
+.pricing-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  padding: 30px;
+  transition: all 0.3s ease;
+  border: 1px solid #f1f1f1;
+}
+
+.pricing-card h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #b22222; /* Dark red color for titles */
+  margin-bottom: 20px;
+}
+
+.pricing-card .price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #b22222;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pricing-card .price span {
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #aaa;
+}
+
+.pricing-card .features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.pricing-card .features li {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.pricing-card .btn {
+  background-color: #b22222; /* Red button color */
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  text-align: center;
+  border-radius: 8px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.pricing-card .btn:hover {
+  background-color: #8b0000; /* Darker red when hovered */
+  transform: translateY(-3px);
+}
+
+/* Highlighting Premium Package */
+.pricing-card.premium {
+  background: linear-gradient(
+    135deg,
+    #ff6f61,
+    #e32b2b
+  ); /* Red gradient background */
+  color: white;
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.pricing-card.premium .price {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.pricing-card.premium .price span {
+  font-size: 1.8rem;
+  color: #f8f8f8;
+}
+
+.pricing-card.premium .btn {
+  background-color: #fff;
+  color: #e32b2b;
+  border: 2px solid #e32b2b;
+}
+
+.pricing-card.premium .btn:hover {
+  background-color: #e32b2b;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.pricing-card.premium .features li {
+  color: #fff;
+}
+
+.pricing-card.premium .features li:before {
+  content: "✔";
+  color: #fff;
+  margin-right: 10px;
+}
+
+/* Hover Effects */
+.pricing-card:hover {
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .pricing-card {
+    margin-bottom: 30px;
+  }
+
+  .pricing-card .price {
+    font-size: 2rem;
   }
 }
