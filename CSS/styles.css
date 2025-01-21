@@ -289,25 +289,23 @@ section {
 
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
     flex-direction: column;
     gap: 15px;
-    padding: 20px 0;
-    background-color: #333;
+    padding: 0; /* Start with no padding */
+    background-color: #fff;
     position: absolute;
     top: 70px;
     left: 0;
     width: 100%;
     z-index: 999;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    max-height: 0;
+    max-height: 0; /* Collapsed height */
     overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
   }
 
   .nav-links.active {
-    display: flex;
-    max-height: 300px;
-    padding: 20px 40px;
+    max-height: 600px; /* Expanded height */
+    padding: 20px 40px; /* Add padding when expanded */
   }
 
   .menu-toggle {

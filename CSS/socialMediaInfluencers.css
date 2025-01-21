@@ -1,6 +1,6 @@
 /* Root Variables for Styling */
 :root {
-  --primary-color: #ff4c61; /* Red for accents */
+  --primary-color: #c90001; /* Red for accents */
   --secondary-color: #ffffff; /* White for contrast */
   --dark-color: #1c1c1c; /* Deep black for text */
   --text-color: #000000; /* Standard black */
@@ -49,7 +49,7 @@ body {
   color: #000; /* Vibrant red color */
   text-transform: uppercase; /* Convert text to uppercase for emphasis */
   letter-spacing: 1px; /* Add spacing between letters */
-  background: linear-gradient(90deg, #ff4c61, #ff9f45, #ffe347, #ff4c61);
+  background: linear-gradient(90deg, #c90001, #ff9f45, #ffe347, #c90001);
   background-size: 200% auto; /* Gradient effect animation */
   animation: gradientScroll 5s linear infinite; /* Smooth gradient animation */
   padding: 20px 0;
@@ -76,8 +76,8 @@ marquee.smm-marq {
   padding: 10px 0; /* Add padding for better appearance */
   overflow: hidden; /* Hide overflow text outside the marquee */
   background-color: #000; /* Contrast background for better visibility */
-  border-top: 2px solid #ff4c61; /* Top border for emphasis */
-  border-bottom: 2px solid #ff4c61; /* Bottom border for emphasis */
+  border-top: 2px solid #c90001; /* Top border for emphasis */
+  border-bottom: 2px solid #c90001; /* Bottom border for emphasis */
   box-shadow: 0 5px 15px rgba(255, 76, 97, 0.5); /* Subtle glow effect */
 }
 
@@ -86,7 +86,7 @@ marquee.smm-marq {
   font-size: 3.5rem; /* Larger font size for a more prominent heading */
   font-weight: 900; /* Bold font weight for emphasis */
   line-height: 1.1; /* Adjust line height for better readability */
-  color: #ff4c61; /* Slightly darker color for better contrast */
+  color: #c90001; /* Slightly darker color for better contrast */
   margin-bottom: 20px;
   margin-top: 40px; /* Increase top margin for better spacing */
   letter-spacing: -0.9px; /* Small letter-spacing for sleek look */
@@ -126,7 +126,7 @@ marquee.smm-marq {
 
 /* Button Styles */
 .btn-primary {
-  background-color: #ff4c61; /* Red background */
+  background-color: #c90001; /* Red background */
   color: white;
   border: none;
   padding: 18px 32px;
@@ -138,7 +138,7 @@ marquee.smm-marq {
 }
 
 .btn-primary:hover {
-  background-color: #ff3366; /* Slightly darker red */
+  background-color: #970001; /* Slightly darker red */
   transform: scale(1.05);
 }
 
@@ -197,6 +197,133 @@ marquee.smm-marq {
   .wd-100:hover {
     transform: scale(1.02); /* More subtle zoom effect on mobile */
     box-shadow: 0 0 20px rgba(255, 99, 132, 0.5); /* Light glow effect on mobile */
+  }
+}
+
+/* ####################################### */
+/* Navigation Links */
+/* Navigation Container */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #fff;
+  color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.logo-img {
+  max-width: 150px; /* Proportional to smaller screens */
+  height: 60px; /* Maintain aspect ratio */
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 15px; /* Maintain spacing between links */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+/* Link Styles */
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem; /* Consistent text size */
+  font-weight: 500;
+  padding: 8px 15px; /* Adjusted for better proportions */
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #333333;
+  color: #ff7f7f;
+  transform: scale(1.05);
+}
+
+.mar-20 {
+  margin-top: 10px;
+}
+
+/* Register Button */
+.register-button {
+  background: linear-gradient(45deg, #c90001, #333333);
+  color: #fff;
+  padding: 18px 32px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.register-button:hover {
+  background: linear-gradient(45deg, #c90001, #ff512f);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255, 81, 47, 0.5);
+}
+
+/* Hamburger Menu (Mobile Only) */
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    max-height: 500px; /* Enough for all links */
+    padding: 20px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-link {
+    font-size: 1.2rem; /* Slightly smaller for mobile */
+    padding: 10px 20px;
+  }
+
+  .register-button {
+    padding: 12px 20px; /* Fit smaller screens */
+    font-size: 1rem;
   }
 }
 
@@ -368,7 +495,7 @@ marquee.smm-marq {
 }
 
 .smm_box {
-  background: #ff4c61; /* Card background */
+  background: #fc4d4d; /* Card background */
   color: #fff;
   padding: 20px;
   border-radius: 8px;
@@ -1061,4 +1188,141 @@ i {
   .pricing-card .price {
     font-size: 2rem;
   }
+}
+
+/* FOOTER */
+/* ################################################# */
+/* footer styles */
+.container-fluid.background {
+  background-color: #1a1a1a; /* Dark theme background */
+  color: white; /* White text for contrast */
+  padding: 20px 0;
+}
+
+.footer_p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.para_footer {
+  margin: 5px 0;
+}
+
+.footerlinks {
+  font-size: 14px;
+  margin: 0;
+  text-decoration: none;
+}
+
+a.white {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a.white:hover {
+  color: #ff4d4d; /* Highlight color on hover */
+}
+
+.pd-10 {
+  padding: 10px;
+}
+
+.center-mb {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.footer_img {
+  width: 20px;
+  margin-top: 5px;
+}
+
+.col-md-2,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-8 {
+  margin-bottom: 15px; /* Add space between columns on smaller screens */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .col-md-2,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Down Triangle */
+/* Floating Social Media Background */
+/* Floating Social Media Background */
+/* Floating Social Media Bar */
+/* Floating Social Media Bar */
+.container-fluid.fsbg {
+  background: #c90001; /* Solid red background */
+  padding: 10px 20px; /* Slight padding for minimal space */
+  text-align: center;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* Center the content */
+  align-items: center;
+  border-radius: 30px 30px 0 0; /* Rounded top corners */
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+}
+
+/* Social Media Icon */
+.wp-idget {
+  margin: 0 12px; /* Space between icons */
+  width: 40px; /* Consistent size */
+  height: 40px; /* Consistent size */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.wp-idget:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+/* Footer Strip Text */
+.footer-strip {
+  margin-top: 10px; /* Space between the icons and text */
+  font-size: 1rem; /* Compact font size */
+  text-align: center;
+  color: white;
+  font-weight: 400;
+}
+
+/* Footer Heading Link */
+.footer-strip-heading a {
+  color: #ffd0d0; /* Light red for the link */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-strip-heading a:hover {
+  color: white; /* White text on hover */
+  text-decoration: underline;
 }
