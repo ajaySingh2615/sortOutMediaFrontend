@@ -101,10 +101,20 @@ marquee.smm-marq {
 
 /* Heading Styles */
 .heading-main {
-  font-size: 2.5rem; /* Larger font size for a more prominent heading */
+  font-size: 3.5rem; /* Larger font size for a more prominent heading */
   font-weight: 900; /* Bold font weight for emphasis */
   line-height: 1.1; /* Adjust line height for better readability */
   color: #ff4c61; /* Slightly darker color for better contrast */
+  margin-bottom: 20px;
+  margin-top: 40px; /* Increase top margin for better spacing */
+  letter-spacing: -0.9px; /* Small letter-spacing for sleek look */
+}
+
+.secondary-heading-main {
+  font-size: 2.5rem; /* Larger font size for a more prominent heading */
+  font-weight: 600; /* Bold font weight for emphasis */
+  line-height: 1.1; /* Adjust line height for better readability */
+  color: #000; /* Slightly darker color for better contrast */
   margin-bottom: 20px;
   margin-top: 40px; /* Increase top margin for better spacing */
   letter-spacing: -0.9px; /* Small letter-spacing for sleek look */
@@ -122,13 +132,14 @@ marquee.smm-marq {
 
 /* Paragraph Styles */
 .p-lg {
-  font-size: 1.3rem; /* Larger paragraph text for better readability */
+  font-size: 1.5rem; /* Larger paragraph text for better readability */
   color: #555; /* Softer color for paragraphs */
-  line-height: 1.1; /* Increased line-height for readability */
+  line-height: 1.2; /* Increased line-height for readability */
   margin-bottom: 20px;
   max-width: 800px; /* Limit width for better text control */
   margin-left: auto; /* Center the text block */
   margin-right: auto; /* Center the text block */
+  font-weight: 500;
 }
 
 /* Button Styles */
@@ -136,7 +147,7 @@ marquee.smm-marq {
   background-color: #ff4c61; /* Red background */
   color: white;
   border: none;
-  padding: 12px 32px;
+  padding: 18px 32px;
   font-size: 1.1rem;
   font-weight: bold;
   border-radius: 8px;
@@ -516,6 +527,7 @@ lord-icon {
   margin-bottom: 40px; /* Increased space below the description */
   line-height: 1.6; /* Better text spacing */
   text-align: center; /* Center-align for balance */
+  font-weight: 600;
 }
 
 .steps {
@@ -683,7 +695,7 @@ i {
 /* FAQ section */
 .freq-ques {
   padding: 80px 0;
-  background-color: #000; /* Dark background for modern feel */
+  background-color: #fff; /* Dark background for modern feel */
   color: #f1f1f1; /* Light text color for contrast */
 }
 
@@ -698,7 +710,7 @@ i {
   font-size: 40px;
   font-weight: 700;
   text-align: center;
-  color: #f1f1f1;
+  color: #000;
   margin-bottom: 20px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -772,7 +784,7 @@ i {
     #f44336 0%,
     #ff1744 100%
   ); /* Slightly different red gradient on hover */
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .single-acco.active h2::after {
