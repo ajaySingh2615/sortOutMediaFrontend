@@ -427,10 +427,8 @@ lord-icon {
 }
 
 /* VIRAL SECTION */
-/* Heading Styles */
-/* Heading Styles */
 .heading-main-viral {
-  font-size: 40px;
+  font-size: 44px;
   font-weight: 600;
   line-height: 1.3;
   color: #fff;
@@ -440,16 +438,14 @@ lord-icon {
 .heading-main-viral span {
   color: #4c0000;
   font-size: 60px;
-  background-color: black; /* Add this for the background color */
+  background-color: #fff; /* Add this for the background color */
   border-radius: 20px;
   padding: 5px; /* Optional: Adds space around the text inside the span */
   margin-left: 10px;
 }
 
-/* Card Section Styling */
 .smm-bx {
   background-color: #fff;
-  border-radius: 10px;
   padding: 30px;
   margin: 10px 0;
   color: #000;
@@ -504,5 +500,329 @@ lord-icon {
 
   .col-md-4 {
     margin-bottom: 20px;
+  }
+}
+
+/* IMPROVE SECTION */
+.improve-section {
+  font-family: Arial, sans-serif;
+  padding: 40px 20px; /* More padding for the entire section */
+  background-color: #fff;
+}
+
+.description {
+  font-size: 1.1rem; /* Slightly larger for better readability */
+  color: #444;
+  margin-bottom: 40px; /* Increased space below the description */
+  line-height: 1.6; /* Better text spacing */
+  text-align: center; /* Center-align for balance */
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Increased gap between cards */
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 12px; /* Slightly rounded corners for softness */
+  padding: 25px; /* Increased padding for breathing room */
+  width: calc(50% - 15px); /* Adjust width to fit better */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step:hover {
+  transform: translateY(-5px); /* Add a slight lift on hover */
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.red-bg {
+  background-color: red;
+  color: white;
+}
+
+.white-bg {
+  background-color: white;
+  color: red;
+  border: 1px solid red;
+}
+
+.step-number {
+  font-size: 2rem; /* Larger step numbers */
+  font-weight: bold;
+  margin-right: 10px; /* Space from content */
+}
+
+.step-content {
+  flex: 1;
+  margin: 0 20px; /* Extra margin for spacing */
+}
+
+.step-content h4 {
+  font-size: 1.2rem; /* Highlight the titles */
+  margin-bottom: 5px;
+}
+
+.step-content p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.step-icon {
+  font-size: 2rem; /* Larger icons */
+}
+
+/* REVIEWS SECTION */
+/* Main Background */
+/* Main Slider Container */
+/* Main Slider Container */
+/* General styles for the section */
+
+/* General styles for the section */
+/* General styles for the section */
+.bg_test {
+  background-size: cover;
+  padding: 60px 0;
+  color: #fff; /* Ensure text is visible on dark background */
+}
+
+/* Style for testimonial card */
+.testimonial-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Style for testimonial image */
+.testimonial-img {
+  width: 80%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 20px;
+  max-width: 150px;
+}
+
+/* Content inside testimonial */
+.testimonial-content {
+  text-align: center;
+}
+
+.test-p {
+  font-size: 16px;
+  color: #555;
+  font-style: italic;
+  margin-bottom: 15px;
+}
+
+.heading-main-md {
+  font-size: 22px;
+  color: #333;
+  font-weight: bold;
+}
+
+h2 {
+  color: #333;
+}
+
+i {
+  font-style: italic;
+  color: #777;
+}
+
+/* Mobile-first styles */
+@media (max-width: 767px) {
+  .testimonial-card {
+    margin-bottom: 20px;
+  }
+
+  .testimonial-img {
+    max-width: 120px;
+  }
+
+  .heading-main-md {
+    font-size: 18px;
+  }
+
+  .test-p {
+    font-size: 14px;
+  }
+}
+
+/* Desktop styles (from 768px and up) */
+@media (min-width: 768px) {
+  .testimonial-card {
+    margin-bottom: 20px;
+  }
+
+  .testimonial-img {
+    max-width: 150px;
+  }
+
+  .heading-main-md {
+    font-size: 22px;
+  }
+
+  .test-p {
+    font-size: 16px;
+  }
+}
+
+/* FAQ section */
+.freq-ques {
+  padding: 80px 0;
+  background-color: #000; /* Dark background for modern feel */
+  color: #f1f1f1; /* Light text color for contrast */
+}
+
+/* Container styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Headings styling */
+.markheading88 {
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  color: #f1f1f1;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.markheading89 {
+  font-size: 18px;
+  text-align: center;
+  color: #bdbdbd;
+  margin-bottom: 50px;
+  font-weight: 400;
+}
+
+.markheading90 {
+  font-size: 28px;
+  text-align: center;
+  color: #f44336; /* Red shade */
+  font-weight: 600;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+/* Accordion styling */
+.single-acco {
+  background-color: #1c1c1c;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  margin-bottom: 25px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Accordion title with floating animation */
+.single-acco h2 {
+  font-size: 20px;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    #ff1744 0%,
+    #f44336 100%
+  ); /* Red gradient */
+  padding: 15px 20px;
+  border-radius: 10px;
+  text-transform: capitalize;
+  font-weight: 500;
+  letter-spacing: 1px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.single-acco h2::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  background: url("https://img.icons8.com/ios-filled/50/ffffff/plus-math.png")
+    no-repeat center center;
+  background-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.single-acco h2:hover {
+  background: linear-gradient(
+    135deg,
+    #f44336 0%,
+    #ff1744 100%
+  ); /* Slightly different red gradient on hover */
+  transform: scale(1.05);
+}
+
+.single-acco.active h2::after {
+  transform: rotate(45deg);
+}
+
+/* Accordion body styling */
+.accodion-body {
+  display: none;
+  padding: 20px 20px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #f1f1f1;
+  font-weight: 300;
+  background-color: #2c2c2c;
+  transition: opacity 0.3s ease;
+  border-top: 1px solid #444;
+}
+
+/* Show content when active */
+.single-acco.active .accodion-body {
+  display: block;
+  opacity: 1;
+}
+
+/* Subtle glow effect on hover */
+.single-acco:hover {
+  box-shadow: 0 30px 60px rgba(244, 67, 54, 0.2); /* Red glow */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .markheading88 {
+    font-size: 32px;
+  }
+
+  .markheading89 {
+    font-size: 16px;
+  }
+
+  .markheading90 {
+    font-size: 24px;
+  }
+
+  .single-acco h2 {
+    font-size: 18px;
+    padding: 12px 15px;
+  }
+
+  .faqpara {
+    font-size: 14px;
   }
 }
