@@ -436,16 +436,6 @@ marquee.smm-marq {
   padding-right: 10px;
 }
 
-.smm-heading-main {
-}
-
-.smm-heading-title-md {
-}
-
-/* Paragraph Styling */
-.smm-paragraph {
-}
-
 .smm-col-left {
   text-align: left;
 }
@@ -505,9 +495,9 @@ marquee.smm-marq {
 /* Headings and Paragraph */
 .secondary-heading-main-card {
   font-size: 2.7rem;
-  color: #fff;
-  margin-bottom: 10px;
-  font-weight: bold;
+  color: #000;
+  margin-bottom: 50px;
+  font-weight: 600;
 }
 
 .p-lg-card {
@@ -520,9 +510,9 @@ marquee.smm-marq {
 .smm_box {
   background-color: #fff;
   border-radius: 12px;
-  padding: 30px 20px;
+  padding: 30px 30px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 20px 0;
+  margin: 20px 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -534,7 +524,7 @@ marquee.smm-marq {
 /* Title Styles */
 .heading-title {
   font-size: 1.4rem;
-  font-weight: bold;
+  font-weight: 500;
   color: #222;
   margin: 0;
   line-height: 1.5;
