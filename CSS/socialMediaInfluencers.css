@@ -102,6 +102,10 @@ marquee.smm-marq {
   letter-spacing: -0.9px; /* Small letter-spacing for sleek look */
 }
 
+.sec-white {
+  color: #fff;
+}
+
 .heading-title-md {
   font-size: 1.8rem; /* Larger title size */
   font-weight: 600; /* Semi-bold for emphasis */
@@ -122,6 +126,10 @@ marquee.smm-marq {
   margin-left: auto; /* Center the text block */
   margin-right: auto; /* Center the text block */
   font-weight: 500;
+}
+
+.p-white {
+  color: #fff;
 }
 
 /* Button Styles */
