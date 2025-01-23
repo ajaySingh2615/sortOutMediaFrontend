@@ -1,0 +1,731 @@
+/* Root Variables for Styling */
+:root {
+  --primary-color: #c90001; /* Red for accents */
+  --secondary-color: #ffffff; /* White for contrast */
+  --dark-color: #1c1c1c; /* Deep black for text */
+  --text-color: #000000; /* Standard black */
+  --font-family-main: "Roboto", sans-serif; /* Main font */
+  --border-radius: 12px; /* Rounded corners */
+  --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* General Reset */
+/* General Reset */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Section Background */
+.bg_smm {
+  background-color: #f1f1f1; /* Light gray background */
+  padding: 50px 0;
+  overflow: hidden;
+}
+
+/* Container with responsive widths */
+.container {
+  padding: 50px 0px;
+}
+.col-md-12 {
+  padding: 0px;
+}
+
+/* Row Layout */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Marquee Text */
+/* Modern Marquee Text Styling */
+
+a {
+  text-decoration: none;
+}
+
+.btn-primary:hover {
+  background-color: #970001; /* Slightly darker red */
+  transform: scale(1.05);
+}
+
+/* ####################################### */
+/* Navigation Links */
+/* Navigation Container */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: linear-gradient(270deg, #f9f9f9 0%, #f8f8f8 100%);
+  color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.logo-img {
+  max-width: 150px; /* Proportional to smaller screens */
+  height: 60px; /* Maintain aspect ratio */
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 15px; /* Maintain spacing between links */
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+/* Link Styles */
+.nav-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.2rem; /* Consistent text size */
+  font-weight: 500;
+  padding: 8px 15px; /* Adjusted for better proportions */
+  border-radius: 4px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #333333;
+  color: #ff7f7f;
+  transform: scale(1.05);
+}
+
+.mar-20 {
+  margin-top: 10px;
+}
+
+/* Register Button */
+.register-button {
+  background: linear-gradient(45deg, #c90001, #333333);
+  color: #fff;
+  padding: 18px 32px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.register-button:hover {
+  background: linear-gradient(45deg, #c90001, #ff512f);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(255, 81, 47, 0.5);
+}
+
+/* Hamburger Menu (Mobile Only) */
+.menu-toggle {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    z-index: 999;
+  }
+
+  .nav-links.active {
+    max-height: 500px; /* Enough for all links */
+    padding: 20px 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-link {
+    font-size: 1.2rem; /* Slightly smaller for mobile */
+    padding: 10px 20px;
+  }
+
+  .register-button {
+    padding: 12px 20px; /* Fit smaller screens */
+    font-size: 1rem;
+  }
+}
+
+/* Responsive for moblie */
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  /* Row Layout Adjustments */
+  .row {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: flex-start; /* Align items to the start */
+    gap: 15px; /* Add spacing between items */
+  }
+
+  /* Marquee Text Adjustments */
+  .smm-marq {
+    font-size: 0.9rem; /* Smaller text for better fit */
+    padding: 15px 0; /* Adjust padding */
+    letter-spacing: 0.5px; /* Slightly tighter spacing */
+  }
+
+  /* Headings Adjustments */
+  .heading-main {
+    font-size: 2.5rem; /* Reduce font size for headings */
+    margin-top: 20px; /* Adjust top margin */
+  }
+
+  .secondary-heading-main {
+    font-size: 2rem; /* Adjust secondary heading size */
+  }
+
+  .heading-title-md {
+    font-size: 1.4rem; /* Smaller title size */
+    margin-bottom: 15px; /* Adjust margin */
+  }
+
+  /* Paragraph Styles Adjustments */
+  .p-lg {
+    font-size: 1.2rem; /* Smaller paragraph text */
+    margin-bottom: 15px; /* Reduce bottom margin */
+    max-width: 100%; /* Allow full width */
+    padding: 0 10px; /* Add side padding */
+  }
+
+  /* Button Adjustments */
+  .btn-primary {
+    padding: 14px 24px; /* Reduce padding */
+    font-size: 1rem; /* Adjust font size */
+    border-radius: 6px; /* Slightly smaller radius */
+  }
+
+  /* Image Adjustments */
+  .wd-100 {
+    border-radius: 10px; /* Smaller corner radius */
+  }
+
+  .wd-100:hover {
+    transform: scale(1.02); /* Subtle zoom */
+    box-shadow: 0 4px 10px rgba(255, 99, 132, 0.4); /* Light glow */
+  }
+
+  /* Marquee Container for Smaller Screens */
+  marquee.smm-marq {
+    padding: 8px 0; /* Adjust padding */
+    border-top: 1px solid #ff4c61; /* Thinner border */
+    border-bottom: 1px solid #ff4c61; /* Thinner border */
+  }
+}
+
+/* Extra Small Screens (max-width: 480px) */
+@media (max-width: 480px) {
+  .heading-main {
+    font-size: 2rem; /* Further reduce heading size */
+  }
+
+  .secondary-heading-main {
+    font-size: 1.6rem; /* Reduce secondary heading size */
+  }
+
+  .btn-primary {
+    padding: 12px 20px; /* Smaller buttons */
+    font-size: 0.9rem; /* Adjust font size */
+  }
+
+  .smm-marq {
+    font-size: 0.8rem; /* Adjust marquee font size */
+    padding: 10px 0; /* Reduce padding */
+  }
+
+  .p-lg {
+    font-size: 1rem; /* Smaller paragraph text */
+  }
+}
+
+/* FOOTER */
+/* ################################################# */
+/* footer styles */
+.container-fluid.background {
+  background-color: #1a1a1a; /* Dark theme background */
+  color: white; /* White text for contrast */
+  padding: 20px 0;
+}
+
+.footer_p {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.para_footer {
+  margin: 5px 0;
+}
+
+.footerlinks {
+  font-size: 14px;
+  margin: 0;
+  text-decoration: none;
+}
+
+a.white {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a.white:hover {
+  color: #ff4d4d; /* Highlight color on hover */
+}
+
+.pd-10 {
+  padding: 10px;
+}
+
+.center-mb {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.footer_img {
+  width: 20px;
+  margin-top: 5px;
+}
+
+.col-md-2,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-8 {
+  margin-bottom: 15px; /* Add space between columns on smaller screens */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .col-md-2,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-8 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Down Triangle */
+/* Floating Social Media Background */
+/* Floating Social Media Background */
+/* Floating Social Media Bar */
+/* Floating Social Media Bar */
+.container-fluid.fsbg {
+  background: #c90001; /* Solid red background */
+  padding: 10px 20px; /* Slight padding for minimal space */
+  text-align: center;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* Center the content */
+  align-items: center;
+  border-radius: 30px 30px 0 0; /* Rounded top corners */
+  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.1); /* Light shadow effect */
+}
+
+/* Social Media Icon */
+.wp-idget {
+  margin: 0 12px; /* Space between icons */
+  width: 40px; /* Consistent size */
+  height: 40px; /* Consistent size */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.wp-idget:hover {
+  transform: scale(1.1); /* Slight zoom effect */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+/* Footer Strip Text */
+.footer-strip {
+  margin-top: 10px; /* Space between the icons and text */
+  font-size: 1rem; /* Compact font size */
+  text-align: center;
+  color: white;
+  font-weight: 400;
+}
+
+/* Footer Heading Link */
+.footer-strip-heading a {
+  color: #ffd0d0; /* Light red for the link */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer-strip-heading a:hover {
+  color: white; /* White text on hover */
+  text-decoration: underline;
+}
+
+/* career */
+/*  */
+/*  */
+/*  */
+
+/* Open Positions */
+/* Icon style */
+.fas.fa-long-arrow-alt-right {
+  font-size: 30px; /* Adjust icon size */
+  color: black; /* Black color for the icon */
+  background-color: #fff; /* Dark background for the icon */
+  padding: 10px; /* Padding around the icon */
+  border-radius: 50%; /* Circular background */
+  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+}
+
+.fas.fa-long-arrow-alt-right:hover {
+  transform: translateX(5px); /* Move the icon to the right on hover */
+  color: #fff; /* Change icon color to white on hover */
+  background-color: #fb0000; /* Change background to red on hover */
+}
+
+.positon-anchor {
+  text-decoration: none;
+}
+
+.position-box-red {
+  border-style: solid;
+  border-width: 3px 3px 3px 3px;
+  border-color: #fb0000;
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  margin: 0px 10px 0px 10px;
+  padding: 5px 40px 15px 40px;
+  border-radius: 11px 11px 11px 11px;
+}
+
+.position-box {
+  border-style: solid;
+  border-width: 3px 3px 3px 3px;
+  border-color: #252525;
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
+  margin: 0px 10px 0px 10px;
+  padding: 5px 40px 15px 40px;
+  border-radius: 11px 11px 11px 11px;
+}
+
+.divider-sec {
+  padding: 22px 0px;
+  border-bottom: 3px solid;
+  color: black;
+}
+
+i.fas.fa-location-arrow {
+  margin-right: 5px;
+}
+i.fas.fa-long-arrow-alt-right {
+  font-size: 26px;
+  margin-top: 30px;
+}
+.red {
+  color: #fb0000 !important;
+}
+.red-background {
+  background-color: red;
+}
+
+.heading-title-position-white {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.red-title {
+  color: #fb0000 !important;
+}
+
+.black-title {
+  color: #000;
+}
+
+/* Looking for a change section */
+
+/* HERO SECTION STYLE */
+/* General Reset for the Hero Section */
+/* Scoped Styling for the Hero Section */
+/* Hero Section Styles */
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* min-height: 100vh; */
+  background: linear-gradient(270deg, #f9f9f9 0%, #f8f8f8 100%);
+
+  color: #000;
+  padding: 20px 20px;
+  position: relative;
+}
+
+.hero-section .container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* Left Column (Image) */
+.hero-image {
+  flex: 1;
+  max-width: 50%;
+}
+
+.hero-image img {
+  width: 90%;
+  height: auto;
+  border-radius: 15px;
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); */
+}
+
+/* Right Column (Text Content) */
+.hero-text {
+  flex: 1;
+  max-width: 50%;
+}
+
+.hero-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.hero-header .hero-icon {
+  width: 22px;
+  height: auto;
+}
+
+.hero-title-heading {
+  color: #c90001;
+  font-family: "Poppins", Sans-serif;
+  font-size: 110px;
+  font-weight: 800;
+  line-height: 1em;
+  letter-spacing: 0px;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  .hero-title-heading {
+    font-size: 80px; /* Smaller font size for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title-heading {
+    font-size: 50px; /* Even smaller font size for mobile devices */
+  }
+}
+
+.hero-description {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.btn-primary {
+  background-color: #c90001; /* Red background */
+  color: white;
+  border: none;
+  padding: 18px 32px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero-button:hover {
+  background: #ff4a39;
+  transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image,
+  .hero-text {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-button {
+    font-size: 16px;
+  }
+}
+
+.hire-us {
+  color: #3540e8;
+  font-family: "Inter", Sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.4em;
+  letter-spacing: 1px;
+}
+
+.hero-description-heading {
+  color: #6b6e71;
+  font-family: "Inter", Sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.8em;
+}
+
+.hero-description-heading {
+  padding-top: 30px;
+}
+
+.hero-description-heading {
+  padding-bottom: 30px;
+}
+
+/* who we are section */
+
+.about-us {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+}
+
+.about-us h2 {
+  /* Secondary Heading: Who We Are */
+  font-size: 4.2rem; /* Larger font for prominence */
+  color: #b30000; /* Red color */
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.about-us h3 {
+  /* Third Heading: We are the best business consulting agency */
+  font-size: 2.8rem; /* Adjusted for hierarchy */
+  color: #800000; /* Darker red for contrast */
+  margin-bottom: 20px;
+  font-weight: normal;
+}
+
+.about-us p {
+  /* Paragraph: Description text */
+  font-size: 1.1rem; /* Slightly larger for readability */
+  color: #666;
+  line-height: 1.8; /* Improved line spacing */
+  margin-bottom: 30px;
+}
+
+.services-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background: #ffffff;
+  border: 2px solid #b30000; /* Red border */
+  border-radius: 8px;
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.service-card h3 {
+  /* Card Heading */
+  font-size: 1.4rem; /* Adjusted font size */
+  color: #b30000; /* Red color */
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.service-card p {
+  /* Card Paragraph */
+  font-size: 1rem; /* Larger for better readability */
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
