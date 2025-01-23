@@ -712,6 +712,8 @@ i.fas.fa-long-arrow-alt-right {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.3)) sepia(1) saturate(2)
+    hue-rotate(-40deg);
 }
 
 .service-card h3 {
