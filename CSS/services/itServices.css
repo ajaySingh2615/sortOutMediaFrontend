@@ -3,10 +3,169 @@ body {
   color: #333333;
   font-family: "Arial", sans-serif;
 }
+
+/* General Navigation Styles */
+/* General Navigation Styles */
+/* General Navigation Styles */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px; /* Fixed height for the navbar */
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 60px;
+  height: auto;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333333;
+  margin: 0 10px;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #d10000; /* Red theme on hover */
+  transform: scale(1.05);
+  background-color: rgba(209, 0, 0, 0.1); /* Light red hover effect */
+  border-radius: 5px;
+}
+
+/* Highlighted Contact Link */
+.contact-link {
+  font-weight: bold;
+  padding: 10px 15px;
+  color: #ffffff;
+  background-color: #d10000;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-link:hover {
+  background-color: #a00000;
+  color: #000;
+  transform: translateY(-3px);
+}
+
+/* Register Button (Different Layout) */
+.register-button {
+  background-color: #ffffff;
+  color: #d10000;
+  font-weight: bold;
+  padding: 12px 20px;
+  border: 2px solid #d10000;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.register-button:hover {
+  background-color: #d10000;
+  color: #ffffff;
+  transform: translateY(-5px);
+}
+
+/* Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #333333;
+}
+
+/* Responsive Design for Mobile Navigation */
+@media (max-width: 991px) {
+  .menu-toggle {
+    display: block; /* Visible on mobile */
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px; /* Below the navbar */
+    right: 0;
+    background: #ffffff;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 999;
+    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  .nav-link {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-link,
+  .register-button {
+    margin: 15px 0;
+    width: auto;
+  }
+}
+
+/* Small Screens (Mobile Adjustments) */
+@media (max-width: 767px) {
+  .logo-img {
+    width: 50px;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  .register-button {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+}
+
 /* Hero Section */
 .hero-section {
-  padding: 100px 0;
-  background-color: #f8f9fa;
+  padding-top: 100px; /* Add padding equal to the navbar height + some buffer */
+  text-align: center;
+  background-color: #f8f9fa; /* Example background */
+  color: #333333;
 }
 
 .hero-content h1 {
@@ -35,6 +194,27 @@ body {
 .hero-img {
   max-width: 100%;
   border-radius: 10px;
+}
+
+/* Responsive Navbar and Hero Section */
+@media (max-width: 991px) {
+  .nav-container {
+    height: 60px; /* Adjust height for smaller screens */
+  }
+
+  .hero-section {
+    padding-top: 80px; /* Adjust top padding dynamically */
+  }
+}
+
+@media (max-width: 767px) {
+  .nav-container {
+    height: 60px; /* Ensure consistent navbar height */
+  }
+
+  .hero-section {
+    padding-top: 80px; /* Match hero padding to navbar height */
+  }
 }
 
 /* Responsive Design */
@@ -834,5 +1014,219 @@ body {
     font-size: 0.9rem;
     padding: 10px 20px;
     margin-bottom: 10px;
+  }
+}
+
+/* General Footer Styles */
+footer {
+  background-color: #0a0a0a;
+  color: #fff;
+  padding: 60px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Footer Grid */
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-grid div {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+/* Footer Headings */
+.footer-grid h4 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #ff4b4b;
+  font-weight: bold;
+}
+
+/* Footer Links */
+.footer-grid ul {
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer-grid ul li {
+  margin-bottom: 10px;
+}
+
+.footer-grid ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-grid ul li a:hover {
+  color: #ff4b4b;
+}
+
+/* Testimonials Styling */
+.footer-grid div p {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.footer-grid div strong {
+  color: #fff;
+}
+
+/* Divider */
+footer .container > div:nth-child(2) {
+  margin: 40px 0;
+  height: 1px;
+  background: #333;
+}
+
+/* Contact Info Section */
+footer .container ul {
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+  color: #aaa;
+}
+
+footer .container ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+footer .container ul li i {
+  color: #ff4b4b;
+  margin-right: 10px;
+}
+
+/* Copyright Section */
+footer .container > div:last-child {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  padding: 20px 0;
+  background-color: #111;
+}
+
+/* WhatsApp Floating Icon */
+.fsbg {
+  position: fixed;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+.fsbg .wp-idget {
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.fsbg .wp-idget:hover {
+  transform: scale(1.1);
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Footer Contact Section */
+#contact {
+  background-color: #d10000; /* Red background */
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-strip-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+
+.footer-strip-heading a {
+  color: #fff !important; /* Ensure the phone number link stays white */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-strip-heading a:hover {
+  color: #ffcccc; /* Light hover effect */
+}
+
+/* Responsive Design for the Contact Section */
+@media (max-width: 767px) {
+  #contact {
+    padding: 20px;
+  }
+
+  .footer-strip-heading {
+    font-size: 1.2rem;
+  }
+
+  #triangle-down {
+    border-top-width: 20px;
+  }
+}
+
+/* Responsive Footer Design */
+@media (max-width: 991px) {
+  .footer-grid {
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-grid div {
+    min-width: 100%;
+  }
+
+  #triangle-down {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .fsbg .wp-idget {
+    width: 40px;
+    height: 40px;
+  }
+
+  footer {
+    padding: 40px 15px;
+  }
+
+  .footer-grid h4 {
+    font-size: 1.1rem;
+  }
+
+  .footer-grid ul li a {
+    font-size: 13px;
+  }
+
+  footer .container ul li {
+    font-size: 13px;
+  }
+
+  footer .container > div:last-child p {
+    font-size: 11px;
   }
 }
