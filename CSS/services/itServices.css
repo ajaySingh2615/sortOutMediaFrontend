@@ -72,7 +72,7 @@ body {
 
 .contact-link:hover {
   background-color: #a00000;
-  color: #000;
+  color: #fff;
   transform: translateY(-3px);
 }
 
@@ -164,7 +164,7 @@ body {
 .hero-section {
   padding-top: 100px; /* Add padding equal to the navbar height + some buffer */
   text-align: center;
-  background-color: #f8f9fa; /* Example background */
+  background-color: #fff; /* Example background */
   color: #333333;
 }
 
