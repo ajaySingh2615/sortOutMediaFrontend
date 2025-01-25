@@ -813,107 +813,79 @@ i.fas.fa-long-arrow-alt-right {
 /* ####################### */
 /* ####################### */
 /* Portfolio Section */
+/* Section Style */
+/* Section Style */
+/* Section Style */
+/* General Styling for Services Section */
 .services {
-  padding: 50px 20px;
-  background-color: #fff;
+  background-color: #fb0000;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.services-heading {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.heading {
-  font-size: 3.8rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #222;
-}
-
-.description {
-  font-size: 1.2rem;
-  color: #666;
+.sec-para,
+.sec-heading {
+  color: #fff !important;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Always 3 columns */
-  gap: 20px;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+  gap: 30px; /* Spacing between the items */
 }
 
 .service-item {
-  background-color: #f4f4f4;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff; /* Light background for each service item */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .service-item:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
-}
-
-.image-wrapper {
-  overflow: hidden;
+  transform: translateY(-10px); /* Hover effect for slight lifting */
 }
 
 .image-wrapper img {
   width: 100%;
-  display: block;
-}
-
-.content {
-  padding: 20px;
-  text-align: center;
+  height: auto;
+  border-radius: 8px;
 }
 
 .content h2 {
   font-size: 1.5rem;
-  margin-bottom: 10px;
-  color: #b30000;
+  color: #b33000;
+  margin-top: 10px;
   font-weight: bold;
 }
 
 .content p {
   font-size: 1rem;
-  color: #555;
-  margin-bottom: 15px;
+  color: #666;
+  margin: 10px 0;
 }
 
 .view-more {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 0.9rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #fff;
-  background-color: #007bff;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+  color: #000; /* Blue color */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Bold text */
+  padding: 5px 10px; /* Add padding for spacing */
+  border: 2px solid #b30000; /* Blue border */
+  border-radius: 5px; /* Rounded corners */
+  transition: all 0.3s ease; /* Smooth transition on hover */
 }
 
 .view-more:hover {
-  background-color: #0056b3;
+  background-color: #b30000; /* Change background color on hover */
+  color: #fff; /* Change text color to white */
+  transform: scale(1.05); /* Slightly enlarge the button */
 }
 
+/* Optional: Responsive Design */
 @media (max-width: 768px) {
   .services-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 columns for smaller screens */
+    grid-template-columns: 1fr; /* Stacks the items vertically on smaller screens */
   }
 }
 
-@media (max-width: 480px) {
-  .services-grid {
-    grid-template-columns: 1fr; /* 1 column for very small screens */
-  }
-}
 /* ########################## */
 /* Why Choose us */
 /* ######################## */
