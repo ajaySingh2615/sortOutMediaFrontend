@@ -623,3 +623,401 @@
     font-size: 1.8rem;
   }
 }
+
+/* Testimonials Section */
+/* Enhanced Testimonials Section */
+.enhanced-testimonials-section {
+  padding: 120px 20px;
+  background: linear-gradient(to right, #ffffff, #f8f9fa);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative Shapes */
+.enhanced-testimonials-section::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: rgba(209, 0, 0, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+  animation: float 5s infinite ease-in-out;
+}
+
+.enhanced-testimonials-section::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 75, 75, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+  animation: floatReverse 6s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes floatReverse {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px);
+  }
+}
+
+/* Section Header */
+.testimonials-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #333333;
+  margin-bottom: 15px;
+  z-index: 1;
+}
+
+.testimonials-subtitle {
+  font-size: 1.2rem;
+  color: #555555;
+  margin-bottom: 50px;
+  z-index: 1;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 40px 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 1;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Icon */
+.testimonial-icon {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: rgba(255, 75, 75, 0.1);
+  font-size: 5rem;
+}
+
+.testimonial-card:hover .testimonial-icon {
+  color: rgba(255, 75, 75, 0.2);
+}
+
+/* Testimonial Content */
+.testimonial-content {
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-text {
+  font-size: 1.2rem;
+  color: #555555;
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+.author-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #d10000;
+  margin-bottom: 5px;
+}
+
+.author-role {
+  font-size: 1rem;
+  color: #666666;
+}
+
+/* Responsive Design */
+/* Tablets */
+@media (max-width: 991px) {
+  .testimonials-title {
+    font-size: 2.4rem;
+  }
+
+  .testimonial-text {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .enhanced-testimonials-section {
+    padding: 100px 15px;
+  }
+
+  .testimonials-title {
+    font-size: 2rem;
+  }
+
+  .testimonial-card {
+    padding: 30px 20px;
+  }
+
+  .testimonial-icon {
+    font-size: 4rem;
+    top: 10px;
+    right: 15px;
+  }
+
+  .testimonial-text {
+    font-size: 1rem;
+  }
+}
+
+/* FAQ Section */
+/* FAQ Enhanced Section */
+/* FAQ Section */
+/* FAQ Section */
+.faq-modern-section {
+  padding: 100px 20px;
+  background: linear-gradient(to bottom right, #ffffff, #f8f9fa);
+  position: relative;
+}
+
+.faq-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #333333;
+  margin-bottom: 20px;
+}
+
+.faq-subtitle {
+  font-size: 1.2rem;
+  color: #666666;
+  margin-bottom: 50px;
+  line-height: 1.6;
+}
+
+/* FAQ Card */
+.faq-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px 25px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.faq-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px);
+}
+
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-question {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #d10000;
+  margin: 0;
+}
+
+.toggle-icon {
+  font-size: 1.2rem;
+  color: #d10000;
+}
+
+.faq-body {
+  font-size: 1rem;
+  color: #555555;
+  margin-top: 15px;
+  display: none;
+  line-height: 1.6;
+}
+
+/* Expanded FAQ Body */
+.faq-card.active .faq-body {
+  display: block;
+}
+
+/* FAQ Hover Interaction */
+.faq-card:hover .faq-question {
+  color: #a00000;
+}
+
+.faq-card:hover .toggle-icon {
+  color: #a00000;
+}
+
+/* Responsive Design */
+/* Tablets */
+@media (max-width: 991px) {
+  .faq-title {
+    font-size: 2.4rem;
+  }
+
+  .faq-subtitle {
+    font-size: 1rem;
+  }
+
+  .faq-icon {
+    font-size: 2rem;
+    margin-right: 10px;
+  }
+
+  .faq-question {
+    font-size: 1.2rem;
+  }
+
+  .faq-body {
+    font-size: 0.95rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .faq-modern-section {
+    padding: 80px 15px;
+  }
+
+  .faq-title {
+    font-size: 2rem;
+  }
+
+  .faq-subtitle {
+    font-size: 0.9rem;
+  }
+
+  .faq-card {
+    padding: 20px 15px;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+  }
+
+  .faq-body {
+    font-size: 0.9rem;
+  }
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 100px 20px;
+  background: linear-gradient(to right, #d10000, #ff4b4b);
+  color: #ffffff;
+  text-align: center;
+}
+
+.cta-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.cta-content {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 15px 30px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.primary-button {
+  background: #ffffff;
+  color: #d10000;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.primary-button:hover {
+  background: #ffdddd;
+  color: #a00000;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+.secondary-button {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.secondary-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  border-color: #ffcccc;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+/* Tablets */
+@media (max-width: 991px) {
+  .cta-heading {
+    font-size: 2.4rem;
+  }
+
+  .cta-content {
+    font-size: 1.1rem;
+  }
+
+  .cta-button {
+    font-size: 1.1rem;
+    padding: 12px 25px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .cta-section {
+    padding: 80px 15px;
+  }
+
+  .cta-heading {
+    font-size: 2rem;
+  }
+
+  .cta-content {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
