@@ -126,7 +126,6 @@
 }
 
 /* Hero Section */
-/* Hero Section */
 .hero-section {
   background: #ffffff; /* White background for a clean look */
   position: relative;
@@ -204,7 +203,7 @@
   width: 100%;
   max-width: 450px;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); */
   animation: float 5s infinite ease-in-out;
 }
 
@@ -635,5 +634,138 @@
 
   .unique-services-title {
     font-size: 2rem;
+  }
+}
+
+/* Why Choose Us Section */
+/* Why Choose Us - Bold Section */
+.why-choose-bold {
+  position: relative;
+  background: #ffffff;
+  padding: 80px 20px;
+}
+
+.why-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #d10000;
+  margin-bottom: 20px;
+}
+
+.why-title span {
+  color: #ff4b4b;
+  font-style: italic;
+}
+
+.why-subtitle {
+  font-size: 1.4rem;
+  color: #555555;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+.why-points {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.why-points li {
+  font-size: 1.2rem;
+  color: #333333;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.why-points li i {
+  color: #d10000;
+  font-size: 1.8rem;
+  background: rgba(209, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+/* Visual Section */
+.why-visual {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.why-image {
+  width: 100%;
+  border-radius: 15px;
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); */
+  z-index: 2;
+  position: relative;
+}
+
+.circle-bg {
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255, 75, 75, 0.1), transparent);
+  z-index: 1;
+  border-radius: 50%;
+}
+
+.circle-highlight {
+  position: absolute;
+  bottom: -20%;
+  right: -10%;
+  width: 70px;
+  height: 70px;
+  background: #d10000;
+  opacity: 0.6;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .why-title {
+    font-size: 2.4rem;
+  }
+
+  .why-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .why-points li {
+    font-size: 1.1rem;
+  }
+
+  .circle-bg {
+    width: 150%;
+    height: 150%;
+  }
+}
+
+@media (max-width: 767px) {
+  .why-choose-bold {
+    text-align: center;
+  }
+
+  .why-title {
+    font-size: 2rem;
+  }
+
+  .why-subtitle {
+    font-size: 1rem;
+  }
+
+  .why-points li {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .circle-bg {
+    display: none;
   }
 }
