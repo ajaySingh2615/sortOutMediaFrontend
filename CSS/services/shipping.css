@@ -1008,3 +1008,544 @@ img {
     font-size: 1.2rem;
   }
 }
+
+/* Testimonials Section */
+/* Testimonials Section */
+/* Testimonials Section */
+.sf-testimonials-highlight-section {
+  padding: 100px 20px;
+  background: linear-gradient(to right, #ffffff, #f8f9fa);
+  text-align: center;
+}
+
+.sf-testimonials-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #333333;
+  margin-bottom: 30px;
+}
+
+.sf-testimonials-heading span {
+  color: #d10000;
+  font-style: italic;
+}
+
+/* Testimonials Grid */
+.sf-testimonials-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sf-testimonial-item {
+  background: #ffffff;
+  padding: 30px 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.sf-testimonial-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+}
+
+.sf-testimonial-item.highlight {
+  background: linear-gradient(135deg, #d10000, #ff4b4b);
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 12px 40px rgba(209, 0, 0, 0.3);
+}
+
+.sf-testimonial-item.highlight:hover {
+  transform: scale(1.15);
+  box-shadow: 0 15px 50px rgba(209, 0, 0, 0.4);
+}
+
+.sf-testimonial-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  font-style: italic;
+  margin-bottom: 20px;
+  color: inherit;
+}
+
+.sf-client-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: inherit;
+}
+
+.sf-client-title {
+  font-size: 1rem;
+  color: inherit;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .sf-testimonials-heading {
+    font-size: 2.4rem;
+  }
+
+  .sf-testimonial-item {
+    max-width: 250px;
+  }
+
+  .sf-testimonial-text {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .sf-testimonials-highlight-section {
+    padding: 80px 15px;
+  }
+
+  .sf-testimonials-heading {
+    font-size: 2rem;
+  }
+
+  .sf-testimonials-grid {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .sf-testimonial-item {
+    max-width: 100%;
+  }
+}
+
+/* FAQ Section */
+.sf-faq-section {
+  padding: 100px 20px;
+  background: linear-gradient(to right, #ffffff, #f8f9fa);
+}
+
+.sf-faq-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #333333;
+  margin-bottom: 40px;
+}
+
+.sf-faq-heading span {
+  color: #d10000;
+  font-style: italic;
+}
+
+/* FAQ Items */
+.sf-faq-items {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sf-faq-item {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px 25px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.sf-faq-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.sf-faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sf-faq-question h4 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #d10000;
+  margin: 0;
+}
+
+.sf-faq-answer {
+  font-size: 1rem;
+  color: #555555;
+  line-height: 1.8;
+  margin-top: 15px;
+  display: none; /* Hidden by default */
+}
+
+.sf-toggle-icon {
+  font-size: 1.2rem;
+  color: #d10000;
+  transition: transform 0.3s ease;
+}
+
+.sf-faq-item.active .sf-faq-answer {
+  display: block; /* Show answer when active */
+}
+
+.sf-faq-item.active .sf-toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .sf-faq-heading {
+    font-size: 2.4rem;
+  }
+
+  .sf-faq-question h4 {
+    font-size: 1.3rem;
+  }
+
+  .sf-faq-answer {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .sf-faq-section {
+    padding: 80px 15px;
+  }
+
+  .sf-faq-heading {
+    font-size: 2rem;
+  }
+
+  .sf-faq-question h4 {
+    font-size: 1.2rem;
+  }
+
+  .sf-faq-answer {
+    font-size: 0.9rem;
+  }
+}
+
+/* Call-to-Action Section */
+.sf-cta-section {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #d10000, #ff4b4b);
+  color: #ffffff;
+  text-align: center;
+}
+
+.sf-cta-heading {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  line-height: 1.3;
+}
+
+.sf-cta-heading span {
+  font-style: italic;
+  color: #ffffff;
+}
+
+.sf-cta-content {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* CTA Buttons */
+.sf-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sf-btn-primary {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 15px 30px;
+  border-radius: 50px;
+  color: #d10000;
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.sf-btn-primary:hover {
+  background: #ffdddd;
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5);
+  color: #a00000;
+}
+
+.sf-btn-secondary {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 15px 30px;
+  border-radius: 50px;
+  color: #ffffff;
+  background: transparent;
+  border: 2px solid #ffffff;
+  transition: all 0.3s ease;
+}
+
+.sf-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .sf-cta-heading {
+    font-size: 2.5rem;
+  }
+
+  .sf-cta-content {
+    font-size: 1.1rem;
+  }
+
+  .sf-btn-primary,
+  .sf-btn-secondary {
+    font-size: 1.1rem;
+    padding: 12px 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sf-cta-section {
+    padding: 80px 15px;
+  }
+
+  .sf-cta-heading {
+    font-size: 2rem;
+  }
+
+  .sf-cta-content {
+    font-size: 1rem;
+  }
+
+  .sf-btn-primary,
+  .sf-btn-secondary {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+}
+
+footer {
+  background-color: #0a0a0a;
+  color: #fff;
+  padding: 60px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Footer Grid */
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-grid div {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+/* Footer Headings */
+.footer-grid h4 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #ff4b4b;
+  font-weight: bold;
+}
+
+/* Footer Links */
+.footer-grid ul {
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer-grid ul li {
+  margin-bottom: 10px;
+}
+
+.footer-grid ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-grid ul li a:hover {
+  color: #ff4b4b;
+}
+
+/* Testimonials Styling */
+.footer-grid div p {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.footer-grid div strong {
+  color: #fff;
+}
+
+/* Divider */
+footer .container > div:nth-child(2) {
+  margin: 40px 0;
+  height: 1px;
+  background: #333;
+}
+
+/* Contact Info Section */
+footer .container ul {
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+  color: #aaa;
+}
+
+footer .container ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+footer .container ul li i {
+  color: #ff4b4b;
+  margin-right: 10px;
+}
+
+/* Copyright Section */
+footer .container > div:last-child {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  padding: 20px 0;
+  background-color: #111;
+}
+
+/* WhatsApp Floating Icon */
+.fsbg {
+  position: fixed;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+.fsbg .wp-idget {
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.fsbg .wp-idget:hover {
+  transform: scale(1.1);
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Footer Contact Section */
+#contact {
+  background-color: #d10000; /* Red background */
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-strip-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+
+.footer-strip-heading a {
+  color: #fff !important; /* Ensure the phone number link stays white */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-strip-heading a:hover {
+  color: #ffcccc; /* Light hover effect */
+}
+
+/* Responsive Design for the Contact Section */
+@media (max-width: 767px) {
+  #contact {
+    padding: 20px;
+  }
+
+  .footer-strip-heading {
+    font-size: 1.2rem;
+  }
+
+  #triangle-down {
+    border-top-width: 20px;
+  }
+}
+
+/* Responsive Footer Design */
+@media (max-width: 991px) {
+  .footer-grid {
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-grid div {
+    min-width: 100%;
+  }
+
+  #triangle-down {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .fsbg .wp-idget {
+    width: 40px;
+    height: 40px;
+  }
+
+  footer {
+    padding: 40px 15px;
+  }
+
+  .footer-grid h4 {
+    font-size: 1.1rem;
+  }
+
+  .footer-grid ul li a {
+    font-size: 13px;
+  }
+
+  footer .container ul li {
+    font-size: 13px;
+  }
+
+  footer .container > div:last-child p {
+    font-size: 11px;
+  }
+}
