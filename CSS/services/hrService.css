@@ -1,3 +1,118 @@
+/* General Styles for Navbar */
+/* General Navbar Styling */
+.navbar {
+  position: sticky; /* Keeps navbar at the top during scroll */
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar .container {
+  max-width: 1200px; /* Restricts the container width */
+  padding: 0 20px; /* Prevents overflow by reducing padding */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo img {
+  height: 50px;
+  width: auto;
+}
+
+/* Navbar Links */
+.navbar-links ul {
+  display: flex;
+  gap: 20px; /* Reduced gap to prevent stretching */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333333;
+  padding: 10px 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links ul li a:hover {
+  color: #d10000;
+  transform: scale(1.05);
+}
+
+.navbar-links ul li a.active {
+  color: #d10000;
+  border-bottom: 2px solid #d10000;
+}
+
+/* Mobile Hamburger Menu */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #333333;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 60px; /* Just below the navbar */
+    right: 0;
+    background: #ffffff;
+    width: 100%;
+    max-width: 300px; /* Dropdown width for mobile */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: block;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .navbar-links ul li {
+    text-align: left;
+  }
+
+  .navbar-links.active {
+    transform: translateX(0); /* Dropdown becomes visible */
+  }
+}
+
+/* Sticky Background on Scroll */
+.navbar.scrolled {
+  background: #f8f9fa;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Alignment */
+@media (max-width: 767px) {
+  .navbar .container {
+    padding: 0 15px;
+  }
+
+  .navbar-links ul li a {
+    font-size: 0.9rem; /* Smaller font size for compact view */
+    padding: 8px 10px;
+  }
+}
+
 /* Hero Section */
 .hero-section {
   position: relative;
@@ -1019,5 +1134,220 @@
   .cta-button {
     font-size: 1rem;
     padding: 10px 20px;
+  }
+}
+
+/* FOOTER */
+/* General Footer Styles */
+footer {
+  background-color: #0a0a0a;
+  color: #fff;
+  padding: 60px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Footer Grid */
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-grid div {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+/* Footer Headings */
+.footer-grid h4 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #ff4b4b;
+  font-weight: bold;
+}
+
+/* Footer Links */
+.footer-grid ul {
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer-grid ul li {
+  margin-bottom: 10px;
+}
+
+.footer-grid ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-grid ul li a:hover {
+  color: #ff4b4b;
+}
+
+/* Testimonials Styling */
+.footer-grid div p {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.footer-grid div strong {
+  color: #fff;
+}
+
+/* Divider */
+footer .container > div:nth-child(2) {
+  margin: 40px 0;
+  height: 1px;
+  background: #333;
+}
+
+/* Contact Info Section */
+footer .container ul {
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+  color: #aaa;
+}
+
+footer .container ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+footer .container ul li i {
+  color: #ff4b4b;
+  margin-right: 10px;
+}
+
+/* Copyright Section */
+footer .container > div:last-child {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  padding: 20px 0;
+  background-color: #111;
+}
+
+/* WhatsApp Floating Icon */
+.fsbg {
+  position: fixed;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+.fsbg .wp-idget {
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.fsbg .wp-idget:hover {
+  transform: scale(1.1);
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Footer Contact Section */
+#contact {
+  background-color: #d10000; /* Red background */
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-strip-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+
+.footer-strip-heading a {
+  color: #fff !important; /* Ensure the phone number link stays white */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-strip-heading a:hover {
+  color: #ffcccc; /* Light hover effect */
+}
+
+/* Responsive Design for the Contact Section */
+@media (max-width: 767px) {
+  #contact {
+    padding: 20px;
+  }
+
+  .footer-strip-heading {
+    font-size: 1.2rem;
+  }
+
+  #triangle-down {
+    border-top-width: 20px;
+  }
+}
+
+/* Responsive Footer Design */
+@media (max-width: 991px) {
+  .footer-grid {
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-grid div {
+    min-width: 100%;
+  }
+
+  #triangle-down {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .fsbg .wp-idget {
+    width: 40px;
+    height: 40px;
+  }
+
+  footer {
+    padding: 40px 15px;
+  }
+
+  .footer-grid h4 {
+    font-size: 1.1rem;
+  }
+
+  .footer-grid ul li a {
+    font-size: 13px;
+  }
+
+  footer .container ul li {
+    font-size: 13px;
+  }
+
+  footer .container > div:last-child p {
+    font-size: 11px;
   }
 }
