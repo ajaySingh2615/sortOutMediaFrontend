@@ -30,7 +30,7 @@
 }
 
 .navbar {
-  position: sticky; /* Keeps navbar at the top during scroll */
+  position: fixed; /* Keeps navbar at the top during scroll */
   top: 0;
   width: 100%;
   background: #ffffff;
@@ -531,9 +531,6 @@
   }
 }
 
-/* Services Section */
-/* Services Section */
-/* Services Section */
 /* Services Section */
 .unique-services {
   background: #ffffff;
@@ -1305,5 +1302,220 @@
     width: 100%; /* Make buttons full width */
     max-width: 300px;
     margin: 0 auto; /* Center buttons */
+  }
+}
+
+* FOOTER */
+/* General Footer Styles */
+footer {
+  background-color: #0a0a0a;
+  color: #fff;
+  padding: 60px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Footer Grid */
+.footer-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-grid div {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+/* Footer Headings */
+.footer-grid h4 {
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: #ff4b4b;
+  font-weight: bold;
+}
+
+/* Footer Links */
+.footer-grid ul {
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer-grid ul li {
+  margin-bottom: 10px;
+}
+
+.footer-grid ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-grid ul li a:hover {
+  color: #ff4b4b;
+}
+
+/* Testimonials Styling */
+.footer-grid div p {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.footer-grid div strong {
+  color: #fff;
+}
+
+/* Divider */
+footer .container > div:nth-child(2) {
+  margin: 40px 0;
+  height: 1px;
+  background: #333;
+}
+
+/* Contact Info Section */
+footer .container ul {
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+  color: #aaa;
+}
+
+footer .container ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+footer .container ul li i {
+  color: #ff4b4b;
+  margin-right: 10px;
+}
+
+/* Copyright Section */
+footer .container > div:last-child {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  padding: 20px 0;
+  background-color: #111;
+}
+
+/* WhatsApp Floating Icon */
+.fsbg {
+  position: fixed;
+  bottom: 20px;
+  z-index: 1000;
+}
+
+.fsbg .wp-idget {
+  animation: bounce 2s infinite;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.fsbg .wp-idget:hover {
+  transform: scale(1.1);
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Footer Contact Section */
+#contact {
+  background-color: #d10000; /* Red background */
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin-top: 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.footer-strip-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  margin: 0;
+}
+
+.footer-strip-heading a {
+  color: #fff !important; /* Ensure the phone number link stays white */
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-strip-heading a:hover {
+  color: #ffcccc; /* Light hover effect */
+}
+
+/* Responsive Design for the Contact Section */
+@media (max-width: 767px) {
+  #contact {
+    padding: 20px;
+  }
+
+  .footer-strip-heading {
+    font-size: 1.2rem;
+  }
+
+  #triangle-down {
+    border-top-width: 20px;
+  }
+}
+
+/* Responsive Footer Design */
+@media (max-width: 991px) {
+  .footer-grid {
+    gap: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer-grid div {
+    min-width: 100%;
+  }
+
+  #triangle-down {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .fsbg .wp-idget {
+    width: 40px;
+    height: 40px;
+  }
+
+  footer {
+    padding: 40px 15px;
+  }
+
+  .footer-grid h4 {
+    font-size: 1.1rem;
+  }
+
+  .footer-grid ul li a {
+    font-size: 13px;
+  }
+
+  footer .container ul li {
+    font-size: 13px;
+  }
+
+  footer .container > div:last-child p {
+    font-size: 11px;
   }
 }
