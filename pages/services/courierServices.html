@@ -303,6 +303,192 @@
       </div>
     </section>
 
+    <section class="testimonials-advanced py-5">
+      <div class="container">
+        <h2 class="testimonials-title text-center">
+          What Our Clients <span>Say</span>
+        </h2>
+        <p class="testimonials-subtitle text-center">
+          Trusted by businesses worldwide for reliable courier solutions.
+        </p>
+
+        <div class="testimonials-wrapper">
+          <!-- Client 1 -->
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">
+              "Fast, professional, and reliable! Their same-day delivery service
+              helped us meet a critical deadline."
+            </p>
+            <div class="client-info">
+              <h4 class="client-name">Sarah T.</h4>
+              <span class="client-role">Business Owner</span>
+            </div>
+          </div>
+
+          <!-- Client 2 -->
+          <div class="testimonial-card featured">
+            <div class="testimonial-quote">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">
+              "I’ve been using their international shipping for years. Packages
+              always arrive on time and in perfect condition."
+            </p>
+            <div class="client-info">
+              <h4 class="client-name">John D.</h4>
+              <span class="client-role">Frequent Shipper</span>
+            </div>
+          </div>
+
+          <!-- Client 3 -->
+          <div class="testimonial-card">
+            <div class="testimonial-quote">
+              <i class="fas fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">
+              "Their e-commerce logistics service made order fulfillment a
+              breeze for my online store. Highly recommend!"
+            </p>
+            <div class="client-info">
+              <h4 class="client-name">Lisa P.</h4>
+              <span class="client-role">E-Commerce Entrepreneur</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-5">
+      <div class="container">
+        <h2 class="faq-title text-center">
+          Frequently Asked <span>Questions</span>
+        </h2>
+        <p class="faq-subtitle text-center mb-5">
+          Get clear answers to your common courier queries.
+        </p>
+        <div class="faq-container">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>What areas do you cover?</h4>
+              <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We provide courier services across cities, states, and over 200
+                international destinations.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Can I track my package?</h4>
+              <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, every shipment comes with real-time tracking to monitor
+                your package's journey.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Do you offer fragile item shipping?</h4>
+              <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Absolutely! We specialize in handling fragile and high-value
+                items with extra care.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>What are your delivery time options?</h4>
+              <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We offer same-day, overnight, and standard delivery options
+                based on your needs.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 5 -->
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Do you provide services for businesses?</h4>
+              <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, we offer bulk shipping, warehousing, and customized
+                solutions for businesses.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section py-5">
+      <div class="container">
+        <div class="row text-center">
+          <!-- Heading -->
+          <div class="col-12">
+            <h2 class="cta-heading">
+              Ready to <span>Ship with Confidence?</span>
+            </h2>
+          </div>
+          <!-- Content -->
+          <div class="col-12 p-2">
+            <p class="cta-content">
+              Whether you’re sending a single package or managing a supply
+              chain, we’re here to make it easy. Get started with our reliable
+              courier services today.
+            </p>
+          </div>
+          <!-- Buttons -->
+          <div class="col-12 p-2">
+            <div class="cta-buttons">
+              <a href="#get-started" class="btn btn-primary">Get Started Now</a>
+              <a href="#contact" class="btn btn-outline-light">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          const isActive = item.classList.contains("active");
+          // Close all other active items
+          document
+            .querySelectorAll(".faq-item.active")
+            .forEach((activeItem) => {
+              activeItem.classList.remove("active");
+            });
+          // Toggle the clicked item
+          if (!isActive) {
+            item.classList.add("active");
+          }
+        });
+      });
+    </script>
+
     <script>
       document.querySelectorAll(".btn").forEach((button) => {
         button.addEventListener("click", (e) => {
