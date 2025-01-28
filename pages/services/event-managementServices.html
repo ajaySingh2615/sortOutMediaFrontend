@@ -465,123 +465,170 @@
     </section>
 
     <section class="testimonials-section py-5">
-      <div class="container">
-        <h2 class="section-heading text-center mb-4">
-          What <span>Our Clients Say</span>
-        </h2>
-        <p class="section-subheading text-center mb-5">
-          Hear from the businesses we've had the privilege to serve.
+      <div class="container text-center">
+        <!-- Heading -->
+        <h2 class="section-title">What <span>Our Clients Say</span></h2>
+        <p class="section-description">
+          Discover why businesses trust us with their most important events.
         </p>
 
-        <div class="row">
+        <!-- Testimonials Slider -->
+        <div class="testimonials-slider">
           <!-- Testimonial 1 -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="testimonial-card">
-              <p class="testimonial-text">
-                "They helped us find the perfect office space in the heart of
-                the city. Truly outstanding service!"
-              </p>
-              <h5 class="testimonial-author">— Sarah T.</h5>
-              <p class="testimonial-role">Tech Startup Founder</p>
-            </div>
+          <div class="testimonial-item">
+            <p class="testimonial-text">
+              "They handled every aspect of our conference, and the result was
+              nothing short of perfect!"
+            </p>
+            <h4 class="client-name">John D.</h4>
+            <p class="client-role">Marketing Manager</p>
           </div>
 
           <!-- Testimonial 2 -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="testimonial-card">
-              <p class="testimonial-text">
-                "Their expertise in commercial real estate is unmatched. Our
-                property investment portfolio has grown significantly."
-              </p>
-              <h5 class="testimonial-author">— John D.</h5>
-              <p class="testimonial-role">Real Estate Investor</p>
-            </div>
+          <div class="testimonial-item">
+            <p class="testimonial-text">
+              "Our team-building retreat was a hit! The activities were fun,
+              engaging, and aligned with our goals."
+            </p>
+            <h4 class="client-name">Lisa P.</h4>
+            <p class="client-role">HR Director</p>
           </div>
 
           <!-- Testimonial 3 -->
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="testimonial-card">
-              <p class="testimonial-text">
-                "From consultation to closing, they made the entire process
-                seamless and stress-free."
-              </p>
-              <h5 class="testimonial-author">— Lisa M.</h5>
-              <p class="testimonial-role">Retail Business Owner</p>
-            </div>
+          <div class="testimonial-item">
+            <p class="testimonial-text">
+              "Seamless execution and incredible attention to detail. We’ll
+              definitely work with them again."
+            </p>
+            <h4 class="client-name">Sarah T.</h4>
+            <p class="client-role">Business Owner</p>
           </div>
+        </div>
+
+        <!-- Slider Controls -->
+        <div class="slider-controls">
+          <button class="prev-slide">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button class="next-slide">
+            <i class="fas fa-chevron-right"></i>
+          </button>
         </div>
       </div>
     </section>
+
+    <script>
+      const sliderItems = document.querySelectorAll(".testimonial-item");
+      const prevButton = document.querySelector(".prev-slide");
+      const nextButton = document.querySelector(".next-slide");
+
+      let currentIndex = 0;
+
+      function showSlide(index) {
+        sliderItems.forEach((item, i) => {
+          item.classList.remove("active");
+          if (i === index) {
+            item.classList.add("active");
+          }
+        });
+      }
+
+      prevButton.addEventListener("click", () => {
+        currentIndex =
+          (currentIndex - 1 + sliderItems.length) % sliderItems.length;
+        showSlide(currentIndex);
+      });
+
+      nextButton.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % sliderItems.length;
+        showSlide(currentIndex);
+      });
+
+      // Show the first slide on load
+      showSlide(currentIndex);
+    </script>
 
     <section class="faq-section py-5">
       <div class="container">
-        <h2 class="section-heading text-center mb-4">
+        <!-- Heading -->
+        <h2 class="section-title text-center mb-4">
           Frequently Asked <span>Questions</span>
         </h2>
-        <p class="section-subheading text-center mb-5">
-          Clear answers to the most common queries about our real estate
-          services.
-        </p>
-
-        <div class="faq-container">
-          <!-- FAQ Item 1 -->
+        <div class="faq-list">
+          <!-- Question 1 -->
           <div class="faq-item">
             <div class="faq-question">
-              <h4>Do you provide services for international clients?</h4>
+              <h4>Do you offer services for both small and large events?</h4>
               <i class="fas fa-chevron-down toggle-icon"></i>
             </div>
             <div class="faq-answer">
               <p>
-                Yes, we assist international clients in finding properties and
-                navigating local real estate markets.
+                Yes, we cater to events of all sizes, from intimate gatherings
+                to large-scale conferences.
               </p>
             </div>
           </div>
 
-          <!-- FAQ Item 2 -->
+          <!-- Question 2 -->
           <div class="faq-item">
             <div class="faq-question">
-              <h4>Can you help with financing property purchases?</h4>
+              <h4>Can you manage last-minute event planning?</h4>
               <i class="fas fa-chevron-down toggle-icon"></i>
             </div>
             <div class="faq-answer">
               <p>
-                Absolutely! We offer property financing and loan assistance to
-                simplify the buying process.
+                Absolutely! Our experienced team can efficiently handle tight
+                deadlines.
               </p>
             </div>
           </div>
 
-          <!-- FAQ Item 3 -->
+          <!-- Question 3 -->
           <div class="faq-item">
             <div class="faq-question">
-              <h4>What type of properties do you specialize in?</h4>
+              <h4>Do you provide on-site event coordinators?</h4>
               <i class="fas fa-chevron-down toggle-icon"></i>
             </div>
             <div class="faq-answer">
               <p>
-                We focus on commercial properties, including office spaces,
-                retail shops, warehouses, and co-working spaces.
+                Yes, our coordinators ensure everything runs smoothly during the
+                event.
               </p>
             </div>
           </div>
 
-          <!-- FAQ Item 4 -->
+          <!-- Question 4 -->
           <div class="faq-item">
             <div class="faq-question">
-              <h4>Are your services scalable for growing businesses?</h4>
+              <h4>Are your services customizable?</h4>
               <i class="fas fa-chevron-down toggle-icon"></i>
             </div>
             <div class="faq-answer">
               <p>
-                Yes, our solutions are tailored to grow alongside your business
-                needs.
+                Completely. We tailor every service to meet your unique
+                requirements.
               </p>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <script>
+      // FAQ Accordion
+      const faqItems = document.querySelectorAll(".faq-item");
+
+      faqItems.forEach((item) => {
+        const question = item.querySelector(".faq-question");
+        question.addEventListener("click", () => {
+          // Close all other FAQ items
+          faqItems.forEach((i) => i.classList.remove("active"));
+
+          // Toggle the clicked FAQ item
+          item.classList.toggle("active");
+        });
+      });
+    </script>
 
     <section class="cta-section py-5">
       <div class="container">
