@@ -1,0 +1,93 @@
+/* Hero Section */
+.hero-section {
+  background-color: #ffffff;
+  padding: 180px 20px; /* Increased padding for a taller section */
+  overflow: hidden;
+}
+
+/* Heading Styles */
+.hero-heading {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #d10000;
+  line-height: 1.3;
+  margin-bottom: 30px;
+}
+
+.hero-heading span {
+  color: #ff4b4b;
+  font-style: italic;
+}
+
+/* Subheading */
+.hero-subheading {
+  font-size: 1.4rem;
+  color: #666666;
+  margin-bottom: 50px; /* Increased spacing below the subheading */
+}
+
+/* Buttons */
+.hero-buttons {
+  margin-bottom: 40px; /* Added spacing below buttons */
+}
+
+.hero-buttons .btn {
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.hero-buttons .btn-red {
+  background-color: #d10000;
+  color: #ffffff;
+}
+
+.hero-buttons .btn-red:hover {
+  background-color: #a00000;
+}
+
+.hero-buttons .btn-white {
+  background-color: #ffffff;
+  color: #d10000;
+  border: 2px solid #d10000;
+}
+
+.hero-buttons .btn-white:hover {
+  background-color: #f8f8f8;
+  color: #a00000;
+}
+
+/* Hero Highlights */
+.hero-highlights {
+  margin-top: 20px;
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+  color: #666666;
+}
+
+.hero-highlights li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px; /* Increased spacing between items */
+  line-height: 1.6;
+}
+
+.hero-highlights li i {
+  font-size: 1.5rem;
+  color: #d10000;
+  margin-right: 10px;
+}
+
+/* Hero Image */
+.hero-img {
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+}
