@@ -20,6 +20,52 @@
     />
   </head>
   <body>
+    <header class="navbar">
+      <div class="container">
+        <!-- Logo -->
+        <a href="#" class="navbar-logo">
+          <img src="/images/SortOutMediaHDLogo.png" alt="Logo" />
+        </a>
+
+        <!-- Hamburger Menu for Mobile -->
+        <button class="navbar-toggle" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navigation Links -->
+        <nav class="navbar-links">
+          <ul>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#find-jobs" class="nav-link">Find Jobs</a></li>
+            <li><a href="#browse-talent" class="nav-link">Browse Talent</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <script>
+      // Toggle Dropdown Menu for Mobile
+      const navbarToggle = document.querySelector(".navbar-toggle");
+      const navbarLinks = document.querySelector(".navbar-links");
+
+      navbarToggle.addEventListener("click", () => {
+        navbarLinks.classList.toggle("active");
+      });
+
+      // Add Background Color on Scroll
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+    </script>
+
     <section class="hero-section d-flex align-items-center">
       <div class="container">
         <div class="row align-items-center">
@@ -64,6 +110,151 @@
       </div>
     </section>
 
+    <section class="why-choose-unique py-5">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="section-heading">Why <span>Choose Us?</span></h2>
+          <p class="section-subheading">Empowering Your Real Estate Journey.</p>
+        </div>
+        <div class="unique-grid">
+          <!-- Feature 1 -->
+          <div class="unique-item">
+            <div class="circle-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h4>Customized Solutions</h4>
+            <p>We tailor strategies to your unique business needs.</p>
+          </div>
+          <!-- Feature 2 -->
+          <div class="unique-item">
+            <div class="circle-icon">
+              <i class="fas fa-chart-bar"></i>
+            </div>
+            <h4>Market Expertise</h4>
+            <p>Leverage data and insights for smarter decisions.</p>
+          </div>
+          <!-- Feature 3 -->
+          <div class="unique-item">
+            <div class="circle-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h4>Trusted Partnerships</h4>
+            <p>We work as your partner, not just your service provider.</p>
+          </div>
+          <!-- Feature 4 -->
+          <div class="unique-item">
+            <div class="circle-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h4>24/7 Support</h4>
+            <p>We're here whenever you need us.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-section py-5">
+      <div class="container">
+        <h2 class="services-heading text-center">
+          Our Real Estate and Management Services
+        </h2>
+        <p class="services-subheading text-center mb-5">
+          Comprehensive solutions tailored to your business needs.
+        </p>
+        <div class="row g-4">
+          <!-- Service Card 1 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="service-card text-center">
+              <i class="fas fa-building service-icon"></i>
+              <h4 class="service-title">Office Space Rental Services</h4>
+              <p class="service-description">
+                Helping businesses find and lease office spaces that suit their
+                size, location, and budget needs.
+              </p>
+            </div>
+          </div>
+          <!-- Service Card 2 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="service-card text-center">
+              <i class="fas fa-shopping-cart service-icon"></i>
+              <h4 class="service-title">Commercial Property Sales</h4>
+              <p class="service-description">
+                Assisting companies in buying commercial properties, including
+                offices, retail spaces, and more.
+              </p>
+            </div>
+          </div>
+          <!-- Service Card 3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="service-card text-center">
+              <i class="fas fa-store service-icon"></i>
+              <h4 class="service-title">Retail Space Leasing and Purchasing</h4>
+              <p class="service-description">
+                Facilitating businesses in renting or buying retail spaces in
+                prime locations.
+              </p>
+            </div>
+          </div>
+          <!-- Service Card 4 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="service-card text-center">
+              <i class="fas fa-warehouse service-icon"></i>
+              <h4 class="service-title">
+                Warehouse and Industrial Property Leasing
+              </h4>
+              <p class="service-description">
+                Providing storage and industrial spaces for logistics and
+                manufacturing.
+              </p>
+            </div>
+          </div>
+          <!-- Service Card 5 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="service-card text-center">
+              <i class="fas fa-user-friends service-icon"></i>
+              <h4 class="service-title">Co-Working Space Rental</h4>
+              <p class="service-description">
+                Flexible and affordable co-working spaces for startups and small
+                businesses.
+              </p>
+            </div>
+          </div>
+          <!-- Service Card 6 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="service-card text-center">
+              <i class="fas fa-coins service-icon"></i>
+              <h4 class="service-title">Real Estate Investment</h4>
+              <p class="service-description">
+                Expert guidance on purchasing properties for income generation.
+              </p>
+            </div>
+          </div>
+          <!-- Service Card 7 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="service-card text-center">
+              <i class="fas fa-truck service-icon"></i>
+              <h4 class="service-title">Corporate Relocation Services</h4>
+              <p class="service-description">
+                Helping businesses relocate by finding and setting up the
+                perfect property.
+              </p>
+            </div>
+          </div>
+          <!-- Service Card 8 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="service-card text-center">
+              <i class="fas fa-handshake service-icon"></i>
+              <h4 class="service-title">Property Financing Assistance</h4>
+              <p class="service-description">
+                Support for companies securing loans and mortgages for
+                commercial real estate.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="about-section text-center py-5">
       <div class="container">
         <h2 class="about-heading">
@@ -96,5 +287,700 @@
         </div>
       </div>
     </section>
+
+    <section class="how-we-work-section py-5">
+      <div class="container">
+        <h2 class="section-heading text-center mb-4">
+          How <span>We Work</span>
+        </h2>
+        <p class="section-subheading text-center mb-5">
+          A clear and simple process to ensure your needs are met with
+          efficiency and care.
+        </p>
+
+        <div class="timeline">
+          <!-- Step 1 -->
+          <div class="timeline-item">
+            <div class="timeline-icon">
+              <i class="fas fa-search-location"></i>
+            </div>
+            <div class="timeline-content">
+              <h4>Step 1: Property Search</h4>
+              <p>
+                We identify and shortlist properties tailored to your business
+                needs.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="timeline-item">
+            <div class="timeline-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <div class="timeline-content">
+              <h4>Step 2: Client Consultation</h4>
+              <p>
+                We work closely with you to understand your requirements and
+                preferences.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="timeline-item">
+            <div class="timeline-icon">
+              <i class="fas fa-file-signature"></i>
+            </div>
+            <div class="timeline-content">
+              <h4>Step 3: Agreement & Documentation</h4>
+              <p>
+                We handle all the paperwork, ensuring compliance and
+                transparency.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="timeline-item">
+            <div class="timeline-icon">
+              <i class="fas fa-key"></i>
+            </div>
+            <div class="timeline-content">
+              <h4>Step 4: Move-In Ready</h4>
+              <p>
+                Your property is fully prepared and ready for occupancy or
+                operations.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="industries-section py-5">
+      <div class="container">
+        <h2 class="section-heading text-center mb-4">
+          Industries <span>We Serve</span>
+        </h2>
+        <p class="section-subheading text-center mb-5">
+          Our real estate solutions cater to a wide range of industries,
+          ensuring every business finds the right property to thrive.
+        </p>
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <ul class="industries-list">
+              <!-- Industry 1 -->
+              <li class="industry-item">
+                <div class="icon-container">
+                  <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="industry-content">
+                  <h4 class="industry-title">Information Technology</h4>
+                  <p>
+                    Cutting-edge office spaces designed for tech-driven
+                    businesses.
+                  </p>
+                </div>
+              </li>
+
+              <!-- Industry 2 -->
+              <li class="industry-item">
+                <div class="icon-container">
+                  <i class="fas fa-shopping-cart"></i>
+                </div>
+                <div class="industry-content">
+                  <h4 class="industry-title">Retail & E-Commerce</h4>
+                  <p>
+                    Prime retail spaces and warehouses for seamless operations.
+                  </p>
+                </div>
+              </li>
+
+              <!-- Industry 3 -->
+              <li class="industry-item">
+                <div class="icon-container">
+                  <i class="fas fa-user-md"></i>
+                </div>
+                <div class="industry-content">
+                  <h4 class="industry-title">Healthcare & Pharmaceuticals</h4>
+                  <p>
+                    Facilities optimized for clinics, hospitals, and research
+                    labs.
+                  </p>
+                </div>
+              </li>
+
+              <!-- Industry 4 -->
+              <li class="industry-item">
+                <div class="icon-container">
+                  <i class="fas fa-industry"></i>
+                </div>
+                <div class="industry-content">
+                  <h4 class="industry-title">Manufacturing & Logistics</h4>
+                  <p>
+                    Industrial properties designed for manufacturing and
+                    distribution.
+                  </p>
+                </div>
+              </li>
+
+              <!-- Industry 5 -->
+              <li class="industry-item">
+                <div class="icon-container">
+                  <i class="fas fa-university"></i>
+                </div>
+                <div class="industry-content">
+                  <h4 class="industry-title">Finance & Banking</h4>
+                  <p>
+                    Premium office spaces tailored for financial institutions.
+                  </p>
+                </div>
+              </li>
+
+              <!-- Industry 6 -->
+              <li class="industry-item">
+                <div class="icon-container">
+                  <i class="fas fa-hotel"></i>
+                </div>
+                <div class="industry-content">
+                  <h4 class="industry-title">Hospitality & Tourism</h4>
+                  <p>
+                    Properties ideal for hotels, resorts, and travel agencies.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials-section py-5">
+      <div class="container">
+        <h2 class="section-heading text-center mb-4">
+          What <span>Our Clients Say</span>
+        </h2>
+        <p class="section-subheading text-center mb-5">
+          Hear from the businesses we've had the privilege to serve.
+        </p>
+
+        <div class="row">
+          <!-- Testimonial 1 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="testimonial-card">
+              <p class="testimonial-text">
+                "They helped us find the perfect office space in the heart of
+                the city. Truly outstanding service!"
+              </p>
+              <h5 class="testimonial-author">— Sarah T.</h5>
+              <p class="testimonial-role">Tech Startup Founder</p>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="testimonial-card">
+              <p class="testimonial-text">
+                "Their expertise in commercial real estate is unmatched. Our
+                property investment portfolio has grown significantly."
+              </p>
+              <h5 class="testimonial-author">— John D.</h5>
+              <p class="testimonial-role">Real Estate Investor</p>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="testimonial-card">
+              <p class="testimonial-text">
+                "From consultation to closing, they made the entire process
+                seamless and stress-free."
+              </p>
+              <h5 class="testimonial-author">— Lisa M.</h5>
+              <p class="testimonial-role">Retail Business Owner</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-section py-5">
+      <div class="container">
+        <h2 class="section-heading text-center mb-4">
+          Frequently Asked <span>Questions</span>
+        </h2>
+        <p class="section-subheading text-center mb-5">
+          Clear answers to the most common queries about our real estate
+          services.
+        </p>
+
+        <div class="faq-container">
+          <!-- FAQ Item 1 -->
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Do you provide services for international clients?</h4>
+              <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, we assist international clients in finding properties and
+                navigating local real estate markets.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 2 -->
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Can you help with financing property purchases?</h4>
+              <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Absolutely! We offer property financing and loan assistance to
+                simplify the buying process.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 3 -->
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>What type of properties do you specialize in?</h4>
+              <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                We focus on commercial properties, including office spaces,
+                retail shops, warehouses, and co-working spaces.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Item 4 -->
+          <div class="faq-item">
+            <div class="faq-question">
+              <h4>Are your services scalable for growing businesses?</h4>
+              <i class="fas fa-chevron-down toggle-icon"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes, our solutions are tailored to grow alongside your business
+                needs.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section py-5">
+      <div class="container">
+        <div class="row text-center">
+          <!-- Heading -->
+          <div class="col-12">
+            <h2 class="cta-heading">
+              Let’s
+              <span>Find Your Perfect Space Today?</span>
+            </h2>
+          </div>
+          <!-- Content -->
+          <div class="col-12 p-2">
+            <p class="cta-content">
+              Ready to explore the best real estate solutions for your business?
+              Partner with us and experience a seamless process for renting,
+              buying, or managing your properties.
+            </p>
+          </div>
+          <!-- Buttons -->
+          <div class="col-12 p-2">
+            <div class="cta-buttons">
+              <a href="#get-started" class="btn btn-primary"
+                >Schedule a Free Consultation</a
+              >
+              <a href="#contact" class="btn btn-outline-light"
+                >Browse Properties</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <!-- Floating Social Media bar Ends -->
+    <!-- FOOTER -->
+    <!-- Floating Social Media bar Ends -->
+
+    <div class="container-fluid fsbg">
+      <a href="https://wa.me/919818559102">
+        <lord-icon
+          class="wp-idget bounce"
+          src="https://cdn.lordicon.com/dhcosedn.json"
+          trigger="hover"
+          style="width: 70px; height: 70px"
+        >
+        </lord-icon>
+      </a>
+      <div id="contact" class="footer-strip center-mb">
+        <h3 class="footer-strip-heading">
+          Need help? Call our support team at
+          <a href="tel:+919818559102" style="color: #fff !important"
+            >+91 9818559102</a
+          >
+        </h3>
+      </div>
+    </div>
+
+    <footer
+      style="
+        background-color: #0a0a0a;
+        color: #fff;
+        padding: 60px 20px;
+        font-family: Arial, sans-serif;
+      "
+    >
+      <div class="container" style="max-width: 1200px; margin: 0 auto">
+        <!-- Footer Grid -->
+        <div
+          class="footer-grid"
+          style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+          "
+        >
+          <!-- Column 1: Marketing -->
+          <div style="flex: 1 1 200px; min-width: 200px">
+            <h4 style="margin-bottom: 15px; color: #ff4b4b">Marketing</h4>
+            <ul
+              style="list-style: none; padding: 0; font-size: 14px; color: #aaa"
+            >
+              <li style="margin-bottom: 10px">
+                <a href="#seo" style="text-decoration: none; color: #fff"
+                  >SEO Services</a
+                >
+              </li>
+              <li style="margin-bottom: 10px">
+                <a
+                  href="#content-marketing"
+                  style="text-decoration: none; color: #fff"
+                  >Content Marketing</a
+                >
+              </li>
+              <li style="margin-bottom: 10px">
+                <a
+                  href="#email-marketing"
+                  style="text-decoration: none; color: #fff"
+                  >Email Marketing</a
+                >
+              </li>
+              <li>
+                <a href="#ppc" style="text-decoration: none; color: #fff"
+                  >PPC Advertising</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Advertising -->
+          <div style="flex: 1 1 200px; min-width: 200px">
+            <h4 style="margin-bottom: 15px; color: #ff4b4b">Advertising</h4>
+            <ul
+              style="list-style: none; padding: 0; font-size: 14px; color: #aaa"
+            >
+              <li style="margin-bottom: 10px">
+                <a href="#social-ads" style="text-decoration: none; color: #fff"
+                  >Social Media Ads</a
+                >
+              </li>
+              <li style="margin-bottom: 10px">
+                <a href="#video-ads" style="text-decoration: none; color: #fff"
+                  >Video Advertising</a
+                >
+              </li>
+              <li style="margin-bottom: 10px">
+                <a href="#influencer" style="text-decoration: none; color: #fff"
+                  >Influencer Marketing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#retargeting"
+                  style="text-decoration: none; color: #fff"
+                  >Retargeting Ads</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Designing -->
+          <div style="flex: 1 1 200px; min-width: 200px">
+            <h4 style="margin-bottom: 15px; color: #ff4b4b">Designing</h4>
+            <ul
+              style="list-style: none; padding: 0; font-size: 14px; color: #aaa"
+            >
+              <li style="margin-bottom: 10px">
+                <a href="#web-design" style="text-decoration: none; color: #fff"
+                  >Website Design</a
+                >
+              </li>
+              <li style="margin-bottom: 10px">
+                <a
+                  href="#graphic-design"
+                  style="text-decoration: none; color: #fff"
+                  >Graphic Design</a
+                >
+              </li>
+              <li style="margin-bottom: 10px">
+                <a
+                  href="#logo-design"
+                  style="text-decoration: none; color: #fff"
+                  >Logo Creation</a
+                >
+              </li>
+              <li>
+                <a href="#ux-ui" style="text-decoration: none; color: #fff"
+                  >UX/UI Design</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Client Testimonials -->
+          <div style="flex: 1 1 250px; min-width: 250px">
+            <h4 style="margin-bottom: 15px; color: #ff4b4b">
+              Client Testimonials
+            </h4>
+            <div style="font-size: 14px; color: #aaa; margin-bottom: 15px">
+              <p>
+                "Sortout Media helped us skyrocket our business visibility. We
+                highly recommend their services!" -
+                <strong>John Doe, CEO</strong>
+              </p>
+              <p>
+                "Their digital marketing expertise is unparalleled. We saw a
+                noticeable improvement in our leads." -
+                <strong>Jane Smith, Marketing Director</strong>
+              </p>
+            </div>
+          </div>
+
+          <!-- Column 5: Legal Links -->
+          <div style="flex: 1 1 250px; min-width: 250px">
+            <h4 style="margin-bottom: 15px; color: #ff4b4b">Legal</h4>
+            <ul
+              style="list-style: none; padding: 0; font-size: 14px; color: #aaa"
+            >
+              <li style="margin-bottom: 10px">
+                <a
+                  href="#privacy-policy"
+                  style="text-decoration: none; color: #fff"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li style="margin-bottom: 10px">
+                <a href="#terms" style="text-decoration: none; color: #fff"
+                  >Terms & Conditions</a
+                >
+              </li>
+              <li>
+                <a href="#disclaimer" style="text-decoration: none; color: #fff"
+                  >Disclaimer</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 6: Quick Links -->
+          <div style="flex: 1 1 250px; min-width: 250px">
+            <h4 style="margin-bottom: 15px; color: #ff4b4b">Quick Links</h4>
+            <ul
+              style="list-style: none; padding: 0; font-size: 14px; color: #aaa"
+            >
+              <li style="margin-bottom: 10px">
+                <a href="#about-us" style="text-decoration: none; color: #fff"
+                  >About Us</a
+                >
+              </li>
+              <li style="margin-bottom: 10px">
+                <a href="#services" style="text-decoration: none; color: #fff"
+                  >Our Services</a
+                >
+              </li>
+              <li style="margin-bottom: 10px">
+                <a href="#blog" style="text-decoration: none; color: #fff"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a href="#contact-us" style="text-decoration: none; color: #fff"
+                  >Contact Us</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 7: Resources -->
+          <div style="flex: 1 1 250px; min-width: 250px">
+            <h4 style="margin-bottom: 15px; color: #ff4b4b">Resources</h4>
+            <ul
+              style="list-style: none; padding: 0; font-size: 14px; color: #aaa"
+            >
+              <li style="margin-bottom: 10px">
+                <a
+                  href="#case-studies"
+                  style="text-decoration: none; color: #fff"
+                  >Case Studies</a
+                >
+              </li>
+              <li style="margin-bottom: 10px">
+                <a
+                  href="#whitepapers"
+                  style="text-decoration: none; color: #fff"
+                  >Whitepapers</a
+                >
+              </li>
+              <li>
+                <a href="#webinars" style="text-decoration: none; color: #fff"
+                  >Webinars</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 8: Support -->
+          <div style="flex: 1 1 250px; min-width: 250px">
+            <h4 style="margin-bottom: 15px; color: #ff4b4b">Support</h4>
+            <ul
+              style="list-style: none; padding: 0; font-size: 14px; color: #aaa"
+            >
+              <li style="margin-bottom: 10px">
+                <a href="#faqs" style="text-decoration: none; color: #fff"
+                  >FAQs</a
+                >
+              </li>
+              <li style="margin-bottom: 10px">
+                <a
+                  href="#contact-form"
+                  style="text-decoration: none; color: #fff"
+                  >Contact Form</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#help-center"
+                  style="text-decoration: none; color: #fff"
+                  >Help Center</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Divider -->
+        <div style="margin: 40px 0; height: 1px; background: #333"></div>
+
+        <!-- Contact Info Section -->
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 14px;
+            color: #aaa;
+          "
+        >
+          <div style="flex: 1 1 200px; min-width: 200px">
+            <h4 style="margin-bottom: 10px; color: #ff4b4b">Contact Us</h4>
+            <ul
+              style="list-style: none; padding: 0; font-size: 14px; color: #aaa"
+            >
+              <li
+                style="display: flex; align-items: center; margin-bottom: 10px"
+              >
+                <i
+                  class="fas fa-phone"
+                  style="color: #ff4b4b; margin-right: 10px"
+                ></i>
+                <span>9818559102</span>
+              </li>
+              <li
+                style="display: flex; align-items: center; margin-bottom: 10px"
+              >
+                <i
+                  class="fas fa-envelope"
+                  style="color: #ff4b4b; margin-right: 10px"
+                ></i>
+                <span>info@example.com</span>
+              </li>
+              <li style="display: flex; align-items: center">
+                <i
+                  class="fas fa-map-marker-alt"
+                  style="color: #ff4b4b; margin-right: 10px"
+                ></i>
+                <span
+                  >Spaze i-Tech Park, Sector 49, Sohna Road, Gurugram, Pin
+                  122018</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div
+          style="
+            text-align: center;
+            font-size: 12px;
+            color: #aaa;
+            padding: 20px 0;
+            background-color: #111;
+          "
+        >
+          <p>&copy; 2025 Sortout Media. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // JavaScript for accordion toggle
+      document.querySelectorAll(".single-acco h2").forEach((item) => {
+        item.addEventListener("click", () => {
+          item.parentNode.classList.toggle("active");
+        });
+      });
+    </script>
+
+    <script>
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          const isActive = item.classList.contains("active");
+          // Close all other active items
+          document
+            .querySelectorAll(".faq-item.active")
+            .forEach((activeItem) => {
+              activeItem.classList.remove("active");
+            });
+          // Toggle the clicked item
+          if (!isActive) {
+            item.classList.add("active");
+          }
+        });
+      });
+    </script>
+
+    <script>
+      // Toggle FAQ Functionality
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+    </script>
   </body>
 </html>
