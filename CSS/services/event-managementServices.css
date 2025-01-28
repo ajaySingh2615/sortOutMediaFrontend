@@ -1105,163 +1105,101 @@
 
 /* CTA Section */
 .cta-section {
-  background: linear-gradient(135deg, #d10000, #ff4b4b); /* Red gradient */
-  color: #ffffff; /* White text */
-  position: relative;
-  overflow: hidden;
-  padding: 80px 20px; /* Consistent spacing */
-}
-
-.cta-section .container {
-  max-width: 1200px; /* Consistent width */
-  margin: 0 auto;
-}
-
-.cta-heading {
-  font-size: 3rem;
-  font-weight: 800;
+  background: linear-gradient(135deg, #ff4b4b, #d10000);
   color: #ffffff;
-  margin-bottom: 20px;
+  padding: 60px 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-.cta-heading span {
-  color: #ffe6e6; /* Slightly lighter shade of red */
+.cta-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.cta-title span {
+  color: #ffffff;
+  font-style: italic;
 }
 
 .cta-content {
   font-size: 1.2rem;
-  line-height: 1.8;
-  margin-bottom: 50px; /* Increased spacing between paragraph and buttons */
-  max-width: 800px;
+  line-height: 1.6;
   margin: 0 auto;
-  color: #f8f8f8;
+  max-width: 700px;
 }
 
 .cta-buttons {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap; /* Ensures buttons wrap on smaller screens */
 }
 
-.cta-buttons .btn {
+.cta-btn {
+  padding: 12px 30px;
   font-size: 1.2rem;
-  font-weight: 600;
-  padding: 15px 30px;
   border-radius: 50px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease;
+  font-weight: bold;
 }
 
-.cta-buttons .btn-primary {
-  background: #ffffff;
+.cta-btn.btn-primary {
+  background-color: #ffffff;
   color: #d10000;
   border: none;
-  box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
-.cta-buttons .btn-primary:hover {
-  background: #ffe6e6;
+.cta-btn.btn-primary:hover {
+  background-color: #ffd6d6;
   color: #a00000;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 20px rgba(255, 255, 255, 0.4);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
 }
 
-.cta-buttons .btn-outline-light {
+.cta-btn.btn-outline-secondary {
   background: transparent;
   color: #ffffff;
   border: 2px solid #ffffff;
-  box-shadow: 0 8px 15px rgba(255, 255, 255, 0.2);
 }
 
-.cta-buttons .btn-outline-light:hover {
-  background: #ffffff;
-  color: #d10000;
-  transform: translateY(-3px);
-  box-shadow: 0 12px 20px rgba(255, 255, 255, 0.4);
-}
-
-/* Background Decorative Elements */
-.cta-section::before,
-.cta-section::after {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  z-index: -1;
-  animation: pulse 8s infinite ease-in-out;
-}
-
-.cta-section::before {
-  top: -100px;
-  left: -100px;
-  width: 300px;
-  height: 300px;
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.cta-section::after {
-  bottom: -150px;
-  right: -150px;
-  width: 400px;
-  height: 400px;
-  background: rgba(255, 255, 255, 0.2);
-}
-
-/* Keyframes for Pulse Animation */
-@keyframes pulse {
-  0%,
-  100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
+.cta-btn.btn-outline-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #ffcccc;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
 }
 
 /* Responsive Design */
 @media (max-width: 991px) {
-  .cta-heading {
-    font-size: 2.4rem;
-  }
-
-  .cta-content {
-    font-size: 1.1rem;
-  }
-
-  .cta-buttons .btn {
-    font-size: 1.1rem;
-    padding: 12px 25px;
-  }
-}
-
-@media (max-width: 767px) {
-  .cta-section {
-    padding: 60px 15px;
-  }
-
-  .cta-heading {
+  .cta-title {
     font-size: 2rem;
   }
 
   .cta-content {
     font-size: 1rem;
-    margin-bottom: 40px; /* Ensure space consistency on smaller screens */
   }
 
-  .cta-buttons {
-    flex-direction: column; /* Stack buttons vertically */
-    gap: 15px;
-  }
-
-  .cta-buttons .btn {
-    width: 100%; /* Make buttons full width */
-    max-width: 300px;
-    margin: 0 auto; /* Center buttons */
+  .cta-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
   }
 }
 
-* FOOTER */
-    /* General Footer Styles */
-    footer {
+@media (max-width: 767px) {
+  .cta-buttons {
+    flex-direction: column;
+  }
+
+  .cta-btn {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+}
+
+/* FOOTER  */
+/* General Footer Styles */
+footer {
   background-color: #0a0a0a;
   color: #fff;
   padding: 60px 20px;
