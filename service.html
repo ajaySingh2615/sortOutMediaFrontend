@@ -35,61 +35,49 @@
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
   </head>
   <body>
-    <section
-      style="
-        background-color: linear-gradient(270deg, #f9f9f9 0%, #f8f8f8 100%);
-      "
-    >
-      <div class="nav-container">
-        <!-- Logo Section with Image -->
-        <a href="#" class="logo">
-          <img
-            src="/images/SortOutMediaHDLogo.png"
-            alt="Your Logo"
-            class="logo-img"
-          />
+    <header class="navbar">
+      <div class="container">
+        <!-- Logo -->
+        <a href="#" class="navbar-logo">
+          <img src="/images/SortOutMediaHDLogo.png" alt="Logo" />
         </a>
 
-        <!-- Menu Toggle Button (Hamburger) -->
-        <button class="menu-toggle" aria-label="Toggle Navigation">
-          <lord-icon
-            src="https://cdn.lordicon.com/wloilxuq.json"
-            trigger="click"
-            style="width: 40px; height: 40px"
-          ></lord-icon>
+        <!-- Hamburger Menu for Mobile -->
+        <button class="navbar-toggle" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
         </button>
 
         <!-- Navigation Links -->
-        <ul class="nav-links">
-          <li><a href="../index.html" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="pages/Findjobs.html" class="nav-link">Find Jobs</a></li>
-          <li>
-            <a href="pages/findTalent.html" class="nav-link">Browse Talent</a>
-          </li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#contact" class="nav-link contact-link">Contact</a></li>
-          <li class="mar-20">
-            <a href="browseTalent.html" class="register-button">Register</a>
-          </li>
-        </ul>
+        <nav class="navbar-links">
+          <ul>
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#find-jobs" class="nav-link">Find Jobs</a></li>
+            <li><a href="#browse-talent" class="nav-link">Browse Talent</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
       </div>
-    </section>
+    </header>
 
     <script>
-      const toggleMenu = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
+      // Toggle Dropdown Menu for Mobile
+      const navbarToggle = document.querySelector(".navbar-toggle");
+      const navbarLinks = document.querySelector(".navbar-links");
 
-      // Toggle the menu visibility
-      toggleMenu.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+      navbarToggle.addEventListener("click", () => {
+        navbarLinks.classList.toggle("active");
       });
 
-      // Close the menu when any link is clicked
-      navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("active");
-        });
+      // Add Background Color on Scroll
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
       });
     </script>
     <!-- #################################################### -->

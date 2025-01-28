@@ -57,217 +57,130 @@ a {
 /* ####################################### */
 /* Navigation Links */
 /* Navigation Container */
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background-color: linear-gradient(270deg, #f9f9f9 0%, #f8f8f8 100%);
-  color: #000;
-  position: sticky;
+.navbar {
+  position: fixed; /* Keeps navbar at the top during scroll */
   top: 0;
+  width: 100%;
+  background: #ffffff;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Logo */
-.logo-img {
-  max-width: 150px; /* Proportional to smaller screens */
-  height: 60px; /* Maintain aspect ratio */
-  margin-left: 10px;
-  transition: transform 0.3s ease;
+/* Universal Container Settings */
+.container {
+  max-width: 1200px; /* Restricts container width for consistent layout */
+  margin: 0 auto; /* Centers content */
+  padding: 0 15px; /* Adds spacing to prevent edge overflow */
 }
 
-.logo-img:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-/* Navigation Links */
-.nav-links {
+.navbar .container {
+  max-width: 1200px; /* Same width as hero and about sections */
+  padding: 0 15px; /* Prevents overflow */
+  margin: 0 auto; /* Centers the content */
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo img {
+  height: 50px;
+  width: auto;
+}
+
+/* Navbar Links */
+.navbar-links ul {
+  display: flex;
+  gap: 20px; /* Reduced gap to prevent stretching */
   list-style: none;
-  gap: 15px; /* Maintain spacing between links */
   margin: 0;
   padding: 0;
 }
 
-.nav-links li {
-  position: relative;
-}
-
-/* Link Styles */
-.nav-link {
+.navbar-links ul li a {
   text-decoration: none;
-  color: #000;
-  font-size: 1.2rem; /* Consistent text size */
-  font-weight: 500;
-  padding: 8px 15px; /* Adjusted for better proportions */
-  border-radius: 4px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333333;
+  padding: 10px 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.nav-link:hover {
-  background-color: #333333;
-  color: #ff7f7f;
+.navbar-links ul li a:hover {
+  color: #d10000;
   transform: scale(1.05);
 }
 
-.mar-20 {
-  margin-top: 10px;
+.navbar-links ul li a.active {
+  color: #d10000;
+  border-bottom: 2px solid #d10000;
 }
 
-/* Register Button */
-.register-button {
-  background: linear-gradient(45deg, #c90001, #333333);
-  color: #fff;
-  padding: 18px 32px;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-  border: none;
-  transition: background-color 0.3s ease, transform 0.3s ease,
-    box-shadow 0.3s ease;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-.register-button:hover {
-  background: linear-gradient(45deg, #c90001, #ff512f);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(255, 81, 47, 0.5);
-}
-
-/* Hamburger Menu (Mobile Only) */
-.menu-toggle {
+/* Mobile Hamburger Menu */
+.navbar-toggle {
   display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #333333;
+  cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    background-color: #333;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    padding: 0;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    z-index: 999;
+@media (max-width: 991px) {
+  .container {
+    padding: 0 15px; /* Consistent padding on medium devices */
   }
-
-  .nav-links.active {
-    max-height: 500px; /* Enough for all links */
-    padding: 20px 0;
-  }
-
-  .menu-toggle {
+  .navbar-toggle {
     display: block;
   }
 
-  .nav-link {
-    font-size: 1.2rem; /* Slightly smaller for mobile */
-    padding: 10px 20px;
+  .navbar-links {
+    position: fixed;
+    top: 60px; /* Just below the navbar */
+    right: 0;
+    background: #ffffff;
+    width: 100%;
+    max-width: 300px; /* Dropdown width for mobile */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: block;
   }
 
-  .register-button {
-    padding: 12px 20px; /* Fit smaller screens */
-    font-size: 1rem;
-  }
-}
-
-/* Responsive for moblie */
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-  /* Row Layout Adjustments */
-  .row {
-    flex-direction: column; /* Stack elements vertically */
-    align-items: flex-start; /* Align items to the start */
-    gap: 15px; /* Add spacing between items */
+  .navbar-links ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
   }
 
-  /* Marquee Text Adjustments */
-  .smm-marq {
-    font-size: 0.9rem; /* Smaller text for better fit */
-    padding: 15px 0; /* Adjust padding */
-    letter-spacing: 0.5px; /* Slightly tighter spacing */
+  .navbar-links ul li {
+    text-align: left;
   }
 
-  /* Headings Adjustments */
-  .heading-main {
-    font-size: 2.5rem; /* Reduce font size for headings */
-    margin-top: 20px; /* Adjust top margin */
-  }
-
-  .secondary-heading-main {
-    font-size: 2rem; /* Adjust secondary heading size */
-  }
-
-  .heading-title-md {
-    font-size: 1.4rem; /* Smaller title size */
-    margin-bottom: 15px; /* Adjust margin */
-  }
-
-  /* Paragraph Styles Adjustments */
-  .p-lg {
-    font-size: 1.2rem; /* Smaller paragraph text */
-    margin-bottom: 15px; /* Reduce bottom margin */
-    max-width: 100%; /* Allow full width */
-    padding: 0 10px; /* Add side padding */
-  }
-
-  /* Button Adjustments */
-  .btn-primary {
-    padding: 14px 24px; /* Reduce padding */
-    font-size: 1rem; /* Adjust font size */
-    border-radius: 6px; /* Slightly smaller radius */
-  }
-
-  /* Image Adjustments */
-  .wd-100 {
-    border-radius: 10px; /* Smaller corner radius */
-  }
-
-  .wd-100:hover {
-    transform: scale(1.02); /* Subtle zoom */
-    box-shadow: 0 4px 10px rgba(255, 99, 132, 0.4); /* Light glow */
-  }
-
-  /* Marquee Container for Smaller Screens */
-  marquee.smm-marq {
-    padding: 8px 0; /* Adjust padding */
-    border-top: 1px solid #ff4c61; /* Thinner border */
-    border-bottom: 1px solid #ff4c61; /* Thinner border */
+  .navbar-links.active {
+    transform: translateX(0); /* Dropdown becomes visible */
   }
 }
 
-/* Extra Small Screens (max-width: 480px) */
-@media (max-width: 480px) {
-  .heading-main {
-    font-size: 2rem; /* Further reduce heading size */
+/* Sticky Background on Scroll */
+.navbar.scrolled {
+  background: #f8f9fa;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Alignment */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 15px; /* Consistent padding on medium devices */
   }
 
-  .secondary-heading-main {
-    font-size: 1.6rem; /* Reduce secondary heading size */
+  .navbar .container {
+    padding: 0 15px;
   }
 
-  .btn-primary {
-    padding: 12px 20px; /* Smaller buttons */
-    font-size: 0.9rem; /* Adjust font size */
-  }
-
-  .smm-marq {
-    font-size: 0.8rem; /* Adjust marquee font size */
-    padding: 10px 0; /* Reduce padding */
-  }
-
-  .p-lg {
-    font-size: 1rem; /* Smaller paragraph text */
+  .navbar-links ul li a {
+    font-size: 0.9rem; /* Smaller font size for compact view */
+    padding: 8px 10px;
   }
 }
 
@@ -491,14 +404,12 @@ i.fas.fa-long-arrow-alt-right {
 /* Looking for a change section */
 
 /* HERO SECTION STYLE */
-/* General Reset for the Hero Section */
-/* Scoped Styling for the Hero Section */
 /* Hero Section Styles */
 .hero-section {
   display: flex;
   align-items: center;
   justify-content: center;
-  /* min-height: 100vh; */
+  min-height: 100vh;
   background: linear-gradient(270deg, #f9f9f9 0%, #f8f8f8 100%);
 
   color: #000;
@@ -562,12 +473,19 @@ i.fas.fa-long-arrow-alt-right {
 
 /* Adjust for smaller screens */
 @media (max-width: 768px) {
+  .hero-section {
+    min-height: 100vh;
+  }
+
   .hero-title-heading {
     font-size: 80px; /* Smaller font size for tablets */
   }
 }
 
 @media (max-width: 480px) {
+  .hero-section {
+    min-height: 100vh;
+  }
   .hero-title-heading {
     font-size: 50px; /* Even smaller font size for mobile devices */
   }
