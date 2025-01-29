@@ -122,7 +122,6 @@
 }
 
 /* WHO WE ARE SECTION */
-/* WHO WE ARE SECTION */
 .who-we-are-section {
   background: #f9f9f9;
   padding: 80px 20px;
@@ -234,22 +233,22 @@
 /* Section Styling */
 .elevated-services-section {
   position: relative;
-  background: linear-gradient(to bottom right, #fff, #f7f7f7);
+  background: #ff4b4b;
   padding: 80px 20px;
 }
 
 .section-title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #d10000;
+  color: #000;
 }
 
 .section-title span {
-  color: #a00000;
+  color: #fff;
 }
 
 .section-description {
-  color: #555;
+  color: #fff;
   font-size: 1.1rem;
   max-width: 600px;
   margin: 10px auto 30px;
@@ -330,6 +329,7 @@
 
 /* Button */
 .btn-view-more {
+  text-decoration: none;
   display: inline-block;
   background-color: #d10000;
   color: #ffffff;
