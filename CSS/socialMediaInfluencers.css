@@ -1198,139 +1198,117 @@ i {
   }
 }
 
-/* FOOTER */
-/* ################################################# */
-/* footer styles */
-.container-fluid.background {
-  background-color: #1a1a1a; /* Dark theme background */
-  color: white; /* White text for contrast */
-  padding: 20px 0;
+.footer-section {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 60px 20px;
+  font-family: Arial, sans-serif;
 }
 
-.footer_p {
-  font-size: 18px;
-  font-weight: bold;
+.footer-section h4 {
+  color: #ff4b4b;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+/* Footer Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.footer-links li {
   margin-bottom: 10px;
 }
 
-.para_footer {
-  margin: 5px 0;
-}
-
-.footerlinks {
-  font-size: 14px;
-  margin: 0;
+.footer-links li a {
   text-decoration: none;
-}
-
-a.white {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-a.white:hover {
-  color: #ff4d4d; /* Highlight color on hover */
-}
-
-.pd-10 {
-  padding: 10px;
-}
-
-.center-mb {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-h3 {
-  font-size: 16px;
-  margin: 0;
-}
-
-.footer_img {
-  width: 20px;
-  margin-top: 5px;
-}
-
-.col-md-2,
-.col-md-4,
-.col-md-5,
-.col-md-6,
-.col-md-8 {
-  margin-bottom: 15px; /* Add space between columns on smaller screens */
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .col-md-2,
-  .col-md-4,
-  .col-md-5,
-  .col-md-6,
-  .col-md-8 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-}
-
-/* Down Triangle */
-/* Floating Social Media Background */
-/* Floating Social Media Background */
-/* Floating Social Media Bar */
-/* Floating Social Media Bar */
-.container-fluid.fsbg {
-  background: #c90001; /* Solid red background */
-  padding: 10px 20px; /* Slight padding for minimal space */
-  text-align: center;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  justify-content: center; /* Center the content */
-  align-items: center;
-  border-radius: 30px 30px 0 0; /* Rounded top corners */
-  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.1); /* Light shadow effect */
-}
-
-/* Social Media Icon */
-.wp-idget {
-  margin: 0 12px; /* Space between icons */
-  width: 40px; /* Consistent size */
-  height: 40px; /* Consistent size */
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.wp-idget:hover {
-  transform: scale(1.1); /* Slight zoom effect */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
-}
-
-/* Footer Strip Text */
-.footer-strip {
-  margin-top: 10px; /* Space between the icons and text */
-  font-size: 1rem; /* Compact font size */
-  text-align: center;
-  color: white;
-  font-weight: 400;
-}
-
-/* Footer Heading Link */
-.footer-strip-heading a {
-  color: #ffd0d0; /* Light red for the link */
-  text-decoration: none;
-  font-weight: 600;
+  color: #ddd;
   transition: color 0.3s ease;
 }
 
-.footer-strip-heading a:hover {
-  color: white; /* White text on hover */
-  text-decoration: underline;
+.footer-links li a:hover {
+  color: #ff4b4b;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ff4b4b;
+  transform: scale(1.1);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.footer-bottom ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.footer-bottom ul li a {
+  text-decoration: none;
+  color: #ddd;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom ul li a:hover {
+  color: #ff4b4b;
+}
+
+.footer-logo img {
+  width: 180px; /* Adjust width as needed */
+  height: auto; /* Maintains aspect ratio */
+  max-width: 100%; /* Ensures responsiveness */
+  display: block;
+  margin: 0 auto; /* Centers the logo */
+}
+
+@media (max-width: 768px) {
+  .footer-logo img {
+    width: 140px; /* Smaller size for mobile */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .footer-section .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-bottom ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
