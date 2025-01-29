@@ -7,7 +7,10 @@ body {
 
 /* General Navbar Styling */
 .navbar {
+  height: 70px; /* Fixed navbar height */
   position: sticky;
+  display: flex;
+  align-items: center;
   top: 0;
   width: 100%;
   background: #ffffff;
@@ -28,8 +31,10 @@ body {
 
 /* Logo */
 .navbar-logo img {
-  height: 50px;
-  width: auto;
+  width: 200px; /* Increase this for bigger logo */
+  height: 80px; /* Maintain aspect ratio */
+  max-height: 50px; /* Restrict navbar height */
+  object-fit: contain; /* Ensures proper scaling */
 }
 
 /* Navbar Links */
@@ -1298,6 +1303,20 @@ body {
 
 .footer-bottom ul li a:hover {
   color: #ff4b4b;
+}
+
+.footer-logo img {
+  width: 180px; /* Adjust width as needed */
+  height: auto; /* Maintains aspect ratio */
+  max-width: 100%; /* Ensures responsiveness */
+  display: block;
+  margin: 0 auto; /* Centers the logo */
+}
+
+@media (max-width: 768px) {
+  .footer-logo img {
+    width: 140px; /* Smaller size for mobile */
+  }
 }
 
 /* Responsive Design */
