@@ -1,0 +1,290 @@
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(to right, #fff 40%, #ff4b4b 100%);
+  position: relative;
+  padding: 100px 10%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Hero Text */
+.hero-text {
+  text-align: left;
+}
+
+.hero-title {
+  font-size: 3.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #222;
+}
+
+.hero-title span {
+  color: #d10000;
+  background: rgba(209, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin: 20px 0;
+  max-width: 550px;
+}
+
+/* Buttons */
+.hero-buttons .btn {
+  padding: 14px 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-right: 15px;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+  background: #d10000;
+  color: #ffffff;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: #ff4b4b;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #d10000;
+  border: 2px solid #d10000;
+}
+
+.btn-secondary:hover {
+  background: #d10000;
+  color: #ffffff;
+}
+
+/* Hero Image */
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  animation: float 4s infinite ease-in-out;
+}
+
+/* Background Design Elements */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to left,
+    rgba(209, 0, 0, 0.8),
+    rgba(255, 255, 255, 0)
+  );
+  z-index: -1;
+}
+
+.floating-shape {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+/* Floating Circle */
+.floating-circle {
+  width: 120px;
+  height: 120px;
+  background: rgba(255, 75, 75, 0.3);
+  border-radius: 50%;
+  top: 20%;
+  left: -30px;
+  animation: pulse 4s infinite ease-in-out;
+}
+
+/* Floating Triangle */
+.floating-triangle {
+  width: 0;
+  height: 0;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 100px solid rgba(209, 0, 0, 0.2);
+  bottom: 15%;
+  right: -30px;
+  animation: float 6s infinite ease-in-out;
+}
+
+/* Floating Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  .hero-buttons .btn {
+    font-size: 1rem;
+  }
+  .hero-image img {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-section {
+    text-align: center;
+    padding: 80px 5%;
+  }
+  .hero-buttons {
+    margin-top: 20px;
+  }
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 250px;
+    margin-bottom: 10px;
+  }
+  .hero-image img {
+    max-width: 300px;
+    margin-top: 30px;
+  }
+  .floating-shape {
+    display: none;
+  }
+}
+
+/* Logo Carousel Section */
+/* General Section Styling */
+.logo-carousel-section {
+  background-color: #fff;
+  padding: 60px 0;
+  text-align: center;
+}
+
+/* Text Styling */
+.carousel-text {
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.carousel-text h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #d10000; /* Red Theme */
+  margin-bottom: 15px;
+}
+
+.carousel-text p {
+  font-size: 1.3rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Full-Width Logo Carousel */
+.logo-carousel {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  background: #f8f8f8; /* Light background for contrast */
+  padding: 30px 0;
+}
+
+/* Logo Container */
+.logos {
+  display: flex;
+  gap: 80px;
+  width: fit-content;
+  animation: scrollLogos 20s linear infinite;
+}
+
+/* Logos Styling */
+.logos img {
+  height: 100px; /* Increased size */
+  max-width: 200px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.logos img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.2);
+}
+
+/* Keyframes for Smooth Infinite Scrolling */
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  } /* Moves half width left */
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .carousel-text h2 {
+    font-size: 2rem;
+  }
+
+  .carousel-text p {
+    font-size: 1.2rem;
+  }
+
+  .logos img {
+    height: 80px; /* Adjusted size for smaller screens */
+    max-width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-text {
+    padding: 0 20px;
+  }
+
+  .carousel-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .carousel-text p {
+    font-size: 1rem;
+  }
+
+  .logos img {
+    height: 70px;
+    max-width: 130px;
+  }
+}
