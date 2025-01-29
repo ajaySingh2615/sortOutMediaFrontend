@@ -2,1614 +2,823 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SortOut Innovation - Business Solutions</title>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- Bootstrap CSS -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="CSS/styles.css" />
-
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule=""
-      src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"
-    ></script>
-
-    <!-- bootstrap styles -->
+    <!-- Font Awesome Icons -->
     <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="asset/style.css" />
-    <link rel="stylesheet" href="asset/style.css" />
-    <link rel="stylesheet" href="asset/hashtag.css" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
-    />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    <!-- LOAD JQUERY LIBRARY -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
-    <!-- LOADING FONTS AND ICONS -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto:400%7CPoppins:700&display=swap"
-      rel="stylesheet"
-      property="stylesheet"
-      media="all"
-      type="text/css"
-    />
-    <script
-      src="https://kit.fontawesome.com/a076d05399.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
       rel="stylesheet"
     />
 
+    <!-- Google Fonts -->
     <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
     />
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="slider/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="slider/fonts/font-awesome/css/font-awesome.css"
-    />
-
-    <!-- REVOLUTION STYLE SHEETS -->
-    <link rel="stylesheet" type="text/css" href="slider/css/rs6.css" />
-    <!-- REVOLUTION LAYERS STYLES -->
-
-    <script src="https://cdn.lordicon.com/fudrjiwc.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js"></script>
-
-    <!-- Include GSAP (GreenSock Animation Platform) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-    <title>Sortout Media</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/CSS/styles.css" />
   </head>
   <body>
-    <section>
-      <div class="nav-container">
-        <!-- Logo Section with Image -->
-        <a href="#" class="logo">
-          <img
-            src="/images/Sortout Media SVG.svg"
-            alt="Your Logo"
-            class="logo-img"
-          />
+    <header class="navbar">
+      <div class="container">
+        <!-- Logo -->
+        <a href="/" class="navbar-logo">
+          <img src="/images/SortOutMediaHDLogo.png" alt="SortOut Innovation" />
         </a>
 
-        <!-- Menu Toggle Button (Hamburger) -->
-        <button class="menu-toggle" aria-label="Toggle Navigation">
-          <lord-icon
-            src="https://cdn.lordicon.com/wloilxuq.json"
-            trigger="click"
-            style="width: 40px; height: 40px"
-          ></lord-icon>
-        </button>
-
         <!-- Navigation Links -->
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="pages/career.html" class="nav-link">Career</a></li>
-          <li>
-            <a href="pages/findTalent.html" class="nav-link">Browse Talent</a>
-          </li>
-          <li>
-            <a href="/pages/our-services-page/service.html" class="nav-link"
-              >Services</a
-            >
-          </li>
-          <li><a href="#contact" class="nav-link contact-link">Contact</a></li>
-        </ul>
+        <nav class="navbar-links">
+          <ul>
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/about" class="nav-link">About</a></li>
+            <li><a href="/services" class="nav-link">Career</a></li>
+            <li><a href="/industries" class="nav-link">Browse Talent</a></li>
+            <li><a href="/process" class="nav-link">Service</a></li>
+            <li><a href="/testimonials" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button class="navbar-toggle" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
-    </section>
+    </header>
 
     <script>
-      const toggleMenu = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
+      // Mobile Menu Toggle
+      const navbarToggle = document.querySelector(".navbar-toggle");
+      const navbarLinks = document.querySelector(".navbar-links");
 
-      // Toggle the menu visibility
-      toggleMenu.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+      navbarToggle.addEventListener("click", () => {
+        navbarLinks.classList.toggle("active");
       });
 
-      // Close the menu when any link is clicked
-      navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("active");
-        });
+      // Sticky Navbar on Scroll
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
       });
     </script>
-
-    <!-- </section> -->
 
     <!-- Hero Section -->
-    <section
-      id="hero"
-      style="
-        position: relative;
-        color: white;
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-      "
-    >
-      <!-- Background Layer -->
-      <div class="hero-background">
-        <div class="arrow-pattern"></div>
+    <section class="hero-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left Side Content -->
+          <div class="col-lg-6 hero-text">
+            <h1 class="hero-title">
+              Empowering <span>Your Business</span> with Excellence
+            </h1>
+            <p class="hero-subtitle">
+              At SortOut Innovation, we provide top-tier solutions in Digital
+              Marketing, IT, HR, Courier, Real Estate, Event Management, and
+              more. Your success is our priority.
+            </p>
+            <div class="hero-buttons">
+              <a href="#services" class="btn btn-primary"
+                >Explore Our Services</a
+              >
+              <a href="#contact" class="btn btn-secondary">Get Started</a>
+            </div>
+          </div>
+
+          <!-- Right Side Image / Illustration -->
+          <div class="col-lg-6 text-center hero-image">
+            <img
+              src="/images/5a.gif"
+              class="img-fluid"
+              alt="Business Solutions"
+            />
+          </div>
+        </div>
       </div>
 
-      <!-- Particle Layer -->
-      <div class="particle-container">
-        <!-- Floating Particles -->
-        <div
-          class="particle"
-          style="top: 10%; left: 20%; animation-delay: 0s"
-        ></div>
-        <div
-          class="particle"
-          style="top: 50%; left: 30%; animation-delay: 2s"
-        ></div>
-        <div
-          class="particle"
-          style="top: 80%; left: 70%; animation-delay: 4s"
-        ></div>
-        <div
-          class="particle"
-          style="top: 30%; left: 90%; animation-delay: 1s"
-        ></div>
-        <div
-          class="particle"
-          style="top: 70%; left: 40%; animation-delay: 3s"
-        ></div>
-        <div
-          class="particle"
-          style="top: 20%; left: 80%; animation-delay: 1.5s"
-        ></div>
-      </div>
-      <div class="container hero-container">
-        <div class="hero-content">
-          <h1 class="headline" id="hero-heading">
-            <span class="heading-text">Unlock the</span>
-            <span class="animate-gradient">Power of Creativity</span>
-          </h1>
-          <p class="subheadline" id="hero-subheading">
-            Revolutionize your brand with cutting-edge strategies and designs
-            that leave a lasting impression.
+      <!-- Background Design Elements -->
+      <div class="hero-overlay"></div>
+      <div class="floating-shape floating-circle"></div>
+      <div class="floating-shape floating-triangle"></div>
+    </section>
+
+    <section class="logo-carousel-section">
+      <div class="container">
+        <!-- Heading & Description -->
+        <div class="carousel-text">
+          <h2>Trusted by Leading Brands</h2>
+          <p>
+            Our services are relied upon by top businesses worldwide. Join our
+            growing network of partners and take your brand to the next level.
           </p>
-          <div class="cta-buttons">
-            <a href="#about"
-              ><button class="btn-hero primary" id="cta-primary">
-                Get Started
-              </button></a
-            >
-            <a href="#services"
-              ><button class="btn-hero secondary" id="cta-secondary">
-                Learn More
-              </button></a
-            >
+        </div>
+
+        <!-- Scrolling Logos -->
+        <div class="logo-carousel">
+          <div class="logos">
+            <img
+              src="/images/company-images/improved-logos/chingari1.jpeg"
+              alt="Logo 1"
+            />
+            <img
+              src="/images/company-images/improved-logos/disco2.jpeg"
+              alt="Logo 2"
+            />
+            <img
+              src="/images/company-images/improved-logos/imo3.png"
+              alt="Logo 3"
+            />
+            <img
+              src="/images/company-images/improved-logos/me4.jpeg"
+              alt="Logo 4"
+            />
+            <img
+              src="/images/company-images/improved-logos/tend10.jpeg"
+              alt="Logo 5"
+            />
+            <img
+              src="/images/company-images/improved-logos/tinder6.jpeg"
+              alt="Logo 6"
+            />
+            <img
+              src="/images/company-images/improved-logos/tictok5.jpeg"
+              alt="Logo 7"
+            />
+            <img
+              src="/images/company-images/improved-logos/snapchat7.jpeg"
+              alt="Logo 8"
+            />
+            <img
+              src="/images/company-images/improved-logos/trendo8.png"
+              alt="Logo 9"
+            />
+            <img
+              src="/images/company-images/improved-logos/triangle9.png"
+              alt="Logo 10"
+            />
+            <img
+              src="/images/company-images/improved-logos/pix11.jpeg"
+              alt="Logo 11"
+            />
+            <img
+              src="/images/company-images/improved-logos/josh13.jpeg"
+              alt="Logo 11"
+            />
           </div>
         </div>
       </div>
     </section>
 
+    <section class="about-us-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left Side: Image -->
+          <div class="col-lg-6">
+            <div class="about-image">
+              <img
+                src="/images/services-imgs/CA/about-us.jpg"
+                alt="About SortOut Innovation"
+              />
+            </div>
+          </div>
+
+          <!-- Right Side: Content -->
+          <div class="col-lg-6">
+            <div class="about-content">
+              <h2>Empowering Businesses with Innovation & Excellence</h2>
+              <p>
+                SortOut Innovation is your trusted partner in delivering
+                tailored solutions across multiple industries. From IT to
+                digital marketing, HR to logistics, we help businesses thrive in
+                a competitive world.
+              </p>
+
+              <!-- Stats Section -->
+              <div class="about-stats">
+                <div class="stat">
+                  <h3>10+</h3>
+                  <p>Years of Experience</p>
+                </div>
+                <div class="stat">
+                  <h3>500+</h3>
+                  <p>Successful Projects</p>
+                </div>
+                <div class="stat">
+                  <h3>300+</h3>
+                  <p>Trusted Clients</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="industries-section py-5">
+      <div class="container text-center">
+        <div class="section-title">
+          <h2>Industries We Serve</h2>
+          <p>
+            Empowering businesses across multiple industries with tailored
+            solutions.
+          </p>
+        </div>
+
+        <div class="industries-grid">
+          <!-- Industry 1 -->
+          <div class="industry-box">
+            <div class="icon"><i class="fas fa-building"></i></div>
+            <h4>Corporate & Business</h4>
+          </div>
+
+          <!-- Industry 2 -->
+          <div class="industry-box">
+            <div class="icon"><i class="fas fa-shopping-cart"></i></div>
+            <h4>Retail & E-Commerce</h4>
+          </div>
+
+          <!-- Industry 3 -->
+          <div class="industry-box">
+            <div class="icon"><i class="fas fa-stethoscope"></i></div>
+            <h4>Healthcare & Pharmaceuticals</h4>
+          </div>
+
+          <!-- Industry 4 -->
+          <div class="industry-box">
+            <div class="icon"><i class="fas fa-truck"></i></div>
+            <h4>Manufacturing & Logistics</h4>
+          </div>
+
+          <!-- Industry 5 -->
+          <div class="industry-box">
+            <div class="icon"><i class="fas fa-chart-line"></i></div>
+            <h4>Finance & Banking</h4>
+          </div>
+
+          <!-- Industry 6 -->
+          <div class="industry-box">
+            <div class="icon"><i class="fas fa-hotel"></i></div>
+            <h4>Hospitality & Tourism</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-services">
+      <div class="container">
+        <!-- Section Title -->
+        <div class="section-heading text-center">
+          <h2 class="services-title">Explore Our Expert Solutions</h2>
+          <p class="services-subtitle">
+            We provide a wide range of innovative services to help your business
+            thrive.
+          </p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="row">
+          <!-- Service 1 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card">
+              <i class="fas fa-shipping-fast service-icon"></i>
+              <h4 class="service-title">Courier Services</h4>
+              <p class="service-description">
+                Fast, secure, and reliable delivery solutions.
+              </p>
+              <a href="/services/courier-services.html" class="service-btn"
+                >View Details</a
+              >
+            </div>
+          </div>
+
+          <!-- Service 2 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card">
+              <i class="fas fa-box-open service-icon"></i>
+              <h4 class="service-title">Shipping & Fulfillment</h4>
+              <p class="service-description">
+                Seamless global logistics and inventory management.
+              </p>
+              <a href="/services/shipping.html" class="service-btn"
+                >View Details</a
+              >
+            </div>
+          </div>
+
+          <!-- Service 3 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card">
+              <i class="fas fa-pencil-ruler service-icon"></i>
+              <h4 class="service-title">Stationery Services</h4>
+              <p class="service-description">
+                Office essentials for daily operations.
+              </p>
+              <a href="/services/stationery.html" class="service-btn"
+                >View Details</a
+              >
+            </div>
+          </div>
+
+          <!-- Service 4 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card">
+              <i class="fas fa-building service-icon"></i>
+              <h4 class="service-title">Real Estate & Property</h4>
+              <p class="service-description">
+                Find and invest in commercial properties.
+              </p>
+              <a href="/services/real-estate.html" class="service-btn"
+                >View Details</a
+              >
+            </div>
+          </div>
+
+          <!-- Service 5 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card">
+              <i class="fas fa-calendar-alt service-icon"></i>
+              <h4 class="service-title">Event Management</h4>
+              <p class="service-description">
+                Plan and execute unforgettable events.
+              </p>
+              <a href="/services/event-management.html" class="service-btn"
+                >View Details</a
+              >
+            </div>
+          </div>
+
+          <!-- Service 6 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card">
+              <i class="fas fa-paint-brush service-icon"></i>
+              <h4 class="service-title">Design & Creative</h4>
+              <p class="service-description">
+                Custom branding and graphic solutions.
+              </p>
+              <a href="/services/design.html" class="service-btn"
+                >View Details</a
+              >
+            </div>
+          </div>
+
+          <!-- Service 7 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card">
+              <i class="fas fa-code service-icon"></i>
+              <h4 class="service-title">Web & App Development</h4>
+              <p class="service-description">
+                Building modern, responsive websites & apps.
+              </p>
+              <a href="/services/web-development.html" class="service-btn"
+                >View Details</a
+              >
+            </div>
+          </div>
+
+          <!-- Service 8 -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <div class="service-card">
+              <i class="fas fa-users service-icon"></i>
+              <h4 class="service-title">Find Talent</h4>
+              <p class="service-description">
+                Connecting businesses with top professionals.
+              </p>
+              <a href="/services/find-talent.html" class="service-btn"
+                >View Details</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- View More Button -->
+        <div class="text-center mt-4">
+          <a href="" class="view-more-services-btn">View More Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="brand-potential-section">
+      <div class="container">
+        <h2 class="brand-heading">
+          Unleashing the Vital Potential of <span>Your Brand</span>
+        </h2>
+        <p class="brand-subheading">
+          Empowering businesses with
+          <strong>innovation, creativity, and technology</strong> to fuel
+          unstoppable growth.
+        </p>
+
+        <!-- Updated Grid Layout -->
+        <div class="brand-grid">
+          <!-- Floating Service Cards -->
+          <div class="floating-card">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Strategic Branding</h3>
+            <p>
+              We craft compelling brand identities that leave lasting
+              impressions.
+            </p>
+          </div>
+
+          <div class="floating-card">
+            <i class="fas fa-code"></i>
+            <h3>Digital Innovation</h3>
+            <p>
+              Harnessing the latest technology to optimize digital experiences.
+            </p>
+          </div>
+
+          <!-- Center Glowing Core -->
+          <div class="glowing-core">
+            <div class="pulse-effect"></div>
+          </div>
+
+          <div class="floating-card">
+            <i class="fas fa-paint-brush"></i>
+            <h3>Creative Excellence</h3>
+            <p>Designing visually stunning and impactful creatives.</p>
+          </div>
+
+          <div class="floating-card">
+            <i class="fas fa-chart-line"></i>
+            <h3>Market Leadership</h3>
+            <p>
+              Helping businesses establish authority and dominate their
+              industry.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="who-we-serve">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <!-- Left Side (White Background) -->
+          <div class="col-lg-6 left-content">
+            <h2>Who Do We Serve?</h2>
+            <p class="subheading">
+              Empowering businesses, organizations, and individuals with
+              cutting-edge digital solutions.
+            </p>
+          </div>
+
+          <!-- Right Side (Red Background) -->
+          <div class="col-lg-6 right-content">
+            <div class="service-category">
+              <i class="fas fa-bullhorn"></i>
+              <h4>Brand Branding</h4>
+              <p>Elevate your brand identity with strategic positioning.</p>
+            </div>
+            <div class="service-category">
+              <i class="fas fa-building"></i>
+              <h4>Organizations & Digital Media</h4>
+              <p>Advanced digital transformation solutions for enterprises.</p>
+            </div>
+            <div class="service-category">
+              <i class="fas fa-user-edit"></i>
+              <h4>Individuals & Digital Publishing</h4>
+              <p>
+                Empowering freelancers, content creators, and professionals.
+              </p>
+            </div>
+            <div class="service-category">
+              <i class="fas fa-globe"></i>
+              <h4>Where Do We Serve?</h4>
+              <p>Global reach, delivering excellence across industries.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="testimonials py-5">
+      <div class="container">
+        <div class="section-title text-center mb-4">
+          <h2>What Our Clients Say</h2>
+          <p>Trusted by businesses and professionals worldwide.</p>
+        </div>
+
+        <div
+          id="testimonialCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="testimonial-box">
+                <div class="testimonial-content">
+                  <p>
+                    "SortOut Innovation transformed our brand. Their expertise
+                    and dedication are unmatched!"
+                  </p>
+                  <h4>Lisa T.</h4>
+                  <span>CEO, Retail Ventures</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="testimonial-box">
+                <div class="testimonial-content">
+                  <p>
+                    "Their digital solutions have significantly boosted our
+                    engagement and conversions!"
+                  </p>
+                  <h4>John M.</h4>
+                  <span>Marketing Head, E-Commerce Co.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <div class="testimonial-box">
+                <div class="testimonial-content">
+                  <p>
+                    "From branding to website design, they exceeded our
+                    expectations at every step."
+                  </p>
+                  <h4>Sarah L.</h4>
+                  <span>Product Manager</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+        <div class="carousel-indicators mt-3">
+          <button
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide-to="0"
+            class="active"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#testimonialCarousel"
+            data-bs-slide-to="2"
+          ></button>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="our-process">
+      <div class="container">
+        <div class="section-title text-center">
+          <h2>Our Process</h2>
+          <p>
+            We follow a structured, results-driven approach to deliver
+            excellence.
+          </p>
+        </div>
+
+        <div class="process-flow">
+          <!-- Step 1 -->
+          <div class="process-row">
+            <div class="process-icon"><i class="fas fa-comments"></i></div>
+            <div class="process-content">
+              <h4>Consultation</h4>
+              <p>
+                Understanding client goals & needs to create a tailored
+                strategy.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="process-row right">
+            <div class="process-icon"><i class="fas fa-lightbulb"></i></div>
+            <div class="process-content">
+              <h4>Strategy & Planning</h4>
+              <p>
+                Creating a roadmap that aligns with your business objectives.
+              </p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="process-row">
+            <div class="process-icon"><i class="fas fa-cogs"></i></div>
+            <div class="process-content">
+              <h4>Implementation</h4>
+              <p>Bringing ideas to life with expert execution & precision.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="process-row right">
+            <div class="process-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="process-content">
+              <h4>Quality Assurance</h4>
+              <p>Ensuring top-tier results through rigorous quality checks.</p>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="process-row">
+            <div class="process-icon"><i class="fas fa-handshake"></i></div>
+            <div class="process-content">
+              <h4>Delivery & Support</h4>
+              <p>On-time completion with post-delivery support & assistance.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Take Your Business to the Next Level</h2>
+          <p>
+            Partner with SortOut Innovation for expert solutions tailored to
+            your needs.
+          </p>
+          <div class="cta-buttons">
+            <a href="/get-started" class="btn-cta btn-primary-cta"
+              >Get Started Today</a
+            >
+            <a href="/contact-us" class="btn-cta btn-outline-cta">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-section">
+      <div class="container">
+        <div class="row">
+          <!-- Column 1: Company Info -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-logo">
+              <img
+                src="/images/SortOutMediaHDLogo.png"
+                alt="SortOut Innovation"
+              />
+              <p>
+                Empowering businesses with top-notch solutions in digital, IT,
+                and business services.
+              </p>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact</a></li>
+              <li><a href="/careers">Careers</a></li>
+              <li><a href="/blog">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Our Services -->
+          <div class="col-lg-3 col-md-6">
+            <h4>Our Services</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="/services/digital-marketing">Digital Marketing</a>
+              </li>
+              <li><a href="/services/it-support">IT Support</a></li>
+              <li><a href="/services/ca-services">CA Services</a></li>
+              <li><a href="/services/hr-services">HR Services</a></li>
+              <li><a href="/services/courier-services">Courier Services</a></li>
+              <li><a href="/services/shipping">Shipping & Fulfillment</a></li>
+              <li><a href="/services/stationery">Stationery Services</a></li>
+              <li>
+                <a href="/services/real-estate">Real Estate & Property</a>
+              </li>
+              <li><a href="/services/event-management">Event Management</a></li>
+              <li><a href="/services/design-creative">Design & Creative</a></li>
+              <li>
+                <a href="/services/web-development">Web & App Development</a>
+              </li>
+              <li><a href="/services/find-talent">Find Talent</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact Info -->
+          <div class="col-lg-2 col-md-6">
+            <h4>Contact Us</h4>
+            <ul class="footer-links">
+              <li>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+919818559102">+91 9818559102</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:info@sortoutinnovation.com"
+                  >info@sortoutinnovation.com</a
+                >
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Spaze i-Tech Park,
+                Gurugram, India
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 5: Social Media -->
+          <div class="col-lg-2 col-md-6">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright & Legal Links -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 SortOut Innovation. All Rights Reserved.</p>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms & Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
     <script>
-      // Enhanced GSAP animations
-      gsap.fromTo(
-        "#hero-heading .line",
-        {
-          opacity: 0,
-          x: -50,
-        },
-        {
-          opacity: 1,
-          x: 0,
-          duration: 1.2,
-          stagger: 0.3,
-          ease: "power4.out",
-        }
-      );
-
-      gsap.fromTo(
-        "#hero-subheading",
-        {
-          y: 100,
-          opacity: 0,
-        },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1.5,
-          delay: 1.2,
-          ease: "power4.out",
-        }
-      );
-
-      gsap.to(".arrow-pattern", {
-        rotation: 360,
-        repeat: -1,
-        duration: 40,
-        ease: "linear",
+      var myCarousel = document.querySelector("#testimonialCarousel");
+      var carousel = new bootstrap.Carousel(myCarousel, {
+        interval: 5000, // Change slide every 5 seconds
+        wrap: true,
       });
     </script>
 
-    <!-- LIST OF PROJECT COMPLETED SECTION -->
+    <script>
+      // Optional: Adds a glowing effect to the center element dynamically
+      document.addEventListener("DOMContentLoaded", function () {
+        const glowingCore = document.querySelector(".glowing-core");
 
-    <section
-      id="about"
-      class="counter-section"
-      style="background-color: #252525; padding: 50px 0; overflow: hidden"
-    >
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="counter-box">
-              <span class="counter-number red f-36">
-                <div class="counter" data-target="350">350</div>
-                +
-              </span>
-              <p class="counter-title f-18 f-20-sm">
-                Successful Projects Delivered
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="counter-box">
-              <span class="counter-number red f-36">
-                <div class="counter" data-target="18000">18000</div>
-                +
-              </span>
-              <p class="counter-title f-18 f-20-sm">Caffeine Boost Delivered</p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="counter-box">
-              <span class="counter-number red f-36">
-                <div class="counter" data-target="12000">12000</div>
-                +
-              </span>
-              <p class="counter-title f-18 f-20-sm">
-                Stunning Creatives Produced
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-6 col-sm-12">
-            <div class="counter-box">
-              <span class="counter-number red f-36">
-                <div class="counter" data-target="150">150</div>
-                +
-              </span>
-              <p class="counter-title f-18 f-20-sm">Trusted Brands Partnered</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+        setInterval(() => {
+          glowingCore.style.boxShadow = `0 0 ${
+            Math.random() * 50 + 30
+          }px rgba(255, 75, 75, 0.8)`;
+        }, 1000);
+      });
+    </script>
 
-    <!-- CLIENTS WE WORKED FOR SECTION -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        let logoContainer = document.querySelector(".logos");
+        let clonedLogos = logoContainer.innerHTML; // Clone inner content
 
-    <section style="overflow: hidden">
-      <div class="row" style="padding: 40px 0px">
-        <div class="col-md-12 center">
-          <h3 class="heading-main-md mb-30">Clients We Worked For</h3>
-          <div class="col-md-4"></div>
-          <div class="col-md-4 offset-md-4 line"></div>
-          <div class="col-md-4"></div>
-        </div>
+        // Append cloned logos only once to avoid duplicates
+        logoContainer.innerHTML += clonedLogos;
+      });
+    </script>
 
-        <div class="col-md-12">
-          <div
-            class="owl-carousel owl-theme clients-carousel"
-            style="padding-top: 20px"
-          >
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="images/company-images/improved-logos/chingari1.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="images/company-images/improved-logos/disco2.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="images/company-images/improved-logos/imo3.png"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="images/company-images/improved-logos/me4.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/tictok5.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/tinder6.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/snapchat7.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/trendo8.png"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/triangle9.png"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/tend10.jpeg"
-              />
-            </div>
-          </div>
-
-          <div
-            class="owl-carousel owl-theme clients-carousel"
-            style="padding-top: 20px"
-          >
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/pix11.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/yo12.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="images/company-images/improved-logos/josh13.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/meesho14.png"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/shar15.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/chingari1.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/disco2.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/imo3.png"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/me4.jpeg"
-              />
-            </div>
-          </div>
-
-          <div
-            class="owl-carousel owl-theme clients-carousel"
-            style="padding-top: 20px"
-          >
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/tictok5.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/tinder6.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/snapchat7.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/trendo8.png"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/triangle9.png"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/tend10.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/pix11.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/josh13.jpeg"
-              />
-            </div>
-            <div class="item boxx">
-              <img
-                alt="client logo"
-                class="client-img"
-                src="/images/company-images/improved-logos/meesho14.png"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Add this CSS to your stylesheet -->
-
-    <!-- OUR DIGITAL TOOLKIT KIT SECTION -->
-    <section
-      id="services"
-      class="grid-section"
-      style="background-color: #252525"
-      style="overflow: hidden"
-    >
-      <div class="grid-container">
-        <h2 class="grid-heading">Our Digital Toolkit</h2>
-        <div class="grid">
-          <!-- Grid Items -->
-          <div class="grid-item">
-            <div class="icon-container">
-              <lord-icon
-                src="https://cdn.lordicon.com/cfoaotmk.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#fb0000"
-                stroke="90"
-              ></lord-icon>
-            </div>
-            <p class="grid-title">Live Streaming Hosts</p>
-          </div>
-
-          <div class="grid-item">
-            <div class="icon-container">
-              <lord-icon
-                src="https://cdn.lordicon.com/urhcgqxz.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#fb0000"
-                stroke="90"
-              ></lord-icon>
-            </div>
-            <p class="grid-title">Website Development</p>
-          </div>
-
-          <div class="grid-item">
-            <div class="icon-container">
-              <lord-icon
-                src="https://cdn.lordicon.com/bdbtadvc.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#fb0000"
-                stroke="90"
-              ></lord-icon>
-            </div>
-            <p class="grid-title">Fashion Influencers</p>
-          </div>
-
-          <div class="grid-item">
-            <div class="icon-container">
-              <lord-icon
-                src="https://cdn.lordicon.com/qfwgmyhc.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#fb0000"
-                stroke="90"
-              ></lord-icon>
-            </div>
-            <p class="grid-title">Short Video Creators</p>
-          </div>
-
-          <div class="grid-item">
-            <a href="/pages/services/socialMediaInfluencers.html"
-              ><div class="icon-container">
-                <lord-icon
-                  src="https://cdn.lordicon.com/uqpazftn.json"
-                  trigger="hover"
-                  colors="primary:#ffffff,secondary:#fb0000"
-                  stroke="90"
-                ></lord-icon>
-              </div>
-              <p class="grid-title">Social Media Influencers</p></a
-            >
-          </div>
-
-          <div class="grid-item">
-            <div class="icon-container">
-              <lord-icon
-                src="https://cdn.lordicon.com/cwnzgsrk.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#fb0000"
-                stroke="90"
-              ></lord-icon>
-            </div>
-            <p class="grid-title">Fitness Influencers</p>
-          </div>
-
-          <div class="grid-item">
-            <div class="icon-container">
-              <lord-icon
-                src="https://cdn.lordicon.com/vycwlttg.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#fb0000"
-                stroke="90"
-              ></lord-icon>
-            </div>
-            <p class="grid-title">Podcast Hosts</p>
-          </div>
-
-          <div class="grid-item">
-            <div class="icon-container">
-              <lord-icon
-                src="https://cdn.lordicon.com/zgzyclie.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#fb0000"
-                stroke="90"
-              ></lord-icon>
-            </div>
-            <p class="grid-title">YouTubers</p>
-          </div>
-
-          <div class="grid-item">
-            <div class="icon-container">
-              <lord-icon
-                src="https://cdn.lordicon.com/gdbwtqvx.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#fb0000"
-                stroke="90"
-              ></lord-icon>
-            </div>
-            <p class="grid-title">Search Engine Optimization</p>
-          </div>
-
-          <div class="grid-item">
-            <div class="icon-container">
-              <lord-icon
-                src="https://cdn.lordicon.com/vixtkkbk.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#fb0000"
-                stroke="90"
-              ></lord-icon>
-            </div>
-            <p class="grid-title">Bollywood Artists</p>
-          </div>
-
-          <div class="grid-item">
-            <div class="icon-container">
-              <lord-icon
-                src="https://cdn.lordicon.com/cvwrvyjv.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#fb0000"
-                stroke="90"
-              ></lord-icon>
-            </div>
-            <p class="grid-title">Tech Reviewers</p>
-          </div>
-
-          <div class="grid-item">
-            <div class="icon-container">
-              <lord-icon
-                src="https://cdn.lordicon.com/onmwuuox.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#fb0000"
-                stroke="90"
-              ></lord-icon>
-            </div>
-            <p class="grid-title">Travel Influencers</p>
-          </div>
-
-          <div class="grid-item">
-            <div class="icon-container">
-              <lord-icon
-                src="https://cdn.lordicon.com/caxgkjgi.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#fb0000"
-                stroke="90"
-              ></lord-icon>
-            </div>
-            <p class="grid-title">Mobile Gamers</p>
-          </div>
-
-          <div class="grid-item">
-            <div class="icon-container">
-              <lord-icon
-                src="https://cdn.lordicon.com/lupuorrc.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#fb0000"
-                stroke="90"
-              ></lord-icon>
-            </div>
-            <p class="grid-title">Lifestyle Bloggers</p>
-          </div>
-
-          <div class="grid-item">
-            <div class="icon-container">
-              <lord-icon
-                src="https://cdn.lordicon.com/ggirntso.json"
-                trigger="hover"
-                colors="primary:#ffffff,secondary:#fb0000"
-                stroke="90"
-              ></lord-icon>
-            </div>
-            <p class="grid-title">E-commerce Solutions</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- IN THE NEWS SECTION -->
-
-    <section class="border-tb" style="overflow: hidden">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 center">
-            <h3 class="heading-main-md mb-30">
-              What's Defining the Digital Marketing & Recruitment World
-            </h3>
-            <div class="col-md-5"></div>
-            <div class="col-md-2 offset-md-4 line"></div>
-
-            <div class="col-md-5"></div>
-          </div>
-          <div class="col-md-12 mt-30 mb-30">
-            <div class="col-md-3">
-              <a
-                href="https://www.smartinsights.com/digital-marketing-strategy/digital-marketing-trends-2025/"
-              >
-                <div class="news-box">
-                  <!-- <img src="./asset/img/news1.png" class="wd-100" /> -->
-                  <p class="mt-20 mb-10">
-                    Stay ahead of the curve! Learn about the latest digital
-                    marketing trends for 2025 that are reshaping how businesses
-                    connect with customers. Discover strategies that can enhance
-                    your marketing campaigns and grow your business.
-                  </p>
-                  <p class="red">Read More...</p>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-3">
-              <a
-                href="https://www.mcgregor-boyall.com/resources/blog/the-future-of-digital-recruitment--emerging-trends-and-strategies/"
-              >
-                <div class="news-box">
-                  <!-- <img src="./asset/img/news2.png" class="wd-100" /> -->
-                  <p class="mt-20 mb-10">
-                    The recruitment landscape is rapidly evolving. This article
-                    explores how digital tools and technologies are transforming
-                    the hiring process, with insights on how to stay competitive
-                    and recruit top talent in the digital age.
-                  </p>
-                  <p class="red">Read More...</p>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-3">
-              <a
-                href="https://www.forbes.com/councils/forbesbusinesscouncil/2023/01/19/how-social-media-is-changing-business-strategies/"
-              >
-                <div class="news-box">
-                  <!-- <img src="./asset/img/news3.png" class="wd-100" /> -->
-                  <p class="mt-20 mb-10">
-                    Social media platforms are no longer just for connecting
-                    with friends—they’re powerful tools for businesses. Explore
-                    how brands use social media to build awareness, engage
-                    customers, and drive sales in innovative ways.
-                  </p>
-                  <p class="red">Read More...</p>
-                </div>
-              </a>
-            </div>
-            <div class="col-md-3">
-              <a
-                href="https://www.ismartrecruit.com/blog-top-innovative-recruitment-methods-for-recruiters"
-              >
-                <div class="news-box">
-                  <!-- <img src="./asset/img/news1.png" class="wd-100" /> -->
-                  <p class="mt-20 mb-10">
-                    Discover the latest recruitment strategies for white-collar
-                    roles and how companies are adapting their hiring processes
-                    to attract the best talent. Learn about emerging tools and
-                    techniques in corporate recruitment.
-                  </p>
-                  <p class="red">Read More...</p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ADVERTISING SECTION -->
-    <section class="border-tb" style="overflow: hidden">
-      <div class="container-fluid light-gradient-section">
-        <div class="row text-center mb-5">
-          <div class="col-12">
-            <h3 class="heading-red">Unleashing</h3>
-            <h3 class="heading">the Viral Potential of Your Brand</h3>
-          </div>
-        </div>
-        <div class="row align-items-start">
-          <!-- Left Section -->
-          <div class="col-lg-6 col-md-12 gradient-box p-4">
-            <h4 class="heading-main-md-who mb-4">Who do we serve?</h4>
-            <div class="line mb-4"></div>
-            <div class="row text-center gy-4">
-              <div class="col-4">
-                <div class="icon-card">
-                  <i class="fas fa-building icon-img"></i>
-                  <p class="heading-title-sm mt-2">Brands</p>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="icon-card">
-                  <i class="fas fa-users-cog icon-img"></i>
-                  <p class="heading-title-sm mt-2">Organizations</p>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="icon-card">
-                  <i class="fas fa-user icon-img"></i>
-                  <p class="heading-title-sm mt-2">Individuals</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Right Section -->
-          <div class="col-lg-6 col-md-12 gradient-box p-4">
-            <h4 class="heading-main-md-who mb-4">Where do we serve?</h4>
-            <div class="line mb-4"></div>
-            <div class="row text-center gy-4">
-              <div class="col-4">
-                <div class="icon-card">
-                  <i class="fas fa-paint-brush icon-img"></i>
-                  <p class="heading-title-sm mt-2">Branding</p>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="icon-card">
-                  <i class="fas fa-laptop-code icon-img"></i>
-                  <p class="heading-title-sm mt-2">Digital Media</p>
-                </div>
-              </div>
-              <div class="col-4">
-                <div class="icon-card">
-                  <i class="fas fa-newspaper icon-img"></i>
-                  <p class="heading-title-sm mt-2">Digital Publishing</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- WORDS FROM OUT CLIENTS SECTION -->
-    <div class="section-padding" style="overflow: hidden">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 center mb-20">
-            <h3 class="heading-main-md mb-20">Voices That Inspire Us</h3>
-            <div class="col-md-5"></div>
-            <div class="col-md-2 offset-md-4 line"></div>
-
-            <div class="col-md-5"></div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <div class="owl-carousel client-testimonial-carousel">
-              <div class="single-testimonial-item">
-                <div class="row">
-                  <div class="col-md-8">
-                    <h3>Rahul Kumar <span>11 months ago</span></h3>
-                  </div>
-                  <div
-                    class="col-md-4 gogle-logo"
-                    style="justify-content: end; display: flex"
-                  >
-                    <!-- <img
-                      src="./asset/images/google-logo.webp"
-                      style="width: 50%"
-                      class=""
-                    /> -->
-                  </div>
-                  <div class="col-md-12">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                  </div>
-                  <div class="col-md-12">
-                    <p class="testim-p">
-                      Working with Sortout Media was a game-changer for our
-                      recruitment strategy. Their expertise in digital marketing
-                      helped us reach the right talent faster and more
-                      effectively.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-testimonial-item">
-                <div class="row">
-                  <div class="col-md-8">
-                    <h3>Priya Sharma<span>4 months ago</span></h3>
-                  </div>
-                  <div
-                    class="col-md-4 gogle-logo"
-                    style="justify-content: end; display: flex"
-                  >
-                    <!-- <img
-                      src="./asset/images/google-logo.webp"
-                      style="width: 50%"
-                      class=""
-                    /> -->
-                  </div>
-                  <div class="col-md-12">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                  </div>
-                  <div class="col-md-12">
-                    <p class="testim-p">
-                      The team at Sortout Media went above and beyond to elevate
-                      our brand presence online. Their creative strategies and
-                      timely execution have made a significant difference.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-testimonial-item">
-                <div class="row">
-                  <div class="col-md-8">
-                    <h3>Anil Verma<span>2 months ago</span></h3>
-                  </div>
-                  <div
-                    class="col-md-4 gogle-logo"
-                    style="justify-content: end; display: flex"
-                  >
-                    <!-- <img
-                      src="./asset/images/google-logo.webp"
-                      style="width: 50%"
-                      class=""
-                    /> -->
-                  </div>
-                  <div class="col-md-12">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                  </div>
-                  <div class="col-md-12">
-                    <p class="testim-p">
-                      Sortout Media’s innovative approach to recruitment and
-                      marketing has transformed the way we connect with clients
-                      and candidates alike. They truly understand our needs.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="single-testimonial-item">
-                <div class="row">
-                  <div class="col-md-8">
-                    <h3>Sonia Reddy<span>2 months ago</span></h3>
-                  </div>
-                  <div
-                    class="col-md-4 gogle-logo"
-                    style="justify-content: end; display: flex"
-                  >
-                    <!-- <img
-                      src="./asset/images/google-logo.webp"
-                      style="width: 50%"
-                      class=""
-                    /> -->
-                  </div>
-                  <div class="col-md-12">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                  </div>
-                  <div class="col-md-12">
-                    <p class="testim-p">
-                      The strategies implemented by Sortout Media have not only
-                      boosted our social media engagement but also strengthened
-                      our brand’s identity in the market. We couldn’t be
-                      happier!
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ################################### -->
-
-    <!-- our team section -->
-    <section class="border-tb" style="overflow: hidden">
-      <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-        rel="stylesheet"
-      />
-      <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-        rel="stylesheet"
-      />
-      <style>
-        .sec-heading {
-          margin-bottom: 50px;
+    <script>
+      function toggleServices(id) {
+        let serviceList = document.getElementById(id);
+        if (serviceList.style.display === "block") {
+          serviceList.style.display = "none";
+        } else {
+          serviceList.style.display = "block";
         }
-        .sec-heading h2 {
-          text-align: center;
-          font-family: allura;
-          font-size: 80px;
-        }
-        .clients {
-          padding: 200px 0;
-        }
-        .boxx {
-          display: grid;
-          align-items: center;
-          justify-items: center;
-          width: 60%;
-          height: auto;
-          transition: transform 0.5s ease-in;
-          margin: 8px auto;
-        }
-        .boxx img {
-          max-width: 100%;
-          max-height: 100%;
-          width: 100%;
-        }
-        .boxx:hover {
-          transform: scale(1.2);
-        }
-      </style>
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.13/js/intlTelInput-jquery.min.js"></script>
-      <script></script>
-
-      <script>
-        $(document).ready(function () {
-          $(".owl-carousel").owlCarousel({
-            responsive: {
-              0: {
-                items: 1,
-              },
-              500: {
-                items: 1,
-              },
-              600: {
-                items: 1,
-              },
-              800: {
-                items: 2,
-              },
-              1200: {
-                items: 3,
-              },
-            },
-            margin: 30,
-            loop: true,
-            autoplay: true,
-            dots: true,
-          });
-        });
-      </script>
-
-      <script>
-        $(".clients-carousel").owlCarousel({
-          autoplay: true,
-          loop: true,
-          margin: 15,
-          dots: false,
-          slideTransition: "linear",
-          autoplayTimeout: 4500,
-          autoplayHoverPause: false,
-          autoplaySpeed: 4500,
-          responsive: {
-            0: {
-              items: 2,
-            },
-            500: {
-              items: 3,
-            },
-            600: {
-              items: 4,
-            },
-            800: {
-              items: 5,
-            },
-            1200: {
-              items: 6,
-            },
-          },
-        });
-      </script>
-      <script>
-        function onSubmit(token) {
-          document.getElementById("contactForm").submit();
-        }
-      </script>
-
-      <div class="float-sm">
-        <a href="https://www.instagram.com/sortoutmedia/" target="_blank">
-          <div class="fl-fl float-fb">
-            <i class="fab fa-instagram fsl-icons"></i>
-            <p>Follow us!</p>
-          </div></a
-        >
-
-        <a
-          href="https://www.facebook.com/profile.php?id=61556452066209"
-          target="_blank"
-        >
-          <div class="fl-fl float-tw">
-            <i class="fab fa-facebook-f fsl-icons"></i>
-            <p>Like us!</p>
-          </div></a
-        >
-
-        <a href="" target="_blank">
-          <div class="fl-fl float-gp">
-            <i class="fab fa-google-plus fsl-icons"></i>
-            <p>Recommend us!</p>
-          </div></a
-        >
-
-        <a
-          href="https://youtu.be/tw-xk-Pb-zA?si=QMTwuvhEuTegpqDr"
-          target="_blank"
-        >
-          <div class="fl-fl float-rs">
-            <i class="fab fa-youtube fsl-icons"></i>
-            <p>Suscribe now !</p>
-          </div></a
-        >
-
-        <a href="" target="_blank">
-          <div class="fl-fl float-ig">
-            <i class="fab fa-twitter fsl-icons"></i>
-            <p>Follow us!</p>
-          </div></a
-        >
-
-        <a
-          href="https://www.linkedin.com/company/104376933/admin/dashboard/"
-          target="_blank"
-        >
-          <div class="fl-fl float-pn">
-            <i class="fab fa-linkedin fsl-icons"></i>
-            <p>Follow us!</p>
-          </div></a
-        >
-      </div>
-
-      <!-- Floating Social Media bar Ends -->
-
-      <div class="container-fluid fsbg">
-        <a href="https://wa.me/919818559102">
-          <lord-icon
-            class="wp-idget bounce"
-            src="https://cdn.lordicon.com/dhcosedn.json"
-            trigger="hover"
-            style="width: 50px; height: 50px"
-          >
-          </lord-icon>
-
-          /></a
-        >
-        <div id="contact" class="footer-strip center-mb">
-          <h3 class="footer-strip-heading">
-            Need help? Call our support team at
-            <a href="tel:+919818559102" style="color: #fff !important"
-              >+91 9818559102</a
-            >
-          </h3>
-        </div>
-      </div>
-      <div
-        class="row triangle-down"
-        style="margin-right: 0px; margin-left: 0px"
-      >
-        <div class="col-md-5"></div>
-        <div class="col-md-2">
-          <div id="triangle-down"></div>
-        </div>
-        <div class="col-md-5"></div>
-      </div>
-      <footer
-        style="
-          background-color: #0a0a0a;
-          color: #fff;
-          padding: 60px 20px;
-          font-family: Arial, sans-serif;
-        "
-      >
-        <div class="container" style="max-width: 1200px; margin: 0 auto">
-          <!-- Footer Grid -->
-          <div
-            class="footer-grid"
-            style="
-              display: flex;
-              flex-wrap: wrap;
-              gap: 40px;
-              justify-content: space-between;
-            "
-          >
-            <!-- Column 1: Marketing -->
-            <div style="flex: 1 1 200px; min-width: 200px">
-              <h4 style="margin-bottom: 15px; color: #ff4b4b">Marketing</h4>
-              <ul
-                style="
-                  list-style: none;
-                  padding: 0;
-                  font-size: 14px;
-                  color: #aaa;
-                "
-              >
-                <li style="margin-bottom: 10px">
-                  <a href="#seo" style="text-decoration: none; color: #fff"
-                    >SEO Services</a
-                  >
-                </li>
-                <li style="margin-bottom: 10px">
-                  <a
-                    href="#content-marketing"
-                    style="text-decoration: none; color: #fff"
-                    >Content Marketing</a
-                  >
-                </li>
-                <li style="margin-bottom: 10px">
-                  <a
-                    href="#email-marketing"
-                    style="text-decoration: none; color: #fff"
-                    >Email Marketing</a
-                  >
-                </li>
-                <li>
-                  <a href="#ppc" style="text-decoration: none; color: #fff"
-                    >PPC Advertising</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Column 2: Advertising -->
-            <div style="flex: 1 1 200px; min-width: 200px">
-              <h4 style="margin-bottom: 15px; color: #ff4b4b">Advertising</h4>
-              <ul
-                style="
-                  list-style: none;
-                  padding: 0;
-                  font-size: 14px;
-                  color: #aaa;
-                "
-              >
-                <li style="margin-bottom: 10px">
-                  <a
-                    href="#social-ads"
-                    style="text-decoration: none; color: #fff"
-                    >Social Media Ads</a
-                  >
-                </li>
-                <li style="margin-bottom: 10px">
-                  <a
-                    href="#video-ads"
-                    style="text-decoration: none; color: #fff"
-                    >Video Advertising</a
-                  >
-                </li>
-                <li style="margin-bottom: 10px">
-                  <a
-                    href="#influencer"
-                    style="text-decoration: none; color: #fff"
-                    >Influencer Marketing</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#retargeting"
-                    style="text-decoration: none; color: #fff"
-                    >Retargeting Ads</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Column 3: Designing -->
-            <div style="flex: 1 1 200px; min-width: 200px">
-              <h4 style="margin-bottom: 15px; color: #ff4b4b">Designing</h4>
-              <ul
-                style="
-                  list-style: none;
-                  padding: 0;
-                  font-size: 14px;
-                  color: #aaa;
-                "
-              >
-                <li style="margin-bottom: 10px">
-                  <a
-                    href="#web-design"
-                    style="text-decoration: none; color: #fff"
-                    >Website Design</a
-                  >
-                </li>
-                <li style="margin-bottom: 10px">
-                  <a
-                    href="#graphic-design"
-                    style="text-decoration: none; color: #fff"
-                    >Graphic Design</a
-                  >
-                </li>
-                <li style="margin-bottom: 10px">
-                  <a
-                    href="#logo-design"
-                    style="text-decoration: none; color: #fff"
-                    >Logo Creation</a
-                  >
-                </li>
-                <li>
-                  <a href="#ux-ui" style="text-decoration: none; color: #fff"
-                    >UX/UI Design</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Column 4: Client Testimonials -->
-            <div style="flex: 1 1 250px; min-width: 250px">
-              <h4 style="margin-bottom: 15px; color: #ff4b4b">
-                Client Testimonials
-              </h4>
-              <div style="font-size: 14px; color: #aaa; margin-bottom: 15px">
-                <p>
-                  "Sortout Media helped us skyrocket our business visibility. We
-                  highly recommend their services!" -
-                  <strong>John Doe, CEO</strong>
-                </p>
-                <p>
-                  "Their digital marketing expertise is unparalleled. We saw a
-                  noticeable improvement in our leads." -
-                  <strong>Jane Smith, Marketing Director</strong>
-                </p>
-              </div>
-            </div>
-
-            <!-- Column 5: Legal Links -->
-            <div style="flex: 1 1 250px; min-width: 250px">
-              <h4 style="margin-bottom: 15px; color: #ff4b4b">Legal</h4>
-              <ul
-                style="
-                  list-style: none;
-                  padding: 0;
-                  font-size: 14px;
-                  color: #aaa;
-                "
-              >
-                <li style="margin-bottom: 10px">
-                  <a
-                    href="#privacy-policy"
-                    style="text-decoration: none; color: #fff"
-                    >Privacy Policy</a
-                  >
-                </li>
-                <li style="margin-bottom: 10px">
-                  <a href="#terms" style="text-decoration: none; color: #fff"
-                    >Terms & Conditions</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#disclaimer"
-                    style="text-decoration: none; color: #fff"
-                    >Disclaimer</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Column 6: Quick Links -->
-            <div style="flex: 1 1 250px; min-width: 250px">
-              <h4 style="margin-bottom: 15px; color: #ff4b4b">Quick Links</h4>
-              <ul
-                style="
-                  list-style: none;
-                  padding: 0;
-                  font-size: 14px;
-                  color: #aaa;
-                "
-              >
-                <li style="margin-bottom: 10px">
-                  <a href="#about-us" style="text-decoration: none; color: #fff"
-                    >About Us</a
-                  >
-                </li>
-                <li style="margin-bottom: 10px">
-                  <a href="#services" style="text-decoration: none; color: #fff"
-                    >Our Services</a
-                  >
-                </li>
-                <li style="margin-bottom: 10px">
-                  <a href="#blog" style="text-decoration: none; color: #fff"
-                    >Blog</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#contact-us"
-                    style="text-decoration: none; color: #fff"
-                    >Contact Us</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Column 7: Resources -->
-            <div style="flex: 1 1 250px; min-width: 250px">
-              <h4 style="margin-bottom: 15px; color: #ff4b4b">Resources</h4>
-              <ul
-                style="
-                  list-style: none;
-                  padding: 0;
-                  font-size: 14px;
-                  color: #aaa;
-                "
-              >
-                <li style="margin-bottom: 10px">
-                  <a
-                    href="#case-studies"
-                    style="text-decoration: none; color: #fff"
-                    >Case Studies</a
-                  >
-                </li>
-                <li style="margin-bottom: 10px">
-                  <a
-                    href="#whitepapers"
-                    style="text-decoration: none; color: #fff"
-                    >Whitepapers</a
-                  >
-                </li>
-                <li>
-                  <a href="#webinars" style="text-decoration: none; color: #fff"
-                    >Webinars</a
-                  >
-                </li>
-              </ul>
-            </div>
-
-            <!-- Column 8: Support -->
-            <div style="flex: 1 1 250px; min-width: 250px">
-              <h4 style="margin-bottom: 15px; color: #ff4b4b">Support</h4>
-              <ul
-                style="
-                  list-style: none;
-                  padding: 0;
-                  font-size: 14px;
-                  color: #aaa;
-                "
-              >
-                <li style="margin-bottom: 10px">
-                  <a href="#faqs" style="text-decoration: none; color: #fff"
-                    >FAQs</a
-                  >
-                </li>
-                <li style="margin-bottom: 10px">
-                  <a
-                    href="#contact-form"
-                    style="text-decoration: none; color: #fff"
-                    >Contact Form</a
-                  >
-                </li>
-                <li>
-                  <a
-                    href="#help-center"
-                    style="text-decoration: none; color: #fff"
-                    >Help Center</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Divider -->
-          <div style="margin: 40px 0; height: 1px; background: #333"></div>
-
-          <!-- Contact Info Section -->
-          <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              flex-wrap: wrap;
-              gap: 20px;
-              font-size: 14px;
-              color: #aaa;
-            "
-          >
-            <div style="flex: 1 1 200px; min-width: 200px">
-              <h4 style="margin-bottom: 10px; color: #ff4b4b">Contact Us</h4>
-              <ul
-                style="
-                  list-style: none;
-                  padding: 0;
-                  font-size: 14px;
-                  color: #aaa;
-                "
-              >
-                <li
-                  style="
-                    display: flex;
-                    align-items: center;
-                    margin-bottom: 10px;
-                  "
-                >
-                  <i
-                    class="fas fa-phone"
-                    style="color: #ff4b4b; margin-right: 10px"
-                  ></i>
-                  <span>9818559102</span>
-                </li>
-                <li
-                  style="
-                    display: flex;
-                    align-items: center;
-                    margin-bottom: 10px;
-                  "
-                >
-                  <i
-                    class="fas fa-envelope"
-                    style="color: #ff4b4b; margin-right: 10px"
-                  ></i>
-                  <span>info@example.com</span>
-                </li>
-                <li style="display: flex; align-items: center">
-                  <i
-                    class="fas fa-map-marker-alt"
-                    style="color: #ff4b4b; margin-right: 10px"
-                  ></i>
-                  <span
-                    >Spaze i-Tech Park, Sector 49, Sohna Road, Gurugram, Pin
-                    122018</span
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Copyright Section -->
-          <div
-            style="
-              text-align: center;
-              font-size: 12px;
-              color: #aaa;
-              padding: 20px 0;
-              background-color: #111;
-            "
-          >
-            <p>&copy; 2025 Sortout Media. All Rights Reserved.</p>
-          </div>
-        </div>
-      </footer>
-
-      <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    </section>
+      }
+    </script>
+    <!-- Bootstrap Accordion Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
