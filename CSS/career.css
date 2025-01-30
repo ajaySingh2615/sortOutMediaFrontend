@@ -1,784 +1,698 @@
-/* Root Variables for Styling */
-:root {
-  --primary-color: #c90001; /* Red for accents */
-  --secondary-color: #ffffff; /* White for contrast */
-  --dark-color: #1c1c1c; /* Deep black for text */
-  --text-color: #000000; /* Standard black */
-  --font-family-main: "Roboto", sans-serif; /* Main font */
-  --border-radius: 12px; /* Rounded corners */
-  --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-/* General Reset */
-/* General Reset */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Roboto", sans-serif;
-  background-color: #f8f9fa;
-  color: #333;
-}
-
-/* Section Background */
-.bg_smm {
-  background-color: #f1f1f1; /* Light gray background */
-  padding: 50px 0;
-  overflow: hidden;
-}
-
-/* Container with responsive widths */
-.container {
-  padding: 50px 0px;
-}
-.col-md-12 {
-  padding: 0px;
-}
-
-/* Row Layout */
-.row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* Marquee Text */
-/* Modern Marquee Text Styling */
-.smm-marq {
-  font-size: 1.1rem; /* Large and readable text */
-  font-weight: bold;
-  color: #000; /* Vibrant red color */
-  text-transform: uppercase; /* Convert text to uppercase for emphasis */
-  letter-spacing: 1px; /* Add spacing between letters */
-  background: linear-gradient(90deg, #c90001, #ff9f45, #ffe347, #c90001);
-  background-size: 200% auto; /* Gradient effect animation */
-  animation: gradientScroll 5s linear infinite; /* Smooth gradient animation */
-  padding: 20px 0;
-}
-
-/* Padding for elements in the marquee */
-.pdr-60 {
-  margin-right: 5px; /* Space between repeating items */
-}
-
-/* Gradient Animation */
-@keyframes gradientScroll {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-/* Optional: Adjust marquee spacing and behavior */
-marquee.smm-marq {
-  width: 100%;
-  padding: 10px 0; /* Add padding for better appearance */
-  overflow: hidden; /* Hide overflow text outside the marquee */
-  background-color: #000; /* Contrast background for better visibility */
-  border-top: 2px solid #c90001; /* Top border for emphasis */
-  border-bottom: 2px solid #c90001; /* Bottom border for emphasis */
-  box-shadow: 0 5px 15px rgba(255, 76, 97, 0.5); /* Subtle glow effect */
-}
-
-/* Heading Styles */
-.heading-main {
-  font-size: 3.5rem; /* Larger font size for a more prominent heading */
-  font-weight: 900; /* Bold font weight for emphasis */
-  line-height: 1.1; /* Adjust line height for better readability */
-  color: #c90001; /* Slightly darker color for better contrast */
-  margin-bottom: 20px;
-  margin-top: 40px; /* Increase top margin for better spacing */
-  letter-spacing: -0.9px; /* Small letter-spacing for sleek look */
-}
-
-.secondary-heading-main {
-  font-size: 2.5rem; /* Larger font size for a more prominent heading */
-  font-weight: 600; /* Bold font weight for emphasis */
-  line-height: 1.1; /* Adjust line height for better readability */
-  color: #000; /* Slightly darker color for better contrast */
-  margin-bottom: 20px;
-  margin-top: 40px; /* Increase top margin for better spacing */
-  letter-spacing: -0.9px; /* Small letter-spacing for sleek look */
-}
-
-.sec-white {
-  color: #fff;
-}
-
-.heading-title-md {
-  font-size: 1.8rem; /* Larger title size */
-  font-weight: 600; /* Semi-bold for emphasis */
-  color: #444; /* Subtle dark color for the title */
-  margin-bottom: 20px;
-  letter-spacing: -0.5px; /* Slight letter-spacing */
-  text-transform: none; /* Keep text in sentence case */
-  line-height: 1.2;
-}
-
-/* Paragraph Styles */
-.p-lg {
-  font-size: 1.5rem; /* Larger paragraph text for better readability */
-  color: #555; /* Softer color for paragraphs */
-  line-height: 1.2; /* Increased line-height for readability */
-  margin-bottom: 20px;
-  max-width: 800px; /* Limit width for better text control */
-  margin-left: auto; /* Center the text block */
-  margin-right: auto; /* Center the text block */
-  font-weight: 500;
-}
-
-.p-white {
-  color: #fff;
-}
-
-/* Button Styles */
-.btn-primary {
-  background-color: #c90001; /* Red background */
-  color: white;
-  border: none;
-  padding: 18px 32px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
-}
-
-.btn-primary:hover {
-  background-color: #970001; /* Slightly darker red */
-  transform: scale(1.05);
-}
-
-/* Modern Image Styling */
-/* Modern 3D Image Styling */
-/* Modern Image Styling with Glowing Effect */
-.wd-100 {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 20px; /* Slight rounded corners */
-  transition: all 0.3s ease-in-out; /* Smooth transition for hover */
-  transform-style: preserve-3d; /* Enable 3D space for the image */
-  position: relative;
-  will-change: transform, box-shadow; /* Optimize for performance during animation */
-  filter: brightness(1.1) contrast(1.2); /* Increase brightness and contrast on hover */
-}
-
-/* Hover Effect for 3D */
-.wd-100:hover {
-  transform: perspective(1500px) rotateY(10deg) rotateX(10deg); /* Slight 3D rotation effect */
-  filter: brightness(1.1) contrast(1.2); /* Increase brightness and contrast on hover */
-}
-
-/* Glowing Effect on Hover */
-.wd-100::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 20px;
-  opacity: 0; /* Initially invisible */
-  transition: opacity 0.3s ease, box-shadow 0.3s ease; /* Smooth fade and shadow effect */
-}
-
-/* Glow on Hover */
-.wd-100:hover::after {
-  opacity: 1; /* Glow appears on hover */
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.7); /* More intense glow shadow */
-}
-
-/* Optional Glowing Borders (Further Enhancement) */
-.wd-100:hover {
-  filter: brightness(1.2) contrast(1.3); /* Stronger brightness and contrast */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .wd-100 {
-    border-radius: 15px; /* Smaller radius on mobile */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Reduced shadow for mobile */
-  }
-
-  .wd-100:hover {
-    transform: scale(1.02); /* More subtle zoom effect on mobile */
-    box-shadow: 0 0 20px rgba(255, 99, 132, 0.5); /* Light glow effect on mobile */
-  }
-}
-
 /* ####################################### */
 /* Navigation Links */
 /* Navigation Container */
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background-color: #fff;
-  color: #000;
+.navbar {
+  height: 70px; /* Fixed navbar height */
   position: sticky;
+  display: flex;
+  align-items: center;
   top: 0;
+  width: 100%;
+  background: #ffffff;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar .container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Logo */
-.logo-img {
-  max-width: 150px; /* Proportional to smaller screens */
-  height: 60px; /* Maintain aspect ratio */
-  margin-left: 10px;
-  transition: transform 0.3s ease;
+.navbar-logo img {
+  width: 200px; /* Increase this for bigger logo */
+  height: 80px; /* Maintain aspect ratio */
+  max-height: 50px; /* Restrict navbar height */
+  object-fit: contain; /* Ensures proper scaling */
 }
 
-.logo-img:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-/* Navigation Links */
-.nav-links {
+/* Navbar Links */
+.navbar-links ul {
   display: flex;
+  gap: 20px;
   list-style: none;
-  gap: 15px; /* Maintain spacing between links */
   margin: 0;
   padding: 0;
 }
 
-.nav-links li {
-  position: relative;
-}
-
-/* Link Styles */
-.nav-link {
+.job-anchor {
   text-decoration: none;
-  color: #000;
-  font-size: 1.2rem; /* Consistent text size */
-  font-weight: 500;
-  padding: 8px 15px; /* Adjusted for better proportions */
-  border-radius: 4px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.nav-link:hover {
-  background-color: #333333;
-  color: #ff7f7f;
+.navbar-links ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333333;
+  padding: 10px 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links ul li a:hover {
+  color: #d10000;
   transform: scale(1.05);
 }
 
-.mar-20 {
-  margin-top: 10px;
+.navbar-links ul li a.active {
+  color: #d10000;
+  border-bottom: 2px solid #d10000;
 }
 
-/* Register Button */
-.register-button {
-  background: linear-gradient(45deg, #c90001, #333333);
-  color: #fff;
-  padding: 18px 32px;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-  border: none;
-  transition: background-color 0.3s ease, transform 0.3s ease,
-    box-shadow 0.3s ease;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+/* Call-to-Action (CTA) Button */
+.nav-cta {
+  background: #d10000;
+  color: #ffffff !important;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.register-button:hover {
-  background: linear-gradient(45deg, #c90001, #ff512f);
+.nav-cta:hover {
+  background: #a00000;
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(255, 81, 47, 0.5);
 }
 
-/* Hamburger Menu (Mobile Only) */
-.menu-toggle {
+/* Mobile Menu Button */
+.navbar-toggle {
   display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #333333;
+  cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    background-color: #333;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    padding: 0;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    z-index: 999;
-  }
-
-  .nav-links.active {
-    max-height: 500px; /* Enough for all links */
-    padding: 20px 0;
-  }
-
-  .menu-toggle {
+@media (max-width: 991px) {
+  .navbar-toggle {
     display: block;
   }
 
-  .nav-link {
-    font-size: 1.2rem; /* Slightly smaller for mobile */
-    padding: 10px 20px;
+  .navbar-links {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background: #ffffff;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: block;
   }
 
-  .register-button {
-    padding: 12px 20px; /* Fit smaller screens */
+  .navbar-links ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .navbar-links ul li {
+    text-align: left;
+  }
+
+  .navbar-links.active {
+    transform: translateX(0);
+  }
+}
+
+/* Sticky Background on Scroll */
+.navbar.scrolled {
+  background: #f8f9fa;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Alignment */
+@media (max-width: 767px) {
+  .navbar .container {
+    padding: 0 15px;
+  }
+
+  .navbar-links ul li a {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+}
+
+/* Career Section */
+.career-section {
+  background: #ffffff;
+  padding: 80px 0;
+  overflow: hidden;
+}
+
+/* Heading Styling */
+.career-heading {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #d10000;
+  margin-bottom: 20px;
+}
+
+/* Description Styling */
+.career-description {
+  font-size: 1.2rem;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+/* Button Styling */
+.career-btn .btn-primary {
+  background-color: #d10000;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 50px;
+  transition: all 0.3s ease-in-out;
+}
+
+.career-btn .btn-primary:hover {
+  background-color: #a00000;
+  transform: translateY(-3px);
+}
+
+/* Image Styling */
+.career-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .career-heading {
+    font-size: 2.4rem;
+  }
+
+  .career-description {
+    font-size: 1.1rem;
+  }
+
+  .career-btn .btn-primary {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+}
+
+@media (max-width: 767px) {
+  .career-section {
+    text-align: center;
+    padding: 60px 15px;
+  }
+
+  .career-heading {
+    font-size: 2rem;
+  }
+
+  .career-description {
+    font-size: 1rem;
+  }
+
+  .career-btn {
+    display: inline-block;
+  }
+
+  .career-image {
+    max-width: 80%;
+    margin-top: 30px;
+  }
+}
+
+/* Core Values Section */
+/* Core Values Section */
+.core-values-section {
+  background-color: #d10000;
+  padding: 80px 0;
+  text-align: center;
+}
+
+/* Heading Styling */
+.core-values-heading {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 40px;
+}
+
+/* Value Boxes */
+.value-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  /* padding-bottom: 20px; */
+}
+
+.value-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .core-values-heading {
+    font-size: 2.4rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .core-values-section {
+    padding: 60px 15px;
+  }
+
+  .core-values-heading {
+    font-size: 2rem;
+  }
+
+  .value-box {
+    font-size: 1rem;
+    padding: 15px;
+    margin-bottom: 20px; /* Adds extra spacing for small screens */
+  }
+}
+
+/* Open Positions Section */
+/* Open Positions Section */
+/* 🌟 Job Listing Section Styles */
+/* 🌟 Job Listing Section */
+/* 🌟 Job Listing Section */
+/* 🌟 Job Listing Section */
+#job-listing {
+  padding: 60px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.job-listing-heading {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #d10000;
+  margin-bottom: 40px;
+}
+
+/* ✅ Filters Styling */
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.filters input {
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #d10000;
+  border-radius: 25px;
+  width: 230px;
+  text-align: center;
+  transition: 0.3s ease-in-out;
+}
+
+.filters input:focus {
+  outline: none;
+  border-color: #a00000;
+  box-shadow: 0 0 10px rgba(209, 0, 0, 0.3);
+}
+
+/* 🌟 Table Scrollable Container */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 🌟 Table Styling */
+.table {
+  width: 100%;
+  min-width: 900px; /* Prevents table from shrinking too much */
+  border-collapse: collapse;
+}
+
+.table th {
+  background: #d10000;
+  color: white;
+  padding: 14px;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.table td {
+  padding: 14px;
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap; /* Prevents text from breaking */
+}
+
+/* ✅ Hover Effect */
+.table-hover tbody tr:hover {
+  background-color: #ffe6e6;
+}
+
+/* ✅ Apply Button */
+.apply-btn {
+  display: inline-block;
+  background: #d10000;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+.apply-btn:hover {
+  background: #a00000;
+  transform: scale(1.05);
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  .table-responsive {
+    overflow-x: auto; /* Enables horizontal scrolling */
+  }
+
+  .filters input {
+    width: 200px;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .apply-btn {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}
+
+/* ✅ Pagination */
+.pagination-container {
+  margin-top: 20px;
+}
+
+.pagination-btn {
+  padding: 10px 15px;
+  border-radius: 50px;
+  background: #d10000;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease-in-out;
+  border: none;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.pagination-btn:hover,
+.pagination-btn.active {
+  background: #a00000;
+  transform: scale(1.1);
+}
+
+/* ✅ Extra Responsive Styling */
+@media (max-width: 576px) {
+  .filters input {
+    width: 180px;
+  }
+
+  .pagination-btn {
+    padding: 8px 12px; /* Smaller buttons on mobile */
+  }
+}
+
+/* 🌟 Pagination Container */
+#pagination-numbers {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+/* ✅ Individual Page Numbers */
+#pagination-numbers button {
+  padding: 10px 16px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  background: #d10000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* ✅ Hover Effect */
+#pagination-numbers button:hover {
+  background: #b30000;
+  transform: scale(1.1);
+}
+
+/* ✅ Active Page */
+#pagination-numbers button.active {
+  background: #ff4b4b;
+  box-shadow: 0 4px 10px rgba(255, 75, 75, 0.3);
+}
+
+/* 🌟 Responsive Design */
+@media (max-width: 576px) {
+  #pagination-numbers {
+    gap: 5px;
+  }
+
+  #pagination-numbers button {
+    padding: 8px 12px;
     font-size: 1rem;
   }
 }
 
-/* Responsive for moblie */
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-  /* Row Layout Adjustments */
-  .row {
-    flex-direction: column; /* Stack elements vertically */
-    align-items: flex-start; /* Align items to the start */
-    gap: 15px; /* Add spacing between items */
-  }
-
-  /* Marquee Text Adjustments */
-  .smm-marq {
-    font-size: 0.9rem; /* Smaller text for better fit */
-    padding: 15px 0; /* Adjust padding */
-    letter-spacing: 0.5px; /* Slightly tighter spacing */
-  }
-
-  /* Headings Adjustments */
-  .heading-main {
-    font-size: 2.5rem; /* Reduce font size for headings */
-    margin-top: 20px; /* Adjust top margin */
-  }
-
-  .secondary-heading-main {
-    font-size: 2rem; /* Adjust secondary heading size */
-  }
-
-  .heading-title-md {
-    font-size: 1.4rem; /* Smaller title size */
-    margin-bottom: 15px; /* Adjust margin */
-  }
-
-  /* Paragraph Styles Adjustments */
-  .p-lg {
-    font-size: 1.2rem; /* Smaller paragraph text */
-    margin-bottom: 15px; /* Reduce bottom margin */
-    max-width: 100%; /* Allow full width */
-    padding: 0 10px; /* Add side padding */
-  }
-
-  /* Button Adjustments */
-  .btn-primary {
-    padding: 14px 24px; /* Reduce padding */
-    font-size: 1rem; /* Adjust font size */
-    border-radius: 6px; /* Slightly smaller radius */
-  }
-
-  /* Image Adjustments */
-  .wd-100 {
-    border-radius: 10px; /* Smaller corner radius */
-  }
-
-  .wd-100:hover {
-    transform: scale(1.02); /* Subtle zoom */
-    box-shadow: 0 4px 10px rgba(255, 99, 132, 0.4); /* Light glow */
-  }
-
-  /* Marquee Container for Smaller Screens */
-  marquee.smm-marq {
-    padding: 8px 0; /* Adjust padding */
-    border-top: 1px solid #ff4c61; /* Thinner border */
-    border-bottom: 1px solid #ff4c61; /* Thinner border */
-  }
-}
-
-/* Extra Small Screens (max-width: 480px) */
-@media (max-width: 480px) {
-  .heading-main {
-    font-size: 2rem; /* Further reduce heading size */
-  }
-
-  .secondary-heading-main {
-    font-size: 1.6rem; /* Reduce secondary heading size */
-  }
-
-  .btn-primary {
-    padding: 12px 20px; /* Smaller buttons */
-    font-size: 0.9rem; /* Adjust font size */
-  }
-
-  .smm-marq {
-    font-size: 0.8rem; /* Adjust marquee font size */
-    padding: 10px 0; /* Reduce padding */
-  }
-
-  .p-lg {
-    font-size: 1rem; /* Smaller paragraph text */
-  }
-}
-
-/* Engaged Section */
-.smm-engage-section {
-  background-color: #fb0001;
-  padding: 50px 0;
-}
-
-.smm-engage-container {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.smm-col-left {
-  text-align: left;
-}
-
-.smm-col-right {
+/* 🌟 Job Application Section */
+.job-application-section {
+  background: linear-gradient(135deg, #d10000, #ff4b4b);
+  color: white;
+  padding: 80px 20px;
   text-align: center;
+  border-radius: 10px;
+  margin: 40px auto;
+  max-width: 900px;
+  box-shadow: 0 10px 30px rgba(255, 0, 0, 0.3);
+  transition: 0.3s ease-in-out;
 }
 
-.smm-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.job-application-section:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 40px rgba(255, 0, 0, 0.4);
 }
 
-.smm-image {
-  max-width: 120%; /* Ensure the image is responsive */
-  width: 140%; /* Adjust the width to make the GIF bigger */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 10px; /* Slight rounded corners for images */
-  transition: transform 0.3s ease-in-out; /* Smooth transition for hover */
-  background-color: transparent; /* Ensure the background is transparent */
-  display: block; /* Remove any inline element spacing */
-  margin: 0 auto; /* Center the image */
-}
-
-.smm-image:hover {
-  transform: scale(1.1); /* Increase the zoom effect for more impact */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .smm-heading-main {
-    font-size: 2rem; /* Adjust font size for mobile */
-    text-align: center; /* Center-align heading for mobile */
-  }
-
-  .smm-heading-title-md {
-    font-size: 1.2rem;
-    text-align: center; /* Center-align subtitle for mobile */
-  }
-
-  .smm-col-right img {
-    width: 80%; /* Smaller width for mobile */
-  }
-
-  .smm-engage-container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-
-/* Styles for Section 03 */
-.center {
-  text-align: center;
-}
-
-/* Headings and Paragraph */
-.secondary-heading-main-card {
-  font-size: 2.7rem;
-  color: #000;
-  margin-bottom: 50px;
-  font-weight: 600;
-}
-
-.p-lg-card {
-  font-size: 1.1rem;
-  color: #f8f9fa;
-  margin-bottom: 40px;
-}
-
-/* Info Boxes */
-.smm_box {
-  background-color: #fff;
-  border-radius: 12px;
-  padding: 30px 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin: 20px 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.smm_box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Title Styles */
-.heading-title {
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: #222;
-  margin: 0;
-  line-height: 1.5;
-}
-
-/* FOOTER */
-/* ################################################# */
-/* footer styles */
-.container-fluid.background {
-  background-color: #1a1a1a; /* Dark theme background */
-  color: white; /* White text for contrast */
-  padding: 20px 0;
-}
-
-.footer_p {
-  font-size: 18px;
+/* ✅ Heading */
+.job-heading {
+  font-size: 2.5rem;
   font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ✅ Description */
+.job-description {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.9;
+}
+
+/* ✅ Submit Button */
+.job-btn {
+  background: white;
+  color: #d10000;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  border: none;
+  outline: none;
+  display: inline-block;
+}
+
+.job-btn:hover {
+  background: #ffffffcc;
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* ✅ Remove Button Focus Outline */
+.job-btn:focus,
+.job-btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* 🌟 Responsive Design */
+@media (max-width: 768px) {
+  .job-application-section {
+    padding: 60px 15px;
+  }
+
+  .job-heading {
+    font-size: 2rem;
+  }
+
+  .job-description {
+    font-size: 1rem;
+  }
+
+  .job-btn {
+    padding: 10px 25px;
+    font-size: 1rem;
+  }
+}
+
+.footer-section {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 60px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-section h4 {
+  color: #ff4b4b;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+/* Footer Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.footer-links li {
   margin-bottom: 10px;
 }
 
-.para_footer {
-  margin: 5px 0;
-}
-
-.footerlinks {
-  font-size: 14px;
-  margin: 0;
+.footer-links li a {
   text-decoration: none;
-}
-
-a.white {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-a.white:hover {
-  color: #ff4d4d; /* Highlight color on hover */
-}
-
-.pd-10 {
-  padding: 10px;
-}
-
-.center-mb {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-h3 {
-  font-size: 16px;
-  margin: 0;
-}
-
-.footer_img {
-  width: 20px;
-  margin-top: 5px;
-}
-
-.col-md-2,
-.col-md-4,
-.col-md-5,
-.col-md-6,
-.col-md-8 {
-  margin-bottom: 15px; /* Add space between columns on smaller screens */
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-@media (max-width: 768px) {
-  .col-md-2,
-  .col-md-4,
-  .col-md-5,
-  .col-md-6,
-  .col-md-8 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-}
-
-/* Down Triangle */
-/* Floating Social Media Background */
-/* Floating Social Media Background */
-/* Floating Social Media Bar */
-/* Floating Social Media Bar */
-.container-fluid.fsbg {
-  background: #c90001; /* Solid red background */
-  padding: 10px 20px; /* Slight padding for minimal space */
-  text-align: center;
-  color: white;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  justify-content: center; /* Center the content */
-  align-items: center;
-  border-radius: 30px 30px 0 0; /* Rounded top corners */
-  box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.1); /* Light shadow effect */
-}
-
-/* Social Media Icon */
-.wp-idget {
-  margin: 0 12px; /* Space between icons */
-  width: 40px; /* Consistent size */
-  height: 40px; /* Consistent size */
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.wp-idget:hover {
-  transform: scale(1.1); /* Slight zoom effect */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Shadow on hover */
-}
-
-/* Footer Strip Text */
-.footer-strip {
-  margin-top: 10px; /* Space between the icons and text */
-  font-size: 1rem; /* Compact font size */
-  text-align: center;
-  color: white;
-  font-weight: 400;
-}
-
-/* Footer Heading Link */
-.footer-strip-heading a {
-  color: #ffd0d0; /* Light red for the link */
-  text-decoration: none;
-  font-weight: 600;
+  color: #ddd;
   transition: color 0.3s ease;
 }
 
-.footer-strip-heading a:hover {
-  color: white; /* White text on hover */
-  text-decoration: underline;
+.footer-links li a:hover {
+  color: #ff4b4b;
 }
 
-/* career */
-/*  */
-/*  */
-/*  */
-
-/* Open Positions */
-/* Icon style */
-.fas.fa-long-arrow-alt-right {
-  font-size: 30px; /* Adjust icon size */
-  color: black; /* Black color for the icon */
-  background-color: #fff; /* Dark background for the icon */
-  padding: 10px; /* Padding around the icon */
-  border-radius: 50%; /* Circular background */
-  transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 10px;
 }
 
-.fas.fa-long-arrow-alt-right:hover {
-  transform: translateX(5px); /* Move the icon to the right on hover */
-  color: #fff; /* Change icon color to white on hover */
-  background-color: #fb0000; /* Change background to red on hover */
+.social-icons a {
+  font-size: 1.5rem;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.positon-anchor {
+.social-icons a:hover {
+  color: #ff4b4b;
+  transform: scale(1.1);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.footer-bottom ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.footer-bottom ul li a {
   text-decoration: none;
+  color: #ddd;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
 }
 
-.position-box-red {
-  border-style: solid;
-  border-width: 3px 3px 3px 3px;
-  border-color: #fb0000;
-  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
-  margin: 0px 10px 0px 10px;
-  padding: 5px 40px 15px 40px;
-  border-radius: 11px 11px 11px 11px;
+.footer-bottom ul li a:hover {
+  color: #ff4b4b;
 }
 
-.position-box {
-  border-style: solid;
-  border-width: 3px 3px 3px 3px;
-  border-color: #252525;
-  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
-  margin: 0px 10px 0px 10px;
-  padding: 5px 40px 15px 40px;
-  border-radius: 11px 11px 11px 11px;
+.footer-logo img {
+  padding-bottom: 15px;
+  width: 180px; /* Adjust width as needed */
+  height: auto; /* Maintains aspect ratio */
+  max-width: 100%; /* Ensures responsiveness */
+  display: block;
+  margin: 0 auto; /* Centers the logo */
 }
 
-.divider-sec {
-  padding: 22px 0px;
-  border-bottom: 3px solid;
-  color: black;
+@media (max-width: 768px) {
+  .footer-logo img {
+    width: 140px; /* Smaller size for mobile */
+  }
 }
 
-i.fas.fa-location-arrow {
-  margin-right: 5px;
-}
-i.fas.fa-long-arrow-alt-right {
-  font-size: 26px;
-  margin-top: 30px;
-}
-.red {
-  color: #fb0000 !important;
-}
-.red-background {
-  background-color: red;
-}
+/* Responsive Design */
+@media (max-width: 991px) {
+  .footer-section .row {
+    flex-direction: column;
+    text-align: center;
+  }
 
-.heading-title-position-white {
-  font-size: 22px;
-  font-weight: 700;
-  color: #fff;
-}
+  .social-icons {
+    justify-content: center;
+  }
 
-.red-title {
-  color: #fb0000 !important;
-}
-
-.black-title {
-  color: #000;
-}
-
-/* Looking for a change section */
-/* Additional Styles for Career Form */
-.heading-main.white {
-  color: #fff;
-  font-size: 40px; /* Increased font size for heading */
-  margin-bottom: 20px; /* Increased space after heading */
-}
-
-.white {
-  color: #fff;
-  font-size: 20px; /* Increased font size for paragraph */
-}
-
-.btn-custom {
-  font-size: 20px; /* Increased font size for button */
-  padding: 15px 40px;
-  color: #fff;
-  text-decoration: none;
-  background-color: #fb0000; /* Red color */
-  border: 2px solid #fff;
-  border-radius: 30px;
-  display: inline-block;
-  transition: background-color 0.3s, box-shadow 0.3s ease;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-
-.btn-custom:hover {
-  background-color: #e60000; /* Darker red on hover */
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
-}
-
-.container {
-  font-size: 18px; /* Increase font-size for the content inside the container */
+  .footer-bottom ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

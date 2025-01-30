@@ -9,8 +9,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/CSS/career.css" />
-    <link rel="stylesheet" href="/CSS/responsiveCareer.css" />
-    <link rel="stylesheet" href="/CSS/moreComponents.css" />
 
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
@@ -30,100 +28,86 @@
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
   </head>
   <body>
-    <section>
-      <div class="nav-container">
-        <!-- Logo Section with Image -->
-        <a href="#" class="logo">
+    <header class="navbar">
+      <div class="container">
+        <!-- Logo -->
+        <a href="/" class="navbar-logo">
           <img
-            src="/images/SortOutMediaHDLogo.png"
-            alt="Your Logo"
-            class="logo-img"
+            src="/images/sortoutInnovation-icon/Sortout innovation.png"
+            alt="SortOut Innovation"
           />
         </a>
 
-        <!-- Menu Toggle Button (Hamburger) -->
-        <button class="menu-toggle" aria-label="Toggle Navigation">
-          <lord-icon
-            src="https://cdn.lordicon.com/wloilxuq.json"
-            trigger="click"
-            style="width: 40px; height: 40px"
-          ></lord-icon>
-        </button>
-
         <!-- Navigation Links -->
-        <ul class="nav-links">
-          <li><a href="../index.html" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="pages/Findjobs.html" class="nav-link">Find Jobs</a></li>
-          <li>
-            <a href="pages/findTalent.html" class="nav-link">Browse Talent</a>
-          </li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#contact" class="nav-link contact-link">Contact</a></li>
-          <li class="mar-20">
-            <a href="browseTalent.html" class="register-button">Register</a>
-          </li>
-        </ul>
+        <nav class="navbar-links">
+          <ul>
+            <li><a href="/index.html" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="/pages/career.html" class="nav-link">Career</a></li>
+            <li><a href="/industries" class="nav-link">Browse Talent</a></li>
+            <li>
+              <a href="/pages/our-services-page/service.html" class="nav-link"
+                >Service</a
+              >
+            </li>
+            <li><a href="#cta" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button class="navbar-toggle" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
-    </section>
+    </header>
 
     <script>
-      const toggleMenu = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
+      // Mobile Menu Toggle
+      const navbarToggle = document.querySelector(".navbar-toggle");
+      const navbarLinks = document.querySelector(".navbar-links");
 
-      // Toggle the menu visibility
-      toggleMenu.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+      navbarToggle.addEventListener("click", () => {
+        navbarLinks.classList.toggle("active");
       });
 
-      // Close the menu when any link is clicked
-      navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("active");
-        });
+      // Sticky Navbar on Scroll
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
       });
     </script>
     <!-- #################################################### -->
     <!-- Hero Section -->
     <!-- #################################################### -->
-    <section style="overflow: hidden">
-      <!-- <marquee class="smm-marq" behavior="alternate">
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-      </marquee> -->
+    <section class="career-section">
       <div class="container">
-        <div class="row">
-          <div class="col-md-6">
-            <h1 class="heading-main mb-20 mt-30">
-              Together, Let's Build the Future
-            </h1>
-
-            <p class="p-lg mb-20">
+        <div class="row align-items-center">
+          <!-- Left Content -->
+          <div class="col-lg-6 text-content">
+            <h1 class="career-heading">Together, Let's Build the Future</h1>
+            <p class="career-description">
               At SortOut Media, we value talent, passion, and creativity. Be
               part of a dynamic team, innovate, and grow with us. Let’s shape
               the future of digital marketing and HR solutions together!
             </p>
-            <button class="btn-primary mt-10 mb-20 myBtn" id="myBtn">
-              Be a Part of Us!
-            </button>
+            <a
+              href="https://linktr.ee/sortoutmedia?utm_source=qr_code"
+              class="career-btn"
+            >
+              <button class="btn-primary myBtn">Find Your Dream Job!</button>
+            </a>
           </div>
-          <div class="col-md-6">
+
+          <!-- Right Image -->
+          <div class="col-lg-6 text-center">
             <img
               src="/images/careers-img/Meeting-mg.png"
-              class="wd-100"
-              alt="Social Media Marketing"
+              class="career-image"
+              alt="Career Growth"
             />
           </div>
         </div>
@@ -133,635 +117,741 @@
     <!-- #################################################### -->
     <!-- SECTION CARD  -->
     <!-- #################################################### -->
-    <section style="background-color: #fb0001">
+
+    <!-- ########################################################## -->
+
+    <section id="job-listing">
       <div class="container">
-        <div class="row">
-          <div class="col-md-12 center">
-            <h2 class="secondary-heading-main-card sec-white">
-              Our Core Values
-            </h2>
-          </div>
+        <h2 class="text-center job-listing-heading">Open Positions</h2>
 
-          <div class="col-md-3 center">
-            <div class="smm_box center">
-              <p class="heading-title">Turn passion into profession</p>
-            </div>
-          </div>
+        <!-- Search Filters -->
+        <div class="filters mb-4 text-center">
+          <input
+            type="text"
+            id="search-location"
+            placeholder="Search by Location"
+          />
+          <input
+            type="text"
+            id="search-salary"
+            placeholder="Search by Salary"
+          />
+          <input
+            type="text"
+            id="search-skills"
+            placeholder="Search by Skills"
+          />
+        </div>
 
-          <div class="col-md-3 center">
-            <div class="smm_box center">
-              <p class="heading-title">Work hard, enjoy harder</p>
-            </div>
-          </div>
+        <!-- ✅ Scrollable Table Container ✅ -->
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Position</th>
+                <th>Location</th>
+                <th>Salary</th>
+                <th>Skills</th>
+                <th>Company</th>
+                <th>Apply</th>
+              </tr>
+            </thead>
+            <tbody id="job-table">
+              <!-- Job Listings - 16 Jobs -->
+              <tr
+                class="job-row"
+                data-location="Gurgaon"
+                data-salary="20000"
+                data-skills="Sales"
+              >
+                <td>Telesales Executive</td>
+                <td>Gurgaon</td>
+                <td>₹14,000 - ₹20,000</td>
+                <td>Sales, Communication</td>
+                <td>Life Chart & Petnojo</td>
+                <td>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+                    class="apply-btn"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
 
-          <div class="col-md-3 center">
-            <div class="smm_box center">
-              <p class="heading-title">Make a meaningful impact</p>
-            </div>
-          </div>
+              <tr
+                class="job-row"
+                data-location="Janakpuri"
+                data-salary="20000"
+                data-skills="Sales"
+              >
+                <td>Telesales Executive</td>
+                <td>Janakpuri</td>
+                <td>₹14,000 - ₹20,000</td>
+                <td>Sales, Communication</td>
+                <td>Life Chart</td>
+                <td>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+                    class="apply-btn"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
 
-          <div class="col-md-3 center">
-            <div class="smm_box center">
-              <p class="heading-title">Learn, grow, and thrive</p>
-            </div>
-          </div>
+              <tr
+                class="job-row"
+                data-location="Janakpuri"
+                data-salary="35000"
+                data-skills="Leadership"
+              >
+                <td>Team Lead (Telesales)</td>
+                <td>Janakpuri</td>
+                <td>₹30,000 - ₹35,000</td>
+                <td>Leadership, Sales</td>
+                <td>Life Chart</td>
+                <td>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+                    class="apply-btn"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
 
-          <div class="col-md-3 center">
-            <div class="smm_box center">
-              <p class="heading-title">Embrace flexibility in work</p>
-            </div>
-          </div>
+              <tr
+                class="job-row"
+                data-location="Gurgaon"
+                data-salary="35000"
+                data-skills="IT"
+              >
+                <td>Web Developer</td>
+                <td>Gurgaon</td>
+                <td>Up to ₹20,000</td>
+                <td>IT Skills, Development</td>
+                <td>Business Raisers</td>
+                <td>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+                    class="apply-btn"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
 
-          <div class="col-md-3 center">
-            <div class="smm_box center">
-              <p class="heading-title">Deliver global-scale solutions</p>
-            </div>
-          </div>
+              <tr
+                class="job-row"
+                data-location="Gurgaon"
+                data-salary="25000"
+                data-skills="Client Relations"
+              >
+                <td>Business Development Executive</td>
+                <td>Gurgaon</td>
+                <td>₹25,000</td>
+                <td>Client Relations</td>
+                <td>Business Raisers</td>
+                <td>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+                    class="apply-btn"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
 
-          <div class="col-md-3 center">
-            <div class="smm_box center">
-              <p class="heading-title">Collaborate with top global brands</p>
-            </div>
-          </div>
+              <tr
+                class="job-row"
+                data-location="Gurgaon"
+                data-salary="50000"
+                data-skills="Marketing"
+              >
+                <td>Marketing & Communication Manager</td>
+                <td>Gurgaon</td>
+                <td>Up to ₹50,000 + Incentive</td>
+                <td>Communication, Marketing</td>
+                <td>Arena</td>
+                <td>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+                    class="apply-btn"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
 
-          <div class="col-md-3 center">
-            <div class="smm_box center">
-              <p class="heading-title">Grow with us and make a difference</p>
-            </div>
-          </div>
+              <tr
+                class="job-row"
+                data-location="Gurgaon"
+                data-salary="35000"
+                data-skills="Logistics"
+              >
+                <td>CRM (Logistics)</td>
+                <td>Gurgaon</td>
+                <td>₹25,000 - ₹35,000</td>
+                <td>Logistics, Client Handling</td>
+                <td>Arena</td>
+                <td>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+                    class="apply-btn"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
+
+              <tr
+                class="job-row"
+                data-location="Gurgaon"
+                data-salary="30000"
+                data-skills="Accounting"
+              >
+                <td>Accountant</td>
+                <td>Gurgaon</td>
+                <td>₹20,000 - ₹30,000</td>
+                <td>Accounting, Bookkeeping</td>
+                <td>Arena</td>
+                <td>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+                    class="apply-btn"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
+
+              <tr
+                class="job-row"
+                data-location="Gurgaon"
+                data-salary="35000"
+                data-skills="Sales"
+              >
+                <td>Team Lead (Telesales)</td>
+                <td>Gurgaon</td>
+                <td>₹35,000 - ₹40,000</td>
+                <td>Leadership, Sales</td>
+                <td>Life Chart</td>
+                <td>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+                    class="apply-btn"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
+
+              <tr
+                class="job-row"
+                data-location="Gurgaon"
+                data-salary="35000"
+                data-skills="Sales"
+              >
+                <td>Business Development Manager</td>
+                <td>Gurgaon</td>
+                <td>₹25,000 - ₹35,000</td>
+                <td>Sales, Communication</td>
+                <td>Arena</td>
+                <td>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+                    class="apply-btn"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
+
+              <tr
+                class="job-row"
+                data-location="Gurgaon"
+                data-salary="40000"
+                data-skills="Logistics"
+              >
+                <td>Vendor Manager (Logistics)</td>
+                <td>Gurgaon</td>
+                <td>₹40,000</td>
+                <td>Logistics Management</td>
+                <td>Arena</td>
+                <td>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+                    class="apply-btn"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
+
+              <tr
+                class="job-row"
+                data-location="Gurgaon"
+                data-salary="17000"
+                data-skills="Field Sales"
+              >
+                <td>Field Sales Executive</td>
+                <td>Gurgaon</td>
+                <td>₹15,000 - ₹17,000 + Incentive</td>
+                <td>Field Sales, Communication</td>
+                <td>Arena</td>
+                <td>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+                    class="apply-btn"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
+
+              <tr
+                class="job-row"
+                data-location="Gurgaon"
+                data-salary="50000"
+                data-skills="Digital Marketing"
+              >
+                <td>Social Media Manager</td>
+                <td>Gurgaon</td>
+                <td>Up to ₹50,000</td>
+                <td>Digital Marketing</td>
+                <td>Petnojo</td>
+                <td>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+                    class="apply-btn"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
+
+              <tr
+                class="job-row"
+                data-location="Gurgaon"
+                data-salary="25000"
+                data-skills="Language"
+              >
+                <td>Telecaller</td>
+                <td>Gurgaon</td>
+                <td>Up to ₹25,000</td>
+                <td>Fluency in Kannada & English</td>
+                <td>Open Mind</td>
+                <td>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+                    class="apply-btn"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
+
+              <tr
+                class="job-row"
+                data-location="Gurgaon"
+                data-salary="20000"
+                data-skills="Language"
+              >
+                <td>Telecaller</td>
+                <td>Gurgaon</td>
+                <td>Up to ₹20,000</td>
+                <td>Fluency in English & Hindi</td>
+                <td>Open Mind</td>
+                <td>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+                    class="apply-btn"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
+
+              <tr
+                class="job-row"
+                data-location="Gurgaon"
+                data-salary="25000"
+                data-skills="Design"
+              >
+                <td>Graphic Designer</td>
+                <td>Gurgaon</td>
+                <td>₹20,000 - ₹25,000</td>
+                <td>Creativity, Design Tools</td>
+                <td>Arena</td>
+                <td>
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform"
+                    class="apply-btn"
+                    >Apply Now</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination-container text-center">
+          <button id="prev-page" class="pagination-btn">Previous</button>
+          <span id="pagination-numbers"></span>
+          <button id="next-page" class="pagination-btn margin-top">Next</button>
         </div>
       </div>
     </section>
 
-    <!-- ########################################################## -->
-    <!-- OPEN POSITION -->
-    <a class="positon-anchor" href="">
-      <section>
-        <div class="container">
-          <div class="row text-center mb-4">
-            <div class="col-12">
-              <h2 class="secondary-heading-main-card">Open Positions</h2>
-            </div>
-          </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const jobs = [
+          {
+            position: "Telesales Executive",
+            location: "Gurgaon",
+            salary: "14000-20000",
+            skills: "Sales, Communication",
+            company: "Life Chart",
+          },
+          {
+            position: "Telesales Executive",
+            location: "Janakpuri",
+            salary: "14000-20000",
+            skills: "Sales, Communication",
+            company: "Life Chart",
+          },
+          {
+            position: "Team Lead (Telesales)",
+            location: "Janakpuri",
+            salary: "30000-35000",
+            skills: "Leadership, Sales",
+            company: "Life Chart",
+          },
+          {
+            position: "Web Developer",
+            location: "Gurgaon",
+            salary: "20000",
+            skills: "IT Skills, Development",
+            company: "Business Raisers",
+          },
+          {
+            position: "Business Development Executive",
+            location: "Gurgaon",
+            salary: "25000",
+            skills: "Client Relations",
+            company: "Business Raisers",
+          },
+          {
+            position: "Marketing & Communication Mgr",
+            location: "Gurgaon",
+            salary: "50000",
+            skills: "Communication, Marketing",
+            company: "Arena",
+          },
+          {
+            position: "CRM (Logistics)",
+            location: "Gurgaon",
+            salary: "35000",
+            skills: "Logistics, Client Handling",
+            company: "Arena",
+          },
+          {
+            position: "Business Development Manager",
+            location: "Gurgaon",
+            salary: "35000",
+            skills: "Sales, Communication",
+            company: "Arena",
+          },
+          {
+            position: "Vendor Manager (Logistics)",
+            location: "Gurgaon",
+            salary: "40000",
+            skills: "Logistics Management",
+            company: "Arena",
+          },
+          {
+            position: "Field Sales Executive",
+            location: "Gurgaon",
+            salary: "17000",
+            skills: "Field Sales, Communication",
+            company: "Arena",
+          },
+          {
+            position: "Social Media Manager",
+            location: "Gurgaon",
+            salary: "50000",
+            skills: "Digital Marketing",
+            company: "Petnojo",
+          },
+          {
+            position: "Telecaller",
+            location: "Gurgaon",
+            salary: "25000",
+            skills: "Fluency in Kannada & English",
+            company: "Open Mind",
+          },
+          {
+            position: "Telecaller",
+            location: "Gurgaon",
+            salary: "20000",
+            skills: "Fluency in English & Hindi",
+            company: "Open Mind",
+          },
+          {
+            position: "Graphic Designer",
+            location: "Gurgaon",
+            salary: "25000",
+            skills: "Creativity, Design Tools",
+            company: "Arena",
+          },
+          {
+            position: "Accountant",
+            location: "Gurgaon",
+            salary: "30000",
+            skills: "Accounting, Bookkeeping",
+            company: "Arena",
+          },
+          {
+            position: "Team Lead (Telesales)",
+            location: "Gurgaon",
+            salary: "40000",
+            skills: "Leadership, Sales",
+            company: "Life Chart",
+          },
+        ];
 
-          <!-- Row 1 -->
-          <div class="row g-4">
-            <!-- Position 1 -->
-            <div class="col-md-4">
-              <div class="position-box bg-dark text-white p-4">
-                <div class="d-flex justify-content-between">
-                  <p class="fw-bold">Experience: 3+ Years</p>
-                  <p><i class="fas fa-location-arrow"></i> Noida</p>
-                </div>
-                <div class="d-flex align-items-center">
-                  <h3 class="heading-title-position-white">
-                    Graphic <br />
-                    Designer
-                  </h3>
-                  <img
-                    src="/images/careers-img/urgent_requ.png"
-                    alt="Urgent"
-                    class="ms-auto"
-                    width="60px"
-                  />
-                </div>
-              </div>
-            </div>
+        let currentPage = 1;
+        const jobsPerPage = 20;
+        let filteredJobs = [...jobs];
 
-            <!-- Position 2 -->
-            <div class="col-md-4">
-              <div class="position-box text-white p-4 red-background">
-                <div class="d-flex justify-content-between">
-                  <p class="fw-bold">Experience: 2+ Years</p>
-                  <p><i class="fas fa-location-arrow"></i> Noida</p>
-                </div>
-                <div class="d-flex align-items-center">
-                  <h3 class="heading-title-position-white">
-                    Business <br />
-                    Development Manager
-                  </h3>
-                  <img
-                    src="/images/careers-img/urgent_requ.png"
-                    alt="Urgent"
-                    class="ms-auto"
-                    width="60px"
-                  />
-                </div>
-              </div>
-            </div>
+        function displayJobs(page) {
+          const jobTable = document.getElementById("job-table");
+          jobTable.innerHTML = "";
 
-            <!-- Position 3 -->
-            <div class="col-md-4">
-              <div class="position-box bg-dark text-white p-4">
-                <div class="d-flex justify-content-between">
-                  <p class="fw-bold">Experience: 3+ Years</p>
-                  <p><i class="fas fa-location-arrow"></i> Noida</p>
-                </div>
-                <div class="d-flex align-items-center">
-                  <h3 class="heading-title-position-white">
-                    Influencer <br />
-                    Marketing Manager
-                  </h3>
-                  <img
-                    src="/images/careers-img/urgent_requ.png"
-                    alt="Urgent"
-                    class="ms-auto"
-                    width="60px"
-                    height="30px"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+          const start = (page - 1) * jobsPerPage;
+          const end = start + jobsPerPage;
+          const paginatedJobs = filteredJobs.slice(start, end);
 
-          <!-- Add more rows as needed, following the same structure -->
-          <div class="row g-4">
-            <!-- Position 1 -->
-            <div class="col-md-4">
-              <div class="bg-white text-white p-4 position-box-red">
-                <div class="d-flex justify-content-between">
-                  <p class="fw-bold text-black">Experience: 3+ Years</p>
-                  <p class="text-black">
-                    <i class="fas fa-location-arrow"></i> Noida
-                  </p>
-                </div>
-                <div class="d-flex justify-content-between">
-                  <h3 class="heading-title-position-white red-title">
-                    Graphic <br />
-                    Designer
-                  </h3>
-                  <i aria-hidden="true" class="fas fa-long-arrow-alt-right"></i>
-                </div>
-              </div>
-            </div>
+          paginatedJobs.forEach((job) => {
+            const row = `<tr>
+        <td>${job.position}</td>
+        <td>${job.location}</td>
+        <td>${job.salary}</td>
+        <td>${job.skills}</td>
+        <td>${job.company}</td>
+        <td><a href="https://docs.google.com/forms/d/e/1FAIpQLSfmHKGO60CrF7M2HuPpb8KhlhazfcsKPo1MF-fqQyFM1aM22A/viewform" class="btn btn-sm btn-danger">Apply</a></td>
+      </tr>`;
+            jobTable.innerHTML += row;
+          });
 
-            <!-- Position 2 -->
-            <div class="col-md-4">
-              <div class="position-box bg-white text-white p-4">
-                <div class="d-flex justify-content-between">
-                  <p class="fw-bold text-black">Experience: 3+ Years</p>
-                  <p class="text-black">
-                    <i class="fas fa-location-arrow"></i> Noida
-                  </p>
-                </div>
-                <div class="d-flex justify-content-between">
-                  <h3 class="heading-title-position-white black-title">
-                    Graphic <br />
-                    Designer
-                  </h3>
-                  <i aria-hidden="true" class="fas fa-long-arrow-alt-right"></i>
-                </div>
-              </div>
-            </div>
+          updatePagination();
+        }
 
-            <!-- Position 3 -->
-            <div class="col-md-4">
-              <div class="position-box-red bg-white text-white p-4">
-                <div class="d-flex justify-content-between">
-                  <p class="fw-bold text-black">Experience: 3+ Years</p>
-                  <p class="text-black">
-                    <i class="fas fa-location-arrow"></i> Noida
-                  </p>
-                </div>
-                <div class="d-flex justify-content-between">
-                  <h3 class="heading-title-position-white red-title">
-                    Graphic <br />
-                    Designer
-                  </h3>
-                  <i aria-hidden="true" class="fas fa-long-arrow-alt-right"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Add more rows as needed, following the same structure -->
-          <div class="row g-4">
-            <!-- Position 1 -->
-            <div class="col-md-4">
-              <div class="bg-white text-white p-4 position-box-red">
-                <div class="d-flex justify-content-between">
-                  <p class="fw-bold text-black">Experience: 3+ Years</p>
-                  <p class="text-black">
-                    <i class="fas fa-location-arrow"></i> Noida
-                  </p>
-                </div>
-                <div class="d-flex justify-content-between">
-                  <h3 class="heading-title-position-white red-title">
-                    Graphic <br />
-                    Designer
-                  </h3>
-                  <i aria-hidden="true" class="fas fa-long-arrow-alt-right"></i>
-                </div>
-              </div>
-            </div>
+        function updatePagination() {
+          const paginationNumbers =
+            document.getElementById("pagination-numbers");
+          paginationNumbers.innerHTML = "";
+          const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
 
-            <!-- Position 2 -->
-            <div class="col-md-4">
-              <div class="position-box bg-white text-white p-4">
-                <div class="d-flex justify-content-between">
-                  <p class="fw-bold text-black">Experience: 3+ Years</p>
-                  <p class="text-black">
-                    <i class="fas fa-location-arrow"></i> Noida
-                  </p>
-                </div>
-                <div class="d-flex justify-content-between">
-                  <h3 class="heading-title-position-white black-title">
-                    Graphic <br />
-                    Designer
-                  </h3>
-                  <i aria-hidden="true" class="fas fa-long-arrow-alt-right"></i>
-                </div>
-              </div>
-            </div>
+          for (let i = 1; i <= totalPages; i++) {
+            const button = document.createElement("button");
+            button.textContent = i;
+            button.classList.add(i === currentPage ? "active" : "");
+            button.addEventListener("click", () => {
+              currentPage = i;
+              displayJobs(currentPage);
+            });
+            paginationNumbers.appendChild(button);
+          }
+        }
 
-            <!-- Position 3 -->
-            <div class="col-md-4">
-              <div class="position-box-red bg-white text-white p-4">
-                <div class="d-flex justify-content-between">
-                  <p class="fw-bold text-black">Experience: 3+ Years</p>
-                  <p class="text-black">
-                    <i class="fas fa-location-arrow"></i> Noida
-                  </p>
-                </div>
-                <div class="d-flex justify-content-between">
-                  <h3 class="heading-title-position-white red-title">
-                    Graphic <br />
-                    Designer
-                  </h3>
-                  <i aria-hidden="true" class="fas fa-long-arrow-alt-right"></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </a>
+        function filterJobs() {
+          const location = document
+            .getElementById("search-location")
+            .value.toLowerCase();
+          const salary = document.getElementById("search-salary").value;
+          const skills = document
+            .getElementById("search-skills")
+            .value.toLowerCase();
+
+          filteredJobs = jobs.filter(
+            (job) =>
+              (location === "" ||
+                job.location.toLowerCase().includes(location)) &&
+              (salary === "" || job.salary.includes(salary)) &&
+              (skills === "" || job.skills.toLowerCase().includes(skills))
+          );
+
+          currentPage = 1;
+          displayJobs(currentPage);
+        }
+
+        document
+          .getElementById("search-location")
+          .addEventListener("input", filterJobs);
+        document
+          .getElementById("search-salary")
+          .addEventListener("input", filterJobs);
+        document
+          .getElementById("search-skills")
+          .addEventListener("input", filterJobs);
+
+        document.getElementById("prev-page").addEventListener("click", () => {
+          if (currentPage > 1) {
+            currentPage--;
+            displayJobs(currentPage);
+          }
+        });
+
+        document.getElementById("next-page").addEventListener("click", () => {
+          if (currentPage * jobsPerPage < filteredJobs.length) {
+            currentPage++;
+            displayJobs(currentPage);
+          }
+        });
+
+        displayJobs(currentPage);
+      });
+    </script>
+
     <!-- #################################################### -->
     <!-- SECTION LOOKING FOR A CHANGE -->
     <!-- #################################################### -->
-    <section style="background-color: #fb0000">
-      <div class="container" id="career-form">
-        <div class="row">
-          <div class="col-md-12 center mb-30">
-            <h2 class="heading-main white">Looking for a change?</h2>
-            <p class="white">
-              What Are You Looking For In Your Next Opportunity!
-            </p>
-          </div>
-
-          <div class="col-md-12 mb-30 text-center">
-            <!-- Button to open Google Form -->
-            <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSdH7X7OsFhLrbHkFfJgF1XMi_o6dwj9nY0Yh5gJ2kW1m3kqxg/viewform?embedded=true"
-              target="_blank"
-              class="btn-custom"
-            >
-              Open Google Form
-            </a>
-          </div>
-        </div>
+    <section id="cta" class="job-application-section">
+      <div class="container text-center">
+        <h2 class="job-heading">Your Skills, Your Future</h2>
+        <p class="job-description">
+          Let us match you with the perfect job! Share your skills, experience,
+          and salary expectations, and we'll help you land your dream role.
+        </p>
+        <a
+          href="https://linktr.ee/sortoutmedia?utm_source=qr_code"
+          target="_blank"
+          class="btn btn-primary job-btn"
+        >
+          Submit Your Details
+        </a>
       </div>
     </section>
 
-    <!-- FOOTER -->
-    <!-- Floating Social Media bar Ends -->
-
-    <div class="container-fluid fsbg">
-      <a href="https://wa.me/919818559102">
-        <lord-icon
-          class="wp-idget bounce"
-          src="https://cdn.lordicon.com/dhcosedn.json"
-          trigger="hover"
-          style="width: 50px; height: 50px"
-        >
-        </lord-icon>
-      </a>
-      <div id="contact" class="footer-strip center-mb">
-        <h3 class="footer-strip-heading">
-          Need help? Call our support team at
-          <a href="tel:+919818559102" style="color: #fff !important"
-            >+91 9818559102</a
-          >
-        </h3>
-      </div>
-    </div>
-    <div class="row triangle-down" style="margin-right: 0px; margin-left: 0px">
-      <div class="col-md-5"></div>
-      <div class="col-md-2">
-        <div id="triangle-down"></div>
-      </div>
-      <div class="col-md-5"></div>
-    </div>
-
-    <footer
-      style="
-        background-color: #0a0a0a;
-        color: #fff;
-        padding: 60px 20px;
-        font-family: Arial, sans-serif;
-      "
-    >
-      <div class="container" style="max-width: 1200px; margin: 0 auto">
-        <!-- Footer Grid -->
-        <div
-          class="footer-grid"
-          style="
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            justify-content: space-between;
-          "
-        >
-          <!-- Column 1: Marketing -->
-          <div style="flex: 1 1 200px; min-width: 200px">
-            <h4 style="margin-bottom: 15px; color: #ff4b4b">Marketing</h4>
-            <ul
-              style="list-style: none; padding: 0; font-size: 14px; color: #aaa"
-            >
-              <li style="margin-bottom: 10px">
-                <a href="#seo" style="text-decoration: none; color: #fff"
-                  >SEO Services</a
-                >
-              </li>
-              <li style="margin-bottom: 10px">
-                <a
-                  href="#content-marketing"
-                  style="text-decoration: none; color: #fff"
-                  >Content Marketing</a
-                >
-              </li>
-              <li style="margin-bottom: 10px">
-                <a
-                  href="#email-marketing"
-                  style="text-decoration: none; color: #fff"
-                  >Email Marketing</a
-                >
-              </li>
-              <li>
-                <a href="#ppc" style="text-decoration: none; color: #fff"
-                  >PPC Advertising</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Column 2: Advertising -->
-          <div style="flex: 1 1 200px; min-width: 200px">
-            <h4 style="margin-bottom: 15px; color: #ff4b4b">Advertising</h4>
-            <ul
-              style="list-style: none; padding: 0; font-size: 14px; color: #aaa"
-            >
-              <li style="margin-bottom: 10px">
-                <a href="#social-ads" style="text-decoration: none; color: #fff"
-                  >Social Media Ads</a
-                >
-              </li>
-              <li style="margin-bottom: 10px">
-                <a href="#video-ads" style="text-decoration: none; color: #fff"
-                  >Video Advertising</a
-                >
-              </li>
-              <li style="margin-bottom: 10px">
-                <a href="#influencer" style="text-decoration: none; color: #fff"
-                  >Influencer Marketing</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#retargeting"
-                  style="text-decoration: none; color: #fff"
-                  >Retargeting Ads</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Column 3: Designing -->
-          <div style="flex: 1 1 200px; min-width: 200px">
-            <h4 style="margin-bottom: 15px; color: #ff4b4b">Designing</h4>
-            <ul
-              style="list-style: none; padding: 0; font-size: 14px; color: #aaa"
-            >
-              <li style="margin-bottom: 10px">
-                <a href="#web-design" style="text-decoration: none; color: #fff"
-                  >Website Design</a
-                >
-              </li>
-              <li style="margin-bottom: 10px">
-                <a
-                  href="#graphic-design"
-                  style="text-decoration: none; color: #fff"
-                  >Graphic Design</a
-                >
-              </li>
-              <li style="margin-bottom: 10px">
-                <a
-                  href="#logo-design"
-                  style="text-decoration: none; color: #fff"
-                  >Logo Creation</a
-                >
-              </li>
-              <li>
-                <a href="#ux-ui" style="text-decoration: none; color: #fff"
-                  >UX/UI Design</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Column 4: Client Testimonials -->
-          <div style="flex: 1 1 250px; min-width: 250px">
-            <h4 style="margin-bottom: 15px; color: #ff4b4b">
-              Client Testimonials
-            </h4>
-            <div style="font-size: 14px; color: #aaa; margin-bottom: 15px">
-              <p>
-                "Sortout Media helped us skyrocket our business visibility. We
-                highly recommend their services!" -
-                <strong>John Doe, CEO</strong>
-              </p>
-              <p>
-                "Their digital marketing expertise is unparalleled. We saw a
-                noticeable improvement in our leads." -
-                <strong>Jane Smith, Marketing Director</strong>
+    <footer class="footer-section">
+      <div class="container">
+        <div class="row">
+          <!-- Column 1: Company Info -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-logo">
+              <img
+                src="/images/sortoutInnovation-icon/Sortout innovation.jpg"
+                alt="SortOut Innovation"
+              />
+              <p class="text-center">
+                Empowering businesses with top-notch solutions in digital, IT,
+                and business services.
               </p>
             </div>
           </div>
 
-          <!-- Column 5: Legal Links -->
-          <div style="flex: 1 1 250px; min-width: 250px">
-            <h4 style="margin-bottom: 15px; color: #ff4b4b">Legal</h4>
-            <ul
-              style="list-style: none; padding: 0; font-size: 14px; color: #aaa"
-            >
-              <li style="margin-bottom: 10px">
-                <a
-                  href="#privacy-policy"
-                  style="text-decoration: none; color: #fff"
-                  >Privacy Policy</a
-                >
-              </li>
-              <li style="margin-bottom: 10px">
-                <a href="#terms" style="text-decoration: none; color: #fff"
-                  >Terms & Conditions</a
-                >
+          <!-- Column 2: Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li>
+                <a href="/pages/career.html">Careers</a>
               </li>
               <li>
-                <a href="#disclaimer" style="text-decoration: none; color: #fff"
-                  >Disclaimer</a
-                >
+                <a href="/pages/our-services-page/service.html">Services</a>
               </li>
             </ul>
           </div>
 
-          <!-- Column 6: Quick Links -->
-          <div style="flex: 1 1 250px; min-width: 250px">
-            <h4 style="margin-bottom: 15px; color: #ff4b4b">Quick Links</h4>
-            <ul
-              style="list-style: none; padding: 0; font-size: 14px; color: #aaa"
-            >
-              <li style="margin-bottom: 10px">
-                <a href="#about-us" style="text-decoration: none; color: #fff"
-                  >About Us</a
+          <!-- Column 3: Our Services -->
+          <div class="col-lg-2 col-md-6">
+            <h4>Our Services</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="/pages/services/socialMediaInfluencers.html"
+                  >Digital Marketing</a
                 >
               </li>
-              <li style="margin-bottom: 10px">
-                <a href="#services" style="text-decoration: none; color: #fff"
-                  >Our Services</a
-                >
-              </li>
-              <li style="margin-bottom: 10px">
-                <a href="#blog" style="text-decoration: none; color: #fff"
-                  >Blog</a
+              <li><a href="/pages/services/itServices.html">IT Support</a></li>
+              <li><a href="/pages/services/caServices.html">CA Services</a></li>
+              <li><a href="/pages/services/hrServices.html">HR Services</a></li>
+              <li>
+                <a href="/pages/services/courierServices.html"
+                  >Courier Services</a
                 >
               </li>
               <li>
-                <a href="#contact-us" style="text-decoration: none; color: #fff"
-                  >Contact Us</a
+                <a href="/pages/services/shipping.html"
+                  >Shipping & Fulfillment</a
                 >
+              </li>
+              <li>
+                <a href="/pages/services/stationeryServices.html"
+                  >Stationery Services</a
+                >
+              </li>
+              <li>
+                <a href="/pages/services/propertyServices.html"
+                  >Real Estate & Property</a
+                >
+              </li>
+              <li>
+                <a href="/pages/services/event-managementServices.html"
+                  >Event Management</a
+                >
+              </li>
+              <li>
+                <a href="/pages/services/designAndCreative.html"
+                  >Design & Creative</a
+                >
+              </li>
+              <li>
+                <a href="/services/web-development">Web & App Development</a>
+              </li>
+              <li><a href="/services/find-talent">Find Talent</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact Info -->
+          <div class="col-lg-3 col-md-6">
+            <h4>Contact Us</h4>
+            <ul class="footer-links">
+              <li>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+919818559102">+91 9818559102</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:info@sortoutinnovation.com"
+                  >info@sortoutinnovation.com</a
+                >
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Spaze i-Tech Park,
+                Gurugram, India
               </li>
             </ul>
           </div>
 
-          <!-- Column 7: Resources -->
-          <div style="flex: 1 1 250px; min-width: 250px">
-            <h4 style="margin-bottom: 15px; color: #ff4b4b">Resources</h4>
-            <ul
-              style="list-style: none; padding: 0; font-size: 14px; color: #aaa"
-            >
-              <li style="margin-bottom: 10px">
-                <a
-                  href="#case-studies"
-                  style="text-decoration: none; color: #fff"
-                  >Case Studies</a
-                >
-              </li>
-              <li style="margin-bottom: 10px">
-                <a
-                  href="#whitepapers"
-                  style="text-decoration: none; color: #fff"
-                  >Whitepapers</a
-                >
-              </li>
-              <li>
-                <a href="#webinars" style="text-decoration: none; color: #fff"
-                  >Webinars</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Column 8: Support -->
-          <div style="flex: 1 1 250px; min-width: 250px">
-            <h4 style="margin-bottom: 15px; color: #ff4b4b">Support</h4>
-            <ul
-              style="list-style: none; padding: 0; font-size: 14px; color: #aaa"
-            >
-              <li style="margin-bottom: 10px">
-                <a href="#faqs" style="text-decoration: none; color: #fff"
-                  >FAQs</a
-                >
-              </li>
-              <li style="margin-bottom: 10px">
-                <a
-                  href="#contact-form"
-                  style="text-decoration: none; color: #fff"
-                  >Contact Form</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#help-center"
-                  style="text-decoration: none; color: #fff"
-                  >Help Center</a
-                >
-              </li>
-            </ul>
+          <!-- Column 5: Social Media -->
+          <div class="col-lg-2 col-md-6">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/profile.php?id=61556452066209"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="https://youtu.be/tw-xk-Pb-zA?si=QMTwuvhEuTegpqDr"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/104376933/admin/dashboard/"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://www.instagram.com/sortoutmedia/"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
           </div>
         </div>
 
-        <!-- Divider -->
-        <div style="margin: 40px 0; height: 1px; background: #333"></div>
-
-        <!-- Contact Info Section -->
-        <div
-          style="
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            font-size: 14px;
-            color: #aaa;
-          "
-        >
-          <div style="flex: 1 1 200px; min-width: 200px">
-            <h4 style="margin-bottom: 10px; color: #ff4b4b">Contact Us</h4>
-            <ul
-              style="list-style: none; padding: 0; font-size: 14px; color: #aaa"
-            >
-              <li
-                style="display: flex; align-items: center; margin-bottom: 10px"
-              >
-                <i
-                  class="fas fa-phone"
-                  style="color: #ff4b4b; margin-right: 10px"
-                ></i>
-                <span>9818559102</span>
-              </li>
-              <li
-                style="display: flex; align-items: center; margin-bottom: 10px"
-              >
-                <i
-                  class="fas fa-envelope"
-                  style="color: #ff4b4b; margin-right: 10px"
-                ></i>
-                <span>info@example.com</span>
-              </li>
-              <li style="display: flex; align-items: center">
-                <i
-                  class="fas fa-map-marker-alt"
-                  style="color: #ff4b4b; margin-right: 10px"
-                ></i>
-                <span
-                  >Spaze i-Tech Park, Sector 49, Sohna Road, Gurugram, Pin
-                  122018</span
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Copyright Section -->
-        <div
-          style="
-            text-align: center;
-            font-size: 12px;
-            color: #aaa;
-            padding: 20px 0;
-            background-color: #111;
-          "
-        >
-          <p>&copy; 2025 Sortout Media. All Rights Reserved.</p>
+        <!-- Copyright & Legal Links -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 SortOut Innovation. All Rights Reserved.</p>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms & Conditions</a></li>
+          </ul>
         </div>
       </div>
     </footer>
