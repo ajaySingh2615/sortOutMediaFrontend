@@ -114,6 +114,49 @@
 }
 
 /* Hero Section */
+.smm-marq {
+  font-size: 1.1rem; /* Large and readable text */
+  font-weight: bold;
+  color: #000; /* Vibrant red color */
+  text-transform: uppercase; /* Convert text to uppercase for emphasis */
+  letter-spacing: 1px; /* Add spacing between letters */
+  background: linear-gradient(90deg, #c90001, #ff9f45, #ffe347, #c90001);
+  background-size: 200% auto; /* Gradient effect animation */
+  animation: gradientScroll 5s linear infinite; /* Smooth gradient animation */
+  padding: 20px 0;
+}
+
+marquee.smm-marq {
+  width: 100%;
+  padding: 10px 0; /* Add padding for better appearance */
+  overflow: hidden; /* Hide overflow text outside the marquee */
+  background-color: #000; /* Contrast background for better visibility */
+  border-top: 2px solid #c90001; /* Top border for emphasis */
+  border-bottom: 2px solid #c90001; /* Bottom border for emphasis */
+  box-shadow: 0 5px 15px rgba(255, 76, 97, 0.5); /* Subtle glow effect */
+}
+
+@media (max-width: 768px) {
+  .smm-marq {
+    font-size: 0.9rem; /* Smaller text for better fit */
+    padding: 15px 0; /* Adjust padding */
+    letter-spacing: 0.5px; /* Slightly tighter spacing */
+  }
+
+  marquee.smm-marq {
+    padding: 8px 0; /* Adjust padding */
+    border-top: 1px solid #ff4c61; /* Thinner border */
+    border-bottom: 1px solid #ff4c61; /* Thinner border */
+  }
+}
+
+@media (max-width: 480px) {
+  .smm-marq {
+    font-size: 0.8rem; /* Adjust marquee font size */
+    padding: 10px 0; /* Reduce padding */
+  }
+}
+
 .hero-section {
   position: relative;
   padding: 100px 20px;
@@ -208,7 +251,7 @@
   width: 100%;
   max-width: 450px;
   border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); */
   transition: transform 0.3s ease;
 }
 
@@ -431,134 +474,85 @@
 }
 
 /* Services Section */
-.services-section {
-  padding: 120px 20px;
-  background: linear-gradient(135deg, #ffffff, #f8f9fa);
-  position: relative;
-  overflow: hidden;
+/* Service Section Styling */
+/* Service Section Styling */
+/* Service Section Styling */
+.simple-services-section {
+  padding: 80px 20px;
+  background-color: #ffffff;
   text-align: center;
 }
 
 .section-title {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: 800;
-  color: #333333;
-  margin-bottom: 20px;
+  color: #d10000;
+  margin-bottom: 15px;
 }
 
 .section-description {
   font-size: 1.2rem;
-  color: #666666;
-  margin-bottom: 50px;
+  color: #555;
+  margin-bottom: 40px;
 }
 
-/* Service Card */
-.service-card {
-  background: #ffffff;
-  border-radius: 15px;
-  padding: 30px 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+/* Service Box */
+.simple-service-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  margin-bottom: 30px; /* ✅ Added gap between service cards */
 }
 
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+.simple-service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.icon-wrapper {
-  display: inline-block;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, #d10000, #ff4b4b);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-  color: #ffffff;
-  font-size: 2rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.service-card:hover .icon-wrapper {
-  transform: scale(1.2);
-  box-shadow: 0 8px 20px rgba(255, 75, 75, 0.5);
+/* Red Icon Styling */
+.service-icon {
+  font-size: 3rem;
+  color: #d10000;
+  margin-bottom: 15px;
 }
 
 .service-title {
   font-size: 1.5rem;
-  font-weight: bold;
-  color: #333333;
-  margin-bottom: 15px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
 }
 
 .service-description {
   font-size: 1rem;
-  color: #555555;
-  line-height: 1.8;
+  color: #555;
 }
 
-/* Staggered Layout */
-.stagger-left {
-  animation: slideInLeft 0.5s ease;
-}
-
-.stagger-right {
-  animation: slideInRight 0.5s ease;
-}
-
-/* Animations */
-@keyframes slideInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* Responsive Design */
-/* Tablets */
+/* Responsive Adjustments */
 @media (max-width: 991px) {
   .service-title {
     font-size: 1.3rem;
   }
 
   .service-description {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
-  .icon-wrapper {
-    width: 50px;
-    height: 50px;
-    font-size: 1.8rem;
+  .service-icon {
+    font-size: 2.5rem;
   }
 }
 
-/* Mobile */
 @media (max-width: 767px) {
-  .services-section {
-    padding: 100px 15px;
+  .simple-services-section {
+    padding: 60px 15px;
   }
 
-  .service-card {
-    margin-bottom: 30px;
+  .simple-service-box {
+    padding: 20px;
+    margin-bottom: 25px; /* ✅ Ensures spacing even on mobile */
   }
 
   .service-title {
@@ -568,11 +562,12 @@
   .service-description {
     font-size: 0.9rem;
   }
+
+  .service-icon {
+    font-size: 2rem;
+  }
 }
 
-/* Why Choose Us Section */
-/* Why Choose Us Section */
-/* Why Choose HR Section */
 /* Why Choose Unique Section */
 .why-choose-unique-section {
   position: relative;

@@ -1,38 +1,38 @@
 .navbar {
-  position: fixed; /* Keeps navbar at the top during scroll */
+  height: 70px; /* Fixed navbar height */
+  position: sticky;
+  display: flex;
+  align-items: center;
   top: 0;
   width: 100%;
   background: #ffffff;
   z-index: 1000;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Universal Container Settings */
-.container {
-  max-width: 1200px; /* Restricts container width for consistent layout */
-  margin: 0 auto; /* Centers content */
-  padding: 0 15px; /* Adds spacing to prevent edge overflow */
-}
-
 .navbar .container {
-  max-width: 1200px; /* Same width as hero and about sections */
-  padding: 0 15px; /* Prevents overflow */
-  margin: 0 auto; /* Centers the content */
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/* Logo */
 .navbar-logo img {
-  height: 50px;
-  width: auto;
+  width: 200px; /* Increase this for bigger logo */
+  height: 80px; /* Maintain aspect ratio */
+  max-height: 50px; /* Restrict navbar height */
+  object-fit: contain; /* Ensures proper scaling */
 }
 
 /* Navbar Links */
 .navbar-links ul {
   display: flex;
-  gap: 20px; /* Reduced gap to prevent stretching */
+  gap: 20px;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -57,7 +57,21 @@
   border-bottom: 2px solid #d10000;
 }
 
-/* Mobile Hamburger Menu */
+/* Call-to-Action (CTA) Button */
+.nav-cta {
+  background: #d10000;
+  color: #ffffff !important;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: #a00000;
+  transform: translateY(-3px);
+}
+
+/* Mobile Menu Button */
 .navbar-toggle {
   display: none;
   background: none;
@@ -68,20 +82,17 @@
 }
 
 @media (max-width: 991px) {
-  .container {
-    padding: 0 15px; /* Consistent padding on medium devices */
-  }
   .navbar-toggle {
     display: block;
   }
 
   .navbar-links {
     position: fixed;
-    top: 60px; /* Just below the navbar */
+    top: 60px;
     right: 0;
     background: #ffffff;
     width: 100%;
-    max-width: 300px; /* Dropdown width for mobile */
+    max-width: 300px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transform: translateX(100%);
     transition: transform 0.3s ease;
@@ -99,7 +110,7 @@
   }
 
   .navbar-links.active {
-    transform: translateX(0); /* Dropdown becomes visible */
+    transform: translateX(0);
   }
 }
 
@@ -111,16 +122,12 @@
 
 /* Responsive Alignment */
 @media (max-width: 767px) {
-  .container {
-    padding: 0 15px; /* Consistent padding on medium devices */
-  }
-
   .navbar .container {
     padding: 0 15px;
   }
 
   .navbar-links ul li a {
-    font-size: 0.9rem; /* Smaller font size for compact view */
+    font-size: 0.9rem;
     padding: 8px 10px;
   }
 }
@@ -129,7 +136,7 @@
 .hero-section {
   position: relative;
   background: linear-gradient(135deg, #ff4b4b 50%, #ffffff 50%);
-  padding: 100px 20px;
+  padding: 100px 0;
   overflow: hidden;
   color: #ffffff;
 }
@@ -251,7 +258,7 @@
 /* WHO WE ARE SECTION */
 .who-we-are-section {
   background: #fff;
-  padding: 80px 20px;
+  padding: 80px 0;
 }
 
 .section-heading {
@@ -361,7 +368,7 @@
 .elevated-services-section {
   position: relative;
   background: #f8f9fa;
-  padding: 80px 20px;
+  padding: 80px 0;
 }
 
 .section-title {
@@ -638,6 +645,9 @@
   padding: 80px 0;
   text-align: center;
   position: relative;
+  width: 100%;
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  box-sizing: border-box;
 }
 
 .section-title {
@@ -660,12 +670,16 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  padding: 0 15px; /* Adds padding for small screens */
+  box-sizing: border-box;
 }
 
 .process-item {
   display: flex;
   align-items: center;
   position: relative;
+  flex-wrap: wrap; /* Ensures proper wrapping on smaller screens */
+  justify-content: center;
 }
 
 .step-number {
@@ -673,7 +687,7 @@
   font-weight: bold;
   color: #d10000;
   flex-shrink: 0;
-  width: 100px;
+  width: 80px;
   text-align: center;
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -687,6 +701,7 @@
   border-radius: 50%;
   margin: 0 20px;
   transition: transform 0.3s ease, background 0.3s ease;
+  flex-shrink: 0;
 }
 
 .process-item:hover .step-icon {
@@ -698,7 +713,7 @@
   background: #f9f9f9;
   padding: 20px;
   border-radius: 8px;
-  width: 100%;
+  width: calc(100% - 120px); /* Ensures content doesn't overflow */
   text-align: left;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, background 0.3s ease;
@@ -725,7 +740,7 @@
   color: #666;
 }
 
-/* Responsive Design */
+/* Responsive Fixes */
 @media (max-width: 991px) {
   .section-title {
     font-size: 2.4rem;
@@ -733,6 +748,7 @@
 
   .step-number {
     font-size: 3rem;
+    width: 70px;
   }
 
   .step-icon {
@@ -750,6 +766,28 @@
   }
 }
 
+@media (max-width: 767px) {
+  .process-item {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center;
+  }
+
+  .step-number {
+    width: auto;
+    font-size: 2.5rem;
+  }
+
+  .step-icon {
+    font-size: 1.5rem;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  .step-content {
+    width: 100%; /* Full width for small screens */
+    text-align: center;
+  }
+}
 .testimonials-section {
   background: #ffffff;
   padding: 80px 0;
@@ -900,7 +938,7 @@
   background: linear-gradient(135deg, #d10000, #ff4b4b);
   color: #ffffff;
   text-align: center;
-  padding: 80px 20px;
+  padding: 80px 0;
   position: relative;
   overflow: hidden;
 }
@@ -1009,7 +1047,7 @@
 .footer-section {
   background: #0a0a0a;
   color: #fff;
-  padding: 60px 20px;
+  padding: 60px 0;
   font-family: Arial, sans-serif;
 }
 

@@ -7,160 +7,185 @@ body {
 /* General Navigation Styles */
 /* General Navigation Styles */
 /* General Navigation Styles */
-.nav-container {
+.navbar {
+  height: 70px; /* Fixed navbar height */
+  position: sticky;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
-  position: fixed;
   top: 0;
   width: 100%;
-  height: 70px; /* Fixed height for the navbar */
+  background: #ffffff;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.logo {
+.navbar .container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
-.logo-img {
-  width: 60px;
-  height: auto;
+/* Logo */
+.navbar-logo img {
+  width: 200px; /* Increase this for bigger logo */
+  height: 80px; /* Maintain aspect ratio */
+  max-height: 50px; /* Restrict navbar height */
+  object-fit: contain; /* Ensures proper scaling */
 }
 
-/* Navigation Links */
-.nav-links {
+/* Navbar Links */
+.navbar-links ul {
   display: flex;
+  gap: 20px;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-.nav-link {
+.navbar-links ul li a {
   text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 600;
   color: #333333;
-  margin: 0 10px;
   padding: 10px 15px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.nav-link:hover {
-  color: #d10000; /* Red theme on hover */
+.navbar-links ul li a:hover {
+  color: #d10000;
   transform: scale(1.05);
-  background-color: rgba(209, 0, 0, 0.1); /* Light red hover effect */
-  border-radius: 5px;
 }
 
-/* Highlighted Contact Link */
-.contact-link {
-  font-weight: bold;
-  padding: 10px 15px;
-  color: #ffffff;
-  background-color: #d10000;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+.navbar-links ul li a.active {
+  color: #d10000;
+  border-bottom: 2px solid #d10000;
 }
 
-.contact-link:hover {
-  background-color: #a00000;
-  color: #fff;
+/* Call-to-Action (CTA) Button */
+.nav-cta {
+  background: #d10000;
+  color: #ffffff !important;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: #a00000;
   transform: translateY(-3px);
 }
 
-/* Register Button (Different Layout) */
-.register-button {
-  background-color: #ffffff;
-  color: #d10000;
-  font-weight: bold;
-  padding: 12px 20px;
-  border: 2px solid #d10000;
-  border-radius: 50px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-}
-
-.register-button:hover {
-  background-color: #d10000;
-  color: #ffffff;
-  transform: translateY(-5px);
-}
-
-/* Menu Toggle Button */
-.menu-toggle {
+/* Mobile Menu Button */
+.navbar-toggle {
   display: none;
   background: none;
   border: none;
-  cursor: pointer;
   font-size: 1.5rem;
   color: #333333;
+  cursor: pointer;
 }
 
-/* Responsive Design for Mobile Navigation */
 @media (max-width: 991px) {
-  .menu-toggle {
-    display: block; /* Visible on mobile */
+  .navbar-toggle {
+    display: block;
   }
 
-  .nav-links {
+  .navbar-links {
     position: fixed;
-    top: 70px; /* Below the navbar */
+    top: 60px;
     right: 0;
     background: #ffffff;
     width: 100%;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    max-width: 300px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 999;
-    box-shadow: -2px 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    display: block;
   }
 
-  .nav-links.active {
+  .navbar-links ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .navbar-links ul li {
+    text-align: left;
+  }
+
+  .navbar-links.active {
     transform: translateX(0);
-  }
-
-  .nav-link {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    width: 100%;
-    text-align: center;
-  }
-
-  .contact-link,
-  .register-button {
-    margin: 15px 0;
-    width: auto;
   }
 }
 
-/* Small Screens (Mobile Adjustments) */
+/* Sticky Background on Scroll */
+.navbar.scrolled {
+  background: #f8f9fa;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Alignment */
 @media (max-width: 767px) {
-  .logo-img {
-    width: 50px;
+  .navbar .container {
+    padding: 0 15px;
   }
 
-  .nav-link {
-    font-size: 1rem;
-  }
-
-  .register-button {
-    padding: 10px 15px;
+  .navbar-links ul li a {
     font-size: 0.9rem;
+    padding: 8px 10px;
   }
 }
 
 /* Hero Section */
+
+.smm-marq {
+  font-size: 1.1rem; /* Large and readable text */
+  font-weight: bold;
+  color: #000; /* Vibrant red color */
+  text-transform: uppercase; /* Convert text to uppercase for emphasis */
+  letter-spacing: 1px; /* Add spacing between letters */
+  background: linear-gradient(90deg, #c90001, #ff9f45, #ffe347, #c90001);
+  background-size: 200% auto; /* Gradient effect animation */
+  animation: gradientScroll 5s linear infinite; /* Smooth gradient animation */
+  padding: 20px 0;
+}
+
+marquee.smm-marq {
+  width: 100%;
+  padding: 10px 0; /* Add padding for better appearance */
+  overflow: hidden; /* Hide overflow text outside the marquee */
+  background-color: #000; /* Contrast background for better visibility */
+  border-top: 2px solid #c90001; /* Top border for emphasis */
+  border-bottom: 2px solid #c90001; /* Bottom border for emphasis */
+  box-shadow: 0 5px 15px rgba(255, 76, 97, 0.5); /* Subtle glow effect */
+}
+
+@media (max-width: 768px) {
+  .smm-marq {
+    font-size: 0.9rem; /* Smaller text for better fit */
+    padding: 15px 0; /* Adjust padding */
+    letter-spacing: 0.5px; /* Slightly tighter spacing */
+  }
+
+  marquee.smm-marq {
+    padding: 8px 0; /* Adjust padding */
+    border-top: 1px solid #ff4c61; /* Thinner border */
+    border-bottom: 1px solid #ff4c61; /* Thinner border */
+  }
+}
+
+@media (max-width: 480px) {
+  .smm-marq {
+    font-size: 0.8rem; /* Adjust marquee font size */
+    padding: 10px 0; /* Reduce padding */
+  }
+}
+
 .hero-section {
   padding-top: 100px; /* Add padding equal to the navbar height + some buffer */
   text-align: center;
@@ -280,114 +305,69 @@ body {
 /* Our Services Section */
 /* Base Styles for All Screens */
 /* Services Section */
-/* Services Section */
-.services-section {
+.our-services-section {
   padding: 80px 0;
-  background-color: #f8f9fa;
+  background-color: #ffffff;
   text-align: center;
 }
 
-.section-title {
+/* Section Title */
+.services-title {
   font-size: 2.5rem;
   font-weight: 800;
-  color: #333333;
-  margin-bottom: 15px;
+  color: #d10000;
+  margin-bottom: 10px;
 }
 
-.section-description {
+.services-description {
   font-size: 1.2rem;
-  color: #666666;
+  color: #555;
   margin-bottom: 40px;
 }
 
-/* Service Cards */
-.service-card {
-  padding: 30px;
+/* Service Boxes */
+.service-box {
+  background: #fff;
+  padding: 25px;
   border-radius: 12px;
-  color: #ffffff;
-  transition: transform 0.4s ease, box-shadow 0.3s ease;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.service-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-.service-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.1);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.service-card:hover::before {
-  opacity: 1;
-}
-
-/* Individual Card Colors */
-.service-card-red {
-  background: linear-gradient(135deg, #d10000, #ff4b4b);
-}
-
-.service-card-blue {
-  background: linear-gradient(135deg, #007bff, #66cfff);
-}
-
-.service-card-green {
-  background: linear-gradient(135deg, #28a745, #71e17d);
-}
-
-.service-card-yellow {
-  background: linear-gradient(135deg, #ffc107, #ffe066);
-}
-
-.service-card-orange {
-  background: linear-gradient(135deg, #ff5722, #ff8c52);
-}
-
-.service-card-purple {
-  background: linear-gradient(135deg, #6f42c1, #aa78e9);
+.service-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Service Icons */
 .service-icon {
   font-size: 3rem;
-  margin-bottom: 20px;
-  color: rgba(255, 255, 255, 0.9);
+  color: #d10000;
+  margin-bottom: 15px;
 }
 
-.service-title {
-  font-size: 1.8rem;
+/* Service Heading */
+.service-heading {
+  font-size: 1.6rem;
   font-weight: bold;
+  color: #d10000;
   margin-bottom: 10px;
 }
 
-.service-description {
+/* Service Description */
+.service-text {
   font-size: 1rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: #555;
   line-height: 1.6;
 }
 
 /* Responsive Design */
-/* Medium Screens (Tablets) */
 @media (max-width: 991px) {
-  .service-card {
-    padding: 20px;
+  .service-heading {
+    font-size: 1.4rem;
   }
 
-  .service-title {
-    font-size: 1.5rem;
-  }
-
-  .service-description {
+  .service-text {
     font-size: 0.95rem;
   }
 
@@ -396,22 +376,21 @@ body {
   }
 }
 
-/* Small Screens (Mobile) */
 @media (max-width: 767px) {
-  .service-card {
-    padding: 15px;
+  .service-box {
+    padding: 20px;
   }
 
-  .service-title {
+  .service-heading {
     font-size: 1.3rem;
   }
 
-  .service-description {
+  .service-text {
     font-size: 0.9rem;
   }
 
   .service-icon {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 }
 
@@ -439,7 +418,7 @@ body {
 .why-choose-us-img {
   max-width: 100%;
   border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); */
 }
 
 /* Feature List */
@@ -804,9 +783,13 @@ body {
   gap: 20px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .social-link {
   font-size: 1.8rem;
-  color: #555555;
+  color: #007bff;
   transition: color 0.3s ease;
 }
 

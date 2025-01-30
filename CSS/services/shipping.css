@@ -103,7 +103,7 @@ img {
   display: block;
   margin: 0 auto;
   border-radius: 15px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); */
 }
 
 /* Responsive Design */
@@ -145,8 +145,6 @@ img {
 }
 
 /* Navbar Styles */
-/* Navbar Container */
-/* Navbar Container */
 .navbar {
   position: sticky; /* Keeps navbar at the top during scroll */
   top: 0;
@@ -159,7 +157,6 @@ img {
 
 .navbar .container {
   max-width: 1200px; /* Aligns with global container width */
-  padding: 10px 20px; /* Prevents content from touching edges */
   margin: 0 auto; /* Centers the navbar content */
   display: flex;
   align-items: center;
@@ -265,6 +262,50 @@ img {
 
 /* Hero Section */
 /* Modern Hero Section */
+
+.smm-marq {
+  font-size: 1.1rem; /* Large and readable text */
+  font-weight: bold;
+  color: #000; /* Vibrant red color */
+  text-transform: uppercase; /* Convert text to uppercase for emphasis */
+  letter-spacing: 1px; /* Add spacing between letters */
+  background: linear-gradient(90deg, #c90001, #ff9f45, #ffe347, #c90001);
+  background-size: 200% auto; /* Gradient effect animation */
+  animation: gradientScroll 5s linear infinite; /* Smooth gradient animation */
+  padding: 20px 0;
+}
+
+marquee.smm-marq {
+  width: 100%;
+  padding: 10px 0; /* Add padding for better appearance */
+  overflow: hidden; /* Hide overflow text outside the marquee */
+  background-color: #000; /* Contrast background for better visibility */
+  border-top: 2px solid #c90001; /* Top border for emphasis */
+  border-bottom: 2px solid #c90001; /* Bottom border for emphasis */
+  box-shadow: 0 5px 15px rgba(255, 76, 97, 0.5); /* Subtle glow effect */
+}
+
+@media (max-width: 768px) {
+  .smm-marq {
+    font-size: 0.9rem; /* Smaller text for better fit */
+    padding: 15px 0; /* Adjust padding */
+    letter-spacing: 0.5px; /* Slightly tighter spacing */
+  }
+
+  marquee.smm-marq {
+    padding: 8px 0; /* Adjust padding */
+    border-top: 1px solid #ff4c61; /* Thinner border */
+    border-bottom: 1px solid #ff4c61; /* Thinner border */
+  }
+}
+
+@media (max-width: 480px) {
+  .smm-marq {
+    font-size: 0.8rem; /* Adjust marquee font size */
+    padding: 10px 0; /* Reduce padding */
+  }
+}
+
 .hero-modern-centered {
   background: #ffffff; /* Clean white background */
   padding: 100px 20px;
@@ -340,7 +381,7 @@ img {
   width: 100%;
   max-width: 500px;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); */
   animation: float 5s infinite ease-in-out;
 }
 
@@ -496,10 +537,11 @@ img {
 
 /* Services Section */
 /* Shipping Fulfillment Services Section */
+/* Services Section */
 .sf-services-section {
   background: #f8f9fa;
-  position: relative;
   padding: 80px 20px;
+  text-align: center;
 }
 
 .sf-container {
@@ -507,6 +549,7 @@ img {
   margin: 0 auto;
 }
 
+/* Heading Styling */
 .sf-services-heading {
   font-size: 2.8rem;
   font-weight: 800;
@@ -523,10 +566,37 @@ img {
   font-size: 1.2rem;
   color: #555555;
   margin-bottom: 50px;
-  line-height: 1.6;
 }
 
-/* Individual Service */
+/* Services Grid */
+.sf-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 30px; /* Space between items */
+}
+
+/* Individual Service Box */
+.sf-service-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sf-service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Service Icons */
+.sf-service-icon {
+  font-size: 3rem;
+  color: #d10000;
+  margin-bottom: 15px;
+}
+
+/* Service Titles */
 .sf-service-title {
   font-size: 1.5rem;
   font-weight: bold;
@@ -534,80 +604,23 @@ img {
   margin-bottom: 10px;
 }
 
+/* Service Description */
 .sf-service-description {
   font-size: 1rem;
   color: #555555;
   line-height: 1.6;
 }
 
-/* Service Icon */
-.sf-service-icon {
-  font-size: 5rem;
-  color: #d10000;
-  margin-top: 15px;
-  transition: transform 0.3s ease;
-}
-
-.sf-service-icon:hover {
-  transform: scale(1.2);
-}
-
-/* Row Styling */
-.row {
-  margin-bottom: 40px;
-}
-
-.row:nth-child(even) {
-  background: #ffffff; /* Alternating row colors */
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.row:nth-child(odd) {
-  padding: 20px;
-  border-radius: 15px;
-}
-
 /* Responsive Design */
 @media (max-width: 991px) {
-  .sf-services-heading {
-    font-size: 2.4rem;
-  }
-
-  .sf-services-description {
-    font-size: 1.1rem;
-  }
-
-  .sf-service-title {
-    font-size: 1.3rem;
-  }
-
-  .sf-service-description {
-    font-size: 0.95rem;
-  }
-
-  .sf-service-icon {
-    font-size: 4rem;
+  .sf-services-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
   }
 }
 
 @media (max-width: 767px) {
-  .sf-services-section {
-    text-align: center;
-    padding: 60px 15px;
-  }
-
-  .sf-services-heading {
-    font-size: 2rem;
-  }
-
-  .sf-services-description {
-    font-size: 1rem;
-  }
-
-  .sf-service-icon {
-    font-size: 3.5rem;
+  .sf-services-grid {
+    grid-template-columns: 1fr; /* 1 column on small screens */
   }
 }
 
@@ -1237,6 +1250,7 @@ img {
 }
 
 .sf-cta-heading {
+  color: #fff;
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 20px;
@@ -1249,6 +1263,7 @@ img {
 }
 
 .sf-cta-content {
+  color: #fff;
   font-size: 1.2rem;
   line-height: 1.8;
   margin-bottom: 40px;

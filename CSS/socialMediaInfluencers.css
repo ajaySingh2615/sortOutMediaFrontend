@@ -19,6 +19,10 @@ body {
   color: #333;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* Section Background */
 .bg_smm {
   background-color: #f1f1f1; /* Light gray background */
@@ -27,9 +31,7 @@ body {
 }
 
 /* Container with responsive widths */
-.container {
-  padding: 50px 0px;
-}
+
 .col-md-12 {
   padding: 0px;
 }
@@ -103,7 +105,7 @@ marquee.smm-marq {
 }
 
 .sec-white {
-  color: #fff;
+  color: #000;
 }
 
 .heading-title-md {
@@ -129,7 +131,7 @@ marquee.smm-marq {
 }
 
 .p-white {
-  color: #fff;
+  color: #000;
 }
 
 /* Button Styles */
@@ -137,8 +139,8 @@ marquee.smm-marq {
   background-color: #c90001; /* Red background */
   color: white;
   border: none;
-  padding: 18px 32px;
-  font-size: 1.1rem;
+  padding: 10px 20px;
+  font-size: 1.5rem;
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
@@ -210,128 +212,137 @@ marquee.smm-marq {
 
 /* ####################################### */
 /* Navigation Links */
-/* Navigation Container */
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background-color: #fff;
-  color: #000;
+.navbar {
+  height: 70px; /* Fixed navbar height */
   position: sticky;
+  display: flex;
+  align-items: center;
   top: 0;
+  width: 100%;
+  background: #ffffff;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar .container {
+  /* max-width: 1200px; */
+  padding: 0 20px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* Logo */
-.logo-img {
-  max-width: 150px; /* Proportional to smaller screens */
-  height: 60px; /* Maintain aspect ratio */
-  margin-left: 10px;
-  transition: transform 0.3s ease;
+.navbar-logo img {
+  width: 200px; /* Increase this for bigger logo */
+  height: 80px; /* Maintain aspect ratio */
+  max-height: 50px; /* Restrict navbar height */
+  object-fit: contain; /* Ensures proper scaling */
 }
 
-.logo-img:hover {
-  transform: scale(1.1);
-  cursor: pointer;
-}
-
-/* Navigation Links */
-.nav-links {
+/* Navbar Links */
+.navbar-links ul {
   display: flex;
+  gap: 20px;
   list-style: none;
-  gap: 15px; /* Maintain spacing between links */
   margin: 0;
   padding: 0;
 }
 
-.nav-links li {
-  position: relative;
-}
-
-/* Link Styles */
-.nav-link {
+.navbar-links ul li a {
   text-decoration: none;
-  color: #000;
-  font-size: 1.2rem; /* Consistent text size */
-  font-weight: 500;
-  padding: 8px 15px; /* Adjusted for better proportions */
-  border-radius: 4px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333333;
+  padding: 10px 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.nav-link:hover {
-  background-color: #333333;
-  color: #ff7f7f;
+.navbar-links ul li a:hover {
+  color: #d10000;
   transform: scale(1.05);
 }
 
-.mar-20 {
-  margin-top: 10px;
+.navbar-links ul li a.active {
+  color: #d10000;
+  border-bottom: 2px solid #d10000;
 }
 
-/* Register Button */
-.register-button {
-  background: linear-gradient(45deg, #c90001, #333333);
-  color: #fff;
-  padding: 18px 32px;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-  border: none;
-  transition: background-color 0.3s ease, transform 0.3s ease,
-    box-shadow 0.3s ease;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+/* Call-to-Action (CTA) Button */
+.nav-cta {
+  background: #d10000;
+  color: #ffffff !important;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.register-button:hover {
-  background: linear-gradient(45deg, #c90001, #ff512f);
+.nav-cta:hover {
+  background: #a00000;
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(255, 81, 47, 0.5);
 }
 
-/* Hamburger Menu (Mobile Only) */
-.menu-toggle {
+/* Mobile Menu Button */
+.navbar-toggle {
   display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #333333;
+  cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    background-color: #333;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    max-height: 0;
-    overflow: hidden;
-    padding: 0;
-    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
-    z-index: 999;
-  }
-
-  .nav-links.active {
-    max-height: 500px; /* Enough for all links */
-    padding: 20px 0;
-  }
-
-  .menu-toggle {
+@media (max-width: 991px) {
+  .navbar-toggle {
     display: block;
   }
 
-  .nav-link {
-    font-size: 1.2rem; /* Slightly smaller for mobile */
-    padding: 10px 20px;
+  .navbar-links {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background: #ffffff;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: block;
   }
 
-  .register-button {
-    padding: 12px 20px; /* Fit smaller screens */
-    font-size: 1rem;
+  .navbar-links ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .navbar-links ul li {
+    text-align: left;
+  }
+
+  .navbar-links.active {
+    transform: translateX(0);
+  }
+}
+
+/* Sticky Background on Scroll */
+.navbar.scrolled {
+  background: #f8f9fa;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Alignment */
+@media (max-width: 767px) {
+  .navbar .container {
+    padding: 0 15px;
+  }
+
+  .navbar-links ul li a {
+    font-size: 0.9rem;
+    padding: 8px 10px;
   }
 }
 
@@ -583,7 +594,7 @@ p.heading-title {
 
 /* Boost Blue Card */
 .boost-bl {
-  background-color: #4d94ff; /* Blue color */
+  background-color: #ff4d4d; /* Red color */
   border-radius: 15px;
   padding: 30px;
   text-align: center;
@@ -607,7 +618,7 @@ p.heading-title {
 /* Text Styling */
 .boost-red p,
 .boost-bl p {
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   color: #fff;
   margin: 0;
@@ -909,7 +920,7 @@ i {
 /* Container styling */
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 30px auto;
 }
 
 /* Headings styling */
@@ -1293,22 +1304,5 @@ i {
 @media (max-width: 768px) {
   .footer-logo img {
     width: 140px; /* Smaller size for mobile */
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 991px) {
-  .footer-section .row {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .social-icons {
-    justify-content: center;
-  }
-
-  .footer-bottom ul {
-    flex-direction: column;
-    gap: 10px;
   }
 }

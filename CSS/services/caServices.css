@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 20px;
+  /* padding: 15px 20px; */
 }
 
 .navbar-logo img {
@@ -106,6 +106,49 @@
 }
 
 /* Hero Section */
+.smm-marq {
+  font-size: 1.1rem; /* Large and readable text */
+  font-weight: bold;
+  color: #000; /* Vibrant red color */
+  text-transform: uppercase; /* Convert text to uppercase for emphasis */
+  letter-spacing: 1px; /* Add spacing between letters */
+  background: linear-gradient(90deg, #c90001, #ff9f45, #ffe347, #c90001);
+  background-size: 200% auto; /* Gradient effect animation */
+  animation: gradientScroll 5s linear infinite; /* Smooth gradient animation */
+  padding: 20px 0;
+}
+
+marquee.smm-marq {
+  width: 100%;
+  padding: 10px 0; /* Add padding for better appearance */
+  overflow: hidden; /* Hide overflow text outside the marquee */
+  background-color: #000; /* Contrast background for better visibility */
+  border-top: 2px solid #c90001; /* Top border for emphasis */
+  border-bottom: 2px solid #c90001; /* Bottom border for emphasis */
+  box-shadow: 0 5px 15px rgba(255, 76, 97, 0.5); /* Subtle glow effect */
+}
+
+@media (max-width: 768px) {
+  .smm-marq {
+    font-size: 0.9rem; /* Smaller text for better fit */
+    padding: 15px 0; /* Adjust padding */
+    letter-spacing: 0.5px; /* Slightly tighter spacing */
+  }
+
+  marquee.smm-marq {
+    padding: 8px 0; /* Adjust padding */
+    border-top: 1px solid #ff4c61; /* Thinner border */
+    border-bottom: 1px solid #ff4c61; /* Thinner border */
+  }
+}
+
+@media (max-width: 480px) {
+  .smm-marq {
+    font-size: 0.8rem; /* Adjust marquee font size */
+    padding: 10px 0; /* Reduce padding */
+  }
+}
+
 .hero-section {
   position: relative;
   height: 100vh;
@@ -146,7 +189,6 @@
 
 .hero-title .highlight {
   color: #333333;
-  background: #ffcccc;
   padding: 0 8px;
   border-radius: 4px;
 }
@@ -338,11 +380,19 @@
 }
 
 .section-title-white {
-  color: #ffffff !important;
+  color: #fff !important;
 }
 
 .section-description-white {
-  color: #ffffff !important;
+  color: #fff !important;
+}
+
+.section-title-black {
+  color: #000 !important;
+}
+
+.section-description-black {
+  color: #000 !important;
 }
 
 .section-description {
@@ -1044,12 +1094,12 @@
 }
 
 .faq-card.active .faq-answer {
-  padding: 30px;
+  /* padding: 10px; */
 }
 
 .faq-answer p {
   margin: 0;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #555555;
   line-height: 1.6;
 }
@@ -1193,22 +1243,5 @@
 @media (max-width: 768px) {
   .footer-logo img {
     width: 140px; /* Smaller size for mobile */
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 991px) {
-  .footer-section .row {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .social-icons {
-    justify-content: center;
-  }
-
-  .footer-bottom ul {
-    flex-direction: column;
-    gap: 10px;
   }
 }

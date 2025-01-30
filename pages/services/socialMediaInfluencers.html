@@ -24,84 +24,82 @@
     <script src="https://cdn.lordicon.com/ritcuqlt.js"></script>
   </head>
   <body>
-    <section>
-      <div class="nav-container">
-        <!-- Logo Section with Image -->
-        <a href="#" class="logo">
+    <header class="navbar">
+      <div class="container">
+        <!-- Logo -->
+        <a href="/" class="navbar-logo">
           <img
-            src="/images/SortOutMediaHDLogo.png"
-            alt="Your Logo"
-            class="logo-img"
+            src="/images/sortoutInnovation-icon/Sortout innovation.png"
+            alt="SortOut Innovation"
           />
         </a>
 
-        <!-- Menu Toggle Button (Hamburger) -->
-        <button class="menu-toggle" aria-label="Toggle Navigation">
-          <lord-icon
-            src="https://cdn.lordicon.com/wloilxuq.json"
-            trigger="click"
-            style="width: 40px; height: 40px"
-          ></lord-icon>
-        </button>
-
         <!-- Navigation Links -->
-        <ul class="nav-links">
-          <li><a href="#" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="pages/Findjobs.html" class="nav-link">Find Jobs</a></li>
-          <li>
-            <a href="pages/findTalent.html" class="nav-link">Browse Talent</a>
-          </li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#contact" class="nav-link contact-link">Contact</a></li>
-          <li class="mar-20">
-            <a href="browseTalent.html" class="register-button">Register</a>
-          </li>
-        </ul>
+        <nav class="navbar-links">
+          <ul>
+            <li><a href="/index.html" class="nav-link">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="/pages/career.html" class="nav-link">Career</a></li>
+            <li><a href="/industries" class="nav-link">Browse Talent</a></li>
+            <li>
+              <a href="/pages/our-services-page/service.html" class="nav-link"
+                >Service</a
+              >
+            </li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button class="navbar-toggle" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
       </div>
-    </section>
+    </header>
 
     <script>
-      const toggleMenu = document.querySelector(".menu-toggle");
-      const navLinks = document.querySelector(".nav-links");
+      // Mobile Menu Toggle
+      const navbarToggle = document.querySelector(".navbar-toggle");
+      const navbarLinks = document.querySelector(".navbar-links");
 
-      // Toggle the menu visibility
-      toggleMenu.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
+      navbarToggle.addEventListener("click", () => {
+        navbarLinks.classList.toggle("active");
       });
 
-      // Close the menu when any link is clicked
-      navLinks.querySelectorAll("a").forEach((link) => {
-        link.addEventListener("click", () => {
-          navLinks.classList.remove("active");
-        });
+      // Sticky Navbar on Scroll
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
       });
     </script>
     <!-- #################################################### -->
     <!-- Hero Section -->
     <!-- #################################################### -->
     <section style="overflow: hidden">
-      <!-- <marquee class="smm-marq" behavior="alternate">
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-        <span class="pdr-60">Social Media Marketing</span>
-      </marquee> -->
+      <marquee class="smm-marq" behavior="alternate">
+        <span class="pdr-60">Digital Marketing Services</span>
+        <span class="pdr-60">Digital Marketing Services</span>
+        <span class="pdr-60">Digital Marketing Services</span>
+        <span class="pdr-60">Digital Marketing Services</span>
+        <span class="pdr-60">Digital Marketing Services</span>
+        <span class="pdr-60">Digital Marketing Services</span>
+        <span class="pdr-60">Digital Marketing Services</span>
+        <span class="pdr-60">Digital Marketing Services</span>
+        <span class="pdr-60">Digital Marketing Services</span>
+        <span class="pdr-60">Digital Marketing Services</span>
+        <span class="pdr-60">Digital Marketing Services</span>
+        <span class="pdr-60">Digital Marketing Services</span>
+        <span class="pdr-60">Digital Marketing Services</span>
+      </marquee>
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <h1 class="heading-main mb-20 mt-30">
-              Boost Your Social Media Impact!
+              Boost Your Digital Marketing Impact!
             </h1>
 
             <p class="p-lg mb-20">
@@ -110,9 +108,15 @@
               media game to the next level and captivate your audience like
               never before.
             </p>
-            <button class="btn-primary mt-10 mb-20 myBtn" id="myBtn">
-              Get Started Now!
-            </button>
+            <a
+              href="https://wa.me/919818559102"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button class="btn-primary mt-10 mb-20 myBtn" id="myBtn">
+                Book Now
+              </button>
+            </a>
           </div>
           <div class="col-md-6">
             <img
@@ -128,7 +132,7 @@
     <!-- #################################################### -->
     <!-- SECTION CARD  -->
     <!-- #################################################### -->
-    <section style="background-color: #fb0001" ;>
+    <section id="about">
       <div class="container">
         <div class="row">
           <div class="col-md-12 center">
@@ -243,11 +247,11 @@
       <div class="container ov-x">
         <div class="row">
           <div class="col-md-12 center mb-30">
-            <h2 class="secondary-heading-main service-heading">
-              Transform your brand’s online presence with our all-inclusive,
-              results-driven social media services, designed to engage, grow,
-              and elevate your audience
-            </h2>
+            <h2 class="secondary-heading-main service-heading">Our Services</h2>
+            <p class="smm-paragraph p-lg mb-20">
+              Explore our range of Digital Marketing Services tailored to meet
+              your business needs.
+            </p>
           </div>
 
           <!-- Content Creation -->
@@ -273,7 +277,7 @@
                 <lord-icon
                   src="https://cdn.lordicon.com/vpbspaec.json"
                   trigger="hover"
-                  colors="primary:#4d94ff,secondary:#ffffff"
+                  colors="primary:#ff4d4d,secondary:#ffffff"
                   style="width: 60px; height: 60px"
                 >
                 </lord-icon>
@@ -294,7 +298,7 @@
                 >
                 </lord-icon>
               </div>
-              <p class="white">Social Media Ads</p>
+              <p class="white">Social Media Marketing</p>
             </div>
           </div>
 
@@ -305,7 +309,7 @@
                 <lord-icon
                   src="https://cdn.lordicon.com/dflgefov.json"
                   trigger="hover"
-                  colors="primary:#4d94ff,secondary:#ffffff"
+                  colors="primary:#ff4d4d,secondary:#ffffff"
                   style="width: 60px; height: 60px"
                 >
                 </lord-icon>
@@ -321,7 +325,7 @@
                 <lord-icon
                   src="https://cdn.lordicon.com/nobciafz.json"
                   trigger="hover"
-                  colors="primary:#4d94ff,secondary:#ffffff"
+                  colors="primary:#ff4d4d,secondary:#ffffff"
                   style="width: 60px; height: 60px"
                 >
                 </lord-icon>
@@ -353,7 +357,7 @@
                 <lord-icon
                   src="https://cdn.lordicon.com/fcyboqbm.json"
                   trigger="hover"
-                  colors="primary:#4d94ff,secondary:#ffffff"
+                  colors="primary:#ff4d4d,secondary:#ffffff"
                   style="width: 60px; height: 60px"
                 >
                 </lord-icon>
@@ -406,7 +410,13 @@
                 <li>Basic engagement (comment replies)</li>
                 <li>Hashtag research</li>
               </ul>
-              <a href="#" class="btn btn-primary mt-3">Get Started</a>
+              <a
+                href="https://wa.me/919818559102"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary mt-3"
+                >Get Started</a
+              >
             </div>
           </div>
 
@@ -425,7 +435,13 @@
                 <li>Basic ad campaign: ₹10,000 ad spend</li>
                 <li>Monthly strategy planning</li>
               </ul>
-              <a href="#" class="btn btn-primary mt-3">Get Started</a>
+              <a
+                href="https://wa.me/919818559102"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary mt-3"
+                >Get Started</a
+              >
             </div>
           </div>
 
@@ -450,7 +466,13 @@
                 <li>Influencer collaboration: up to 2 influencers/month</li>
                 <li>Monthly strategy meetings</li>
               </ul>
-              <a href="#" class="btn btn-primary mt-3">Get Started</a>
+              <a
+                href="https://wa.me/919818559102"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary mt-3"
+                >Get Started</a
+              >
             </div>
           </div>
 
@@ -491,7 +513,13 @@
                 </li>
                 <li>Dedicated account manager available 24/7</li>
               </ul>
-              <a href="#" class="btn btn-primary mt-3">Get Started</a>
+              <a
+                href="https://wa.me/919818559102"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary mt-3"
+                >Get Started</a
+              >
             </div>
           </div>
         </div>
@@ -733,11 +761,11 @@
           <!-- Testimonial Card 1 -->
           <div class="col-12 col-md-4">
             <div class="testimonial-card">
-              <img
+              <!-- <img
                 src="/images/service-1.png"
                 class="testimonial-img"
                 alt="Testimonial 1"
-              />
+              /> -->
               <div class="testimonial-content">
                 <p class="test-p">
                   Working with Digital Boosters has been a game-changer for us.
@@ -755,11 +783,11 @@
           <!-- Testimonial Card 2 -->
           <div class="col-12 col-md-4">
             <div class="testimonial-card">
-              <img
+              <!-- <img
                 src="/images/service-2.png"
                 class="testimonial-img"
                 alt="Testimonial 2"
-              />
+              /> -->
               <div class="testimonial-content">
                 <p class="test-p">
                   From their innovative strategies to their continuous support,
@@ -777,11 +805,11 @@
           <!-- Testimonial Card 3 -->
           <div class="col-12 col-md-4">
             <div class="testimonial-card">
-              <img
+              <!-- <img
                 src="/images/service-3.png"
                 class="testimonial-img"
                 alt="Testimonial 3"
-              />
+              /> -->
               <div class="testimonial-content">
                 <p class="test-p">
                   Digital Boosters took a personal, hands-on approach that led
@@ -985,7 +1013,7 @@
       </div>
     </section>
 
-    <footer class="footer-section">
+    <footer id="contact" class="footer-section">
       <div class="container">
         <div class="row">
           <!-- Column 1: Company Info -->
@@ -995,7 +1023,7 @@
                 src="/images/sortoutInnovation-icon/Sortout innovation.jpg"
                 alt="SortOut Innovation"
               />
-              <p>
+              <p class="text-center">
                 Empowering businesses with top-notch solutions in digital, IT,
                 and business services.
               </p>
@@ -1019,7 +1047,7 @@
           </div>
 
           <!-- Column 3: Our Services -->
-          <div class="col-lg-3 col-md-6">
+          <div class="col-lg-2 col-md-6">
             <h4>Our Services</h4>
             <ul class="footer-links">
               <li>
@@ -1068,16 +1096,24 @@
           </div>
 
           <!-- Column 4: Contact Info -->
-          <div class="col-lg-2 col-md-6">
+          <div class="col-lg-3 col-md-6">
             <h4>Contact Us</h4>
             <ul class="footer-links">
               <li>
                 <i class="fas fa-phone"></i>
-                <a href="tel:+919818559102">+91 9818559102</a>
+                <a
+                  href="tel:+919818559102"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >+91 9818559102</a
+                >
               </li>
               <li>
                 <i class="fas fa-envelope"></i>
-                <a href="mailto:info@sortoutinnovation.com"
+                <a
+                  href="mailto:info@sortoutinnovation.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   >info@sortoutinnovation.com</a
                 >
               </li>
@@ -1092,10 +1128,30 @@
           <div class="col-lg-2 col-md-6">
             <h4>Follow Us</h4>
             <div class="social-icons">
-              <a href="#"><i class="fab fa-facebook"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-linkedin"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a
+                href="https://www.facebook.com/profile.php?id=61556452066209"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a
+                href="https://youtu.be/tw-xk-Pb-zA?si=QMTwuvhEuTegpqDr"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/company/104376933/admin/dashboard/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/sortoutmedia/"
+                target="_blank"
+                rel="noopener noreferrer"
+                ><i class="fab fa-instagram"></i
+              ></a>
             </div>
           </div>
         </div>
