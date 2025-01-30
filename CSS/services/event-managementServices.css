@@ -1282,6 +1282,8 @@
 }
 
 .footer-logo img {
+  padding-bottom: 15px;
+
   width: 180px; /* Adjust width as needed */
   height: auto; /* Maintains aspect ratio */
   max-width: 100%; /* Ensures responsiveness */
