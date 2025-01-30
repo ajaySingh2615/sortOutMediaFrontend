@@ -1157,6 +1157,7 @@ body {
 
 /* Primary Button */
 .btn-primary-cta {
+  text-decoration: none;
   background: white;
   color: #d10000;
   border: none;
@@ -1170,6 +1171,7 @@ body {
 
 /* Outline Button */
 .btn-outline-cta {
+  text-decoration: none;
   background: transparent;
   color: white;
   border: 2px solid white;
@@ -1306,6 +1308,7 @@ body {
 }
 
 .footer-logo img {
+  padding-bottom: 15px;
   width: 180px; /* Adjust width as needed */
   height: auto; /* Maintains aspect ratio */
   max-width: 100%; /* Ensures responsiveness */
