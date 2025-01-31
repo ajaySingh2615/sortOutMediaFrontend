@@ -393,7 +393,7 @@ body {
   width: 100%;
   max-width: 500px;
   border-radius: 10px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); */
 }
 
 /* 🔹 Responsive Fixes for Mobile */
@@ -1352,6 +1352,63 @@ body {
   .btn-primary {
     font-size: 1rem;
     padding: 8px 15px;
+  }
+}
+
+.founder-section {
+  background: linear-gradient(135deg, #d10000, #ff4b4b);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.founder-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.founder-quote {
+  font-size: 1.4rem;
+  font-style: italic;
+  max-width: 900px;
+  margin: 0 auto 30px;
+  line-height: 1.8;
+}
+
+.founder-name {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.founder-title {
+  font-size: 1.2rem;
+  color: #fff5f5;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .founder-heading {
+    font-size: 2rem;
+  }
+  .founder-quote {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .founder-section {
+    padding: 60px 15px;
+  }
+
+  .founder-heading {
+    font-size: 1.8rem;
+  }
+
+  .founder-quote {
+    font-size: 1.1rem;
   }
 }
 
