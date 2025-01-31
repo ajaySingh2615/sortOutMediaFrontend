@@ -369,13 +369,13 @@ body {
   height: 100px; /* Increased size */
   max-width: 200px;
   object-fit: contain;
-  filter: grayscale(100%);
+  filter: grayscale(0%);
   transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
 }
 
 /* Hover Effect */
 .logos img:hover {
-  filter: grayscale(0%);
+  filter: grayscale(100%);
   transform: scale(1.2);
 }
 
