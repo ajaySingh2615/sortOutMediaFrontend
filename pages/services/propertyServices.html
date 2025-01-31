@@ -23,8 +23,11 @@
     <header class="navbar">
       <div class="container">
         <!-- Logo -->
-        <a href="#" class="navbar-logo">
-          <img src="/images/SortOutMediaHDLogo.png" alt="Logo" />
+        <a href="/index.html" class="navbar-logo">
+          <img
+            src="/images/sortoutInnovation-icon/Sortout innovation.png"
+            alt="Logo"
+          />
         </a>
 
         <!-- Hamburger Menu for Mobile -->
@@ -775,32 +778,6 @@
         </div>
       </div>
     </footer>
-    <script>
-      // JavaScript for accordion toggle
-      document.querySelectorAll(".single-acco h2").forEach((item) => {
-        item.addEventListener("click", () => {
-          item.parentNode.classList.toggle("active");
-        });
-      });
-    </script>
-
-    <script>
-      document.querySelectorAll(".faq-item").forEach((item) => {
-        item.addEventListener("click", () => {
-          const isActive = item.classList.contains("active");
-          // Close all other active items
-          document
-            .querySelectorAll(".faq-item.active")
-            .forEach((activeItem) => {
-              activeItem.classList.remove("active");
-            });
-          // Toggle the clicked item
-          if (!isActive) {
-            item.classList.add("active");
-          }
-        });
-      });
-    </script>
 
     <script>
       // Toggle FAQ Functionality
