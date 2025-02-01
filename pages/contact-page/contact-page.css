@@ -131,3 +131,115 @@ body {
     padding: 8px 20px;
   }
 }
+
+/* Contact Info Section */
+.contact-info-section {
+  background: #f9f9f9;
+  padding: 100px 20px;
+}
+
+.section-title h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.section-title span {
+  color: red;
+}
+
+.section-title p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 40px;
+}
+
+/* Contact Card */
+.contact-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  text-decoration: none;
+  display: block;
+  color: inherit;
+  border: 2px solid transparent;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border-color: red;
+}
+
+/* Icon Styling */
+.icon-box {
+  width: 70px;
+  height: 70px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 15px;
+}
+
+.contact-icon {
+  font-size: 2rem;
+}
+
+/* Text Styling */
+.contact-card h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.contact-card p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Responsive Design */
+
+/* Small devices (phones) */
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 30px;
+  }
+
+  .contact-icon {
+    font-size: 1.8rem;
+  }
+
+  .contact-card h4 {
+    font-size: 1.3rem;
+  }
+
+  .contact-card p {
+    font-size: 1rem;
+  }
+}
+
+/* Extra small devices (very small phones) */
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 25px;
+  }
+
+  .contact-icon {
+    font-size: 1.6rem;
+  }
+
+  .contact-card h4 {
+    font-size: 1.2rem;
+  }
+
+  .contact-card p {
+    font-size: 0.95rem;
+  }
+}
