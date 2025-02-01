@@ -128,6 +128,159 @@
       <div class="floating-shape floating-triangle"></div>
     </section>
 
+    <!-- Banner Section Using Bootstrap -->
+    <section class="banner-section">
+      <div
+        id="bannerCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="4000"
+      >
+        <!-- Indicators -->
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#bannerCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Slide 1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#bannerCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#bannerCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#bannerCarousel"
+            data-bs-slide-to="3"
+            aria-label="Slide 4"
+          ></button>
+        </div>
+
+        <!-- Carousel Items -->
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="/images/banners/one.jpg"
+              class="d-block w-100"
+              alt="Banner 1"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/images/banners/two.jpg"
+              class="d-block w-100"
+              alt="Banner 2"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/images/banners/three.jpg"
+              class="d-block w-100"
+              alt="Banner 3"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="/images/banners/four.jpg"
+              class="d-block w-100"
+              alt="Banner 4"
+            />
+          </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#bannerCarousel"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#bannerCarousel"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+
+    <script>
+      const slider = document.querySelector(".banner-slider");
+      const slides = document.querySelectorAll(".banner-slide");
+      const prevBtn = document.querySelector(".prev-btn");
+      const nextBtn = document.querySelector(".next-btn");
+
+      let currentIndex = 0;
+      const totalSlides = slides.length;
+      const slideDuration = 4000; // 4 seconds
+
+      // Function to Update Slide Position Smoothly
+      function updateSlide() {
+        slider.style.transition = "transform 1s ease-in-out";
+        slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+      }
+
+      // Move to Next Slide
+      function nextSlide() {
+        if (currentIndex >= totalSlides - 1) {
+          currentIndex = 0; // Reset to first slide
+        } else {
+          currentIndex++;
+        }
+        updateSlide();
+      }
+
+      // Move to Previous Slide
+      function prevSlide() {
+        if (currentIndex <= 0) {
+          currentIndex = totalSlides - 1; // Go to last slide
+        } else {
+          currentIndex--;
+        }
+        updateSlide();
+      }
+
+      // Auto-Slide Every 4 Seconds
+      let autoSlide = setInterval(nextSlide, slideDuration);
+
+      // Restart Auto-Slide When Clicking Buttons
+      function resetAutoSlide() {
+        clearInterval(autoSlide);
+        autoSlide = setInterval(nextSlide, slideDuration);
+      }
+
+      // Next Button Click
+      nextBtn.addEventListener("click", () => {
+        nextSlide();
+        resetAutoSlide();
+      });
+
+      // Previous Button Click
+      prevBtn.addEventListener("click", () => {
+        prevSlide();
+        resetAutoSlide();
+      });
+
+      // Initial Setup
+      updateSlide();
+    </script>
+
     <section class="logo-carousel-section">
       <div class="container">
         <!-- Heading & Description -->

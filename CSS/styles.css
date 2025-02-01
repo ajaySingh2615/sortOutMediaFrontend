@@ -319,6 +319,97 @@ body {
   }
 }
 
+/* Banner Section */
+/* Banner Section - Full Width */
+/* Banner Section - Full Width */
+/* Banner Section - Full Width */
+/* Banner Section - Full Width */
+/* Ensure Banner Takes Full Width */
+/* Ensure the Banner Section Takes Full Width */
+.banner-section {
+  width: 100%;
+  height: 50vh; /* Adjust as needed */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #e0e0e0; /* Prevents white/black screen flicker */
+}
+
+/* Fix Image Display Without Cropping */
+.carousel-item img {
+  height: 100%;
+  object-fit: contain; /* Ensures full image visibility */
+}
+
+/* Center Navigation Buttons */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%; /* Keeps buttons closer to images */
+}
+
+/* Fix Bottom Gap Issue */
+.carousel {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .banner-section {
+    height: 10vh;
+  }
+
+  /* Adjust button sizes for smaller screens */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 10%;
+  }
+}
+
+/* Navigation Buttons */
+.prev-btn,
+.next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .banner-section {
+    height: 40vh;
+  }
+
+  .prev-btn,
+  .next-btn {
+    font-size: 18px;
+    padding: 8px 12px;
+  }
+}
+
 /* Logo Carousel Section */
 /* General Section Styling */
 .logo-carousel-section {
