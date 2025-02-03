@@ -563,3 +563,25 @@ body {
     gap: 10px;
   }
 }
+
+/* Book Now Button */
+.book-now-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  background: #ff4b2b;
+  border-radius: 5px;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+  border: none;
+  width: 100%;
+}
+
+.book-now-btn:hover {
+  background: #d10000;
+  transform: scale(1.05);
+}
