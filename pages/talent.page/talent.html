@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Talent Page</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/pages/talent.page/talent.css" />
+    <link rel="stylesheet" href="/CSS/floating-social-media.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="container">
+        <!-- Logo -->
+        <a href="/" class="navbar-logo">
+          <img
+            src="/images/sortoutInnovation-icon/sortout-innovation-only-s.gif"
+            alt="SortOut Innovation"
+          />
+        </a>
+
+        <!-- Navigation Links -->
+        <nav class="navbar-links">
+          <ul>
+            <li><a href="#" class="nav-link">Home</a></li>
+            <li>
+              <a href="/pages/about-page/about.html" class="nav-link">About</a>
+            </li>
+            <li><a href="/pages/career.html" class="nav-link">Career</a></li>
+            <li>
+              <a href="/pages/talent.page/talent.html" class="nav-link"
+                >Browse Talent</a
+              >
+            </li>
+            <li>
+              <a href="/pages/our-services-page/service.html" class="nav-link"
+                >Service</a
+              >
+            </li>
+            <li>
+              <a href="/pages/contact-page/contact-page.html" class="nav-link"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button class="navbar-toggle" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </header>
+
+    <script>
+      // Mobile Menu Toggle
+      const navbarToggle = document.querySelector(".navbar-toggle");
+      const navbarLinks = document.querySelector(".navbar-links");
+
+      navbarToggle.addEventListener("click", () => {
+        navbarLinks.classList.toggle("active");
+      });
+
+      // Sticky Navbar on Scroll
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+    </script>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container text-center">
+        <h1 class="hero-title">
+          Find & Collaborate with <span>Top Talents</span>
+        </h1>
+        <p class="hero-subtitle">
+          Discover social media influencers, artists, and professionals in
+          various industries. <br />
+          Connect, grow, and take your brand to the next level.
+        </p>
+      </div>
+    </section>
+
+    <!-- Talent Section -->
+    <section class="talent-section">
+      <div class="container">
+        <!-- Title -->
+        <!-- Filters Section -->
+        <div class="filter-heading">
+          <h2>🎯 Find Your Perfect Match</h2>
+          <p>
+            Use the filters below to narrow down your search and find the best
+            talent suited to your needs.
+          </p>
+        </div>
+
+        <!-- Filters Section -->
+        <div class="filters-container">
+          <select id="filterCategory" class="form-select">
+            <option value="">🎭 Category</option>
+            <option value="Live Streaming Hosts">Live Streaming Hosts</option>
+            <option value="YouTubers">YouTubers</option>
+            <option value="Social Media Influencers">
+              Social Media Influencers
+            </option>
+            <option value="Bollywood Artists">Bollywood Artists</option>
+            <option value="Mobile Gamers">Mobile Gamers</option>
+            <option value="Short Video Creators">Short Video Creators</option>
+            <option value="Podcast Hosts">Podcast Hosts</option>
+            <option value="Lifestyle Bloggers/Vloggers">
+              Lifestyle Bloggers/Vloggers
+            </option>
+            <option value="Fitness Influencers">Fitness Influencers</option>
+            <option value="Travel Influencers">Travel Influencers</option>
+            <option value="Tech Reviewers">Tech Reviewers</option>
+            <option value="Fashion Influencers">Fashion Influencers</option>
+          </select>
+
+          <select id="filterGender" class="form-select">
+            <option value="">🚻 Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+
+          <select id="filterAge" class="form-select">
+            <option value="">🎂 Age</option>
+            <option value="18-25">18-25</option>
+            <option value="26-35">26-35</option>
+            <option value="36-45">36-45</option>
+            <option value="46+">46+</option>
+          </select>
+
+          <select id="filterLanguage" class="form-select">
+            <option value="">🗣 Language</option>
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Spanish">Spanish</option>
+            <option value="French">French</option>
+          </select>
+
+          <select id="filterProfessional" class="form-select">
+            <option value="">💼 Professional</option>
+            <option value="Artist">Artist</option>
+            <option value="Employee">Employee</option>
+          </select>
+
+          <button id="clearFilters" class="btn btn-danger">❌ Reset</button>
+        </div>
+
+        <!-- Talent Grid -->
+        <div class="talent-grid" id="talentList">
+          <!-- Talents will be inserted dynamically -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination-container">
+          <button id="prevPage" class="pagination-btn">❮ Prev</button>
+          <div id="pageNumbers" class="pagination-numbers"></div>
+          <button id="nextPage" class="pagination-btn">Next ❯</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer-section">
+      <div class="container">
+        <div class="row">
+          <!-- Column 1: Company Info -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-logo">
+              <img
+                src="/images/sortoutInnovation-icon/Sortout innovation.jpg"
+                alt="SortOut Innovation"
+              />
+              <p class="text-center">
+                Empowering businesses with top-notch solutions in digital, IT,
+                and business services.
+              </p>
+            </div>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="col-lg-2 col-md-6">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li>
+                <a href="/pages/career.html">Careers</a>
+              </li>
+              <li>
+                <a href="/pages/our-services-page/service.html">Services</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Our Services -->
+          <div class="col-lg-2 col-md-6">
+            <h4>Our Services</h4>
+            <ul class="footer-links">
+              <li>
+                <a href="/pages/services/socialMediaInfluencers.html"
+                  >Digital Marketing</a
+                >
+              </li>
+              <li><a href="/pages/services/itServices.html">IT Support</a></li>
+              <li><a href="/pages/services/caServices.html">CA Services</a></li>
+              <li><a href="/pages/services/hrServices.html">HR Services</a></li>
+              <li>
+                <a href="/pages/services/courierServices.html"
+                  >Courier Services</a
+                >
+              </li>
+              <li>
+                <a href="/pages/services/shipping.html"
+                  >Shipping & Fulfillment</a
+                >
+              </li>
+              <li>
+                <a href="/pages/services/stationeryServices.html"
+                  >Stationery Services</a
+                >
+              </li>
+              <li>
+                <a href="/pages/services/propertyServices.html"
+                  >Real Estate & Property</a
+                >
+              </li>
+              <li>
+                <a href="/pages/services/event-managementServices.html"
+                  >Event Management</a
+                >
+              </li>
+              <li>
+                <a href="/pages/services/designAndCreative.html"
+                  >Design & Creative</a
+                >
+              </li>
+              <li>
+                <a href="/services/web-development">Web & App Development</a>
+              </li>
+              <li><a href="/services/find-talent">Find Talent</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Contact Info -->
+          <div class="col-lg-3 col-md-6">
+            <h4>Contact Us</h4>
+            <ul class="footer-links">
+              <li>
+                <i class="fas fa-phone"></i>
+                <a href="tel:+919818559102">+91 9818559102</a>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:info@sortoutinnovation.com"
+                  >info@sortoutinnovation.com</a
+                >
+              </li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> Spaze i-Tech Park,
+                Gurugram, India
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 5: Social Media -->
+          <div class="col-lg-2 col-md-6">
+            <h4>Follow Us</h4>
+            <div class="social-icons">
+              <a href="https://www.facebook.com/profile.php?id=61556452066209"
+                ><i class="fab fa-facebook"></i
+              ></a>
+              <a href="https://youtu.be/tw-xk-Pb-zA?si=QMTwuvhEuTegpqDr"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="https://www.linkedin.com/company/sortout-innovation/"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://www.instagram.com/sortoutinnovation"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Copyright & Legal Links -->
+        <div class="footer-bottom">
+          <p>&copy; 2025 SortOut Innovation. All Rights Reserved.</p>
+          <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms & Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating Social Media Bar -->
+    <div class="floating-social-bar">
+      <a
+        href="https://www.facebook.com/profile.php?id=61556452066209"
+        target="_blank"
+        class="social-icon facebook"
+      >
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a
+        href="https://www.instagram.com/sortoutinnovation"
+        target="_blank"
+        class="social-icon instagram"
+      >
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a
+        href="https://www.linkedin.com/company/sortout-innovation/"
+        target="_blank"
+        class="social-icon linkedin"
+      >
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a
+        href="https://youtu.be/tw-xk-Pb-zA?si=QMTwuvhEuTegpqDr"
+        target="_blank"
+        class="social-icon youtube"
+      >
+        <i class="fab fa-youtube"></i>
+      </a>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp">
+      <div class="whatsapp-button">
+        <a
+          class="what-a"
+          href="https://wa.me/919818559102"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fab fa-whatsapp"></i>
+          <span class="whatsapp-text"> Contact Us</span></a
+        >
+      </div>
+    </div>
+
+    <script>
+      const talentsPerPage = 30;
+      let currentPage = 1;
+
+      // Sample Talent Data (Replace with actual data)
+      const talentData = [
+        {
+          name: "Amit Sharma",
+          category: "YouTubers",
+          followers: "1M",
+          age: "26-35",
+          language: "Hindi",
+          gender: "Male",
+          professional: "Artist",
+          img: "/images/1a.jpg",
+        },
+        {
+          name: "Priya Kapoor",
+          category: "Fashion Influencers",
+          followers: "500K",
+          age: "18-25",
+          language: "English",
+          gender: "Female",
+          professional: "Artist",
+          img: "/images/1a.jpg",
+        },
+        {
+          name: "Rahul Verma",
+          category: "Tech Reviewers",
+          followers: "800K",
+          age: "26-35",
+          language: "English",
+          gender: "Male",
+          professional: "Employee",
+          img: "/images/1a.jpg",
+        },
+        {
+          name: "Simran Kaur",
+          category: "Social Media Influencers",
+          followers: "1.5M",
+          age: "18-25",
+          language: "Hindi",
+          gender: "Female",
+          professional: "Artist",
+          img: "/images/1a.jpg",
+        },
+      ];
+
+      // Duplicate Data to Simulate 100+ Talents (For Testing)
+      for (let i = 5; i <= 100; i++) {
+        talentData.push({
+          name: `Talent ${i}`,
+          category: [
+            "YouTubers",
+            "Fashion Influencers",
+            "Tech Reviewers",
+            "Bollywood Artists",
+          ][i % 4],
+          followers: `${(Math.random() * 1000).toFixed(0)}K`,
+          age: ["18-25", "26-35", "36-45"][i % 3],
+          language: ["English", "Hindi", "Spanish"][i % 3],
+          gender: i % 2 === 0 ? "Male" : "Female",
+          professional: i % 3 === 0 ? "Artist" : "Employee",
+          img: `talent${i}.jpg`,
+        });
+      }
+
+      let filteredTalents = [...talentData];
+
+      // Function to Display Paginated Talents
+      function displayTalents() {
+        const talentList = document.getElementById("talentList");
+        talentList.innerHTML = "";
+
+        // Calculate start & end index
+        const startIndex = (currentPage - 1) * talentsPerPage;
+        const endIndex = startIndex + talentsPerPage;
+        const paginatedTalents = filteredTalents.slice(startIndex, endIndex);
+
+        paginatedTalents.forEach((talent) => {
+          const talentElement = document.createElement("div");
+          talentElement.classList.add("talent-card");
+
+          talentElement.innerHTML = `
+            <img src="${talent.img}" alt="${talent.name}">
+            <div class="talent-basic-info">
+                <h4>${talent.name}</h4>
+                <p>${talent.category}</p>
+                <p>👥 ${talent.followers} Followers</p>
+            </div>
+            <div class="talent-info">
+                <p>🎂 Age: ${talent.age}</p>
+                <p>🗣 Language: ${talent.language}</p>
+                <p>🚻 Gender: ${talent.gender}</p>
+                <p>💼 ${talent.professional}</p>
+            </div>
+        `;
+
+          talentList.appendChild(talentElement);
+        });
+
+        updatePagination();
+      }
+
+      // Function to Update Pagination Numbers
+      function updatePagination() {
+        const totalPages = Math.ceil(filteredTalents.length / talentsPerPage);
+        const pageNumbersContainer = document.getElementById("pageNumbers");
+        pageNumbersContainer.innerHTML = "";
+
+        for (let i = 1; i <= totalPages; i++) {
+          let pageButton = document.createElement("button");
+          pageButton.classList.add("page-number");
+          pageButton.textContent = i;
+          if (i === currentPage) {
+            pageButton.classList.add("active");
+          }
+          pageButton.addEventListener("click", () => {
+            currentPage = i;
+            displayTalents();
+          });
+          pageNumbersContainer.appendChild(pageButton);
+        }
+
+        // Enable/Disable Prev & Next Buttons
+        document.getElementById("prevPage").disabled = currentPage === 1;
+        document.getElementById("nextPage").disabled =
+          currentPage === totalPages;
+      }
+
+      // Filtering Function
+      function filterTalents() {
+        const category = document.getElementById("filterCategory").value;
+        const gender = document.getElementById("filterGender").value;
+        const age = document.getElementById("filterAge").value;
+        const language = document.getElementById("filterLanguage").value;
+        const professional =
+          document.getElementById("filterProfessional").value;
+
+        filteredTalents = talentData.filter(
+          (talent) =>
+            (!category || talent.category === category) &&
+            (!gender || talent.gender === gender) &&
+            (!age || talent.age === age) &&
+            (!language || talent.language === language) &&
+            (!professional || talent.professional === professional)
+        );
+
+        currentPage = 1; // Reset to first page on filter change
+        displayTalents();
+      }
+
+      // Event Listeners for Filters
+      document
+        .querySelectorAll(".form-select")
+        .forEach((select) => select.addEventListener("change", filterTalents));
+
+      // Clear Filters Button
+      document.getElementById("clearFilters").addEventListener("click", () => {
+        document
+          .querySelectorAll(".form-select")
+          .forEach((select) => (select.value = ""));
+        filteredTalents = [...talentData];
+        currentPage = 1;
+        displayTalents();
+      });
+
+      // Event Listeners for Pagination
+      document.getElementById("prevPage").addEventListener("click", () => {
+        if (currentPage > 1) {
+          currentPage--;
+          displayTalents();
+        }
+      });
+
+      document.getElementById("nextPage").addEventListener("click", () => {
+        const totalPages = Math.ceil(filteredTalents.length / talentsPerPage);
+        if (currentPage < totalPages) {
+          currentPage++;
+          displayTalents();
+        }
+      });
+
+      // Initial Load
+      displayTalents();
+    </script>
+
+    <!-- Bootstrap & JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
