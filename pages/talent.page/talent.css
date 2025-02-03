@@ -250,6 +250,13 @@ body {
   justify-content: center;
 }
 
+.talent-section {
+  padding: 60px 20px;
+  color: white;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
 /* Talent Cards */
 .talent-card {
   position: relative;
