@@ -563,7 +563,7 @@
           .value.trim()
           .toLowerCase();
         const gender = document.getElementById("filterGender").value.trim();
-        const age = document.getElementById("filterAge").value.trim();
+        const ageRange = document.getElementById("filterAge").value.trim();
         const language = document.getElementById("filterLanguage").value.trim();
         const professional = document
           .getElementById("filterProfessional")
@@ -574,10 +574,28 @@
             .split(",")
             .map((cat) => cat.trim().toLowerCase()); // Convert to array & lowercase
 
+          let talentAge = parseInt(talent.age); // Convert talent's age from string to number
+
+          // Determine min & max age from selected range
+          let minAge, maxAge;
+          if (ageRange === "18-25") {
+            minAge = 18;
+            maxAge = 25;
+          } else if (ageRange === "26-35") {
+            minAge = 26;
+            maxAge = 35;
+          } else if (ageRange === "36-45") {
+            minAge = 36;
+            maxAge = 45;
+          } else if (ageRange === "46+") {
+            minAge = 46;
+            maxAge = 100; // Assume max age is 100
+          }
+
           return (
             (!category || talentCategories.some((cat) => cat === category)) &&
             (!gender || talent.gender === gender) &&
-            (!age || talent.age === age) &&
+            (!ageRange || (talentAge >= minAge && talentAge <= maxAge)) && // ✅ Age filtering works correctly now
             (!language || talent.language === language) &&
             (!professional || talent.professional === professional)
           );
