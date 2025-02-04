@@ -365,8 +365,8 @@
       // Sample Talent Data (Replace with actual data)
       const talentData = [
         {
-          name: "Amit Sharma",
-          category: "YouTubers",
+          name: "Sakshi Sharma",
+          category: "YouTubers, Fashion Influencers",
           followers: "1M",
           age: "26-35",
           language: "Hindi",
@@ -490,25 +490,33 @@
           currentPage === totalPages;
       }
 
-      // Filtering Function
       function filterTalents() {
-        const category = document.getElementById("filterCategory").value;
-        const gender = document.getElementById("filterGender").value;
-        const age = document.getElementById("filterAge").value;
-        const language = document.getElementById("filterLanguage").value;
-        const professional =
-          document.getElementById("filterProfessional").value;
+        const category = document
+          .getElementById("filterCategory")
+          .value.trim()
+          .toLowerCase();
+        const gender = document.getElementById("filterGender").value.trim();
+        const age = document.getElementById("filterAge").value.trim();
+        const language = document.getElementById("filterLanguage").value.trim();
+        const professional = document
+          .getElementById("filterProfessional")
+          .value.trim();
 
-        filteredTalents = talentData.filter(
-          (talent) =>
-            (!category || talent.category === category) &&
+        filteredTalents = talentData.filter((talent) => {
+          let talentCategories = talent.category
+            .split(",")
+            .map((cat) => cat.trim().toLowerCase()); // Convert to array & lowercase
+
+          return (
+            (!category || talentCategories.some((cat) => cat === category)) &&
             (!gender || talent.gender === gender) &&
             (!age || talent.age === age) &&
             (!language || talent.language === language) &&
             (!professional || talent.professional === professional)
-        );
+          );
+        });
 
-        currentPage = 1; // Reset to first page on filter change
+        currentPage = 1; // Reset pagination when filters change
         displayTalents();
       }
 
