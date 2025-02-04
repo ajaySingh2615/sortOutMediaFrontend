@@ -116,16 +116,13 @@
               Social Media Influencers
             </option>
             <option value="Bollywood Artists">Bollywood Artists</option>
-            <option value="Mobile Gamers">Mobile Gamers</option>
+            <option value="Mobile/PC Gamers">Mobile/PC Gamers</option>
             <option value="Short Video Creators">Short Video Creators</option>
             <option value="Podcast Hosts">Podcast Hosts</option>
             <option value="Lifestyle Bloggers/Vloggers">
               Lifestyle Bloggers/Vloggers
             </option>
             <option value="Fitness Influencers">Fitness Influencers</option>
-            <option value="Travel Influencers">Travel Influencers</option>
-            <option value="Tech Reviewers">Tech Reviewers</option>
-            <option value="Fashion Influencers">Fashion Influencers</option>
           </select>
 
           <select id="filterGender" class="form-select">
@@ -365,65 +362,135 @@
       // Sample Talent Data (Replace with actual data)
       const talentData = [
         {
-          name: "Sakshi Sharma",
-          category: "YouTubers, Fashion Influencers",
-          followers: "1M",
-          age: "26-35",
-          language: "Hindi",
-          gender: "Male",
-          professional: "Artist",
-          img: "/images/1a.jpg",
-        },
-        {
-          name: "Priya Kapoor",
-          category: "Fashion Influencers",
-          followers: "500K",
-          age: "18-25",
-          language: "English",
-          gender: "Female",
-          professional: "Artist",
-          img: "/images/1a.jpg",
-        },
-        {
-          name: "Rahul Verma",
-          category: "Tech Reviewers",
-          followers: "800K",
-          age: "26-35",
-          language: "English",
-          gender: "Male",
-          professional: "Employee",
-          img: "/images/1a.jpg",
-        },
-        {
-          name: "Simran Kaur",
-          category: "Social Media Influencers",
-          followers: "1.5M",
-          age: "18-25",
+          name: "Madhu",
           language: "Hindi",
           gender: "Female",
+          category: "Short Video Creators",
+          age: "32",
+          followers: "92K",
           professional: "Artist",
-          img: "/images/1a.jpg",
+          img: "/images/Artist-images/slot-1/Madhu.png",
+        },
+        {
+          name: "Annupriya Singh",
+          language: "Sindhi",
+          gender: "Female",
+          category: "Short Video Creators",
+          age: "28",
+          followers: "2.1M",
+          professional: "Artist",
+          img: "/images/Artist-images/slot-1/Annupriya_singh.png",
+        },
+        {
+          name: "Twinkle Sharma",
+          language: "Hindi",
+          gender: "Female",
+          category: "Short Video Creators",
+          age: "30",
+          followers: "1.7M",
+          professional: "Artist",
+          img: "/images/Artist-images/slot-1/Twinkle_Sharma.png",
+        },
+        {
+          name: "Vinuja",
+          language: "Hindi",
+          gender: "Female",
+          category: "Short Video Creators",
+          age: "24",
+          followers: "172K",
+          professional: "Artist",
+          img: "/images/Artist-images/slot-1/Vinuja.png",
+        },
+        {
+          name: "Shivangi Ghosh",
+          language: "Hindi",
+          gender: "Female",
+          category: "Lifestyle Bloggers/Vloggers",
+          age: "25",
+          followers: "110K",
+          professional: "Artist",
+          img: "/images/Artist-images/slot-1/Shivangi_Ghosh.png",
+        },
+        {
+          name: "Shereen A Bannsal",
+          language: "Hindi",
+          gender: "Female",
+          category: "Lifestyle Bloggers/Vloggers",
+          age: "26",
+          followers: "118K",
+          professional: "Artist",
+          img: "/images/Artist-images/slot-1/Shereen_A_Bannsal.png",
+        },
+        {
+          name: "Ambika Arora",
+          language: "Hindi",
+          gender: "Female",
+          category: "Short Video Creators",
+          age: "27",
+          followers: "42.3K",
+          professional: "Artist",
+          img: "/images/Artist-images/slot-1/Ambika_Arora.png",
+        },
+        {
+          name: "Nancy Khatri",
+          language: "Hindi",
+          gender: "Female",
+          category: "Lifestyle Bloggers/Vloggers",
+          age: "29",
+          followers: "393K",
+          professional: "Artist",
+          img: "/images/Artist-images/slot-1/Nancy_Khatri.png",
+        },
+        {
+          name: "Priyanka Taras",
+          language: "Sindhi",
+          gender: "Female",
+          category: "Lifestyle Bloggers/Vloggers",
+          age: "26",
+          followers: "24K",
+          professional: "Artist",
+          img: "/images/Artist-images/slot-1/Priyanka_Taras.png",
+        },
+        {
+          name: "Anchal Thakur",
+          language: "Hindi",
+          gender: "Female",
+          category: "Lifestyle Bloggers/Vloggers",
+          age: "25",
+          followers: "100K",
+          professional: "Artist",
+          img: "/images/Artist-images/slot-1/Anchal_Thakur.png",
+        },
+        {
+          name: "Jyoti Soni",
+          language: "Hindi",
+          gender: "Female",
+          category: "Short Video Creators",
+          age: "26",
+          followers: "246K",
+          professional: "Artist",
+          img: "/images/Artist-images/slot-1/Jyoti_Soni.png",
         },
       ];
 
       // Duplicate Data to Simulate 100+ Talents (For Testing)
-      for (let i = 5; i <= 100; i++) {
-        talentData.push({
-          name: `Talent ${i}`,
-          category: [
-            "YouTubers",
-            "Fashion Influencers",
-            "Tech Reviewers",
-            "Bollywood Artists",
-          ][i % 4],
-          followers: `${(Math.random() * 1000).toFixed(0)}K`,
-          age: ["18-25", "26-35", "36-45"][i % 3],
-          language: ["English", "Hindi", "Spanish"][i % 3],
-          gender: i % 2 === 0 ? "Male" : "Female",
-          professional: i % 3 === 0 ? "Artist" : "Employee",
-          img: `talent${i}.jpg`,
-        });
-      }
+      // for (let i = 5; i <= 100; i++) {
+      //   talentData.push({
+      //     name: `Talent ${i}`,
+      //     category: [
+      //       "YouTubers",
+      //       "Fashion Influencers",
+      //       "Tech Reviewers",
+      //       "Bollywood Artists",
+      //     ][i % 4],
+      //     followers: `${(Math.random() * 1000).toFixed(0)}K`,
+      //     age: ["18-25", "26-35", "36-45"][i % 3],
+      //     language: ["English", "Hindi", "Spanish"][i % 3],
+      //     gender: i % 2 === 0 ? "Male" : "Female",
+      //     professional: i % 3 === 0 ? "Artist" : "Employee",
+      //     img: `talent${i}.jpg`,
+      //   });
+      // }
 
       let filteredTalents = [...talentData];
 
