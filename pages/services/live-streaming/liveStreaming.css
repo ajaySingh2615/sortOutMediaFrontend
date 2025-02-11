@@ -729,3 +729,146 @@ body {
     font-size: 1.5rem;
   }
 }
+
+/* Contact Card Section */
+.contact-card-section {
+  background: #ffffff; /* White Background */
+  padding: 100px 0;
+  text-align: center;
+  color: #333;
+}
+
+/* Section Title */
+.contact-card-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #c20000;
+}
+
+/* Contact Cards Wrapper */
+.contact-card-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Contact Card */
+.contact-card {
+  background: #f9f9f9;
+  width: 300px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* Show animation on scroll */
+.contact-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Contact Card Icon */
+.contact-card-icon {
+  width: 70px;
+  height: 70px;
+  background: #c20000;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 auto 15px;
+  box-shadow: 0px 5px 15px rgba(255, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* Contact Card Title */
+.contact-card h3 {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Contact Card Text */
+.contact-card p {
+  font-size: 1.2rem;
+  color: #666;
+  margin: 0;
+}
+
+/* Hover Effects */
+.contact-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-card:hover .contact-card-icon {
+  transform: scale(1.1);
+  background: #ff4d4d;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .contact-card-title {
+    font-size: 2rem;
+  }
+
+  .contact-card {
+    width: 250px;
+    padding: 25px;
+  }
+
+  .contact-card-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+  }
+
+  .contact-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .contact-card p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-card-section {
+    padding: 80px 20px;
+  }
+
+  .contact-card-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .contact-card {
+    width: 100%;
+    max-width: 320px;
+    padding: 20px;
+  }
+
+  .contact-card-icon {
+    width: 55px;
+    height: 55px;
+    font-size: 1.7rem;
+  }
+
+  .contact-card h3 {
+    font-size: 1.2rem;
+  }
+
+  .contact-card p {
+    font-size: 1rem;
+  }
+}
