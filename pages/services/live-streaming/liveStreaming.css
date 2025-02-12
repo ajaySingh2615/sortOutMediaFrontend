@@ -1226,3 +1226,75 @@ body {
     transform: translateX(-50%);
   }
 }
+
+/* ########################### */
+/* Full Section Styling */
+.live-streaming-container {
+  width: 100%;
+  max-width: 1200px; /* Keeps section centered */
+  margin: auto;
+  padding: 60px 20px;
+  text-align: center;
+  background: white;
+}
+
+/* Section Title */
+.live-streaming-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  color: #c20000;
+}
+
+/* Highlight Text */
+.highlight-text {
+  color: #ff4500;
+}
+
+/* Swiper Wrapper */
+.swiper {
+  width: 100%;
+  padding: 10px 0;
+}
+
+/* Fix Slide Container */
+.ls-slide {
+  width: 100%;
+  max-width: 280px; /* Adjust the width */
+  height: 380px; /* Fix height */
+  border: 3px solid #ff4500;
+  box-shadow: 0px 5px 15px rgba(255, 69, 0, 0.5);
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Fix Image Size */
+.ls-slide img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 9/16; /* Keeps images proportional */
+  object-fit: cover; /* Crops extra height */
+  border-radius: 10px;
+}
+
+/* Hover Effect */
+.ls-slide:hover {
+  transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .live-streaming-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .ls-slide {
+    max-width: 230px;
+    height: 330px;
+  }
+}
