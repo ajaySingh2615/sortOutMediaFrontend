@@ -749,3 +749,150 @@
     padding: 10px 25px;
   }
 }
+
+/* 🎯 Client Testimonials Section */
+.testimonials-section {
+  background: #f8f8f8;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+/* 🏆 Section Title */
+.testimonials-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #c20000;
+  margin-bottom: 15px;
+}
+
+/* 🔥 Highlighted Text */
+.testimonials-highlight {
+  color: #ff4500;
+}
+
+/* 📝 Subtitle */
+.testimonials-subtext {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+/* 📌 Testimonials Container */
+.testimonials-container {
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 📌 Testimonials Slider */
+.testimonials-slider {
+  display: flex;
+  width: 300%;
+  transition: transform 1s ease-in-out;
+  animation: slideTestimonials 20s infinite linear;
+}
+
+/* 🎯 Individual Testimonial */
+.testimonial {
+  width: 33.33%;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+/* 📝 Testimonial Text */
+.testimonial-text {
+  font-size: 1.3rem;
+  color: #333;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* 🏆 Client Name */
+.testimonial-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #c20000;
+}
+
+/* 🎥 Fixed Sliding Animation */
+@keyframes slideTestimonials {
+  0% {
+    transform: translateX(0);
+  }
+  33% {
+    transform: translateX(-33.33%);
+  }
+  66% {
+    transform: translateX(-66.66%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* 📍 Client Logos */
+.clients-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin: 60px 0 30px;
+}
+
+/* 🏢 Client Logos */
+.clients-logos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.clients-logos img {
+  max-width: 150px;
+  height: auto;
+  opacity: 0.8;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+/* 🖱️ Hover Effect */
+.clients-logos img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .testimonials-section {
+    padding: 80px 15px;
+  }
+
+  .testimonials-title {
+    font-size: 2rem;
+  }
+
+  .testimonials-subtext {
+    font-size: 1rem;
+  }
+
+  .testimonial-text {
+    font-size: 1.2rem;
+  }
+
+  .testimonial-name {
+    font-size: 1.1rem;
+  }
+
+  .clients-title {
+    font-size: 1.8rem;
+  }
+
+  .clients-logos img {
+    max-width: 120px;
+  }
+}
