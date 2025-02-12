@@ -1,3 +1,137 @@
+.navbar {
+  height: 70px; /* Fixed navbar height */
+  position: sticky;
+  display: flex;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  background: #ffffff;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px 0;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar .container {
+  max-width: 1200px;
+  padding: 0 20px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.navbar-logo img {
+  width: 200px; /* Increase this for bigger logo */
+  height: 80px; /* Maintain aspect ratio */
+  max-height: 50px; /* Restrict navbar height */
+  object-fit: contain; /* Ensures proper scaling */
+}
+
+/* Navbar Links */
+.navbar-links ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-links ul li a {
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333333;
+  padding: 10px 15px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-links ul li a:hover {
+  color: #d10000;
+  transform: scale(1.05);
+}
+
+.navbar-links ul li a.active {
+  color: #d10000;
+  border-bottom: 2px solid #d10000;
+}
+
+/* Call-to-Action (CTA) Button */
+.nav-cta {
+  background: #d10000;
+  color: #ffffff !important;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: #a00000;
+  transform: translateY(-3px);
+}
+
+/* Mobile Menu Button */
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #333333;
+  cursor: pointer;
+}
+
+@media (max-width: 991px) {
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background: #ffffff;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    display: block;
+  }
+
+  .navbar-links ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+  }
+
+  .navbar-links ul li {
+    text-align: left;
+  }
+
+  .navbar-links.active {
+    transform: translateX(0);
+  }
+}
+
+/* Sticky Background on Scroll */
+.navbar.scrolled {
+  background: #f8f9fa;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Alignment */
+@media (max-width: 767px) {
+  .navbar .container {
+    padding: 0 15px;
+  }
+
+  .navbar-links ul li a {
+    font-size: 0.9rem;
+    padding: 8px 10px;
+  }
+}
+
 /* Hero Section */
 .hero-section {
   width: 100%;
@@ -342,7 +476,7 @@
 
 /* 🔴 Highlighted Text */
 .trust-highlight {
-  color: #ff4500;
+  color: #ffcc00;
 }
 
 /* 🟦 Benefits Grid */
@@ -503,7 +637,7 @@
 
 /* 🔥 Highlighted Text */
 .insurance-highlight {
-  color: #ff4500;
+  color: #ffcc00;
 }
 
 /* Subtitle */
@@ -627,7 +761,7 @@
 
 /* 🔥 Highlighted Text */
 .process-highlight {
-  color: #ff4500;
+  color: #ffcc00;
 }
 
 /* 📝 Subtitle */
@@ -752,7 +886,7 @@
 
 /* 🎯 Client Testimonials Section */
 .testimonials-section {
-  background: #f8f8f8;
+  background: #fff;
   padding: 100px 20px;
   text-align: center;
 }
@@ -767,7 +901,7 @@
 
 /* 🔥 Highlighted Text */
 .testimonials-highlight {
-  color: #ff4500;
+  color: #ffcc00;
 }
 
 /* 📝 Subtitle */
@@ -795,6 +929,7 @@
 
 /* 🎯 Individual Testimonial */
 .testimonial {
+  margin: 5px;
   width: 33.33%;
   background: white;
   padding: 30px;
@@ -894,5 +1029,364 @@
 
   .clients-logos img {
     max-width: 120px;
+  }
+}
+
+/* 🎯 FAQs Section */
+.faqs-section {
+  background: #f8f8f8;
+  padding: 100px 20px;
+  text-align: center;
+}
+
+/* 🏆 Section Title */
+.faqs-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #c20000;
+  margin-bottom: 15px;
+}
+
+/* 🔥 Highlighted Text */
+.faqs-highlight {
+  color: #ffcc00;
+}
+
+/* 📝 Subtitle */
+.faqs-subtext {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+/* 📌 FAQs Container */
+.faqs {
+  max-width: 800px;
+  margin: auto;
+  text-align: left;
+}
+
+/* 🎯 Individual FAQ */
+.faq-item {
+  border-bottom: 2px solid #ddd;
+  padding: 15px 0;
+}
+
+/* 🔹 FAQ Question Button */
+.faq-question {
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #c20000;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.3s ease-in-out;
+}
+
+/* 🖱️ Hover Effect */
+.faq-question:hover {
+  color: #ff4500;
+}
+
+/* 🔽 Dropdown Icon */
+.faq-question i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 📜 FAQ Answer (Initially Hidden) */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+/* ✅ Show Answer When Active */
+.faq-item.active .faq-answer {
+  max-height: 200px;
+  padding: 10px 15px;
+}
+
+/* 🔽 Rotate Icon When Active */
+.faq-item.active .faq-question i {
+  transform: rotate(180deg);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .faqs-section {
+    padding: 80px 15px;
+  }
+
+  .faqs-title {
+    font-size: 2rem;
+  }
+
+  .faqs-subtext {
+    font-size: 1rem;
+  }
+
+  .faq-question {
+    font-size: 1.2rem;
+  }
+}
+
+/* 🎯 Contact Section */
+.contact-section {
+  background: linear-gradient(to right, #c20000, #ff4d4d);
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+}
+
+/* 🏆 Section Title */
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* 🔥 Highlighted Text */
+.contact-highlight {
+  color: #ffcc00;
+}
+
+/* 📝 Subtitle */
+.contact-subtext {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+}
+
+/* 📌 Contact Info */
+.contact-info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+/* 🎯 Individual Contact Item */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.2rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+/* 🏆 Icons */
+.contact-item i {
+  font-size: 1.5rem;
+  color: #ffcc00;
+  min-width: 30px; /* Ensures icons are properly aligned */
+  text-align: center;
+}
+
+/* 📩 Email & Phone Links */
+.contact-item p,
+.contact-item a {
+  color: white;
+  margin: 0;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+/* 🖱️ Hover Effect */
+.contact-item a:hover {
+  color: #ffcc00;
+}
+
+/* 🖱️ Contact Item Hover Effect */
+.contact-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* 🔴 CTA Button */
+.contact-cta {
+  display: inline-block;
+  padding: 12px 30px;
+  background: white;
+  color: #c20000;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* 🖱️ Hover Effect on CTA */
+.contact-cta:hover {
+  background: #ffcc00;
+  color: #c20000;
+  transform: scale(1.05);
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 80px 15px;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .contact-subtext {
+    font-size: 1rem;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .contact-item {
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+  }
+
+  .contact-item i {
+    font-size: 1.3rem;
+  }
+
+  .contact-item p,
+  .contact-item a {
+    font-size: 1.1rem;
+  }
+
+  .contact-cta {
+    font-size: 1rem;
+    padding: 10px 25px;
+  }
+}
+
+.footer-section {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 60px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-section h4 {
+  color: #ff4b4b;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+/* Footer Links */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links li a {
+  text-decoration: none;
+  color: #ddd;
+  transition: color 0.3s ease;
+}
+
+.footer-links li a:hover {
+  color: #ff4b4b;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #ff4b4b;
+  transform: scale(1.1);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.footer-bottom ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.footer-bottom ul li a {
+  text-decoration: none;
+  color: #ddd;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom ul li a:hover {
+  color: #ff4b4b;
+}
+
+.footer-logo img {
+  width: 180px; /* Adjust width as needed */
+  height: auto; /* Maintains aspect ratio */
+  max-width: 100%; /* Ensures responsiveness */
+  display: block;
+  margin: 0 auto; /* Centers the logo */
+}
+
+@media (max-width: 768px) {
+  .footer-logo img {
+    width: 140px; /* Smaller size for mobile */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .footer-section .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .footer-bottom ul {
+    flex-direction: column;
+    gap: 10px;
   }
 }
