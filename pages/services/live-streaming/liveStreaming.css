@@ -1231,7 +1231,7 @@ body {
 /* Full Section Styling */
 .live-streaming-container {
   width: 100%;
-  max-width: 1200px; /* Keeps section centered */
+  max-width: 1200px;
   margin: auto;
   padding: 60px 20px;
   text-align: center;
@@ -1261,8 +1261,8 @@ body {
 /* Fix Slide Container */
 .ls-slide {
   width: 100%;
-  max-width: 280px; /* Adjust the width */
-  height: 380px; /* Fix height */
+  max-width: 280px;
+  height: 380px;
   border: 3px solid #ff4500;
   box-shadow: 0px 5px 15px rgba(255, 69, 0, 0.5);
   border-radius: 15px;
@@ -1272,13 +1272,13 @@ body {
   justify-content: center;
 }
 
-/* Fix Image Size */
-.ls-slide img {
+/* Fix Video Size */
+.ls-slide video {
   width: 100%;
   height: 100%;
-  aspect-ratio: 9/16; /* Keeps images proportional */
-  object-fit: cover; /* Crops extra height */
+  object-fit: cover;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 /* Hover Effect */
