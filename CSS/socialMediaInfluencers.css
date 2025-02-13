@@ -1057,158 +1057,6 @@ i {
   }
 }
 
-/* PRICING SECTION */
-/* Styling for pricing section */
-/* Pricing Section Styles */
-/* Pricing Section Styles */
-/* Pricing Section Styles */
-/* General Styles for the pricing section */
-/* General Styles */
-.pricing-section {
-  background-color: #fef9f9; /* Light red-ish background for the section */
-  padding: 60px 0;
-  border-radius: 12px;
-}
-
-.pricing-section h2 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #b22222; /* Dark red color for heading */
-  text-align: center;
-}
-
-.pricing-section p {
-  font-size: 1.2rem;
-  color: #777;
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-/* Pricing Card Styles */
-.pricing-card {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
-  padding: 30px;
-  transition: all 0.3s ease;
-  border: 1px solid #f1f1f1;
-}
-
-.pricing-card h3 {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #b22222; /* Dark red color for titles */
-  margin-bottom: 20px;
-}
-
-.pricing-card .price {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #b22222;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.pricing-card .price span {
-  font-size: 1.5rem;
-  font-weight: normal;
-  color: #aaa;
-}
-
-.pricing-card .features {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 25px;
-}
-
-.pricing-card .features li {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 10px;
-}
-
-.pricing-card .btn {
-  background-color: #b22222; /* Red button color */
-  color: #fff;
-  padding: 12px 20px;
-  font-size: 1.1rem;
-  text-align: center;
-  border-radius: 8px;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  border: none;
-}
-
-.pricing-card .btn:hover {
-  background-color: #8b0000; /* Darker red when hovered */
-  transform: translateY(-3px);
-}
-
-/* Highlighting Premium Package */
-.pricing-card.premium {
-  background: linear-gradient(
-    135deg,
-    #ff6f61,
-    #e32b2b
-  ); /* Red gradient background */
-  color: white;
-  transform: translateY(-10px);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.pricing-card.premium .price {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #fff;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-}
-
-.pricing-card.premium .price span {
-  font-size: 1.8rem;
-  color: #f8f8f8;
-}
-
-.pricing-card.premium .btn {
-  background-color: #fff;
-  color: #e32b2b;
-  border: 2px solid #e32b2b;
-}
-
-.pricing-card.premium .btn:hover {
-  background-color: #e32b2b;
-  color: #fff;
-  transform: translateY(-3px);
-}
-
-.pricing-card.premium .features li {
-  color: #fff;
-}
-
-.pricing-card.premium .features li:before {
-  content: "✔";
-  color: #fff;
-  margin-right: 10px;
-}
-
-/* Hover Effects */
-.pricing-card:hover {
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.1);
-  transform: translateY(-5px);
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-  .pricing-card {
-    margin-bottom: 30px;
-  }
-
-  .pricing-card .price {
-    font-size: 2rem;
-  }
-}
-
 .footer-section {
   background: #0a0a0a;
   color: #fff;
@@ -1306,5 +1154,421 @@ i {
 @media (max-width: 768px) {
   .footer-logo img {
     width: 140px; /* Smaller size for mobile */
+  }
+}
+
+/* ###################### */
+/* 📌 Pricing Section */
+.pricing-container {
+  background: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* 📌 Title & Subtitle */
+.pricing-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #c20000;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.pricing-subtext {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+/* 📌 Pricing Grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* 📌 Individual Pricing Cards */
+.pricing-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative; /* Allows absolute positioning inside */
+  min-height: 550px; /* Ensures all cards have the same height */
+  border: 3px solid transparent;
+}
+
+/* 📌 Hover Effect */
+.pricing-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 8px 20px rgba(255, 69, 0, 0.3);
+}
+
+/* 📌 Package Titles */
+.pricing-card h3 {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #c20000;
+}
+
+/* 📌 Pricing Amount */
+.pricing-amount {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #c20000;
+  margin-bottom: 15px;
+}
+
+.pricing-amount span {
+  font-size: 1rem;
+  font-weight: normal;
+  color: #666;
+}
+
+/* 📌 Package Description */
+.pricing-desc {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+/* 📌 Package Features */
+.pricing-features {
+  text-align: left;
+  padding: 0;
+  margin: auto;
+  flex-grow: 1;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #444;
+}
+
+/* 📌 Feature List Items */
+.pricing-features li {
+  list-style: none;
+  padding: 8px 0;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* 📌 Remove border from last item */
+.pricing-features li:last-child {
+  border-bottom: none;
+}
+
+/* 📌 "Most Popular" Tag (Starter Package) */
+.popular-tag {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: #ffcc00;
+  color: #c20000;
+  font-weight: bold;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 📌 "Best Value" Tag (Ultimate Package) */
+.best-deal {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #ff4500;
+  color: white;
+  font-weight: bold;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 📌 Ultimate Package Special Styling */
+.ultimate-package {
+  background: #c20000;
+  color: white;
+  border-color: #ffcc00;
+}
+
+.ultimate-package .pricing-amount {
+  color: #ffcc00;
+}
+
+.ultimate-package h3,
+.ultimate-package .pricing-desc,
+.ultimate-package .pricing-features li {
+  color: white;
+}
+
+/* 📌 Call-to-Action Button */
+.btn-started {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #ff4500;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+  margin-top: 20px;
+}
+
+.btn-started:hover {
+  background: #c20000;
+  transform: scale(1.05);
+}
+
+.btn-started.yellow-hover:hover {
+  background: #ffcc00;
+  transform: scale(1.05);
+}
+
+/* 📌 Responsive Design */
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card {
+    min-height: unset;
+    margin-bottom: 30px;
+  }
+
+  .popular-tag,
+  .best-deal {
+    top: -5px;
+    left: 5px;
+    font-size: 0.8rem;
+  }
+}
+
+.ultimate-package-month-color {
+  color: #fff !important;
+}
+
+/* 🔹 Modern Glassmorphism Modal Background */
+.modal {
+  display: none; /* Initially hidden */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Dark overlay for focus */
+  backdrop-filter: blur(8px); /* Smooth blur effect */
+  padding-top: 60px;
+  overflow: auto;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+/* 🔹 Stylish Modal Box */
+.modal-content {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 35px;
+  width: 90%;
+  max-width: 520px;
+  margin: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  animation: scaleUp 0.4s ease-in-out;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* 🔹 Close Button (X) */
+.close {
+  color: #ff4500;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.close:hover {
+  color: #c20000;
+  transform: scale(1.2);
+}
+
+/* 🔹 Modal Title */
+.modal-content h2 {
+  font-size: 2rem;
+  color: #ff4500;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* 🔹 Description Text */
+.modal-content p {
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+/* 🔹 Add-On Options (Glassmorphic Toggle Switches) */
+#addOnForm label {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 12px;
+  border-radius: 12px;
+  margin: 10px 0;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  color: white;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+/* 🔹 Hover Effect */
+#addOnForm label:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.02);
+}
+
+/* 🔹 Custom Neon Checkbox */
+#addOnForm input {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  border: 2px solid white;
+  margin-right: 12px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* 🔹 When Checkbox is Checked */
+#addOnForm input:checked {
+  background: #25d366; /* WhatsApp green */
+  border-color: #25d366;
+  box-shadow: 0px 0px 10px rgba(37, 211, 102, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 🔹 Perfectly Centered Checkmark */
+#addOnForm input:checked::after {
+  content: "✔";
+  font-size: 14px;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* 🔹 WhatsApp Button (3D Neon Effect) */
+#whatsappBtn {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 14px 24px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* WhatsApp Icon */
+#whatsappBtn::before {
+  content: "📩"; /* WhatsApp emoji icon */
+  font-size: 1.4rem;
+}
+
+/* Hover Effect */
+#whatsappBtn:hover {
+  background: linear-gradient(135deg, #128c7e, #25d366);
+  transform: scale(1.08);
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.6);
+}
+
+/* 3D Click Effect */
+#whatsappBtn:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 30px rgba(37, 211, 102, 0.9);
+}
+
+/* 🔹 Modal Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.9);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* 🔹 Responsive Design */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .modal-content p {
+    font-size: 1rem;
+  }
+
+  #whatsappBtn {
+    font-size: 1rem;
+    padding: 12px;
   }
 }
