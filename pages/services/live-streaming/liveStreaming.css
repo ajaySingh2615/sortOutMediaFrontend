@@ -1260,9 +1260,10 @@ body {
 
 /* Fix Slide Container */
 .ls-slide {
+  aspect-ratio: 9 / 16;
   width: 100%;
   max-width: 280px;
-  height: 380px;
+  height: auto;
   border: 3px solid #ff4500;
   box-shadow: 0px 5px 15px rgba(255, 69, 0, 0.5);
   border-radius: 15px;
@@ -1275,8 +1276,8 @@ body {
 /* Fix Video Size */
 .ls-slide video {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-height: 100%;
+  object-fit: contain; /* Prevent stretching */
   border-radius: 10px;
   cursor: pointer;
 }
@@ -1284,6 +1285,12 @@ body {
 /* Hover Effect */
 .ls-slide:hover {
   transform: scale(1.02);
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Responsive Design */
