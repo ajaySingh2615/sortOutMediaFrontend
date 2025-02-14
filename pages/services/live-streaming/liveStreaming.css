@@ -1125,108 +1125,6 @@ body {
   }
 }
 
-.clients-section {
-  background: #ffffff;
-  padding: 80px 20px;
-  text-align: center;
-}
-
-/* 📌 Section Header */
-.clients-header {
-  max-width: 700px;
-  margin: 0 auto 50px auto;
-}
-
-.section-title {
-  font-size: 2.8rem;
-  font-weight: bold;
-  color: #d10000;
-}
-
-.section-title span {
-  color: #a00000;
-  font-style: italic;
-}
-
-.section-subtitle {
-  font-size: 1.2rem;
-  color: #555;
-  font-weight: 500;
-  margin-bottom: 40px;
-}
-
-/* 🏢 Industries Grid */
-.industries-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  max-width: 900px;
-  margin: auto;
-}
-
-.industry-item {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: 180px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.industry-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* 🔴 Industry Icons */
-.industry-item i {
-  font-size: 2.5rem;
-  color: #d10000;
-  margin-bottom: 10px;
-}
-
-.industry-item p {
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: #333;
-}
-
-/* 🔥 Client Logo Carousel */
-.clients-carousel {
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-  margin: 50px auto;
-  width: 100%;
-}
-
-.logos-slide {
-  display: flex;
-  gap: 40px;
-  animation: scrollLogos 10s linear infinite;
-}
-
-.logos-slide img {
-  width: 120px;
-  height: auto;
-  transition: filter 0.3s ease-in-out;
-}
-
-.logos-slide img:hover {
-  filter: grayscale(100%);
-}
-
-/* 🚀 Logo Animation */
-@keyframes scrollLogos {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
 /* ########################### */
 /* Full Section Styling */
 .live-streaming-container {
@@ -1258,7 +1156,6 @@ body {
   padding: 10px 0;
 }
 
-/* Fix Slide Container */
 .ls-slide {
   aspect-ratio: 9 / 16;
   width: 100%;
@@ -1273,9 +1170,10 @@ body {
   justify-content: center;
 }
 
-/* Fix Video Size */
 .ls-slide video {
   width: 100%;
+  max-width: 100%;
+  height: auto;
   max-height: 100%;
   object-fit: contain; /* Prevent stretching */
   border-radius: 10px;
@@ -1303,6 +1201,30 @@ body {
   .ls-slide {
     max-width: 230px;
     height: 330px;
+  }
+}
+
+/* Ensure fixed aspect ratio */
+@media (min-width: 1024px) {
+  .ls-slide {
+    width: 280px;
+    height: 500px;
+  }
+
+  .ls-slide video {
+    max-width: 280px;
+    max-height: 500px;
+  }
+}
+
+/* Fix for Retina Screens */
+@media screen and (-webkit-min-device-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi) {
+  .ls-slide video {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 
