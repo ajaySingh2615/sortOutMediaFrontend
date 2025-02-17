@@ -166,6 +166,7 @@ a {
 
 /* Hero Section - FIXED EXTRA SPACE ON LARGE SCREENS */
 .hero {
+  background: linear-gradient(135deg, rgb(255, 59, 63), rgb(255, 59, 63));
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -184,19 +185,19 @@ a {
   font-size: 3.8rem;
   font-weight: 800;
   line-height: 1.2;
-  color: #ff4b2b;
+  color: #000;
   text-transform: capitalize;
 }
 
 .text-content .highlight {
-  color: #ff6347;
+  color: #fff;
   font-weight: 800;
 }
 
 .text-content p {
   font-size: 1.4rem;
   margin-top: 20px;
-  color: #ccc;
+  color: #fff;
   line-height: 1.7;
 }
 
@@ -213,7 +214,7 @@ a {
   padding: 15px 40px;
   border-radius: 50px;
   font-weight: 600;
-  background: #ff4b2b;
+  background: #801e20;
   color: white;
   border: none;
   box-shadow: 5px 5px 20px rgba(255, 75, 43, 0.4),
