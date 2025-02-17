@@ -1,0 +1,462 @@
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to right, #e63946, #ff6b6b);
+  color: #333;
+  overflow-x: hidden;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Hero Content */
+.hero-content {
+  background: #fff;
+  padding: 50px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  animation: fadeInLeft 1s ease-in-out;
+}
+
+/* Responsive Text Scaling */
+.hero-title {
+  font-weight: 700;
+  font-size: clamp(28px, 5vw, 42px); /* Responsive font size */
+  color: #222;
+}
+
+.hero-subtitle {
+  font-size: clamp(14px, 2vw, 18px);
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Button Responsiveness */
+.btn-primary,
+.btn-outline {
+  padding: 10px 15px;
+  font-size: clamp(12px, 1.5vw, 16px);
+}
+
+/* Hero Image */
+.hero-image {
+  position: relative;
+  max-width: 100%;
+  width: clamp(200px, 50vw, 400px);
+  border-radius: 50%;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+/* Floating Elements */
+.floating-badge {
+  position: absolute;
+  background: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: clamp(12px, 1.5vw, 14px);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: floatAnimation 3s infinite ease-in-out;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Floating Badge Fix for Cut-Off */
+.floating-badge::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+/* Floating Badge Icons */
+.floating-badge img {
+  width: 16px;
+  height: 16px;
+}
+
+/* Floating Animation */
+@keyframes floatAnimation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Responsive Badge Positions */
+.badge-top-left {
+  top: 10%;
+  left: 5%;
+}
+
+.badge-bottom-right {
+  bottom: 10%;
+  right: 5%;
+}
+
+/* Hover Effects */
+.floating-badge:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive Brand Logos */
+.brand-logos img {
+  height: clamp(20px, 5vw, 40px);
+  margin: 0 5px;
+  opacity: 1;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+  }
+
+  .hero-content {
+    padding: 30px;
+  }
+
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .hero-subtitle {
+    font-size: 16px;
+  }
+
+  .hero-image {
+    width: 80%;
+    margin-top: 20px;
+  }
+
+  .badge-top-left,
+  .badge-bottom-right {
+    position: static;
+    margin: 10px auto;
+    display: inline-block;
+    animation: none;
+  }
+}
+
+/* Small Mobile Screens */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 20px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .hero-image {
+    width: 90%;
+  }
+
+  .brand-logos img {
+    height: 25px;
+  }
+}
+
+/* About Section */
+.about-section {
+  padding: 80px 0;
+  background: #fff;
+  text-align: left;
+}
+
+/* About Title */
+.about-title {
+  font-size: clamp(26px, 5vw, 36px);
+  font-weight: 700;
+  color: #222;
+}
+
+/* About Subtitle */
+.about-subtitle {
+  font-size: clamp(14px, 2vw, 18px);
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Company Image / Logo */
+.about-image {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.about-image:hover {
+  transform: scale(1.05);
+}
+
+/* Services List */
+.about-services {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.about-services li {
+  font-size: 16px;
+  color: #333;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+}
+
+.about-services li::before {
+  content: "✔";
+  color: #e63946;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 20px;
+}
+
+.social-link {
+  font-size: 22px;
+  margin-right: 15px;
+  color: #e63946;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-link:hover {
+  color: #c32f39;
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-section {
+    text-align: center;
+  }
+
+  .about-image {
+    margin-bottom: 20px;
+  }
+
+  .about-services {
+    display: inline-block;
+    text-align: left;
+  }
+}
+
+/* Portfolio Section */
+.portfolio-section {
+  padding: 80px 0;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+/* Section Title */
+.portfolio-title {
+  font-size: clamp(26px, 5vw, 36px);
+  font-weight: 700;
+  color: #222;
+}
+
+/* Section Subtitle */
+.portfolio-subtitle {
+  font-size: clamp(14px, 2vw, 18px);
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* Portfolio Grid */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.portfolio-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+}
+
+/* CTA Button */
+.btn-primary {
+  background: #e63946;
+  border: none;
+  padding: 12px 20px;
+  font-weight: 600;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #c32f39;
+  transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .portfolio-item {
+    margin-bottom: 20px;
+  }
+}
+
+/* Case Study Section */
+.case-study-section {
+  padding: 80px 0;
+  background: #fff;
+  text-align: left;
+}
+
+/* Case Study Title */
+.case-title {
+  font-size: clamp(26px, 5vw, 36px);
+  font-weight: 700;
+  color: #222;
+}
+
+/* Industry Info */
+.case-industry {
+  font-size: clamp(16px, 2vw, 18px);
+  font-weight: 600;
+  color: #e63946;
+}
+
+/* Case Description */
+.case-description {
+  font-size: clamp(14px, 2vw, 18px);
+  color: #555;
+  margin-top: 10px;
+}
+
+/* Swapping Images - Right Side */
+.case-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  margin: auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.case-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.case-image.active {
+  opacity: 1;
+}
+
+/* Image Slider */
+.case-slider {
+  margin-top: 40px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-container {
+  display: flex;
+  gap: 15px;
+  width: max-content;
+  animation: slideAnimation 10s infinite linear;
+}
+
+.slider-img {
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slider-img:hover {
+  transform: scale(1.1);
+}
+
+/* Animation for Sliding */
+@keyframes slideAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .case-study-section {
+    text-align: center;
+  }
+
+  .case-image-container {
+    max-width: 100%;
+  }
+
+  .slider-container {
+    animation: none; /* Stop auto-slide on small screens */
+    justify-content: center;
+  }
+}
