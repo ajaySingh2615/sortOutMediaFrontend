@@ -13,7 +13,6 @@ a {
 
 /* General Navbar Styling */
 .navbar {
-  height: 70px; /* Fixed navbar height */
   position: sticky;
   top: 0;
   width: 100%;
@@ -115,7 +114,7 @@ a {
     position: fixed;
     top: 60px;
     right: 0;
-    width: 100%;
+    /* width: 100%; */
     max-width: 300px;
     background: #ffffff;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -1028,5 +1027,284 @@ a {
 
   .btn-submit {
     width: 100%;
+  }
+}
+
+/* CTA Section - Modern & Responsive */
+.custom-cta {
+  background: linear-gradient(135deg, #ff4b4b, #ff6b6b);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 12px;
+  margin: 50px auto;
+  font-family: "Poppins", sans-serif;
+  /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); */
+  max-width: 1200px;
+  width: 90%;
+}
+
+/* CTA Heading */
+.custom-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.custom-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+/* CTA Info Box */
+.custom-cta-info {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+/* CTA Box - Each Contact Method */
+.custom-cta-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 18px 25px;
+  border-radius: 12px;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+  min-width: 280px;
+  text-align: left;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+.custom-cta-box:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* CTA Icons */
+.custom-cta-box i {
+  font-size: 2rem;
+  background: linear-gradient(135deg, #fff, #ddd);
+  color: #ff4b4b;
+  padding: 12px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.custom-cta-box:hover i {
+  background: #fff;
+  color: #ff4b4b;
+}
+
+/* CTA Links */
+.custom-cta-box a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.custom-cta-box a:hover {
+  color: #0a0a0a;
+}
+
+/* Responsive for Tablets & Mobile */
+@media (max-width: 1024px) {
+  .custom-cta h2 {
+    font-size: 2.2rem;
+  }
+
+  .custom-cta p {
+    font-size: 1.1rem;
+  }
+
+  .custom-cta-info {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .custom-cta-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 15px 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .custom-cta-box i {
+    font-size: 1.8rem;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .custom-cta {
+    padding: 40px 15px;
+    /* width: 95%; */
+  }
+
+  .custom-cta h2 {
+    font-size: 2rem;
+  }
+
+  .custom-cta p {
+    font-size: 1rem;
+  }
+
+  .custom-cta .custom-cta-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .custom-cta-box {
+    width: 90%;
+    max-width: 350px;
+  }
+}
+
+/* Footer Section */
+.custom-footer {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 60px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.custom-footer-title {
+  color: #ff4b4b;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+/* Footer Grid */
+.custom-footer .custom-footer-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.custom-footer .custom-footer-col {
+  flex: 1;
+  min-width: 200px; /* Ensures proper column width */
+  padding: 10px;
+}
+
+/* Footer Links */
+.custom-footer-links {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.custom-footer-links li {
+  margin-bottom: 10px;
+}
+
+.custom-footer-links li a {
+  text-decoration: none;
+  color: #ddd;
+  transition: color 0.3s ease;
+}
+
+.custom-footer-links li a:hover {
+  color: #ff4b4b;
+}
+
+/* Social Icons */
+.custom-social-icons {
+  /* display: flex; */
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.custom-social-icons a {
+  font-size: 1.5rem;
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.custom-social-icons a:hover {
+  color: #ff4b4b;
+  transform: scale(1.1);
+}
+
+/* Footer Bottom */
+.custom-footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.custom-footer-bottom p {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.custom-footer-bottom ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.custom-footer-bottom ul li a {
+  text-decoration: none;
+  color: #ddd;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.custom-footer-bottom ul li a:hover {
+  color: #ff4b4b;
+}
+
+/* Footer Logo */
+.custom-footer-logo img {
+  width: 150px; /* Properly sized logo */
+  height: auto;
+  display: block;
+  margin: 0 auto; /* Centers logo */
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+  .custom-footer .custom-footer-row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .custom-footer .custom-footer-col {
+    text-align: center;
+  }
+
+  .custom-social-icons {
+    justify-content: center;
+  }
+
+  .custom-footer-bottom ul {
+    flex-direction: column;
+    gap: 10px;
   }
 }
