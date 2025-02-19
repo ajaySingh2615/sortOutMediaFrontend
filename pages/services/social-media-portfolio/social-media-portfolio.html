@@ -199,6 +199,359 @@
       </div>
     </section>
 
+    <section class="uhcc-case-study">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left Side: Case Study Details -->
+          <div class="col-md-6 case-study-content">
+            <h2 class="case-study-title">Universal Health Care Center</h2>
+            <p class="case-study-industry">Industry: Healthcare & Wellness</p>
+            <p class="case-study-description">
+              We helped UHCC enhance their online presence, increase engagement,
+              and drive patient interactions through strategic social media
+              marketing.
+            </p>
+
+            <ul class="case-study-strategy">
+              <li>
+                ✅ <strong>Audience Target:</strong> Optimized content for the
+                right patient demographics.
+              </li>
+              <li>
+                ✅ <strong>Content Strategy:</strong> Created engaging
+                healthcare posts to build trust.
+              </li>
+              <li>
+                ✅ <strong>Paid Ads:</strong> Facebook & Instagram ads increased
+                patient inquiries.
+              </li>
+              <li>
+                ✅ <strong>Community Engagement:</strong> Actively managed
+                comments & messages.
+              </li>
+              <li>
+                ✅ <strong>Performance Analytics:</strong> Optimized content &
+                ad performance.
+              </li>
+            </ul>
+
+            <h4 class="case-study-achievements">📊 Key Achievements:</h4>
+            <ul class="achievements-list">
+              <li>
+                ✔
+                <span class="achievements-list-color-black"
+                  >200% growth in social media followers.</span
+                >
+              </li>
+              <li>
+                ✔
+                <span class="achievements-list-color-black"
+                  >Doubled engagement, boosting patient inquiries.</span
+                >
+              </li>
+              <li>
+                ✔
+                <span class="achievements-list-color-black"
+                  >80% increase in lead conversion.</span
+                >
+              </li>
+              <li>
+                ✔
+                <span class="achievements-list-color-black"
+                  >150% more Facebook & Instagram reach.</span
+                >
+              </li>
+              <li>
+                ✔
+                <span class="achievements-list-color-black"
+                  >Strong brand credibility in healthcare.</span
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right Side: Social Media Preview -->
+          <div class="col-md-6">
+            <div
+              id="socialMediaCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="/images/portfolio/socail-media-img/ugcc-img-1.webp"
+                    class="d-block w-100"
+                    alt="Facebook Page"
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="/images/portfolio/socail-media-img/ugcc-img-2.webp"
+                    class="d-block w-100"
+                    alt="Instagram Page"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Image Slider (Before & After) -->
+        <div class="case-study-slider">
+          <h3 class="text-center">Campaign Highlights</h3>
+          <div class="slider">
+            <div class="slide">
+              <img
+                src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-1.webp"
+                alt="Campaign 1"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-2.webp"
+                alt="Campaign 2"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-3.webp"
+                alt="Campaign 3"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-4.webp"
+                alt="Campaign 4"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-5.webp"
+                alt="Campaign 4"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-6.webp"
+                alt="Campaign 4"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Auto-scroll the image slider
+        let slider = document.querySelector(".slider");
+        let scrollAmount = 0;
+        let scrollStep = 250; // Image width
+
+        function autoScrollSlider() {
+          if (scrollAmount >= slider.scrollWidth - slider.clientWidth) {
+            scrollAmount = 0;
+          } else {
+            scrollAmount += scrollStep;
+          }
+          slider.scrollTo({ left: scrollAmount, behavior: "smooth" });
+        }
+
+        let sliderInterval = setInterval(autoScrollSlider, 2000);
+
+        // Pause scrolling when hovering over images
+        document.querySelectorAll(".slide").forEach((slide) => {
+          slide.addEventListener("mouseenter", () =>
+            clearInterval(sliderInterval)
+          );
+          slide.addEventListener("mouseleave", () => {
+            sliderInterval = setInterval(autoScrollSlider, 2000);
+          });
+        });
+      });
+    </script>
+
+    <section class="earndigitally-case-study">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Left Side: Before & After Instagram Profile -->
+          <!-- Left Side: Before & After Instagram Profile -->
+          <div class="col-md-6">
+            <div
+              class="flip-container"
+              onmouseover="hoverEffect(true)"
+              onmouseout="hoverEffect(false)"
+              onclick="flipCard()"
+            >
+              <div class="flipper">
+                <!-- Front (Before Image) -->
+                <div class="front">
+                  <img
+                    src="/images/portfolio/socail-media-img/earnDigital/earnDigital-img-1.webp"
+                    alt="Before Instagram Profile"
+                  />
+                  <div class="flip-text">Click to Flip</div>
+                </div>
+                <!-- Back (After Image) -->
+                <div class="back">
+                  <img
+                    src="/images/portfolio/socail-media-img/earnDigital/earnDigital-img-2.webp"
+                    alt="After Instagram Profile"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side: Company Info & Description -->
+          <div class="col-md-6 case-study-content">
+            <h2 class="case-study-title">Earndigitally</h2>
+            <p class="case-study-industry">
+              Industry: Digital Marketing & Content Creation
+            </p>
+            <p class="case-study-description">
+              We helped Earndigitally improve their online branding, engagement,
+              and content strategy. Our goal was to enhance their social media
+              presence through creative content and targeted strategies.
+            </p>
+
+            <ul class="case-study-strategy">
+              <li>
+                ✅ <strong>Profile Enhancement:</strong> Optimized Instagram
+                profile layout & aesthetics.
+              </li>
+              <li>
+                ✅ <strong>Content Strategy:</strong> Created engaging posts &
+                reels.
+              </li>
+              <li>
+                ✅ <strong>Ad Campaigns:</strong> Managed Facebook & Instagram
+                ads.
+              </li>
+              <li>
+                ✅ <strong>Audience Growth:</strong> Increased followers &
+                engagement.
+              </li>
+              <li>
+                ✅ <strong>Performance Analytics:</strong> Regular insights &
+                strategy adjustments.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Image Album Section -->
+        <div class="image-album">
+          <h3 class="text-center">Our Work Portfolio</h3>
+          <div class="album-grid">
+            <div
+              class="album-item"
+              onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-1.webp')"
+            >
+              <img
+                src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-1.webp"
+                alt="Work 1"
+              />
+              <div class="overlay"><span>Social Media Campaign</span></div>
+            </div>
+            <div
+              class="album-item"
+              onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-2.webp')"
+            >
+              <img
+                src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-2.webp"
+                alt="Work 2"
+              />
+              <div class="overlay"><span>Brand Awareness</span></div>
+            </div>
+            <div
+              class="album-item"
+              onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-3.webp')"
+            >
+              <img
+                src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-3.webp"
+                alt="Work 3"
+              />
+              <div class="overlay"><span>Marketing Strategy</span></div>
+            </div>
+            <div
+              class="album-item"
+              onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-4.webp')"
+            >
+              <img
+                src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-4.webp"
+                alt="Work 4"
+              />
+              <div class="overlay"><span>Website Development</span></div>
+            </div>
+            <div
+              class="album-item"
+              onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-5.webp')"
+            >
+              <img
+                src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-5.webp"
+                alt="Work 5"
+              />
+              <div class="overlay"><span>SEO Optimization</span></div>
+            </div>
+            <div
+              class="album-item"
+              onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-6.webp')"
+            >
+              <img
+                src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-6.webp"
+                alt="Work 6"
+              />
+              <div class="overlay"><span>Content Marketing</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lightbox Popup -->
+        <div id="lightbox" class="lightbox">
+          <span class="close-btn" onclick="closeLightbox()">&times;</span>
+          <img id="lightbox-img" src="" alt="Expanded Image" />
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Flip Effect on Click
+      function flipCard() {
+        document.querySelector(".flipper").classList.toggle("flipped");
+      }
+
+      // Hover Effect to Pop Out the Image
+      function hoverEffect(isHover) {
+        const container = document.querySelector(".flip-container");
+        if (isHover) {
+          container.classList.add("hovered");
+        } else {
+          container.classList.remove("hovered");
+        }
+      }
+
+      // Ensure Lightbox is Hidden on Page Load
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("lightbox").style.display = "none";
+      });
+
+      // Function to open lightbox and display clicked image
+      function openLightbox(imageSrc) {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+
+        lightboxImg.src = imageSrc;
+        lightbox.style.display = "flex"; // Show the lightbox
+      }
+
+      // Function to close lightbox when clicked outside or on close button
+      function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+      }
+    </script>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
