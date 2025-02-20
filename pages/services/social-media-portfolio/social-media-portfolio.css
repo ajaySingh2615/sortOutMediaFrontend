@@ -1091,7 +1091,7 @@ body {
 }
 
 .three-grow {
-  font-size: 40px;
+  font-size: 110px;
 }
 
 /* ==============================
@@ -1150,14 +1150,14 @@ body {
    Performance Growth Section
    ============================== */
 .performance-section {
-  margin-top: 50px;
+  margin-top: 150px;
   text-align: center;
 }
 
 .performance-title {
   font-size: 28px;
   font-weight: bold;
-  color: #e63946;
+  color: #00004c;
   margin-bottom: 20px;
 }
 
@@ -1192,13 +1192,13 @@ body {
 /* Right Arrows (Between Images) */
 .arrow-icon {
   font-size: 36px;
-  color: #e63946;
+  color: #00004c;
 }
 
 /* Downward Arrow */
 .arrow-down {
   font-size: 50px;
-  color: #e63946;
+  color: #00004c;
   margin: 20px 0;
 }
 
@@ -1320,7 +1320,7 @@ body {
    Instagram Story Album (Fully Responsive)
    ============================== */
 .instagram-album {
-  margin-top: 50px;
+  margin-top: 150px;
   text-align: center;
   width: 100%;
 }
@@ -1475,5 +1475,90 @@ body {
 
   .ls-slide img {
     max-width: 180px;
+  }
+}
+
+/* ==============================
+   CTA (Call-To-Action) Section
+   ============================== */
+.cta-section {
+  width: 100%;
+  padding: 60px 20px;
+  background: #f8f9fa;
+  text-align: center;
+}
+
+.cta-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #00004c;
+  margin-bottom: 30px;
+}
+
+/* CTA Container */
+.cta-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* Individual CTA Box */
+.cta-box {
+  width: 300px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cta-box i {
+  font-size: 30px;
+  color: #e63946;
+  margin-bottom: 10px;
+}
+
+.cta-box h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.cta-box p {
+  font-size: 16px;
+  color: #666;
+}
+
+.cta-box a {
+  text-decoration: none;
+  color: #e63946;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out;
+}
+
+.cta-box a:hover {
+  color: #00004c;
+}
+
+/* Hover Effect */
+.cta-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ==============================
+     Responsive Fixes (Tablet & Mobile)
+     ============================== */
+@media (max-width: 768px) {
+  .cta-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-box {
+    width: 90%;
   }
 }
