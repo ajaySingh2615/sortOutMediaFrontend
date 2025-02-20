@@ -112,9 +112,9 @@
               From managed IT services to cybersecurity, we provide everything
               you need to stay ahead in today’s digital world.
             </p>
-            <a href="#services" class="btn btn-primary btn-lg mt-3"
-              >Explore Our Services</a
-            >
+            <a href="#" id="whatsapp-link" class="btn btn-primary btn-lg mt-3">
+              Book Now
+            </a>
           </div>
           <!-- Image Content -->
           <div class="col-md-6 text-center">
@@ -127,6 +127,36 @@
         </div>
       </div>
     </section>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const whatsappBtn = document.getElementById("whatsapp-link");
+
+        whatsappBtn.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent default action
+
+          let userName = prompt("Enter your name:");
+          if (!userName) {
+            alert("Please enter your name to proceed.");
+            return;
+          }
+
+          let pageTitle = document.title; // Gets the current page title
+
+          // Construct the message
+          let message = `Hi, my name is ${userName}, and I am interested in ${pageTitle} services.`;
+
+          // Encode message for URL
+          let encodedMessage = encodeURIComponent(message);
+
+          // Final WhatsApp URL
+          let whatsappURL = `https://wa.me/919818559102?text=${encodedMessage}`;
+
+          // Redirect to WhatsApp
+          window.open(whatsappURL, "_blank");
+        });
+      });
+    </script>
 
     <!-- Services Section -->
     <section class="our-services-section" id="services">
@@ -147,11 +177,11 @@
           <!-- Service 1 -->
           <div class="col-md-4">
             <div class="service-box">
-              <i class="fas fa-server service-icon"></i>
+              <i class="fas fa-tools service-icon"></i>
               <h3 class="service-heading">Managed IT Services</h3>
               <p class="service-text">
-                Comprehensive IT management to keep your systems efficient and
-                reliable.
+                Complete IT support for businesses, covering troubleshooting,
+                software updates, and technical assistance.
               </p>
             </div>
           </div>
@@ -159,11 +189,11 @@
           <!-- Service 2 -->
           <div class="col-md-4">
             <div class="service-box">
-              <i class="fas fa-shield-alt service-icon"></i>
-              <h3 class="service-heading">Cybersecurity Services</h3>
+              <i class="fas fa-network-wired service-icon"></i>
+              <h3 class="service-heading">Network Infrastructure & Setup</h3>
               <p class="service-text">
-                Protect your business from digital threats with advanced
-                security solutions.
+                Design, installation, and maintenance of network infrastructure,
+                including structured cabling, routers, and switches.
               </p>
             </div>
           </div>
@@ -171,11 +201,14 @@
           <!-- Service 3 -->
           <div class="col-md-4">
             <div class="service-box">
-              <i class="fas fa-database service-icon"></i>
-              <h3 class="service-heading">Data Backup & Recovery</h3>
+              <i class="fas fa-desktop service-icon"></i>
+              <h3 class="service-heading">
+                Hardware Maintenance & AMC Services
+              </h3>
               <p class="service-text">
-                Ensure your critical data is safe, secure, and recoverable when
-                needed.
+                Preventive and corrective hardware support, covering desktops,
+                laptops, printers, and other IT hardware under Annual
+                Maintenance Contracts (AMC).
               </p>
             </div>
           </div>
@@ -183,11 +216,11 @@
           <!-- Service 4 -->
           <div class="col-md-4">
             <div class="service-box">
-              <i class="fas fa-network-wired service-icon"></i>
-              <h3 class="service-heading">Network Infrastructure</h3>
+              <i class="fas fa-database service-icon"></i>
+              <h3 class="service-heading">Data Backup & Recovery</h3>
               <p class="service-text">
-                Design and implement robust networks tailored to your business
-                needs.
+                Cloud and local backup solutions with data recovery services to
+                prevent loss due to failures or cyber threats.
               </p>
             </div>
           </div>
@@ -195,11 +228,11 @@
           <!-- Service 5 -->
           <div class="col-md-4">
             <div class="service-box">
-              <i class="fas fa-tools service-icon"></i>
-              <h3 class="service-heading">Hardware Maintenance</h3>
+              <i class="fas fa-laptop-house service-icon"></i>
+              <h3 class="service-heading">IT Equipment Rental & Sales</h3>
               <p class="service-text">
-                Professional hardware installation and ongoing maintenance
-                support.
+                Rent or buy new and used laptops, desktops, servers, and
+                networking equipment. We also handle IT asset purchases.
               </p>
             </div>
           </div>
@@ -207,10 +240,48 @@
           <!-- Service 6 -->
           <div class="col-md-4">
             <div class="service-box">
-              <i class="fas fa-globe service-icon"></i>
-              <h3 class="service-heading">Website Development</h3>
+              <i class="fas fa-fingerprint service-icon"></i>
+              <h3 class="service-heading">Biometric & Security Solutions</h3>
               <p class="service-text">
-                Build a strong online presence with custom-designed websites.
+                Installation and maintenance of biometric attendance systems,
+                access control, and other security solutions.
+              </p>
+            </div>
+          </div>
+          <!-- Service 7 -->
+          <div class="col-md-4">
+            <div class="service-box">
+              <i class="fas fa-code service-icon"></i>
+              <h3 class="service-heading">
+                Website Development & IT Solutions
+              </h3>
+              <p class="service-text">
+                Professional website design and development for businesses,
+                including e-commerce and corporate websites.
+              </p>
+            </div>
+          </div>
+          <!-- Service 8 -->
+          <div class="col-md-4">
+            <div class="service-box">
+              <i class="fas fa-phone-alt service-icon"></i>
+              <h3 class="service-heading">PABX & Telephony Solutions</h3>
+              <p class="service-text">
+                Setup and maintenance of PABX (Private Automated Branch
+                Exchange) telephone systems for businesses.
+              </p>
+            </div>
+          </div>
+          <!-- Service 9 -->
+          <div class="col-md-4">
+            <div class="service-box">
+              <i class="fas fa-mobile-alt service-icon"></i>
+              <h3 class="service-heading">
+                Used Laptop/Mobile Devices (Sales & Services)
+              </h3>
+              <p class="service-text">
+                Sales and servicing of pre-owned mobile phones, desktops, and
+                laptops with warranty options.
               </p>
             </div>
           </div>

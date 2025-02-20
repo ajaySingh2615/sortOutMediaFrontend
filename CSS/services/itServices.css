@@ -325,8 +325,19 @@ marquee.smm-marq {
   margin-bottom: 40px;
 }
 
-/* Service Boxes */
+/* Services Grid */
+.row.g-4 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch; /* Makes all service boxes equal height */
+}
+
+/* Service Boxes (Ensuring Equal Height) */
 .service-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* Forces all boxes to have the same height */
   background: #fff;
   padding: 25px;
   border-radius: 12px;
