@@ -297,6 +297,7 @@ body {
 
   .brand-logos img {
     height: 25px;
+    margin: 10px;
   }
 }
 
@@ -481,6 +482,10 @@ body {
 
 .background-uhcc {
   background: linear-gradient(to right, #e63946, #ff6b6b) !important;
+}
+
+.uhcc-color {
+  color: #e63946 !important;
 }
 
 /* Left Side: Case Study Content */
