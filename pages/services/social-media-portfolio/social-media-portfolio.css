@@ -365,6 +365,10 @@ body {
   background: #fff;
 }
 
+.background-uhcc {
+  background: linear-gradient(to right, #e63946, #ff6b6b) !important;
+}
+
 /* Left Side: Case Study Content */
 .uhcc-case-study .case-study-content {
   display: flex;
@@ -663,6 +667,14 @@ body {
 .earndigitally-case-study {
   padding: 80px 0;
   background: #fff;
+}
+
+.background-earndigitally {
+  background: #008000 !important;
+}
+
+.red-earn {
+  color: #000 !important;
 }
 
 /* ==============================
@@ -1071,6 +1083,17 @@ body {
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
 }
 
+.growth-arrow-icon {
+  font-size: 20px;
+  color: #00004c;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.three-grow {
+  font-size: 40px;
+}
+
 /* ==============================
    Lightbox (Properly Shows on Click)
    ============================== */
@@ -1290,5 +1313,167 @@ body {
   .cta-button {
     font-size: 14px;
     padding: 10px 15px;
+  }
+}
+
+/* ==============================
+   Instagram Story Album (Fully Responsive)
+   ============================== */
+.instagram-album {
+  margin-top: 50px;
+  text-align: center;
+  width: 100%;
+}
+
+.album-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: #00004c;
+  margin-bottom: 20px;
+}
+
+/* Story Container - Full Width */
+.story-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+/* Individual Story Items with Mobile Aspect Ratio (9:16) */
+.story-item {
+  width: calc(100% / 6 - 10px); /* Ensures 6 Stories in One Row */
+  max-width: 180px;
+  height: calc(180px * 1.77); /* Maintain 9:16 Aspect Ratio */
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Ensure Story Images Fit Properly */
+.story-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effects */
+.story-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ==============================
+       Responsive Fixes (Tablet & Mobile)
+       ============================== */
+
+/* Tablets (Show 3 Stories Per Row) */
+@media (max-width: 992px) {
+  .story-item {
+    width: calc(100% / 3 - 10px); /* Three Stories Per Row */
+    max-width: 200px;
+    height: calc(200px * 1.77);
+  }
+}
+
+/* Mobile (Show 2 Stories Per Row) */
+@media (max-width: 576px) {
+  .story-item {
+    width: calc(100% / 2 - 10px); /* Two Stories Per Row */
+    max-width: 180px;
+    height: calc(180px * 1.77);
+  }
+}
+
+/* ==============================
+   Live Streaming Portfolio (Multiple Images)
+   ============================== */
+.live-streaming-container {
+  width: 100%;
+  padding: 60px 0;
+  background: #00004c;
+  text-align: center;
+}
+
+.live-streaming-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.highlight-text {
+  color: #e63946;
+}
+
+/* Swiper Container */
+.liveSwiper {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Swiper Slide */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ls-slide img {
+  width: 100%;
+  max-width: 250px; /* Ensures multiple images are visible */
+  height: auto;
+  border-radius: 15px;
+  border: 3px solid orange;
+  padding: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.ls-slide img:hover {
+  transform: scale(1.05);
+}
+
+/* Swiper Navigation Arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #e63946; /* Red arrows */
+}
+
+/* Swiper Pagination */
+.swiper-pagination {
+  bottom: 10px;
+}
+
+/* ==============================
+     Responsive Design (Ensure Proper Layout)
+     ============================== */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .liveSwiper {
+    width: 95%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .live-streaming-title {
+    font-size: 22px;
+  }
+
+  .liveSwiper {
+    width: 100%;
+  }
+
+  .ls-slide img {
+    max-width: 180px;
   }
 }

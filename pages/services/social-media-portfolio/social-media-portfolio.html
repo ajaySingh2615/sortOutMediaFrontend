@@ -28,6 +28,20 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
   </head>
   <body>
     <!-- Hero Section -->
@@ -112,10 +126,10 @@
 
             <!-- Company Services -->
             <ul class="about-services">
-              <li>📈 Social Media Strategy</li>
-              <li>🎨 Content Creation & Branding</li>
-              <li>🎯 Paid Advertising & Campaigns</li>
-              <li>📊 Analytics & Performance Tracking</li>
+              <li>Social Media Strategy</li>
+              <li>Content Creation & Branding</li>
+              <li>Paid Advertising & Campaigns</li>
+              <li>Analytics & Performance Tracking</li>
             </ul>
 
             <!-- Social Media Links -->
@@ -204,7 +218,9 @@
             Boost your brand visibility and engagement with our expert
             strategies. Let's take your business to the next level!
           </p>
-          <a href="#contact" class="cta-button">Get Started Now</a>
+          <a href="/pages/our-services-page/service.html" class="cta-button"
+            >Get Started Now</a
+          >
         </div>
 
         <!-- CTA Button -->
@@ -250,7 +266,7 @@
               </li>
             </ul>
 
-            <h4 class="case-study-achievements">📊 Key Achievements:</h4>
+            <h4 class="case-study-achievements">Key Achievements:</h4>
             <ul class="achievements-list">
               <li>
                 ✔
@@ -312,40 +328,80 @@
           </div>
         </div>
       </div>
-      <!-- Image Slider (Before & After) -->
-      <div class="case-study-slider">
-        <h3 class="text-center image-slider-font-white">Campaign Highlights</h3>
-        <div class="slider">
-          <div class="slide">
-            <img
-              src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-1.webp"
-              alt="Campaign 1"
-            />
+    </section>
+
+    <!-- earndigitally Section -->
+    <section class="live-streaming-container background-uhcc">
+      <div class="live-streaming-content">
+        <h2 class="live-streaming-title">
+          <span class="highlight-text red-earn">Campaign </span> Highlights
+          <br />
+        </h2>
+
+        <!-- Image Slider (Before & After) -->
+        <div class="case-study-slider">
+          <div class="slider">
+            <div class="slide">
+              <img
+                src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-1.webp"
+                alt="Campaign 1"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-2.webp"
+                alt="Campaign 2"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-3.webp"
+                alt="Campaign 3"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-4.webp"
+                alt="Campaign 4"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-5.webp"
+                alt="Campaign 4"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-6.webp"
+                alt="Campaign 4"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-1.webp"
+                alt="Campaign 4"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-2.webp"
+                alt="Campaign 4"
+              />
+            </div>
+            <div class="slide">
+              <img
+                src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-3.webp"
+                alt="Campaign 4"
+              />
+            </div>
           </div>
-          <div class="slide">
-            <img
-              src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-2.webp"
-              alt="Campaign 2"
-            />
-          </div>
-          <div class="slide">
-            <img
-              src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-3.webp"
-              alt="Campaign 3"
-            />
-          </div>
-          <div class="slide">
-            <img
-              src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-4.webp"
-              alt="Campaign 4"
-            />
-          </div>
-          <div class="slide">
-            <img
-              src="/images/portfolio/socail-media-img/ucc-img/uhcc-icons-image-5.webp"
-              alt="Campaign 4"
-            />
-          </div>
+        </div>
+
+        <!-- Lightbox Popup -->
+        <div id="lightbox" class="lightbox">
+          <span class="close-btn" onclick="closeLightbox()">&times;</span>
+          <img id="lightbox-img" src="" alt="Expanded Image" />
         </div>
       </div>
     </section>
@@ -449,77 +505,87 @@
           </div>
         </div>
       </div>
-      <!-- Image Album Section -->
-      <div class="image-album">
-        <h3 class="text-center">Our Work Portfolio</h3>
-        <div class="album-grid">
-          <div
-            class="album-item"
-            onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-1.webp')"
-          >
-            <img
-              src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-1.webp"
-              alt="Work 1"
-            />
-            <div class="overlay"><span>Social Media Campaign</span></div>
-          </div>
-          <div
-            class="album-item"
-            onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-2.webp')"
-          >
-            <img
-              src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-2.webp"
-              alt="Work 2"
-            />
-            <div class="overlay"><span>Brand Awareness</span></div>
-          </div>
-          <div
-            class="album-item"
-            onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-3.webp')"
-          >
-            <img
-              src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-3.webp"
-              alt="Work 3"
-            />
-            <div class="overlay"><span>Marketing Strategy</span></div>
-          </div>
-          <div
-            class="album-item"
-            onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-4.webp')"
-          >
-            <img
-              src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-4.webp"
-              alt="Work 4"
-            />
-            <div class="overlay"><span>Website Development</span></div>
-          </div>
-          <div
-            class="album-item"
-            onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-5.webp')"
-          >
-            <img
-              src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-5.webp"
-              alt="Work 5"
-            />
-            <div class="overlay"><span>SEO Optimization</span></div>
-          </div>
-          <div
-            class="album-item"
-            onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-6.webp')"
-          >
-            <img
-              src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-6.webp"
-              alt="Work 6"
-            />
-            <div class="overlay"><span>Content Marketing</span></div>
+    </section>
+
+    <!-- earndigitally Section -->
+    <section class="live-streaming-container background-earndigitally">
+      <div class="live-streaming-content">
+        <h2 class="live-streaming-title">
+          <span class="highlight-text red-earn">Our Work</span> Portfolio.
+          <br />
+        </h2>
+
+        <!-- Image Album Section -->
+        <div class="image-album">
+          <div class="album-grid">
+            <div
+              class="album-item"
+              onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-1.webp')"
+            >
+              <img
+                src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-1.webp"
+                alt="Work 1"
+              />
+              <div class="overlay"><span>Social Media Campaign</span></div>
+            </div>
+            <div
+              class="album-item"
+              onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-2.webp')"
+            >
+              <img
+                src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-2.webp"
+                alt="Work 2"
+              />
+              <div class="overlay"><span>Brand Awareness</span></div>
+            </div>
+            <div
+              class="album-item"
+              onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-3.webp')"
+            >
+              <img
+                src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-3.webp"
+                alt="Work 3"
+              />
+              <div class="overlay"><span>Marketing Strategy</span></div>
+            </div>
+            <div
+              class="album-item"
+              onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-4.webp')"
+            >
+              <img
+                src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-4.webp"
+                alt="Work 4"
+              />
+              <div class="overlay"><span>Website Development</span></div>
+            </div>
+            <div
+              class="album-item"
+              onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-5.webp')"
+            >
+              <img
+                src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-5.webp"
+                alt="Work 5"
+              />
+              <div class="overlay"><span>SEO Optimization</span></div>
+            </div>
+            <div
+              class="album-item"
+              onclick="openLightbox('/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-6.webp')"
+            >
+              <img
+                src="/images/portfolio/socail-media-img/earnDigital/album/Earndigitally-image-album-6.webp"
+                alt="Work 6"
+              />
+              <div class="overlay"><span>Content Marketing</span></div>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Lightbox Popup -->
-      <div id="lightbox" class="lightbox">
-        <span class="close-btn" onclick="closeLightbox()">&times;</span>
-        <img id="lightbox-img" src="" alt="Expanded Image" />
+        <!-- Lightbox Popup -->
+        <div id="lightbox" class="lightbox">
+          <span class="close-btn" onclick="closeLightbox()">&times;</span>
+          <img id="lightbox-img" src="" alt="Expanded Image" />
+        </div>
       </div>
     </section>
 
@@ -580,7 +646,7 @@
         <div class="growth-section">
           <!-- Left Side: Before Instagram Growth -->
           <div class="growth-box">
-            <h3>Before</h3>
+            <h3>BEFORE</h3>
             <img
               src="/images/portfolio/socail-media-img/trueasset/before-after/before.webp"
               alt="Before Growth"
@@ -591,12 +657,15 @@
 
           <!-- Animated Arrow -->
           <div class="growth-arrow">
-            <span>3 Months Growth 🚀</span>
+            <span class="growth-arrow-icon"
+              ><span class="three-grow">3</span> <br />
+              MONTHS GROWTH</span
+            >
           </div>
 
           <!-- Right Side: After Instagram Growth -->
           <div class="growth-box">
-            <h3>After</h3>
+            <h3>AFTER</h3>
             <img
               src="/images/portfolio/socail-media-img/trueasset/before-after/after.webp"
               alt="After Growth"
@@ -606,15 +675,9 @@
           </div>
         </div>
 
-        <!-- Lightbox Container (Popup) -->
-        <div id="lightbox" class="lightbox">
-          <span class="close-lightbox">&times;</span>
-          <img id="lightbox-image" src="" alt="Enlarged Image" />
-        </div>
-
         <!-- Performance Growth (Analytics Section) -->
         <div class="performance-section">
-          <h3 class="performance-title">Performance Growth 📈</h3>
+          <h3 class="performance-title">Performance Growth</h3>
           <p>
             Our strategic approach led to outstanding improvements in
             engagement, views, and audience growth.
@@ -664,34 +727,164 @@
             </div>
           </div>
         </div>
+
+        <!-- Instagram Story Album (Full Width, Responsive) -->
+        <div class="instagram-album">
+          <h3 class="album-title">Instagram Stories Showcase 📸</h3>
+          <div class="story-container">
+            <div class="story-item">
+              <img
+                src="/images/portfolio/socail-media-img/trueasset/instagram-story/trueassetimg-1.webp"
+                alt="Story 1"
+                class="lightbox-trigger"
+              />
+            </div>
+            <div class="story-item">
+              <img
+                src="/images/portfolio/socail-media-img/trueasset/instagram-story/trueassetimg-2.webp"
+                alt="Story 2"
+                class="lightbox-trigger"
+              />
+            </div>
+            <div class="story-item">
+              <img
+                src="/images/portfolio/socail-media-img/trueasset/instagram-story/trueassetimg-3.webp"
+                alt="Story 3"
+                class="lightbox-trigger"
+              />
+            </div>
+            <div class="story-item">
+              <img
+                src="/images/portfolio/socail-media-img/trueasset/instagram-story/trueassetimg-4.webp"
+                alt="Story 4"
+                class="lightbox-trigger"
+              />
+            </div>
+            <div class="story-item">
+              <img
+                src="/images/portfolio/socail-media-img/trueasset/instagram-story/trueassetimg-5.webp"
+                alt="Story 5"
+                class="lightbox-trigger"
+              />
+            </div>
+            <div class="story-item">
+              <img
+                src="/images/portfolio/socail-media-img/trueasset/instagram-story/trueassetimg-6.webp"
+                alt="Story 6"
+                class="lightbox-trigger"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Streaming Portfolio Section -->
+    <section class="live-streaming-container">
+      <div class="live-streaming-content">
+        <h2 class="live-streaming-title">
+          We deliver the best
+          <span class="highlight-text">Social Media Posts</span> content.
+          <br />
+          And we will do the same for you.
+        </h2>
+
+        <!-- Swiper Slider -->
+        <div class="swiper liveSwiper">
+          <div class="swiper-wrapper">
+            <!-- Image Slides -->
+            <div class="swiper-slide ls-slide">
+              <img
+                src="/images/portfolio/socail-media-img/trueasset/instagram-post/instagram-post-1.webp"
+                alt="Post 1"
+              />
+            </div>
+            <div class="swiper-slide ls-slide">
+              <img
+                src="/images/portfolio/socail-media-img/trueasset/instagram-post/instagram-post-2.webp"
+                alt="Post 2"
+              />
+            </div>
+            <div class="swiper-slide ls-slide">
+              <img
+                src="/images/portfolio/socail-media-img/trueasset/instagram-post/instagram-post-3.webp"
+                alt="Post 3"
+              />
+            </div>
+            <div class="swiper-slide ls-slide">
+              <img
+                src="/images/portfolio/socail-media-img/trueasset/instagram-post/instagram-post-4.webp"
+                alt="Post 4"
+              />
+            </div>
+            <div class="swiper-slide ls-slide">
+              <img
+                src="/images/portfolio/socail-media-img/trueasset/instagram-post/instagram-post-5.webp"
+                alt="Post 5"
+              />
+            </div>
+            <div class="swiper-slide ls-slide">
+              <img
+                src="/images/portfolio/socail-media-img/trueasset/instagram-post/instagram-post-6.webp"
+                alt="Post 6"
+              />
+            </div>
+            <div class="swiper-slide ls-slide">
+              <img
+                src="/images/portfolio/socail-media-img/trueasset/instagram-post/instagram-post-7.webp"
+                alt="Post 7"
+              />
+            </div>
+            <div class="swiper-slide ls-slide">
+              <img
+                src="/images/portfolio/socail-media-img/trueasset/instagram-post/instagram-post-8.webp"
+                alt="Post 8"
+              />
+            </div>
+            <div class="swiper-slide ls-slide">
+              <img
+                src="/images/portfolio/socail-media-img/trueasset/instagram-post/instagram-post-9.webp"
+                alt="Post 9"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <script>
-      // Get elements
-      const lightbox = document.getElementById("lightbox");
-      const lightboxImage = document.getElementById("lightbox-image");
-      const closeLightbox = document.querySelector(".close-lightbox");
+      // Initialize Swiper
+      document.addEventListener("DOMContentLoaded", function () {
+        var swiper = new Swiper(".liveSwiper", {
+          slidesPerView: 4, // Show 4 images at a time
+          spaceBetween: 15, // Spacing between images
+          loop: true, // Infinite loop
+          autoplay: {
+            delay: 1000, // Auto-scroll every 2 seconds
+            disableOnInteraction: false,
+          },
+          navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+          },
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
 
-      // Open Lightbox on Click
-      document.querySelectorAll(".lightbox-trigger").forEach((img) => {
-        img.addEventListener("click", function () {
-          lightboxImage.src = this.dataset.image;
-          lightbox.style.display = "flex";
+          // Responsive Breakpoints
+          breakpoints: {
+            1200: { slidesPerView: 4 }, // Large screens
+            992: { slidesPerView: 3 }, // Tablets
+            768: { slidesPerView: 2 }, // Small tablets
+            480: { slidesPerView: 1 }, // Mobile
+          },
         });
       });
-
-      // Close Lightbox on Click Outside or Close Button
-      closeLightbox.addEventListener("click", function () {
-        lightbox.style.display = "none";
-      });
-
-      lightbox.addEventListener("click", function (e) {
-        if (e.target === lightbox) {
-          lightbox.style.display = "none";
-        }
-      });
     </script>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
