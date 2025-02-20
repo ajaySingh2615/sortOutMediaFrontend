@@ -44,6 +44,69 @@
     />
   </head>
   <body>
+    <header class="navbar">
+      <div class="container">
+        <!-- Logo -->
+        <a href="/index.html" class="navbar-logo">
+          <img
+            src="/images/sortoutInnovation-icon/sortout-innovation-only-s.gif"
+            alt="Logo"
+          />
+        </a>
+
+        <!-- Hamburger Menu for Mobile -->
+        <button class="navbar-toggle" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navigation Links -->
+        <nav class="navbar-links">
+          <ul>
+            <li><a href="/index.html" class="nav-link">Home</a></li>
+            <li>
+              <a href="/pages/about-page/about.html" class="nav-link">About</a>
+            </li>
+            <li><a href="/pages/career.html" class="nav-link">Career</a></li>
+            <li>
+              <a href="/pages/talent.page/talent.html" class="nav-link"
+                >Find Talent</a
+              >
+            </li>
+            <li>
+              <a href="/pages/our-services-page/service.html" class="nav-link"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a href="/pages/contact-page/contact-page.html" class="nav-link"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <script>
+      // Toggle Dropdown Menu for Mobile
+      const navbarToggle = document.querySelector(".navbar-toggle");
+      const navbarLinks = document.querySelector(".navbar-links");
+
+      navbarToggle.addEventListener("click", () => {
+        navbarLinks.classList.toggle("active");
+      });
+
+      // Add Background Color on Scroll
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+    </script>
+
     <!-- Hero Section -->
     <div class="container hero-section">
       <div class="row align-items-center">
@@ -57,28 +120,40 @@
             </p>
 
             <div class="mt-4">
-              <button class="btn btn-primary">Get Started</button>
+              <a href="work"
+                ><button class="btn btn-primary">Get Started</button></a
+              >
+
               <button class="btn btn-outline">🎬 Watch Video</button>
             </div>
 
             <!-- Brand Logos -->
             <div class="brand-logos mt-4">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
-                alt="Google"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png"
-                alt="Meta"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Adobe_Corporate_logo.png"
-                alt="Adobe"
-              />
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/9/95/LinkedIn_Logo_2019.svg"
-                alt="LinkedIn"
-              />
+              <a href="https://sortoutinnovation.com/">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+                  alt="Google"
+                />
+              </a>
+              <a href="https://www.facebook.com/Sortout.Innovation/"
+                ><img
+                  src="https://upload.wikimedia.org/wikipedia/commons/4/44/Facebook_Logo.png"
+                  alt="Meta"
+              /></a>
+
+              <a href="https://www.instagram.com/sortout_innovation/">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/900px-Instagram_icon.png?20200512141346"
+                  alt="Adobe"
+                />
+              </a>
+
+              <a href="https://www.youtube.com/watch?v=tw-xk-Pb-zA">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/YouTube_full-color_icon_%282024%29.svg/640px-YouTube_full-color_icon_%282024%29.svg.png"
+                  alt="LinkedIn"
+                />
+              </a>
             </div>
           </div>
         </div>
@@ -93,10 +168,8 @@
             />
 
             <!-- Floating Elements -->
-            <div class="floating-badge badge-top-left">🏆 Best Agency</div>
-            <div class="floating-badge badge-bottom-right">
-              <img src="/icons/speaker.png" alt="Support Icon" /> 24/7 Support
-            </div>
+            <div class="floating-badge badge-top-left">Best Agency</div>
+            <div class="floating-badge badge-bottom-right">24/7 Support</div>
           </div>
         </div>
       </div>
@@ -150,7 +223,7 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section class="portfolio-section">
+    <section class="portfolio-section" id="work">
       <div class="container">
         <div class="text-center">
           <h2 class="portfolio-title">Our Work</h2>
@@ -209,18 +282,6 @@
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Call-to-Action (CTA) -->
-        <div class="cta-box">
-          <h3>Want the Same Growth for Your Business?</h3>
-          <p>
-            Boost your brand visibility and engagement with our expert
-            strategies. Let's take your business to the next level!
-          </p>
-          <a href="/pages/our-services-page/service.html" class="cta-button"
-            >Get Started Now</a
-          >
         </div>
 
         <!-- CTA Button -->
@@ -888,21 +949,25 @@
         <div class="cta-box">
           <i class="fas fa-phone-alt"></i>
           <h3>Call Us</h3>
-          <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+          <p><a href="tel:+919818559102">+91 9818559102</a></p>
         </div>
 
         <!-- Email Contact -->
         <div class="cta-box">
           <i class="fas fa-envelope"></i>
           <h3>Email Us</h3>
-          <p><a href="mailto:info@yourcompany.com">info@yourcompany.com</a></p>
+          <p>
+            <a href="mailto:info@sortoutinnovation.com"
+              >info@sortoutinnovation.com</a
+            >
+          </p>
         </div>
 
         <!-- Address Contact -->
         <div class="cta-box">
           <i class="fas fa-map-marker-alt"></i>
           <h3>Visit Us</h3>
-          <p>123 Business Street, Delhi, India</p>
+          <p>Spaze i-Tech Park, Gurugram, India</p>
         </div>
       </div>
     </section>
