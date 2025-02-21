@@ -6,6 +6,14 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+}
+
+.brand-logos-a {
+  text-decoration: none;
+}
+
 /* General Navbar Styling */
 .navbar {
   position: sticky; /* Keeps navbar at the top during scroll */
@@ -351,10 +359,11 @@ body {
 }
 
 .about-services li::before {
-  content: "✔";
+  content: "\2714";
   color: #e63946;
   font-weight: bold;
   margin-right: 10px;
+  font-family: Arial, sans-serif; /* Change font */
 }
 
 /* Social Icons */
@@ -553,8 +562,11 @@ body {
 }
 
 .achievements-list li {
-  font-weight: bold;
+  content: "\2714";
   color: #e63946;
+  font-weight: bold;
+  margin-right: 10px;
+  font-family: Arial, sans-serif;
 }
 
 /* Key Achievements Section */
