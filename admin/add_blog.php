@@ -5,6 +5,7 @@ require '../includes/config.php'; // Cloudinary config
 require '../vendor/autoload.php';
 
 use Cloudinary\Api\Upload\UploadApi;
+use Cloudinary\Configuration\Configuration;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = trim($_POST['title']);
@@ -12,9 +13,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Upload image to Cloudinary
     if (!empty($_FILES['image']['tmp_name'])) {
-        $uploadApi = new UploadApi();
-        $upload = $uploadApi->upload($_FILES['image']['tmp_name']);
-        $image_url = $upload['secure_url'];
+        try {
+            $uploadApi = new UploadApi();
+            $upload = $uploadApi->upload($_FILES['image']['tmp_name'], [
+                'folder' => 'blog_images' // Store images in Cloudinary folder
+            ]);
+            $image_url = $upload['secure_url'];
+        } catch (Exception $e) {
+            die("Cloudinary Upload Error: " . $e->getMessage());
+        }
     } else {
         $image_url = '';
     }
@@ -51,4 +58,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <button type="submit">Add Blog</button>
     </form>
 </body>
-</html>
