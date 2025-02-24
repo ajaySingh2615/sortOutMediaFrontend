@@ -124,13 +124,17 @@ $totalPages = ceil($totalBlogs / $blogsPerPage);
 
                 <!-- ✅ Right Section: Speech Bubble Blog Content -->
                 <div class="relative bg-white p-6 md:p-10 border border-gray-300 shadow-lg rounded-[50px] mt-6 md:mt-0 md:ml-10 w-full transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 speech-bubble">
-                    <h3 class="text-xl md:text-3xl font-bold text-gray-800 leading-tight hover:text-red-600 transition duration-200 font-playfair">
-                        <a href="post.php?id=<?= $row['id']; ?>"><?= htmlspecialchars($row['title']); ?></a>
-                    </h3>
-                    <p class="text-gray-600 mt-3 md:mt-4 font-poppins text-base md:text-lg">
-                        <?= substr(htmlspecialchars($row['content']), 0, 200) . '...'; ?>
-                    </p>
-                    <p class="text-sm md:text-md text-gray-500 mt-3 md:mt-4 font-roboto tracking-wide">By Our Growth Experts</p>
+                <h3 class="text-xl md:text-3xl font-bold text-gray-800 leading-tight hover:text-red-600 transition duration-200 font-playfair">
+    <a href="post.php?id=<?= $row['id']; ?>"><?= htmlspecialchars($row['title']); ?></a>
+</h3>
+<p class="text-gray-600 mt-3 md:mt-4 font-poppins text-base md:text-lg">
+    <?= substr(nl2br(preg_replace('/<a (.*?)>(.*?)<\/a>/i', '<a $1 class="text-red-600 font-semibold hover:text-red-800 transition" target="_blank">$2</a>', htmlspecialchars_decode($row['content']))), 0, 200) . '...'; ?>
+</p>
+
+<p class="text-sm md:text-md text-gray-500 mt-3 md:mt-4 font-roboto tracking-wide">
+    By Our Growth Experts
+</p>
+
 
                     <!-- Buttons (Share & Read More) -->
                     <div class="flex flex-col md:flex-row md:items-center justify-end mt-4 md:mt-6 space-y-2 md:space-y-0 md:space-x-4">
