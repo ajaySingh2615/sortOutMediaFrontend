@@ -5,9 +5,9 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
-// Restrict access to admin users only
-if ($_SESSION['role'] !== 'admin') {
-    echo "Access Denied! Only admins can access this page.";
+// ✅ Allow both Admin & Super Admin
+if (!in_array($_SESSION['role'], ['admin', 'super_admin'])) {
+    echo "Access Denied! Only admins and super admins can access this page.";
     exit();
 }
 ?>

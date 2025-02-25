@@ -1,6 +1,22 @@
 <?php
 require '../auth/auth.php';
 require '../includes/db_connect.php';
+
+echo "Logged in as: " . $_SESSION['role'];
+
+
+// ✅ Ensure Only Admins & Super Admins Can Access
+if ($_SESSION['role'] !== 'admin' && $_SESSION['role'] !== 'super_admin') {
+    header("Location: ../index.php");
+    exit();
+}
+
+// ✅ Fetch Pending Admins (Only for Super Admin)
+$pendingAdmins = [];
+if ($_SESSION['role'] === 'super_admin') {
+    $adminQuery = "SELECT id, username, email FROM users WHERE role = 'admin' AND status = 'pending'";
+    $pendingAdmins = $conn->query($adminQuery);
+}
 ?>
 
 <!DOCTYPE html>
@@ -41,6 +57,16 @@ require '../includes/db_connect.php';
         }
         tr:hover {
             background: #f8d7da;
+        }
+
+         /* ✅ Buttons */
+         .btn-approve {
+            background: #28a745;
+            color: white;
+        }
+        .btn-reject {
+            background: #dc3545;
+            color: white;
         }
 
         /* ✅ Filters */
@@ -124,6 +150,31 @@ require '../includes/db_connect.php';
 <!-- ✅ Spacing for Navbar -->
 <div style="height: 80px;"></div>
 
+<!-- ✅ Super Admin Panel (Approve Admins) -->
+<?php if ($_SESSION['role'] === 'super_admin' && $pendingAdmins->num_rows > 0): ?>
+    <div class="container my-4">
+        <h3 class="text-danger fw-bold">Pending Admin Approvals</h3>
+        <table class="table table-bordered">
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+            <?php while ($admin = $pendingAdmins->fetch_assoc()): ?>
+                <tr id="admin-<?= $admin['id']; ?>">
+                    <td><?= htmlspecialchars($admin['username']); ?></td>
+                    <td><?= htmlspecialchars($admin['email']); ?></td>
+                    <td>
+                        <button class="btn btn-approve approve-btn" data-id="<?= $admin['id']; ?>">Approve</button>
+                        <button class="btn btn-reject reject-btn" data-id="<?= $admin['id']; ?>">Reject</button>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
+    </div>
+<?php endif; ?>
+
+
 <!-- ✅ Dashboard Content -->
 <div class="container my-5">
     <h2 class="text-center fw-bold text-danger mb-4">Admin Dashboard</h2>
@@ -156,70 +207,98 @@ require '../includes/db_connect.php';
 
 <script>
     $(document).ready(function () {
-    function loadData(page = 1, search = '', month = '') {
-        $.ajax({
-            url: "fetch_blogs.php",
-            type: "GET",
-            data: { page: page, search: search, month: month },
-            success: function (response) {
-                $("#table-data").html(response);
-            }
-        });
-    }
-
-    // ✅ Load Initial Data
-    loadData();
-
-    // ✅ Search Event
-    $("#search").on("keyup", function () {
-        loadData(1, $(this).val(), $("#month").val());
-    });
-
-    // ✅ Month Filter
-    $("#month").on("change", function () {
-        loadData(1, $("#search").val(), $(this).val());
-    });
-
-    // ✅ Reset Filters
-    $("#reset").on("click", function () {
-        $("#search").val('');
-        $("#month").val('');
-        loadData(1, '', '');
-    });
-
-    // ✅ Pagination Click Event
-    $(document).on("click", ".pagination-link", function (e) {
-        e.preventDefault();
-        let page = $(this).data("page");
-        loadData(page, $("#search").val(), $("#month").val());
-    });
-
-    // ✅ Handle Delete Confirmation Modal (Attach Dynamically)
-    let deleteId = null;
-    
-    $(document).on("click", ".delete-btn", function () {
-        deleteId = $(this).data("id"); // Store the ID
-        $("#deleteModal").modal("show"); // Show the modal
-    });
-
-    // ✅ Confirm Delete Button Click (Fix: Event Delegation)
-    $(document).on("click", "#confirmDelete", function () {
-        if (deleteId) {
+        function loadData(page = 1, search = '', month = '') {
             $.ajax({
-                url: "delete_blog.php",
-                type: "POST",
-                data: { id: deleteId },
+                url: "fetch_blogs.php",
+                type: "GET",
+                data: { page: page, search: search, month: month },
                 success: function (response) {
-                    $("#deleteModal").modal("hide"); // Hide modal after delete
-                    loadData(); // Refresh Table
+                    $("#table-data").html(response);
                 }
             });
         }
+
+        // ✅ Load Initial Data
+        loadData();
+
+        // ✅ Search Event
+        $("#search").on("keyup", function () {
+            loadData(1, $(this).val(), $("#month").val());
+        });
+
+        // ✅ Month Filter
+        $("#month").on("change", function () {
+            loadData(1, $("#search").val(), $(this).val());
+        });
+
+        // ✅ Reset Filters
+        $("#reset").on("click", function () {
+            $("#search").val('');
+            $("#month").val('');
+            loadData(1, '', '');
+        });
+
+        // ✅ Pagination Click Event
+        $(document).on("click", ".pagination-link", function (e) {
+            e.preventDefault();
+            let page = $(this).data("page");
+            loadData(page, $("#search").val(), $("#month").val());
+        });
+
+        // ✅ Handle Delete Confirmation Modal (Attach Dynamically)
+        let deleteId = null;
+
+        $(document).on("click", ".delete-btn", function () {
+            deleteId = $(this).data("id"); // Store the ID
+            $("#deleteModal").modal("show"); // Show the modal
+        });
+
+        // ✅ Confirm Delete Button Click (Fix: Event Delegation)
+        $(document).on("click", "#confirmDelete", function () {
+            if (deleteId) {
+                $.ajax({
+                    url: "delete_blog.php",
+                    type: "POST",
+                    data: { id: deleteId },
+                    success: function (response) {
+                        $("#deleteModal").modal("hide"); // Hide modal after delete
+                        loadData(); // Refresh Table
+                    }
+                });
+            }
+        });
+
+        // ✅ Super Admin: Approve Admin
+        $(document).on("click", ".approve-btn", function () {
+            let adminId = $(this).data("id");
+            $.ajax({
+                url: "approve_admin.php",
+                type: "POST",
+                data: { id: adminId },
+                success: function () {
+                    loadData(); // Refresh table
+                    alert("✅ Admin approved successfully.");
+                }
+            });
+        });
+
+        // ✅ Super Admin: Reject Admin
+        $(document).on("click", ".reject-btn", function () {
+            let adminId = $(this).data("id");
+            $.ajax({
+                url: "reject_admin.php",
+                type: "POST",
+                data: { id: adminId },
+                success: function () {
+                    loadData(); // Refresh table
+                    alert("❌ Admin request rejected.");
+                }
+            });
+        });
+
     });
-});
-
-
 </script>
+
 
 </body>
 </html>
