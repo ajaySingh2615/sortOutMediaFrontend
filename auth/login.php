@@ -102,9 +102,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /* ✅ Navbar */
         .navbar {
-            background: black;
-            padding: 15px;
-            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(135deg, #d90429, #ef233c);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
 
         .navbar-brand {
