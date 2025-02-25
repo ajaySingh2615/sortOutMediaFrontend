@@ -62,28 +62,81 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             background-repeat: repeat;
         }
 
-        /* ✅ Form Styling */
+        /* ✅ Centering the Form (NOW RESPONSIVE) */
         .form-container {
-            max-width: 450px;
+            max-width: 500px; /* Increased width */
+            width: 90%; /* Ensures good scaling on small screens */
             margin: auto;
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            color: black;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ✅ Form Styling */
+        .form-control {
+            border-radius: 8px;
+            padding: 12px;
+        }
+
+        /* ✅ Custom Button */
+        .btn-primary {
+            background: #d90429;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #ef233c;
         }
 
         /* ✅ Navbar */
         .navbar {
-            background: linear-gradient(135deg, #d90429, #ef233c);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            background: black;
+            padding: 15px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
         }
 
         /* ✅ Footer */
         footer {
             background: black;
             color: white;
-            padding: 30px 0;
+            padding: 20px;
             text-align: center;
+            margin-top: 20px;
+        }
+
+        /* ✅ Eye Icon */
+        .eye-icon {
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: gray;
+        }
+
+        /* ✅ Responsive Design */
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 30px;
+                width: 95%;
+            }
         }
     </style>
 </head>
@@ -93,15 +146,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
         <a class="navbar-brand text-white fw-bold d-flex align-items-center" href="#">
-            <img src="logo.png" alt="Logo" height="40" class="me-2"> <span class="fs-4">Login</span>
+            <img src="logo.png" alt="Logo" height="40" class="me-2">
         </a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="../index.php">🏠 Home</a></li>
-                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="register.php">📝 Register</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="../index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="register.php">Register</a></li>
             </ul>
         </div>
     </div>
@@ -121,26 +174,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="alert alert-danger text-center"><?= $errorMsg; ?></div>
         <?php endif; ?>
 
-        <form method="POST" class="row g-3">
-            <div class="col-12">
-                <label class="form-label fw-semibold">Email:</label>
-                <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
-            </div>
+        <form method="POST">
+            <label class="form-label fw-semibold">Email:</label>
+            <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
 
-            <div class="col-12">
-                <label class="form-label fw-semibold">Password:</label>
-                <input type="password" name="password" class="form-control" placeholder="Enter your password" required>
+            <label class="form-label fw-semibold">Password:</label>
+            <div class="position-relative">
+                <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required>
+                <span class="eye-icon" onclick="togglePassword('password')">👁️</span>
             </div>
 
             <div class="col-12 text-center">
                 <p><a href="forgot_password.php" class="text-danger fw-bold">Forgot Password?</a></p>
             </div>
 
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">🔓 Login</button>
-            </div>
+            <button type="submit" class="btn btn-primary w-100 mt-3">🔓 Login</button>
 
-            <div class="col-12 text-center">
+            <div class="col-12 text-center mt-3">
                 <p>Don't have an account? <a href="register.php" class="text-danger fw-bold">Register Here</a></p>
             </div>
         </form>
@@ -152,6 +202,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!-- ✅ Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function togglePassword(id) {
+    const input = document.getElementById(id);
+    input.type = input.type === "password" ? "text" : "password";
+}
+</script>
 
 </body>
 </html>

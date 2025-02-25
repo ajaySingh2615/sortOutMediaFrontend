@@ -48,41 +48,96 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        /* ✅ Background Design */
-        body {
+         /* ✅ Background Design */
+         body {
             background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(240,240,240,1) 100%);
             background-image: url("https://www.transparenttextures.com/patterns/cubes.png");
             background-repeat: repeat;
         }
 
-        /* ✅ Form Styling */
+        /* ✅ Centering the Form (NOW RESPONSIVE) */
         .form-container {
-            max-width: 500px;
+            max-width: 600px; /* Increased width */
+            width: 90%; /* Ensures good scaling on small screens */
             margin: auto;
             background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+            color: black;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ✅ Form Styling */
+        .form-control {
+            border-radius: 8px;
+            padding: 10px;
+        }
+
+        /* ✅ Custom Button */
+        .btn-primary {
+            background: #d90429;
+            border: none;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #ef233c;
         }
 
         /* ✅ Password Strength Indicator */
         .password-strength {
             font-size: 0.9rem;
             margin-top: 5px;
+            font-weight: bold;
         }
 
         /* ✅ Navbar */
         .navbar {
-            background: linear-gradient(135deg, #d90429, #ef233c);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            background: black;
+            padding: 15px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
         }
 
         /* ✅ Footer */
         footer {
             background: black;
             color: white;
-            padding: 30px 0;
+            padding: 20px;
             text-align: center;
+            margin-top: 20px;
+        }
+
+        /* ✅ Eye Icon */
+        .eye-icon {
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2rem;
+            color: gray;
+        }
+
+         /* ✅ Responsive Design */
+         @media (max-width: 768px) {
+            .form-container {
+                padding: 30px;
+                width: 95%;
+            }
         }
     </style>
 </head>
@@ -99,8 +154,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="../index.php">🏠 Home</a></li>
-                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="login.php">🔑 Login</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="../index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="login.php">Login</a></li>
             </ul>
         </div>
     </div>
@@ -140,15 +195,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <input type="email" name="email" class="form-control" required>
 
             <label class="form-label fw-semibold">Password:</label>
-            <input type="password" name="password" id="password" class="form-control" required>
+            <div class="position-relative">
+                <input type="password" name="password" id="password" class="form-control" required>
+                <span class="eye-icon" onclick="togglePassword('password')">👁️</span>
+            </div>
             <small id="password-strength" class="password-strength text-muted"></small>
 
             <label class="form-label fw-semibold">Confirm Password:</label>
-            <input type="password" id="confirm_password" class="form-control" required>
+            <div class="position-relative">
+                <input type="password" id="confirm_password" class="form-control" required>
+                <span class="eye-icon" onclick="togglePassword('confirm_password')">👁️</span>
+            </div>
             <small id="password-match" class="password-strength text-muted"></small>
-
-            <input type="checkbox" id="show-password" class="form-check-input">
-            <label for="show-password" class="form-check-label">Show Password</label>
 
             <label class="form-label fw-semibold mt-3">Select Role:</label>
             <select name="role" class="form-select">
@@ -160,7 +218,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
 </div>
-
 <!-- ✅ Footer -->
 <footer>© 2025 Your Website | All Rights Reserved.</footer>
 
@@ -169,6 +226,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!-- ✅ JavaScript for Password Validation -->
 <script>
+function togglePassword(id) {
+    const input = document.getElementById(id);
+    input.type = input.type === "password" ? "text" : "password";
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const passwordInput = document.getElementById("password");
     const confirmPasswordInput = document.getElementById("confirm_password");

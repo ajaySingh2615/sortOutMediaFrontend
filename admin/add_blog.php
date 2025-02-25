@@ -165,10 +165,19 @@ body::before {
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="blogs.php">Blogs</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="../admin/dashboard.php">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="../blog/index.php">Blogs</a></li>
                 <!-- <li class="nav-item">
                     <a class="btn btn-light text-danger fw-bold px-4 rounded-pill shadow-sm" href="logout.php">Logout</a>
                 </li> -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white fw-semibold px-3" href="#" role="button" data-bs-toggle="dropdown">
+                        👤 <?= $_SESSION['username']; ?> (<?= ucfirst($_SESSION['role']); ?>)
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="../auth/logout.php">Logout</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
