@@ -51,6 +51,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- ✅ Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <style>
         body {
@@ -148,7 +153,7 @@ body::before {
     <div class="container">
         <!-- ✅ Logo -->
         <a class="navbar-brand text-white fw-bold d-flex align-items-center" href="#">
-            <img src="logo.png" alt="Logo" height="40" class="me-2"> <span class="fs-4">YourBrand</span>
+            <img src="logo.png" alt="Logo" height="40" class="me-2"> 
         </a>
 
         <!-- ✅ Mobile Menu Button -->
@@ -159,11 +164,11 @@ body::before {
         <!-- ✅ Navbar Links -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#">🏠 Home</a></li>
-                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="blogs.php">📝 Blogs</a></li>
-                <li class="nav-item">
-                    <a class="btn btn-light text-danger fw-bold px-4 rounded-pill shadow-sm" href="logout.php">🚪 Logout</a>
-                </li>
+                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="blogs.php">Blogs</a></li>
+                <!-- <li class="nav-item">
+                    <a class="btn btn-light text-danger fw-bold px-4 rounded-pill shadow-sm" href="logout.php">Logout</a>
+                </li> -->
             </ul>
         </div>
     </div>
