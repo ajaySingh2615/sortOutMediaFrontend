@@ -149,11 +149,11 @@ body::before {
 <body>
 
 <!-- ✅ Modern Red & White Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top" style="background: linear-gradient(135deg, #d90429, #ef233c); box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+<nav class="navbar navbar-expand-lg fixed-top" style="background: linear-gradient(135deg, #fff, #fff); box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
     <div class="container">
         <!-- ✅ Logo -->
         <a class="navbar-brand text-white fw-bold d-flex align-items-center" href="#">
-            <img src="logo.png" alt="Logo" height="40" class="me-2"> 
+            <img src="../public/logo.png" alt="Logo" height="40" class="me-2"> 
         </a>
 
         <!-- ✅ Mobile Menu Button -->
@@ -164,14 +164,14 @@ body::before {
         <!-- ✅ Navbar Links -->
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="#">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="../admin/dashboard.php">Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="../blog/index.php">Blogs</a></li>
+                <li class="nav-item"><a class="nav-link text-black fw-semibold px-3" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-black fw-semibold px-3" href="../admin/dashboard.php">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link text-black fw-semibold px-3" href="../blog/index.php">Blogs</a></li>
                 <!-- <li class="nav-item">
                     <a class="btn btn-light text-danger fw-bold px-4 rounded-pill shadow-sm" href="logout.php">Logout</a>
                 </li> -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white fw-semibold px-3" href="#" role="button" data-bs-toggle="dropdown">
+                    <a class="nav-link dropdown-toggle text-black fw-semibold px-3" href="#" role="button" data-bs-toggle="dropdown">
                         👤 <?= $_SESSION['username']; ?> (<?= ucfirst($_SESSION['role']); ?>)
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">

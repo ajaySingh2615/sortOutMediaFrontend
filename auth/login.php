@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         /* ✅ Navbar */
         .navbar {
-            background: linear-gradient(135deg, #d90429, #ef233c);
+            background: linear-gradient(135deg, #fff, #fff);
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         }
 
@@ -144,16 +144,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!-- ✅ Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
-        <a class="navbar-brand text-white fw-bold d-flex align-items-center" href="#">
-            <img src="logo.png" alt="Logo" height="40" class="me-2">
+        <a class="navbar-brand text-black fw-bold d-flex align-items-center" href="#">
+            <img src="../public/logo.png" alt="Logo" height="40" class="me-2">
         </a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="../index.php">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-white fw-semibold px-3" href="register.php">Register</a></li>
+                <li class="nav-item"><a class="nav-link text-black fw-semibold px-3" href="../index.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link text-black fw-semibold px-3" href="register.php">Register</a></li>
             </ul>
         </div>
     </div>

@@ -38,7 +38,7 @@ $totalPages = ceil($totalBlogs / $blogsPerPage);
 
             <!-- ✅ Logo (Left Side) -->
             <a href="#" class="logo flex items-center">
-                <img src="logo.png" alt="Logo" class="h-10 w-auto">
+                <img src="../public/logo.png" alt="Logo" class="h-10 w-auto">
             </a>
 
             <!-- ✅ Mobile Menu Button (Right Side) -->
