@@ -18,6 +18,17 @@ CREATE TABLE blogs (
     FOREIGN KEY (created_by) REFERENCES users(id) ON DELETE CASCADE
 );
 
+CREATE TABLE devices (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(255) NOT NULL,
+    category ENUM('Laptop', 'Desktop', 'CCTV', 'Biometric', 'Printer') NOT NULL,
+    description TEXT NOT NULL,
+    price DECIMAL(10,2) NOT NULL,
+    image_url VARCHAR(500),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 -- ✅ Ensure a Super Admin Exists (Insert if not already present)
 INSERT INTO users (username, email, password, role, status)
 SELECT 'SuperAdmin', 'superadmin@example.com', '$2y$10$hashedpassword123', 'super_admin', 'approved'

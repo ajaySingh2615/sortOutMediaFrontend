@@ -2,9 +2,6 @@
 require '../auth/auth.php';
 require '../includes/db_connect.php';
 
-echo "Logged in as: " . $_SESSION['role'];
-
-
 // ✅ Ensure Only Admins & Super Admins Can Access
 if ($_SESSION['role'] !== 'admin' && $_SESSION['role'] !== 'super_admin') {
     header("Location: ../index.php");
@@ -127,9 +124,9 @@ if ($_SESSION['role'] === 'super_admin') {
 <body>
 
 <!-- ✅ Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top" style="background: linear-gradient(135deg, #fff, #fff); box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+<nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
     <div class="container">
-        <a class="navbar-brand text-white fw-bold d-flex align-items-center" href="#">
+        <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
             <img src="../public/logo.png" alt="Logo" height="40" class="me-2">
         </a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -137,12 +134,12 @@ if ($_SESSION['role'] === 'super_admin') {
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link text-black fw-semibold px-3" href="dashboard.php">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-black fw-semibold px-3" href="dashboard.php">Dashboard</a></li>
-                <li class="nav-item"><a class="nav-link text-black fw-semibold px-3" href="add_blog.php">Add Blog</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold px-3" href="dashboard.php">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold px-3" href="add_blog.php">Add Blog</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold px-3 text-primary" href="device_dashboard.php">📌 Manage Devices</a></li>
                 <!-- ✅ Display Logged-in User Info -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-black fw-semibold px-3" href="#" role="button" data-bs-toggle="dropdown">
+                    <a class="nav-link dropdown-toggle fw-semibold px-3" href="#" role="button" data-bs-toggle="dropdown">
                         👤 <?= $_SESSION['username']; ?> (<?= ucfirst($_SESSION['role']); ?>)
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
@@ -196,6 +193,11 @@ if ($_SESSION['role'] === 'super_admin') {
             <?php endfor; ?>
         </select>
         <button id="reset" class="btn btn-secondary">Reset</button>
+    </div>
+
+      <!-- ✅ New Button for Device Dashboard -->
+      <div class="text-center mb-4">
+        <a href="device_dashboard.php" class="btn btn-custom btn-manage-devices">📌 Manage Devices</a>
     </div>
 
     <!-- ✅ Blog Table -->
