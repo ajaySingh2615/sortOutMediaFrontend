@@ -37,7 +37,7 @@ $totalPages = ceil($totalBlogs / $blogsPerPage);
         <div class="mobile-navbar md:flex md:items-center md:justify-between h-16"> <!-- ✅ FIXED -->
 
             <!-- ✅ Logo (Left Side) -->
-            <a href="#" class="logo flex items-center">
+            <a href="../index.php" class="logo flex items-center">
                 <img src="../public/logo.png" alt="Logo" class="h-10 w-auto">
             </a>
 

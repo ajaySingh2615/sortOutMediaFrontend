@@ -73,7 +73,7 @@ $relatedStmt->close();
 <nav class="bg-white-600 p-2 shadow-lg px-6 md:px-12">
     <div class="container mx-auto flex justify-between items-center">
         <!-- ✅ Logo -->
-        <a href="dashboard.php" class="text-black text-2xl font-bold flex items-center">
+        <a href="../index.php" class="text-black text-2xl font-bold flex items-center">
             <img src="../public/logo.png" alt="Logo" class="h-10 mr-2">
         </a>
 
