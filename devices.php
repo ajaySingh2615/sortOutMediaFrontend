@@ -326,7 +326,7 @@ body {
     <div class="container">
         <!-- 🌟 Logo -->
         <a class="navbar-brand" href="index.php">
-            <i class="fas fa-laptop-code"></i> MyStore
+            <i class="fas fa-laptop-code"></i> Store
         </a>
 
         <!-- 📱 Mobile Menu Toggle -->
