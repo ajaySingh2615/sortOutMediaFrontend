@@ -347,19 +347,19 @@ body {
                         <i class="fas fa-th-large"></i> Categories
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-laptop"></i> Laptops</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-desktop"></i> Desktops</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-video"></i> CCTV Cameras</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-fingerprint"></i> Biometric Devices</a></li>
-                        <li><a class="dropdown-item" href="#"><i class="fas fa-print"></i> Printers</a></li>
+                        <li><a class="dropdown-item" href="#deviceContainer"><i class="fas fa-laptop"></i> Laptops</a></li>
+                        <li><a class="dropdown-item" href="#deviceContainer"><i class="fas fa-desktop"></i> Desktops</a></li>
+                        <li><a class="dropdown-item" href="#deviceContainer"><i class="fas fa-video"></i> CCTV Cameras</a></li>
+                        <li><a class="dropdown-item" href="#deviceContainer"><i class="fas fa-fingerprint"></i> Biometric Devices</a></li>
+                        <li><a class="dropdown-item" href="#deviceContainer"><i class="fas fa-print"></i> Printers</a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="about.php"><i class="fas fa-info-circle"></i> About</a>
+                    <a class="nav-link" href="/pages/about-page/about.html"><i class="fas fa-info-circle"></i> About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="contact.php"><i class="fas fa-envelope"></i> Contact</a>
+                    <a class="nav-link" href="/pages/contact-page/contact-page.html"><i class="fas fa-envelope"></i> Contact</a>
                 </li>
             </ul>
 
@@ -383,7 +383,7 @@ body {
             <div class="carousel-caption">
                 <h1 class="hero-title">Upgrade Your Work Setup with <br> Premium</h1>
                 <p class="hero-subtitle">Top-notch refurbished laptops, desktops, and accessories at unbeatable prices.</p>
-                <a href="#devices" class="btn hero-btn">🛒 Explore Devices</a>
+                <a href="#deviceContainer" class="btn hero-btn">🛒 Explore Devices</a>
             </div>
         </div>
 
@@ -394,7 +394,7 @@ body {
             <div class="carousel-caption">
                 <h1 class="hero-title">Secure Your Space with <br> CCTV & Biometric Solutions</h1>
                 <p class="hero-subtitle">Protect your home and office with high-quality security devices.</p>
-                <a href="#devices" class="btn hero-btn">🔍 Browse Security Devices</a>
+                <a href="#deviceContainer" class="btn hero-btn">🔍 Browse Security Devices</a>
             </div>
         </div>
 
@@ -405,7 +405,7 @@ body {
             <div class="carousel-caption">
                 <h1 class="hero-title">High-Quality Printers & Accessories</h1>
                 <p class="hero-subtitle">Perfect printing solutions for businesses and professionals.</p>
-                <a href="#devices" class="btn hero-btn">🖨️ View Printers</a>
+                <a href="#deviceContainer" class="btn hero-btn">🖨️ View Printers</a>
             </div>
         </div>
     </div>
@@ -480,10 +480,14 @@ body {
                 <h4><i class="fas fa-laptop-code"></i> MyStore</h4>
                 <p>Providing top-quality refurbished devices with warranty and support.</p>
                 <div class="social-icons">
-                    <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/profile.php?id=61556452066209"
+                    target="_blank" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://youtu.be/tw-xk-Pb-zA?si=QMTwuvhEuTegpqDr"
+                    target="_blank" class="text-white"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/sortoutinnovation"
+                    target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/sortout-innovation/"
+                    target="_blank" class="text-white"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
 
@@ -492,18 +496,19 @@ body {
                 <h5>Quick Links</h5>
                 <ul class="list-unstyled">
                     <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="about.php"><i class="fas fa-info-circle"></i> About Us</a></li>
-                    <li><a href="products.php"><i class="fas fa-th-large"></i> Products</a></li>
-                    <li><a href="contact.php"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="/pages/about-page/about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
+                    <li><a href="#deviceContainer"><i class="fas fa-th-large"></i> Products</a></li>
+                    <li><a href="/pages/contact-page/contact-page.html"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </div>
 
             <!-- 📞 Contact Details -->
             <div class="col-md-4">
                 <h5>Contact Us</h5>
-                <p><i class="fas fa-map-marker-alt"></i> 123 Street, City, India</p>
-                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
-                <p><i class="fas fa-envelope"></i> support@mystore.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Spaze i-Tech Park,
+                Gurugram, India</p>
+                <p><i class="fas fa-phone"></i> +91 9818559036</p>
+                <p><i class="fas fa-envelope"></i> info@sortoutinnovation.com</p>
             </div>
         </div>
 
@@ -511,7 +516,7 @@ body {
 
         <!-- ⚖️ Copyright -->
         <div class="text-center">
-            <p>&copy; <?php echo date("Y"); ?> MyStore. All rights reserved.</p>
+            <p>&copy; <?php echo date("Y"); ?> Sortout Innovation Store. All rights reserved.</p>
         </div>
     </div>
 </footer>
