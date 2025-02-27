@@ -4,17 +4,19 @@ require '../includes/db_connect.php';
 
 // ✅ Pagination Setup
 $limit = 6; // Devices per page
-$page = isset($_GET['page']) ? $_GET['page'] : 1;
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $start = ($page - 1) * $limit;
 
 // ✅ Fetch Devices with Filters
 $search = isset($_GET['search']) ? trim($_GET['search']) : '';
 $categoryFilter = isset($_GET['category']) ? trim($_GET['category']) : '';
 
+// ✅ Base Query
 $query = "SELECT * FROM devices WHERE 1";
 $params = [];
 $types = "";
 
+// ✅ Apply Filters
 if (!empty($search)) {
     $query .= " AND device_name LIKE ?";
     $params[] = "%$search%";
@@ -27,19 +29,37 @@ if (!empty($categoryFilter)) {
     $types .= "s";
 }
 
-$query .= " ORDER BY created_at DESC LIMIT ?, ?";
-$params[] = $start;
-$params[] = $limit;
-$types .= "ii";
-
+// ✅ Apply Pagination (Fixed: Remove `?` for `LIMIT`)
+$query .= " ORDER BY created_at DESC LIMIT $start, $limit";
 $stmt = $conn->prepare($query);
-$stmt->bind_param($types, ...$params);
+
+if (!empty($params)) {
+    $stmt->bind_param($types, ...$params);
+}
 $stmt->execute();
 $result = $stmt->get_result();
 
-// ✅ Count Total Devices
+// ✅ Count Total Devices (Fixed: Add Filters)
 $countQuery = "SELECT COUNT(*) as total FROM devices WHERE 1";
+$countParams = [];
+$countTypes = "";
+
+if (!empty($search)) {
+    $countQuery .= " AND device_name LIKE ?";
+    $countParams[] = "%$search%";
+    $countTypes .= "s";
+}
+
+if (!empty($categoryFilter)) {
+    $countQuery .= " AND category = ?";
+    $countParams[] = $categoryFilter;
+    $countTypes .= "s";
+}
+
 $countStmt = $conn->prepare($countQuery);
+if (!empty($countParams)) {
+    $countStmt->bind_param($countTypes, ...$countParams);
+}
 $countStmt->execute();
 $countResult = $countStmt->get_result();
 $totalDevices = $countResult->fetch_assoc()['total'];
@@ -61,6 +81,12 @@ $totalPages = ceil($totalDevices / $limit);
         body {
             background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 100%);
         }
+
+         /* ✅ Table Responsive */
+         .table-responsive {
+            overflow-x: auto;
+        }
+
 
         /* ✅ Table Styling */
         .table th, .table td {
@@ -86,28 +112,54 @@ $totalPages = ceil($totalDevices / $limit);
         .loading-spinner {
             display: none;
         }
+
+        /* ✅ Responsive Fixes */
+        @media (max-width: 768px) {
+            .btn-sm {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            .pagination-btn {
+                display: block;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+        }
     </style>
 </head>
-<body>
 
 <!-- ✅ Navbar -->
 <nav class="navbar navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand text-white fw-bold" href="#">Admin Panel</a>
-        <button class="btn btn-light text-danger fw-bold" data-bs-toggle="modal" data-bs-target="#addDeviceModal">➕ Add Device</button>
+        
+        <!-- ✅ Button Wrapper -->
+        <div class="d-flex gap-2">
+    <button class="btn btn-light text-danger fw-bold" data-bs-toggle="modal" data-bs-target="#addDeviceModal">
+        ➕ Add Device
+    </button>
+
+    
+    <button class="btn btn-warning fw-bold" onclick="window.location.href='../devices.php'">
+        Devices
+    </button>
+</div>
+
     </div>
 </nav>
+
 
 <!-- ✅ Spacing for Navbar -->
 <div style="height: 80px;"></div>
 
 <!-- ✅ Filters -->
 <div class="container my-4">
-    <div class="row">
-        <div class="col-md-4">
+    <div class="row g-2">
+        <div class="col-md-4 col-12">
             <input type="text" id="search" class="form-control" placeholder="🔎 Search by Name">
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-12">
             <select id="categoryFilter" class="form-select">
                 <option value="">📂 Filter by Category</option>
                 <option value="Laptop">💻 Laptop</option>
@@ -117,37 +169,42 @@ $totalPages = ceil($totalDevices / $limit);
                 <option value="Printer">🖨️ Printer</option>
             </select>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-4 col-12">
             <button id="resetFilters" class="btn btn-secondary w-100">🔄 Reset</button>
         </div>
     </div>
 </div>
 
 <!-- ✅ Device List Table -->
+<!-- ✅ Device List Table (Responsive) -->
 <div class="container my-5">
     <h2 class="text-center text-danger fw-bold">📋 Device List</h2>
-    <table class="table table-bordered mt-4">
-    <thead>
-        <tr>
-            <th>📷 Image</th>
-            <th>📝 Name</th>
-            <th>📂 Category</th>
-            <th>💰 Price</th>
-            <th>📞 Contact</th>
-            <th>🔧 Actions</th>
-        </tr>
-    </thead>
+    <div class="table-responsive">
+        <table class="table table-bordered mt-4">
+            <thead>
+                <tr>
+                    <th>📷 Image</th>
+                    <th>📝 Name</th>
+                    <th>📂 Category</th>
+                    <th>💰 Price</th>
+                    <th>📞 Contact</th>
+                    <th>🔧 Actions</th>
+                </tr>
+            </thead>
     <tbody id="device-list">
         <!-- Devices will be loaded here dynamically -->
     </tbody>
-</table>
+        </table>
+    </div>
 
 </div>
 
-<!-- ✅ Pagination -->
+<!-- ✅ Pagination (Fixed: Pass Filters) -->
 <div class="container text-center">
     <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-        <a href="?page=<?= $i; ?>" class="btn btn-dark"><?= $i; ?></a>
+        <button class="btn btn-dark pagination-btn" data-page="<?= $i; ?>">
+            <?= $i; ?>
+        </button>
     <?php endfor; ?>
 </div>
 
@@ -253,7 +310,6 @@ $totalPages = ceil($totalDevices / $limit);
 
 <script>
     $(document).ready(function () {
-    // ✅ Fetch Devices (Reusable Function)
     function fetchDevices(search = "", category = "", page = 1) {
         $.ajax({
             url: "fetch_devices.php",
@@ -263,8 +319,7 @@ $totalPages = ceil($totalDevices / $limit);
                 $("#device-list").html(response);
             },
             error: function () {
-                console.error("❌ Error fetching devices.");
-                alert("❌ Error fetching devices. Please try again.");
+                alert("❌ Error fetching devices.");
             }
         });
     }
@@ -407,7 +462,7 @@ $totalPages = ceil($totalDevices / $limit);
         });
     });
     
-    // ✅ Pagination (No Page Reload)
+    // ✅ Pagination Click
     $(document).on("click", ".pagination-btn", function (e) {
         e.preventDefault();
         let page = $(this).data("page");

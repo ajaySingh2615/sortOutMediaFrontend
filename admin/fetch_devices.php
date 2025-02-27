@@ -47,8 +47,8 @@ if ($result->num_rows > 0) {
         echo '<td>₹' . number_format($row['price'], 2) . '</td>';
         echo '<td><a href="https://wa.me/' . htmlspecialchars($row['contact_number']) . '" target="_blank" class="btn btn-success btn-sm">📞 Contact</a></td>';
         echo '<td>';
-        echo '<button class="btn btn-warning btn-sm edit-device" data-id="' . $row['id'] . '">✏️ Edit</button>';
-        echo '<button class="btn btn-danger btn-sm delete-device" data-id="' . $row['id'] . '">🗑️ Delete</button>';
+        echo '<button class="btn btn-warning btn-sm edit-device me-2 mb-2" data-id="' . $row['id'] . '">✏️ Edit</button>';
+        echo '<button class="btn btn-danger btn-sm delete-device me-2" data-id="' . $row['id'] . '">🗑️ Delete</button>';
         echo '</td>';
         echo '</tr>';
     }
