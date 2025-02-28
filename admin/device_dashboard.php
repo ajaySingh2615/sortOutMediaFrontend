@@ -161,12 +161,13 @@ $totalPages = ceil($totalDevices / $limit);
         </div>
         <div class="col-md-4 col-12">
             <select id="categoryFilter" class="form-select">
-                <option value="">📂 Filter by Category</option>
-                <option value="Laptop">💻 Laptop</option>
-                <option value="Desktop">🖥️ Desktop</option>
-                <option value="CCTV Camera">📷 CCTV Camera</option>
-                <option value="Biometric">🔐 Biometric</option>
-                <option value="Printer">🖨️ Printer</option>
+            <option value="">📂 Filter by Category</option>
+    <option value="Laptop">💻 Laptop</option>
+    <option value="Desktop">🖥️ Desktop</option>
+    <option value="Smartphone">📱 Smartphone</option>
+    <option value="CCTV Camera">📷 CCTV Camera</option>
+    <option value="Biometric">🔐 Biometric</option>
+    <option value="Printer">🖨️ Printer</option>
             </select>
         </div>
         <div class="col-md-4 col-12">
@@ -225,6 +226,7 @@ $totalPages = ceil($totalDevices / $limit);
                     <select name="category" class="form-select" required>
                         <option value="Laptop">💻 Laptop</option>
                         <option value="Desktop">🖥️ Desktop</option>
+                        <option value="Smartphone">📱 Smartphone</option>
                         <option value="CCTV Camera">📷 CCTV Camera</option>
                         <option value="Biometric">🔐 Biometric</option>
                         <option value="Printer">🖨️ Printer</option>
@@ -271,6 +273,7 @@ $totalPages = ceil($totalDevices / $limit);
                     <select id="edit_category" name="category" class="form-select" required>
                         <option value="Laptop">💻 Laptop</option>
                         <option value="Desktop">🖥️ Desktop</option>
+                        <option value="Smartphone">📱 Smartphone</option>
                         <option value="CCTV Camera">📷 CCTV Camera</option>
                         <option value="Biometric">🔐 Biometric</option>
                         <option value="Printer">🖨️ Printer</option>
