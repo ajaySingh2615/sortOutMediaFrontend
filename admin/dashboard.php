@@ -126,17 +126,19 @@ if ($_SESSION['role'] === 'super_admin') {
 <!-- ✅ Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top bg-white shadow-sm">
     <div class="container">
-        <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
-            <img src="../public/logo.png" alt="Logo" height="40" class="me-2">
+        <a class="navbar-brand fw-bold d-flex align-items-center text-danger" href="#">
+            <!-- <img src="../public/logo.png" alt="Logo" height="40" class="me-2"> -->
+            Admin Panel
         </a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link fw-semibold px-3" href="dashboard.php">Dashboard</a></li>
                 <li class="nav-item"><a class="nav-link fw-semibold px-3" href="add_blog.php">Add Blog</a></li>
-                <li class="nav-item"><a class="nav-link fw-semibold px-3 text-primary" href="device_dashboard.php">📌 Manage Devices</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold px-3" href="../blog/index.php">Blogs</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold px-3" href="../pages/our-services-page/service.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold px-3" href="device_dashboard.php">Manage Devices</a></li>
                 <!-- ✅ Display Logged-in User Info -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle fw-semibold px-3" href="#" role="button" data-bs-toggle="dropdown">
@@ -181,7 +183,7 @@ if ($_SESSION['role'] === 'super_admin') {
 
 <!-- ✅ Dashboard Content -->
 <div class="container my-5">
-    <h2 class="text-center fw-bold text-danger mb-4">Admin Dashboard</h2>
+    <!-- <h2 class="text-center fw-bold text-danger mb-4">Admin Dashboard</h2> -->
 
     <!-- ✅ Filter Section -->
     <div class="filter-box mb-3">
