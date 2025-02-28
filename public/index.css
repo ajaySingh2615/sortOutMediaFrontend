@@ -1,13 +1,6 @@
-/* styles.css */
 /* Apply Google Fonts */
 body {
   font-family: "Poppins", sans-serif;
-}
-
-/* Blog heading */
-h2 {
-  font-family: "Playfair Display", serif;
-  letter-spacing: 1px;
 }
 
 /* ✅ Ensure Smooth Mobile Menu Animation */

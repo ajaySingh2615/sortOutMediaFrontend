@@ -2,7 +2,7 @@
 require '../includes/db_connect.php';
 
 // Set the number of blogs per page
-$blogsPerPage = 10;
+$blogsPerPage = 20;
 
 // Get the current page number from the URL, default is page 1
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -26,8 +26,9 @@ $totalPages = ceil($totalBlogs / $blogsPerPage);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Latest Blog Posts</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <link rel="stylesheet" href="../public/index.css"> <!-- Custom CSS -->
+    <link rel="stylesheet" href="../public/index.css">
 </head>
 <body class="bg-gray-50">
 
@@ -48,18 +49,22 @@ $totalPages = ceil($totalBlogs / $blogsPerPage);
 
             <!-- ✅ Desktop Menu (Hidden on Mobile) -->
             <div class="hidden md:flex space-x-6">
-                <a href="#" class="text-gray-700 hover:text-red-500 transition font-semibold">Home</a>
+                <a href="../index.php" class="text-gray-700 hover:text-red-500 transition font-semibold">Home</a>
+                <a href="../pages/about-page/about.html" class="text-gray-700 hover:text-red-500 transition font-semibold">About</a>
                 <a href="#blog-section" class="text-gray-700 hover:text-red-500 transition font-semibold">Blogs</a>
-                <a href="#footer" class="text-gray-700 hover:text-red-500 transition font-semibold">Contact</a>
+                <a href="../pages/our-services-page/service.html" class="text-gray-700 hover:text-red-500 transition font-semibold">Services</a>
+                <a href="../pages/contact-page/contact-page.html" class="text-gray-700 hover:text-red-500 transition font-semibold">Contact</a>
             </div>
         </div>
     </div>
 
     <!-- ✅ Mobile Menu (Dropdown) -->
     <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md w-full py-4 px-6">
-        <a href="#" class="block py-2 text-gray-700 hover:text-red-500 transition font-semibold">Home</a>
+        <a href="../index.php" class="block py-2 text-gray-700 hover:text-red-500 transition font-semibold">Home</a>
+        <a href="../pages/about-page/about.html" class="block py-2 text-gray-700 hover:text-red-500 transition font-semibold">About</a>
         <a href="#blog-section" class="block py-2 text-gray-700 hover:text-red-500 transition font-semibold">Blogs</a>
-        <a href="#footer" class="block py-2 text-gray-700 hover:text-red-500 transition font-semibold">Contact</a>
+        <a href="../pages/our-services-page/service.html" class="block py-2 text-gray-700 hover:text-red-500 transition font-semibold">Services</a>
+        <a href="../pages/contact-page/contact-page.html" class="block py-2 text-gray-700 hover:text-red-500 transition font-semibold">Contact</a>
     </div>
 </nav>
 
@@ -76,30 +81,62 @@ $totalPages = ceil($totalBlogs / $blogsPerPage);
 </script>
 
 
-<!-- ✅ Hero Section with Full-Width Blog Image -->
-<header class="relative w-full h-[400px] md:h-[500px] lg:h-[600px]">
+<!-- ✅ Hero Section - Alternative Modern Design -->
+<header class="relative w-full h-[550px] md:h-[700px] lg:h-[850px] flex items-center justify-center overflow-hidden px-4">
     
-    <!-- ✅ Hero Image with Shadow -->
+    <!-- ✅ Background with Dual Gradient Overlay -->
     <div class="absolute inset-0">
         <img src="../images/blogging-page/blogging.webp" 
-             alt="Blogging Image" 
-             class="w-full h-full object-cover shadow-lg">
+             alt="Unlock Digital Success" 
+             class="w-full h-full object-cover brightness-75 transition-transform duration-500 ease-in-out md:hover:scale-110">
+        <div class="absolute inset-0 bg-gradient-to-br from-black/80 via-black/50 to-red-900/70"></div>
     </div>
 
-    <!-- ✅ Overlay for Readability -->
-    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white px-6">
-        <h1 class="text-4xl md:text-6xl font-bold font-playfair">
-            Welcome to Our Blog
+    <!-- ✅ Hero Content Wrapper -->
+    <div class="relative z-10 max-w-4xl w-full text-center px-6 py-12">
+        
+        <!-- ✅ Stylish Text with Gradient & Focus Effect -->
+        <h1 class="text-4xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-500 leading-tight tracking-wide animate-fade-in">
+            Unlock Your Digital Potential
         </h1>
-        <p class="text-lg md:text-xl font-poppins mt-4 max-w-2xl">
-            Stay updated with the latest trends, insights, and expert articles in the world of technology, marketing, and innovation.
+
+        <!-- ✅ Subheading with Increased Readability -->
+        <p class="text-lg md:text-xl mt-4 text-gray-300 leading-relaxed animate-fade-up">
+            Transform your online presence with expert strategies, powerful insights, and cutting-edge trends in business, technology, and digital marketing.
         </p>
-        <a href="#blog-section" class="mt-6 inline-block px-6 py-3 bg-red-600 text-white font-semibold rounded-md shadow-md hover:bg-red-700 transition">
-            Explore Blogs
-        </a>
+
+        <!-- ✅ Call to Action Buttons (New Style) -->
+        <div class="mt-6 flex flex-wrap justify-center gap-4">
+            <a href="#blog-section" 
+               class="px-6 py-3 text-lg font-semibold text-white bg-gradient-to-r from-red-500 to-red-700 rounded-lg shadow-md transition-all duration-500 ease-in-out hover:from-red-600 hover:to-red-800 hover:shadow-lg hover:-translate-y-1">
+                Start Exploring →
+            </a>
+            <a href="../pages/contact-page/contact-page.html" 
+               class="px-6 py-3 text-lg font-semibold text-gray-900 bg-white rounded-lg shadow-md transition-all duration-500 ease-in-out hover:bg-gray-200 hover:shadow-lg hover:-translate-y-1">
+                Get in Touch →
+            </a>
+        </div>
     </div>
 
 </header>
+
+<!-- ✅ Custom Animations -->
+<style>
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+        animation: fadeIn 1.2s ease-out;
+    }
+    @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(50px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-up {
+        animation: fadeUp 1.5s ease-out;
+    }
+</style>
 
 <!-- ✅ Blog Timeline Container -->
 <div class="flex justify-center py-12 px-4 md:px-8" id="blog-section">
@@ -132,15 +169,12 @@ $totalPages = ceil($totalBlogs / $blogsPerPage);
 </p>
 
 <p class="text-sm md:text-md text-gray-500 mt-3 md:mt-4 font-roboto tracking-wide">
-    By Our Growth Experts
+    By Our Experts
 </p>
 
 
                     <!-- Buttons (Share & Read More) -->
                     <div class="flex flex-col md:flex-row md:items-center justify-end mt-4 md:mt-6 space-y-2 md:space-y-0 md:space-x-4">
-                        <button class="p-3 md:p-4 bg-red-200 rounded-full hover:bg-red-300 transition shadow-md">
-                            🔗
-                        </button>
                         <a href="post.php?id=<?= $row['id']; ?>" class="px-5 md:px-6 py-2 md:py-3 border-2 border-red-400 text-red-500 font-semibold rounded-md hover:bg-red-700 hover:text-white transition shadow-md">
                             READ MORE
                         </a>
@@ -150,62 +184,94 @@ $totalPages = ceil($totalBlogs / $blogsPerPage);
         <?php endwhile; ?>
 
         <!-- ✅ Pagination -->
-        <div class="bg-gray-900 text-white p-6 rounded-lg shadow-md text-center mt-10">
-            <p class="text-sm md:text-lg">
-                Showing <span class="font-bold"><?= ($offset + 1); ?></span> to 
-                <span class="font-bold"><?= min(($offset + $blogsPerPage), $totalBlogs); ?></span> of 
-                <span class="font-bold"><?= $totalBlogs; ?></span> Entries
-            </p>
+<div class="bg-gray-900 text-white p-6 rounded-lg shadow-md text-center mt-10">
+    <p class="text-sm md:text-lg">
+        Showing <span class="font-bold"><?= ($offset + 1); ?></span> to 
+        <span class="font-bold"><?= min(($offset + $blogsPerPage), $totalBlogs); ?></span> of 
+        <span class="font-bold"><?= $totalBlogs; ?></span> Entries
+    </p>
 
-            <div class="flex justify-center mt-4 space-x-2">
-                <?php if ($page > 1): ?>
-                    <a href="?page=<?= $page - 1; ?>" class="px-4 md:px-5 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-600 transition">Prev</a>
-                <?php else: ?>
-                    <span class="px-4 md:px-5 py-2 bg-gray-800 text-gray-500 rounded-md cursor-not-allowed">Prev</span>
-                <?php endif; ?>
+    <!-- ✅ Styled Pagination Buttons -->
+    <div class="flex justify-center mt-4 space-x-2">
+        <!-- Previous Button -->
+        <?php if ($page > 1): ?>
+            <a href="?page=<?= $page - 1; ?>" 
+               class="px-4 md:px-5 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition">
+                Previous
+            </a>
+        <?php else: ?>
+            <span class="px-4 md:px-5 py-2 bg-gray-800 text-gray-500 rounded-lg cursor-not-allowed">
+                Previous
+            </span>
+        <?php endif; ?>
 
-                <?php if ($page < $totalPages): ?>
-                    <a href="?page=<?= $page + 1; ?>" class="px-4 md:px-5 py-2 bg-gray-700 text-white rounded-md hover:bg-gray-600 transition">Next</a>
-                <?php else: ?>
-                    <span class="px-4 md:px-5 py-2 bg-gray-800 text-gray-500 rounded-md cursor-not-allowed">Next</span>
-                <?php endif; ?>
-            </div>
-        </div>
+        <!-- Page Numbers -->
+        <?php for ($i = 1; $i <= $totalPages; $i++): ?>
+            <?php if ($i == $page): ?>
+                <span class="px-4 md:px-5 py-2 bg-gray-700 text-white font-bold rounded-lg shadow-md">
+                    <?= $i; ?>
+                </span>
+            <?php else: ?>
+                <a href="?page=<?= $i; ?>" 
+                   class="px-4 md:px-5 py-2 bg-gray-600 text-white rounded-lg hover:bg-gray-500 transition">
+                    <?= $i; ?>
+                </a>
+            <?php endif; ?>
+        <?php endfor; ?>
+
+        <!-- Next Button -->
+        <?php if ($page < $totalPages): ?>
+            <a href="?page=<?= $page + 1; ?>" 
+               class="px-4 md:px-5 py-2 bg-gray-700 text-white rounded-lg hover:bg-gray-600 transition">
+                Next
+            </a>
+        <?php else: ?>
+            <span class="px-4 md:px-5 py-2 bg-gray-800 text-gray-500 rounded-lg cursor-not-allowed">
+                Next
+            </span>
+        <?php endif; ?>
+    </div>
+</div>
+
 
     </div>
 </div>
 
 <!-- ✅ Footer Section -->
-<footer class="bg-gray-900 text-white py-12">
-    <div class="container mx-auto px-6 md:px-12 lg:px-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+<footer class="bg-black text-white text-center py-6 mt-12">
+    <div class="container mx-auto px-4">
+        <!-- Footer Navigation Links -->
+        <ul class="flex flex-wrap justify-center space-x-4 md:space-x-6 text-sm md:text-base font-medium">
+            <li><a href="../index.php" class="hover:text-gray-400 transition">Home</a></li>
+            <li><a href="../pages/about-page/about.html" class="hover:text-gray-400 transition">About</a></li>
+            <li><a href="../pages/contact-page/contact-page.html" class="hover:text-gray-400 transition">Contact</a></li>
+            <li><a href="privacy.php" class="hover:text-gray-400 transition">Privacy Policy</a></li>
+        </ul>
 
-        <!-- About -->
-        <div>
-            <h3 class="text-xl font-bold mb-4">About Us</h3>
-            <p class="text-gray-400">We share the latest trends and insights in technology, marketing, and innovation. Stay informed with our expert articles.</p>
+        <!-- Divider -->
+        <div class="w-full border-t border-gray-700 my-4"></div>
+
+        <!-- Social Media Icons -->
+        <div class="flex justify-center space-x-6">
+            <a href="https://youtu.be/tw-xk-Pb-zA?si=QMTwuvhEuTegpqDr" target="_blank" class="text-gray-400 hover:text-white transition text-lg">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/sortout-innovation/" target="_blank" class="text-gray-400 hover:text-white transition text-lg">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61556452066209" target="_blank" class="text-gray-400 hover:text-white transition text-lg">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/sortout_innovation" target="_blank" class="text-gray-400 hover:text-white transition text-lg">
+                <i class="fab fa-instagram"></i>
+            </a>
         </div>
 
-        <!-- Quick Links -->
-        <div>
-            <h3 class="text-xl font-bold mb-4">Quick Links</h3>
-            <ul>
-                <li><a href="#" class="text-gray-400 hover:text-white transition">Home</a></li>
-                <li><a href="#" class="text-gray-400 hover:text-white transition">Blog</a></li>
-                <li><a href="#" class="text-gray-400 hover:text-white transition">Contact</a></li>
-            </ul>
-        </div>
+        <!-- Divider -->
+        <div class="w-full border-t border-gray-700 my-4"></div>
 
-        <!-- Contact Info -->
-        <div>
-            <h3 class="text-xl font-bold mb-4">Contact Us</h3>
-            <p class="text-gray-400">Email: info@example.com</p>
-            <p class="text-gray-400">Phone: +123 456 7890</p>
-        </div>
-
-    </div>
-
-    <div class="text-center text-gray-500 text-sm mt-8">
-        © 2025 Your Blog. All Rights Reserved.
+        <!-- Copyright Text -->
+        <p class="text-sm md:text-base text-gray-500">&copy; 2025 Sortout Innovation | All Rights Reserved.</p>
     </div>
 </footer>
 
