@@ -130,7 +130,7 @@ $relatedStmt->close();
 <body>
 
 <!-- ✅ Responsive Navbar -->
-<nav class="bg-white-600 p-2 shadow-lg px-6 md:px-12">
+<nav class="bg-white-600 p-4 shadow-lg px-6 md:px-12">
     <div class="container mx-auto flex justify-between items-center">
         <!-- ✅ Logo -->
         <a href="../index.php" class="text-black text-2xl font-bold flex items-center">
@@ -144,8 +144,11 @@ $relatedStmt->close();
 
         <!-- ✅ Navigation Links -->
         <ul id="nav-links" class="hidden md:flex space-x-6 text-black font-medium">
-            <li><a href="dashboard.php" class="hover:text-gray-200">Home</a></li>
-            <li><a href="../blog/index.php" class="hover:text-gray-200">Blog</a></li>
+            <li><a href="../index.php" class="hover:text-red-400">Home</a></li>
+            <li><a href="../pages/about-page/about.html" class="hover:text-red-400">About</a></li>
+            <li><a href="../blog/index.php" class="hover:text-red-400">Blog</a></li>
+            <li><a href="../pages/contact-page/contact-page.html" class="hover:text-red-400">Contact</a></li>
+
             <!-- <li><a href="add_blog.php" class="hover:text-gray-200">Add Blog</a></li> -->
             
             <!-- ✅ Logout Button -->
@@ -284,7 +287,7 @@ $page_url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
                 <!-- Blog Content -->
                 <div class="p-5 text-center">
-                    <h5 class="text-lg md:text-xl font-semibold text-gray-800 leading-snug group-hover:text-blue-500 transition">
+                    <h5 class="text-lg md:text-xl font-semibold text-gray-800 leading-snug group-hover:text-red-500 transition">
                         <?= htmlspecialchars($related['title']); ?>
                     </h5>
                     <p class="text-sm text-gray-500 mt-2">Read More →</p>
@@ -336,16 +339,16 @@ $page_url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 
         <!-- Social Media Icons -->
         <div class="flex justify-center space-x-6">
-            <a href="https://twitter.com" target="_blank" class="text-gray-400 hover:text-white transition text-lg">
-                <i class="fab fa-twitter"></i>
+            <a href="https://youtu.be/tw-xk-Pb-zA?si=QMTwuvhEuTegpqDr" target="_blank" class="text-gray-400 hover:text-white transition text-lg">
+                <i class="fab fa-youtube"></i>
             </a>
-            <a href="https://linkedin.com" target="_blank" class="text-gray-400 hover:text-white transition text-lg">
+            <a href="https://www.linkedin.com/company/sortout-innovation/" target="_blank" class="text-gray-400 hover:text-white transition text-lg">
                 <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="https://facebook.com" target="_blank" class="text-gray-400 hover:text-white transition text-lg">
+            <a href="https://www.facebook.com/profile.php?id=61556452066209" target="_blank" class="text-gray-400 hover:text-white transition text-lg">
                 <i class="fab fa-facebook-f"></i>
             </a>
-            <a href="https://instagram.com" target="_blank" class="text-gray-400 hover:text-white transition text-lg">
+            <a href="https://www.instagram.com/sortout_innovation" target="_blank" class="text-gray-400 hover:text-white transition text-lg">
                 <i class="fab fa-instagram"></i>
             </a>
         </div>
@@ -354,7 +357,7 @@ $page_url = "https://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         <div class="w-full border-t border-gray-700 my-4"></div>
 
         <!-- Copyright Text -->
-        <p class="text-sm md:text-base text-gray-500">&copy; 2025 Your Website | All Rights Reserved.</p>
+        <p class="text-sm md:text-base text-gray-500">&copy; 2025 Sortout Innovation | All Rights Reserved.</p>
     </div>
 </footer>
 
