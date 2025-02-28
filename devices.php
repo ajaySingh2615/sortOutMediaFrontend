@@ -26,50 +26,63 @@ require 'includes/db_connect.php';
         /* ✅ General Styling */
 body {
     font-family: 'Poppins', sans-serif;
-    background: #c2c4c6;
+    background: #fff;
     color: #333;
 }
 
-/* ✅ Navbar Custom Styling */
 .navbar {
-            background-color: #343a40; /* Dark Navbar */
-        }
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-        }
-        .nav-link {
-            color: white;
-            font-size: 1.1rem;
-            transition: 0.3s;
-        }
-        .nav-link:hover {
-            color: #ffcc00;
-        }
-        .navbar-toggler {
-            border: none;
-        }
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-        .dropdown-menu {
-            background-color: #343a40;
-        }
-        .dropdown-item {
-            color: white;
-        }
-        .dropdown-item:hover {
-            background-color: #495057;
-        }
-        .search-box {
-            width: 250px;
-        }
-        @media (max-width: 768px) {
-            .search-box {
-                width: 100%;
-            }
-        }
+    background-color: white !important;
+}
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: black !important;
+    display: flex;
+    align-items: center;
+}
+.logo-img {
+    height: 40px;
+    max-width: 120px;
+    object-fit: contain;
+}
+.nav-link {
+    color: black !important;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+.nav-link:hover {
+    color: #ffcc00 !important;
+}
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+.navbar-dark .navbar-toggler-icon {
+    filter: invert(1);
+}
+.dropdown-menu {
+    background-color: white !important;
+    border: 1px solid #ddd;
+}
+.dropdown-item {
+    color: black !important;
+}
+.dropdown-item:hover {
+    background-color: #f8f9fa !important;
+}
+.search-box {
+    width: 250px;
+}
+@media (max-width: 768px) {
+    .search-box {
+        width: 100%;
+    }
+    .logo-img {
+        height: 35px;
+    }
+}
 
         /* ✅ Make Hero Section Full-Screen */
 #heroCarousel {
@@ -186,72 +199,116 @@ body {
 .device-card {
     background: #fff;
     border-radius: 12px;
-    padding: 15px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
+    padding: 18px;
+    /* box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.12); */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     text-align: center;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    /* border: 2px solid #f8f9fa; */
+    position: relative;
 }
 
 .device-card:hover {
     transform: scale(1.05);
+    box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.18);
 }
 
 /* ✅ Device Image */
 .device-img {
     width: 100%;
-    height: 180px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 10px;
+    /* border: 2px solid #e0e0e0; */
+    transition: transform 0.3s ease-in-out;
 }
 
-/* ✅ Fix title overflow */
+.device-img:hover {
+    transform: scale(1.02);
+}
+
+/* ✅ Device Title */
 .device-title {
-    font-size: 1rem; /* Adjust font size */
+    font-size: 1.1rem;
     font-weight: bold;
-    color: #000;
-    margin-top: 10px;
+    color: #333;
+    margin-top: 12px;
     text-align: center;
-    word-wrap: break-word; /* Ensures long words break */
+    word-wrap: break-word;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* Limits to 2 lines */
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
 
-/* ✅ Description Button */
-.description-btn {
-    font-size: 0.9rem;
-    font-weight: bold;
-    padding: 8px 12px;
-    background: #17a2b8;
-    color: white;
-    border-radius: 5px;
-    width: 100%;
-    text-align: center;
-}
-
-.description-btn:hover {
-    background: #117a8b;
+/* ✅ Star Rating */
+.device-rating {
+    font-size: 1rem;
+    color: #ffcc00;
+    margin-bottom: 8px;
 }
 
 /* ✅ Price */
 .device-price {
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: bold;
-    color:#000;
+    color: #d9534f;
+    margin: 10px 0;
 }
 
-/* ✅ Contact Button */
+/* ✅ Stock Status */
+.device-stock-status {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* ✅ Stock Indicators */
+.in-stock {
+    color: green;
+    font-weight: bold;
+}
+
+.out-of-stock {
+    color: red;
+    font-weight: bold;
+}
+
+/* ✅ Contact & Description Buttons */
+.device-footer {
+    margin-top: auto; /* Pushes the description button to the bottom */
+    display: flex;
+    flex-direction: column;
+}
+
 .device-footer .btn {
     font-size: 1rem;
-    padding: 10px;
+    padding: 12px;
     border-radius: 8px;
     font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+}
+
+.device-footer .btn:hover {
+    transform: scale(1.05);
+}
+
+/* ✅ Description Button */
+.description-btn {
+    background: #007bff;
+    color: white;
+    border-radius: 6px;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+}
+
+.description-btn:hover {
+    background: #0056b3;
 }
 
 /* ✅ Pagination Styling */
@@ -324,9 +381,9 @@ body {
 <!-- ✅ Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-        <!-- 🌟 Logo -->
+        <!-- 🌟 Logo (Replace 'logo.png' with your actual logo file) -->
         <a class="navbar-brand" href="index.php">
-            <i class="fas fa-laptop-code"></i> Store
+            <img src="/logo.png" alt="Brand Logo" class="logo-img">
         </a>
 
         <!-- 📱 Mobile Menu Toggle -->
@@ -338,28 +395,30 @@ body {
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.php"><i class="fas fa-home"></i> Home</a>
+                    <a class="nav-link" href="index.php"> Home</a>
                 </li>
 
                 <!-- 📂 Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="categoryDropdown" role="button" data-bs-toggle="dropdown">
-                        <i class="fas fa-th-large"></i> Categories
+                        Categories
                     </a>
+
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#deviceContainer"><i class="fas fa-laptop"></i> Laptops</a></li>
-                        <li><a class="dropdown-item" href="#deviceContainer"><i class="fas fa-desktop"></i> Desktops</a></li>
-                        <li><a class="dropdown-item" href="#deviceContainer"><i class="fas fa-video"></i> CCTV Cameras</a></li>
-                        <li><a class="dropdown-item" href="#deviceContainer"><i class="fas fa-fingerprint"></i> Biometric Devices</a></li>
-                        <li><a class="dropdown-item" href="#deviceContainer"><i class="fas fa-print"></i> Printers</a></li>
+                        <li><a class="dropdown-item" href="#deviceContainer">Laptops</a></li>
+                        <li><a class="dropdown-item" href="#deviceContainer">Desktops</a></li>
+                        <li><a class="dropdown-item" href="#deviceContainer">Smartphone</a></li>
+                        <li><a class="dropdown-item" href="#deviceContainer">CCTV Cameras</a></li>
+                        <li><a class="dropdown-item" href="#deviceContainer">Biometric Devices</a></li>
+                        <li><a class="dropdown-item" href="#deviceContainer">Printers</a></li>
                     </ul>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="/pages/about-page/about.html"><i class="fas fa-info-circle"></i> About</a>
+                    <a class="nav-link" href="/pages/about-page/about.html">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/pages/contact-page/contact-page.html"><i class="fas fa-envelope"></i> Contact</a>
+                    <a class="nav-link" href="/pages/contact-page/contact-page.html">Contact</a>
                 </li>
             </ul>
 
@@ -430,6 +489,7 @@ body {
             <option value="">📂 All Categories</option>
             <option value="Laptop">💻 Laptop</option>
             <option value="Desktop">🖥️ Desktop</option>
+            <option value="Smartphone">📱 Smartphone</option>
             <option value="CCTV Camera">📷 CCTV Camera</option>
             <option value="Biometric">🔐 Biometric</option>
             <option value="Printer">🖨️ Printer</option>
@@ -543,28 +603,40 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function renderDevices(devices) {
-        let container = document.querySelector(".container .row");
-        container.innerHTML = "";
-        
-        devices.forEach(device => {
-            let deviceHTML = `
-                <div class="col-lg-2 col-md-3 col-sm-6 mb-4">
-                    <div class="device-card">
-                        <img src="${device.image_url}" class="device-img" alt="Device Image">
-                        <h5 class="device-title">${device.device_name}</h5>
-                        <button class="btn description-btn" data-description="${device.description}">ℹ️ See Description</button>
-                        <p class="device-price text-danger fw-bold mt-2">₹${device.price}</p>
-                        <div class="device-footer">
-                            <a href="https://wa.me/${device.contact_number}" target="_blank" class="btn btn-success w-100">📞 Contact on WhatsApp</a>
-                        </div>
+    let container = document.querySelector(".container .row");
+    container.innerHTML = "";
+    
+    devices.forEach(device => {
+        let stockStatus = device.in_stock ? `<span class="out-of-stock">🔴 Out of Stock</span>` 
+                                          : `<span class="in-stock">🟢 In Stock</span>`;
+        let ratingStars = "⭐⭐⭐⭐⭐"; // Dynamic Star Rating
+
+        let deviceHTML = `
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="device-card">
+                    <img src="${device.image_url}" class="device-img" alt="Device Image">
+                    
+                    <h5 class="device-title">${device.device_name}</h5>
+                    
+                    <div class="device-rating">${ratingStars}</div>
+
+                    <p class="device-price text-danger fw-bold mt-2">₹${device.price}</p>
+                    
+                    <p class="device-stock-status">${stockStatus}</p>
+
+                    <div class="device-footer">
+                        <a href="https://wa.me/${device.contact_number}" target="_blank" class="btn btn-success w-100">📞 Contact on WhatsApp</a>
+                        <button class="btn description-btn mt-2" data-description="${device.description}">ℹ️ See Description</button>
                     </div>
                 </div>
-            `;
-            container.innerHTML += deviceHTML;
-        });
+            </div>
+        `;
+        container.innerHTML += deviceHTML;
+    });
 
-        attachDescriptionEvent();
-    }
+    attachDescriptionEvent();
+}
+
 
     function renderPagination(totalPages, currentPage) {
         let paginationContainer = document.querySelector(".pagination");
