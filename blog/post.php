@@ -147,6 +147,7 @@ $relatedStmt->close();
             <li><a href="../index.php" class="hover:text-red-400">Home</a></li>
             <li><a href="../pages/about-page/about.html" class="hover:text-red-400">About</a></li>
             <li><a href="../blog/index.php" class="hover:text-red-400">Blog</a></li>
+            <li><a href="../pages/our-services-page/service.html" class="hover:text-red-400">Services</a></li>
             <li><a href="../pages/contact-page/contact-page.html" class="hover:text-red-400">Contact</a></li>
 
             <!-- <li><a href="add_blog.php" class="hover:text-gray-200">Add Blog</a></li> -->
@@ -162,8 +163,11 @@ $relatedStmt->close();
 
     <!-- ✅ Mobile Menu (Hidden by Default) -->
     <div id="mobile-menu" class="hidden md:hidden bg-white-700 text-black flex flex-col items-center py-4 space-y-4">
-        <a href="dashboard.php" class="hover:text-gray-200">Home</a>
+        <a href="../index.php" class="hover:text-gray-200">Home</a>
+        <a href="../pages/about-page/about.html" class="hover:text-gray-200">About</a>
         <a href="/blog/index.php" class="hover:text-gray-200">Blog</a>
+        <a href="../pages/our-services-page/service.html" class="hover:text-gray-200">Services</a>
+        <a href="../pages/contact-page/contact-page.html" class="hover:text-gray-200">Contact</a>
         <!-- <a href="../auth/logout.php" class="bg-white text-red-600 px-4 py-2 rounded-md hover:bg-gray-200 transition">
             🚪 Logout
         </a> -->
