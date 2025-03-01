@@ -374,6 +374,28 @@ body {
             }
         }
 
+        /* 🔽 Search Suggestions Dropdown */
+#search-suggestions {
+    top: 40px;
+    max-height: 250px;
+    overflow-y: auto;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1050;
+}
+
+#search-suggestions .dropdown-item {
+    cursor: pointer;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+#search-suggestions .dropdown-item:hover {
+    background: #ffcc00;
+    color: black;
+}
+
     </style>
 </head>
 <body>
@@ -422,11 +444,19 @@ body {
                 </li>
             </ul>
 
-            <!-- 🔎 Search Box -->
-            <form class="d-flex">
-                <input class="form-control search-box me-2" type="search" placeholder="Search...">
-                <button class="btn btn-danger" type="submit"><i class="fas fa-search"></i></button>
-            </form>
+          <!-- 🔎 Search Box with Dropdown -->
+          <form id="navbar-search-form" class="d-flex position-relative">
+    <input id="search-box" class="form-control search-box me-2" type="search" placeholder="Search for devices..." autocomplete="off">
+    <button class="btn btn-danger" type="submit"><i class="fas fa-search"></i></button>
+
+    <!-- 🔽 Dropdown for Search Suggestions -->
+    <ul id="search-suggestions" class="dropdown-menu w-100 position-absolute d-none"></ul>
+</form>
+
+
+
+
+
         </div>
     </div>
 </nav>
@@ -586,12 +616,18 @@ body {
 <!-- ✅ Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+
+
+
 <script>
 document.addEventListener("DOMContentLoaded", function () {
+    const searchBox = document.getElementById("search-box");
+    const suggestionsList = document.getElementById("search-suggestions");
+
+    // ✅ Fetch Devices (Used for Search, Filters, and Pagination)
     function fetchDevices(filters = {}) {
         let url = new URL("fetch_devices.php", window.location.origin);
-        
-        // ✅ Append filters to URL
+
         Object.keys(filters).forEach(key => url.searchParams.append(key, filters[key]));
 
         fetch(url)
@@ -603,42 +639,45 @@ document.addEventListener("DOMContentLoaded", function () {
             .catch(error => console.error("Error fetching devices:", error));
     }
 
+    // ✅ Render Device Cards
     function renderDevices(devices) {
-    let container = document.querySelector(".container .row");
-    container.innerHTML = "";
-    
-    devices.forEach(device => {
-        let stockStatus = device.in_stock ? `<span class="out-of-stock">🔴 Out of Stock</span>` 
-                                          : `<span class="in-stock">🟢 In Stock</span>`;
-        let ratingStars = "⭐⭐⭐⭐⭐"; // Dynamic Star Rating
+        let container = document.getElementById("deviceContainer");
+        container.innerHTML = "";
 
-        let deviceHTML = `
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                <div class="device-card">
-                    <img src="${device.image_url}" class="device-img" alt="Device Image">
-                    
-                    <h5 class="device-title">${device.device_name}</h5>
-                    
-                    <div class="device-rating">${ratingStars}</div>
+        if (devices.length === 0) {
+            container.innerHTML = "<p class='text-center text-muted'>No devices found.</p>";
+            return;
+        }
 
-                    <p class="device-price text-danger fw-bold mt-2">₹${device.price}</p>
-                    
-                    <p class="device-stock-status">${stockStatus}</p>
+        devices.forEach(device => {
+            let stockStatus = device.in_stock ? `<span class="out-of-stock">🔴 Out of Stock</span>` 
+                                              : `<span class="in-stock">🟢 In Stock</span>`;
 
-                    <div class="device-footer">
-                        <a href="https://wa.me/${device.contact_number}" target="_blank" class="btn btn-success w-100">📞 Contact on WhatsApp</a>
-                        <button class="btn description-btn mt-2" data-description="${device.description}">ℹ️ See Description</button>
+            let deviceHTML = `
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="device-card">
+                        <img src="${device.image_url}" class="device-img" alt="${device.device_name}">
+                        
+                        <h5 class="device-title">${device.device_name}</h5>
+                        
+                        <p class="device-price text-danger fw-bold mt-2">₹${device.price}</p>
+                        
+                        <p class="device-stock-status">${stockStatus}</p>
+
+                        <div class="device-footer">
+                            <a href="https://wa.me/${device.contact_number}" target="_blank" class="btn btn-success w-100">📞 Contact</a>
+                            <button class="btn description-btn mt-2" data-description="${device.description}">ℹ️ See Description</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `;
-        container.innerHTML += deviceHTML;
-    });
+            `;
+            container.innerHTML += deviceHTML;
+        });
 
-    attachDescriptionEvent();
-}
+        attachDescriptionEvent();
+    }
 
-
+    // ✅ Pagination Logic
     function renderPagination(totalPages, currentPage) {
         let paginationContainer = document.querySelector(".pagination");
         paginationContainer.innerHTML = "";
@@ -668,6 +707,7 @@ document.addEventListener("DOMContentLoaded", function () {
         attachPaginationEvents();
     }
 
+    // ✅ Handle Device Description Modal
     function attachDescriptionEvent() {
         document.querySelectorAll('.description-btn').forEach(button => {
             button.addEventListener('click', function () {
@@ -677,6 +717,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    // ✅ Attach Pagination Events
     function attachPaginationEvents() {
         document.querySelectorAll(".pagination-btn").forEach(button => {
             button.addEventListener("click", function (event) {
@@ -686,6 +727,50 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     }
+
+    // ✅ Attach Search Functionality with Dropdown Suggestions
+    searchBox.addEventListener("input", function () {
+        let query = this.value.trim();
+
+        if (query.length < 2) {
+            suggestionsList.classList.add("d-none");
+            return;
+        }
+
+        fetch(`search.php?q=${encodeURIComponent(query)}`)
+            .then(response => response.json())
+            .then(data => {
+                suggestionsList.innerHTML = "";
+                if (data.length === 0) {
+                    suggestionsList.classList.add("d-none");
+                    return;
+                }
+
+                data.forEach(device => {
+                    let listItem = document.createElement("li");
+                    listItem.className = "dropdown-item";
+                    listItem.innerHTML = `<strong>${device.device_name}</strong>`;
+                    listItem.addEventListener("click", () => {
+                        searchBox.value = device.device_name;
+                        suggestionsList.classList.add("d-none");
+
+                        // ✅ Use `fetchDevices()` to filter results dynamically
+                        fetchDevices({ search: device.device_name });
+                    });
+                    suggestionsList.appendChild(listItem);
+                });
+
+                suggestionsList.classList.remove("d-none");
+            })
+            .catch(error => console.error("Error fetching search results:", error));
+    });
+
+    // ✅ Hide Dropdown When Clicking Outside
+    document.addEventListener("click", function (e) {
+        if (!searchBox.contains(e.target) && !suggestionsList.contains(e.target)) {
+            suggestionsList.classList.add("d-none");
+        }
+    });
 
     // ✅ Add Event Listeners for Filters
     document.getElementById('search').addEventListener('input', function () {
@@ -704,10 +789,11 @@ document.addEventListener("DOMContentLoaded", function () {
         fetchDevices({});
     });
 
-    // ✅ Fetch Initial Devices
+    // ✅ Fetch Initial Devices on Page Load
     fetchDevices();
 });
 </script>
+
 
 </body>
 </html>
