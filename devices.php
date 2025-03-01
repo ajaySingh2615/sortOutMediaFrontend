@@ -425,7 +425,7 @@ body {
             <!-- 🔎 Search Box -->
             <form class="d-flex">
                 <input class="form-control search-box me-2" type="search" placeholder="Search...">
-                <button class="btn btn-warning" type="submit"><i class="fas fa-search"></i></button>
+                <button class="btn btn-danger" type="submit"><i class="fas fa-search"></i></button>
             </form>
         </div>
     </div>
@@ -446,7 +446,18 @@ body {
             </div>
         </div>
 
-        <!-- 🌟 Slide 2: Security Solutions -->
+        <!-- 🌟 Slide 2: Smartphones -->
+        <div class="carousel-item">
+            <div class="hero-overlay"></div>
+            <img src="/public/bannerForDevices/smartphone.webp" class="d-block w-100 hero-img" alt="Banner 3">
+            <div class="carousel-caption">
+                <h1 class="hero-title">Compact & Smart Moblies</h1>
+                <p class="hero-subtitle">Perfect SmartPhone solutions for businesses and professionals.</p>
+                <a href="#deviceContainer" class="btn hero-btn">🖨️ View SmartPhones</a>
+            </div>
+        </div>
+
+        <!-- 🌟 Slide 3: Security Solutions -->
         <div class="carousel-item">
             <div class="hero-overlay"></div>
             <img src="/public/bannerForDevices/cctv.webp" class="d-block w-100 hero-img" alt="Banner 2">
@@ -457,7 +468,7 @@ body {
             </div>
         </div>
 
-        <!-- 🌟 Slide 3: Printers & Accessories -->
+        <!-- 🌟 Slide 4: Printers & Accessories -->
         <div class="carousel-item">
             <div class="hero-overlay"></div>
             <img src="/public/bannerForDevices/printer.webp" class="d-block w-100 hero-img" alt="Banner 3">
@@ -537,38 +548,27 @@ body {
         <div class="row">
             <!-- 🌟 Company Info -->
             <div class="col-md-4">
-                <h4><i class="fas fa-laptop-code"></i> MyStore</h4>
+                <img src="/public/logo.png" alt="MyStore Logo" class="footer-logo" width="150">
                 <p>Providing top-quality refurbished devices with warranty and support.</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/profile.php?id=61556452066209"
-                    target="_blank" class="text-white"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://youtu.be/tw-xk-Pb-zA?si=QMTwuvhEuTegpqDr"
-                    target="_blank" class="text-white"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.instagram.com/sortoutinnovation"
-                    target="_blank" class="text-white"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.linkedin.com/company/sortout-innovation/"
-                    target="_blank" class="text-white"><i class="fab fa-linkedin"></i></a>
-                </div>
             </div>
 
             <!-- 🔗 Quick Links -->
             <div class="col-md-4">
                 <h5>Quick Links</h5>
                 <ul class="list-unstyled">
-                    <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="/pages/about-page/about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
-                    <li><a href="#deviceContainer"><i class="fas fa-th-large"></i> Products</a></li>
-                    <li><a href="/pages/contact-page/contact-page.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/pages/about-page/about.html">About Us</a></li>
+                    <li><a href="#deviceContainer">Products</a></li>
+                    <li><a href="/pages/contact-page/contact-page.html">Contact</a></li>
                 </ul>
             </div>
 
             <!-- 📞 Contact Details -->
             <div class="col-md-4">
                 <h5>Contact Us</h5>
-                <p><i class="fas fa-map-marker-alt"></i> Spaze i-Tech Park,
-                Gurugram, India</p>
-                <p><i class="fas fa-phone"></i> +91 9818559036</p>
-                <p><i class="fas fa-envelope"></i> info@sortoutinnovation.com</p>
+                <p>Spaze i-Tech Park, Gurugram, India</p>
+                <p>+91 9818559036</p>
+                <p>info@sortoutinnovation.com</p>
             </div>
         </div>
 
@@ -580,6 +580,7 @@ body {
         </div>
     </div>
 </footer>
+
 
 
 <!-- ✅ Bootstrap JS -->
