@@ -1,89 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Corrected JSON-LD Schema for Google -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Sortout Innovation - Business Solutions",
-        "url": "https://sortoutinnovation.com/",
-        "logo": "https://sortoutinnovation.com/logo.png"
-      }
-    </script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sortout Innovation - Business Solutions</title>
 
-    <!-- Open Graph Meta Tags (For Social Media and Google) -->
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:title"
-      content="Sortout Innovation - Business Solutions"
-    />
-    <meta property="og:url" content="https://sortoutinnovation.com/" />
-    <meta
-      property="og:image"
-      content="https://sortoutinnovation.com/logo.png"
-    />
-    <meta property="og:site_name" content="Sortout Innovation" />
+  <!-- SEO Meta Description -->
+  <meta name="description" content="SortOut Innovation provides top-tier solutions in Digital Marketing, IT, HR, Courier, Real Estate, Event Management, and more. Your success is our priority." />
 
-    <!-- Twitter Card for Better Indexing -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Sortout Innovation - Business Solutions"
-    />
-    <meta
-      name="twitter:image"
-      content="https://sortoutinnovation.com/logo.png"
-    />
+  <!-- Open Graph Meta Tags (For Social Media and Google) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Sortout Innovation - Business Solutions" />
+  <meta property="og:description" content="Your success is our priority with top-tier business solutions across multiple industries." />
+  <meta property="og:url" content="https://sortoutinnovation.com/" />
+  <meta property="og:image" content="https://sortoutinnovation.com/logo.png" />
+  <meta property="og:site_name" content="Sortout Innovation" />
 
-    <link
-      rel="icon"
-      sizes="32x32"
-      href="https://sortoutinnovation.com/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      sizes="192x192"
-      href="https://sortoutinnovation.com/favicon-192x192.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="https://sortoutinnovation.com/apple-touch-icon.png"
-    />
+  <!-- Twitter Card for Better Indexing -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sortout Innovation - Business Solutions" />
+  <meta name="twitter:description" content="Top-tier solutions in Digital Marketing, IT, HR, and more." />
+  <meta name="twitter:image" content="https://sortoutinnovation.com/logo.png" />
 
-    <!-- Corrected Favicon with Absolute Path -->
-    <link
-      rel="icon"
-      type="image/png"
-      href="https://sortoutinnovation.com/favicon.png"
-    />
+  <!-- JSON-LD Structured Data for Google -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Sortout Innovation - Business Solutions",
+      "url": "https://sortoutinnovation.com/",
+      "logo": "https://sortoutinnovation.com/logo.png"
+    }
+  </script>
 
-    <title>Sortout Innovation - Business Solutions</title>
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="https://sortoutinnovation.com/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="https://sortoutinnovation.com/favicon-192x192.png" />
+  <link rel="apple-touch-icon" href="https://sortoutinnovation.com/apple-touch-icon.png" />
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" />
 
-    <!-- Font Awesome Icons -->
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-      rel="stylesheet"
-    />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="/CSS/styles.css" />
-    <link rel="stylesheet" href="/CSS/floating-social-media.css" />
-  </head>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/CSS/styles.css" />
+  <link rel="stylesheet" href="/CSS/floating-social-media.css" />
+</head>
+
   <body>
     <header class="navbar">
       <div class="container">
