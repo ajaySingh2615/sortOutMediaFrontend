@@ -940,6 +940,9 @@
               <li>
                 <a href="/auth/register.php">Register</a>
               </li>
+              <li>
+                <a href="/modal_agency.php">talent</a>
+              </li>
             </ul>
           </div>
 

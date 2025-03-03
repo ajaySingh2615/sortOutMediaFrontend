@@ -35,3 +35,21 @@ SELECT 'SuperAdmin', 'superadmin@example.com', '$2y$10$hashedpassword123', 'supe
 WHERE NOT EXISTS (
     SELECT 1 FROM users WHERE role = 'super_admin'
 );
+
+CREATE TABLE IF NOT EXISTS clients (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    age INT NOT NULL,
+    gender ENUM('Male', 'Female') NOT NULL,
+    followers INT NOT NULL,
+    category ENUM(
+        'Live Streaming Host', 'YouTubers', 'Social Media Influencers', 'Bollywood Artist',
+        'Mobile/PC Gamers', 'Short Video Creators', 'Podcast Hosts',
+        'Lifestyle Bloggers/Vloggers', 'Fitness Influencers'
+    ) NOT NULL,
+    language VARCHAR(255) NOT NULL,
+    professional ENUM('Artist', 'Employee') NOT NULL,
+    image_url VARCHAR(500),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
