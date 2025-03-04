@@ -394,7 +394,7 @@
                 </div>
                 <div>
                     <label class="block font-medium">Followers:</label>
-                    <input type="number" name="followers" class="w-full p-2 border rounded focus:ring focus:ring-red-300" required>
+                    <input type="text" name="followers" class="w-full p-2 border rounded focus:ring focus:ring-red-300" required>
                 </div>
             </div>
 
@@ -537,7 +537,7 @@
     <!-- ✅ Filters Section -->
 <div class="flex flex-wrap justify-center gap-4 mb-6 rounded-lg p-4">
     <select id="filterCategory" class="filter-dropdown">
-        <option value="">All Categories</option>
+        <option value="">Categories</option>
         <option value="Live Streaming Host">Live Streaming Host</option>
         <option value="YouTubers">YouTubers</option>
         <option value="Social Media Influencers">Social Media Influencers</option>
@@ -550,13 +550,13 @@
     </select>
 
     <select id="filterGender" class="filter-dropdown">
-        <option value="">All Genders</option>
+        <option value="">Genders</option>
         <option value="Male">Male</option>
         <option value="Female">Female</option>
     </select>
 
     <select id="filterAge" class="filter-dropdown">
-        <option value="">All Ages</option>
+        <option value="">Ages</option>
         <option value="18-25">18-25</option>
         <option value="26-35">26-35</option>
         <option value="36-45">36-45</option>
@@ -564,7 +564,7 @@
     </select>
 
     <select id="filterLanguage" class="filter-dropdown">
-        <option value="">All Languages</option>
+        <option value="">Languages</option>
         <option value="Hindi">Hindi</option>
         <option value="English">English</option>
         <option value="Bengali">Bengali</option>
@@ -572,7 +572,7 @@
     </select>
 
     <select id="filterProfessional" class="filter-dropdown">
-        <option value="">All Professionals</option>
+        <option value="">Professionals</option>
         <option value="Artist">Artist</option>
         <option value="Employee">Employee</option>
     </select>
@@ -701,9 +701,7 @@
 
                                 <!-- ✅ Icons for View Profile & Booking -->
                                 <div class="flex gap-4 mt-4">
-                                    <button class="px-5 py-2 bg-white text-pink-600 font-semibold rounded-lg hover:bg-gray-200 shadow-md btn-primary">
-                                        <i class="fas fa-eye mr-2"></i> View Profile
-                                    </button>
+                                    
                                     <button class="px-5 py-2 bg-white text-pink-600 font-semibold rounded-lg hover:bg-gray-200 shadow-md btn-primary">
                                         <i class="fas fa-user-check mr-2"></i> Book Now
                                     </button>

@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS clients (
     name VARCHAR(255) NOT NULL,
     age INT NOT NULL,
     gender ENUM('Male', 'Female') NOT NULL,
-    followers INT NOT NULL,
+    followers VARCHAR(255) NOT NULL,
     category ENUM(
         'Live Streaming Host', 'YouTubers', 'Social Media Influencers', 'Bollywood Artist',
         'Mobile/PC Gamers', 'Short Video Creators', 'Podcast Hosts',

@@ -10,7 +10,7 @@ $age_group = isset($_GET['age_group']) ? trim($_GET['age_group']) : "";
 $language = isset($_GET['language']) ? trim($_GET['language']) : "";
 $professional = isset($_GET['professional']) ? trim($_GET['professional']) : "";
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
-$limit = 10; // Show 10 clients per page
+$limit = 16; // Show 10 clients per page
 $offset = ($page - 1) * $limit;
 
 // ✅ Build SQL Query with Filters
