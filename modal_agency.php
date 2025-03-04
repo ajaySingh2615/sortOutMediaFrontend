@@ -122,13 +122,13 @@
         font-weight: 500;
         color: #333;
         transition: 0.3s;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
         cursor: pointer;
     }
 
     .filter-dropdown:hover, .filter-dropdown:focus {
         border-color: #ff4757;
-        box-shadow: 0 4px 8px rgba(255, 71, 87, 0.2);
+        /* box-shadow: 0 4px 8px rgba(255, 71, 87, 0.2); */
         outline: none;
     }
 
@@ -169,22 +169,152 @@
         font-family: 'Poppins', sans-serif;
     }
 
-    /* ✅ Call-to-Action Button */
-    .cta-btn {
-        background-color: white;
-        color: #e63946;
-        font-size: 18px;
-        font-weight: 600;
-        padding: 12px 24px;
-        border-radius: 30px;
-        transition: all 0.3s ease-in-out;
-        box-shadow: 0 6px 15px rgba(255, 71, 87, 0.3);
+    /* ✅ Font Styles */
+    .font-montserrat {
+        font-family: 'Montserrat', sans-serif;
+    }
+    .font-poppins {
+        font-family: 'Poppins', sans-serif;
     }
 
-    .cta-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 8px 20px rgba(255, 71, 87, 0.5);
+    /* ✅ Animations */
+    .animate-fade-in {
+        animation: fadeIn 1.5s ease-in-out;
     }
+    .animate-slide-up {
+        animation: slideUp 1.2s ease-in-out;
+    }
+    .animate-bounce {
+        animation: bounce 1.5s infinite;
+    }
+    .animate-pulse {
+        animation: pulse 2s infinite;
+    }
+
+    /* ✅ Keyframes */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes slideUp {
+        from { transform: translateY(20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+    }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
+
+      /* ✅ Elegant Fonts */
+    .font-montserrat {
+        font-family: 'Montserrat', sans-serif;
+    }
+    .font-dancing {
+        font-family: 'Dancing Script', cursive;
+    }
+    .font-poppins {
+        font-family: 'Poppins', sans-serif;
+    }
+
+    /* ✅ Client Logo Styling */
+    .client-logo {
+        max-width: 150px;
+        height: auto;
+        opacity: 0.8;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .client-logo:hover {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    /* ✅ Auto Scrolling Animation for Mobile */
+    @keyframes slide {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); }
+    }
+
+    .animate-slide {
+        display: flex;
+        animation: slide 10s linear infinite;
+    }
+
+    /* ✅ Category Box Styling */
+    .category-box {
+        font-size: 1.25rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 16px;
+        border-radius: 12px;
+        transition: all 0.3s ease-in-out;
+        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    }
+
+    /* ✅ Unique Random Styling for Placement */
+    .category-box:nth-child(odd) {
+        transform: rotate(-3deg);
+    }
+
+    .category-box:nth-child(even) {
+        transform: rotate(3deg);
+    }
+
+    .category-box:hover {
+        transform: scale(1.05) rotate(0deg);
+        box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    /* ✅ Responsive Fixes */
+    @media (max-width: 768px) {
+        .category-box {
+            font-size: 1rem;
+            padding: 12px;
+        }
+
+        .category-box:nth-child(odd),
+        .category-box:nth-child(even) {
+            transform: rotate(0);
+        }
+    }
+
+    /* ✅ Social Media Icon Styling */
+    .social-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        color: white;
+        font-size: 1.2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .social-icon:hover {
+        transform: scale(1.1);
+        box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    }
+
+    /* ✅ Responsive Fixes */
+    @media (max-width: 768px) {
+        .grid-cols-4 {
+            grid-template-columns: 1fr 1fr;
+            text-align: center;
+        }
+
+        .flex.space-x-4 {
+            justify-content: center;
+        }
+    }
+
+    
 </style>
 
 
@@ -328,14 +458,21 @@
 <!-- ✅ Hero Section -->
 <div class="relative w-full overflow-hidden">
     <div id="heroCarousel" class="flex transition-transform duration-700 ease-in-out">
-        <img src="/images/Artist-images/slot-1/refactor-v1/Ambika_Arora.webp" class="hero-img">
-        <img src="/images/Artist-images/slot-1/refactor-v1/Anchal_Thakur.webp" class="hero-img">
-        <img src="/images/Artist-images/slot-1/refactor-v1/Annupriya_singh.webp" class="hero-img">
-        <img src="/images/Artist-images/slot-1/refactor-v1/Madhu.webp" class="hero-img">
-        <img src="/images/Artist-images/slot-1/refactor-v1/Priyanka_Taras.webp" class="hero-img">
-        <img src="/images/Artist-images/slot-1/refactor-v1/Shereen_A_Bannsal.webp" class="hero-img">
-        <img src="/images/Artist-images/slot-1/refactor-v1/Shivangi_Ghosh.webp" class="hero-img">
-        <img src="/images/Artist-images/slot-1/refactor-v1/Twinkle_Sharma.webp" class="hero-img">
+        <img src="/images/Artist-images/slot-1/Ambika_Arora.png" class="hero-img">
+        <img src="/images/Artist-images/slot-1/Anchal_Thakur.png" class="hero-img">
+        <img src="/images/Artist-images/slot-1/Annupriya_singh.png" class="hero-img">
+        <img src="/images/Artist-images/slot-1/Shereen_A_Bannsal.png" class="hero-img">
+        <img src="/images/Artist-images/slot-1/Shivangi_Ghosh.png" class="hero-img">
+        <img src="/images/Artist-images/slot-1/Vinuja.png" class="hero-img">
+        <img src="/images/Artist-images/slot-2/Aishwarya_Sanglikar.png" class="hero-img">
+        <img src="/images/Artist-images/slot-2/Arnav_Mathur.png" class="hero-img">
+        <img src="/images/Artist-images/slot-2/Iris_Vatrana.png" class="hero-img">
+        <img src="/images/Artist-images/slot-2/Manav_Mongia.png" class="hero-img">
+        <img src="/images/Artist-images/slot-2/Manisha_sharma.png" class="hero-img">
+        <img src="/images/Artist-images/slot-2/Moumita_Mukherjee.png" class="hero-img">
+        <img src="/images/Artist-images/slot-2/Naveena_Kapoor.png" class="hero-img">
+        <img src="/images/Artist-images/slot-2/Pooja_Singh.png" class="hero-img">
+        <img src="/images/Artist-images/slot-2/Shambhavi_Sharma-2.png" class="hero-img">
     </div>
 
     <!-- ✅ Navigation Buttons -->
@@ -343,30 +480,62 @@
     <button id="nextHero" class="hero-btn right-4">❯</button>
 </div>
 
-<!-- ✅ CTA Section -->
-<div class="relative bg-gradient-to-r from-red-500 to-pink-600 text-white py-16 px-8 text-center">
-    <h2 class="text-4xl font-bold tracking-wide leading-tight font-montserrat">
-        Show Your Talent? <br> Call Us Now to Know How!
-    </h2>
-    <p class="mt-4 text-lg font-light max-w-2xl mx-auto font-poppins">
-        Join our exclusive agency and take your career to the next level. 
-        We help models, influencers, and artists get discovered and work with top brands.
-    </p>
-    
-    <!-- ✅ Call Us Button -->
-    <button class="mt-6 px-6 py-3 bg-white text-red-600 font-semibold text-lg rounded-full shadow-lg transition duration-300 hover:scale-105 hover:shadow-xl">
-        Call Us Now
-    </button>
+<!-- ✅ Clients Logo Section -->
+<div class="w-full bg-gray-100 py-12">
+    <h2 class="text-3xl lg:text-4xl font-bold text-center text-gray-800 mb-6">Our Trusted Clients</h2>
+
+    <!-- ✅ Clients Logo Grid (Desktop) -->
+    <div class="hidden lg:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-center items-center max-w-6xl mx-auto">
+        <img src="/images/company-images/improved-logos/chingari1.jpeg" alt="Client 1" class="client-logo">
+        <img src="/images/company-images/improved-logos/disco2.jpeg" alt="Client 2" class="client-logo">
+        <img src="/images/company-images/improved-logos/josh13.jpeg" alt="Client 3" class="client-logo">
+        <img src="/images/company-images/improved-logos/me4.jpeg" alt="Client 4" class="client-logo">
+        <img src="/images/company-images/improved-logos/meesho14.png" alt="Client 5" class="client-logo">
+    </div>
+
+    <!-- ✅ Clients Logo Carousel (Mobile) -->
+    <div class="lg:hidden overflow-hidden relative w-full max-w-4xl mx-auto">
+        <div class="flex whitespace-nowrap animate-slide">
+            <img src="/images/company-images/improved-logos/chingari1.jpeg" alt="Client 1" class="client-logo">
+            <img src="/images/company-images/improved-logos/disco2.jpeg" alt="Client 2" class="client-logo">
+            <img src="/images/company-images/improved-logos/josh13.jpeg" alt="Client 3" class="client-logo">
+            <img src="/images/company-images/improved-logos/me4.jpeg" alt="Client 4" class="client-logo">
+            <img src="/images/company-images/improved-logos/meesho14.png" alt="Client 5" class="client-logo">
+        </div>
+    </div>
 </div>
 
+<!-- ✅ Categories Showcase Section -->
+<div class="relative w-full h-auto py-20 bg-cover bg-center" style="background-image: url('/images/background-image-2.jpg');">
+    
+    <!-- ✅ Overlay for better readability -->
+    <div class="absolute inset-0 bg-black bg-opacity-70"></div>
 
+    <!-- ✅ Content Container -->
+    <div class="relative z-10 text-center text-white max-w-6xl mx-auto px-6">
+        <h2 class="text-4xl font-bold mb-8 font-[Montserrat]">Explore Our Categories</h2>
+        
+        <!-- ✅ Categories Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="category-box bg-red-500 hover:bg-red-600">Live Streaming Host</div>
+            <div class="category-box bg-blue-500 hover:bg-blue-600">YouTubers</div>
+            <div class="category-box bg-yellow-500 hover:bg-yellow-600">Social Media Influencers</div>
+            <div class="category-box bg-green-500 hover:bg-green-600">Hollywood Artist</div>
+            <div class="category-box bg-purple-500 hover:bg-purple-600">Mobile/PC Gamers</div>
+            <div class="category-box bg-orange-500 hover:bg-orange-600">Short Video Creators</div>
+            <div class="category-box bg-pink-500 hover:bg-pink-600">Podcast Hosts</div>
+            <div class="category-box bg-indigo-500 hover:bg-indigo-600">Lifestyle Bloggers/Vloggers</div>
+            <div class="category-box bg-teal-500 hover:bg-teal-600">Fitness Influencers</div>
+        </div>
+    </div>
+</div>
 
 
 <div class="max-w-7xl mx-auto p-4">
     <h2 class="text-3xl font-bold text-center text-red-600 mb-6">All Clients</h2>
 
     <!-- ✅ Filters Section -->
-<div class="flex flex-wrap justify-center gap-4 mb-6 bg-white shadow-md rounded-lg p-4">
+<div class="flex flex-wrap justify-center gap-4 mb-6 rounded-lg p-4">
     <select id="filterCategory" class="filter-dropdown">
         <option value="">All Categories</option>
         <option value="Live Streaming Host">Live Streaming Host</option>
@@ -628,14 +797,116 @@
     });
 </script>
 
+<!-- ✅ Fully Responsive About Section -->
+<div class="relative w-full h-auto lg:h-[80vh] flex flex-col lg:flex-row items-center bg-cover bg-center" 
+    style="background-image: url('/images/section-background-1.jpg');">
+    
+    <!-- ✅ Right Side Black Overlay (Covers Entire Background on Mobile) -->
+    <div class="absolute inset-0 bg-black bg-opacity-70 lg:w-1/2 lg:right-0 lg:inset-auto"></div>
+
+    <!-- ✅ Content Section (Now Centered on Mobile, Left on Large Screens) -->
+    <div class="relative z-10 w-full lg:w-1/2 ml-auto px-6 lg:px-16 py-12 text-white text-center lg:text-left">
+        <h2 class="text-4xl lg:text-5xl font-bold font-[Montserrat]">About Agency</h2>
+        <p class="text-red-400 text-xl lg:text-2xl italic font-[Dancing Script] mt-2">Something You Need to Know</p>
+
+        <p class="mt-4 text-md lg:text-lg font-light leading-relaxed font-[Poppins]">
+            We are a leading talent agency helping **models, influencers, and artists** showcase their potential and collaborate with top brands.  
+            With a vast network in the **entertainment & fashion industry**, we bring talent closer to their dreams.
+        </p>
+
+        <p class="mt-4 text-md lg:text-lg font-light font-[Poppins]">
+            Our agency believes in **creativity, excellence, and building long-lasting relationships** with artists. Whether you're a rising star or an experienced professional, we provide the right platform to grow and shine.
+        </p>
+
+        <!-- ✅ About Us Button -->
+        <button class="mt-6 px-6 lg:px-8 py-3 bg-red-500 text-white text-md lg:text-lg font-semibold rounded-full shadow-lg transition-all duration-300 hover:scale-105 hover:bg-red-600">
+            ABOUT US
+        </button>
+    </div>
+</div>
 
 
+<!-- ✅ Engaging Call-to-Action (CTA) Section -->
+<div class="relative bg-gradient-to-r from-red-600 to-pink-500 text-white py-20 px-8 text-center">
+    <h2 class="text-5xl font-extrabold tracking-wide leading-tight font-montserrat animate-fade-in">
+        🚀 Show Your Talent?  
+        <br> Call Us Now to Know How! 🎭
+    </h2>
+    
+    <p class="mt-4 text-lg font-light max-w-3xl mx-auto font-poppins animate-slide-up">
+        Ready to take your career to the next level? Whether you're an **influencer, model, or artist**, we help you get discovered by top brands!  
+        Don't miss out on amazing opportunities.
+    </p>
 
+    <!-- ✅ Call Now Button with Animation -->
+    <button onclick="callNow()" class="mt-6 px-8 py-4 bg-white text-red-600 font-semibold text-xl rounded-full shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-2xl animate-bounce">
+        📞 Call Us Now
+    </button>
 
+    <!-- ✅ Floating Call Icon -->
+    <div class="absolute bottom-6 right-6 hidden md:block animate-pulse">
+        <a href="tel:+911234567890" class="bg-white text-red-600 p-4 rounded-full shadow-xl hover:scale-110 transition">
+            📞
+        </a>
+    </div>
+</div>
 
+<script>
+    function callNow() {
+        window.location.href = "tel:+911234567890"; // Replace with your actual phone number
+    }
+</script>
 
+<!-- ✅ Footer Section -->
+<footer class="bg-gray-900 text-white py-12">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
+        <!-- ✅ About Us -->
+        <div>
+            <h3 class="text-xl font-bold text-red-500 mb-4">About Us</h3>
+            <p class="text-sm text-gray-300">
+                We are a leading agency helping influencers, artists, and brands connect for the best collaborations.  
+                Join us to showcase your talent and grow!
+            </p>
+        </div>
 
+        <!-- ✅ Quick Links -->
+        <div>
+            <h3 class="text-xl font-bold text-red-500 mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+                <li><a href="#" class="text-gray-400 hover:text-red-400 transition">Home</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-red-400 transition">About</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-red-400 transition">Services</a></li>
+                <li><a href="#" class="text-gray-400 hover:text-red-400 transition">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- ✅ Contact Info -->
+        <div>
+            <h3 class="text-xl font-bold text-red-500 mb-4">Contact</h3>
+            <p class="text-sm text-gray-300">📍 Location: Mumbai, India</p>
+            <p class="text-sm text-gray-300">📞 Phone: +91 98765 43210</p>
+            <p class="text-sm text-gray-300">📧 Email: info@agency.com</p>
+        </div>
+
+        <!-- ✅ Social Media -->
+        <div>
+            <h3 class="text-xl font-bold text-red-500 mb-4">Follow Us</h3>
+            <div class="flex space-x-4">
+                <a href="#" class="social-icon bg-blue-500"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon bg-pink-500"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon bg-blue-400"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon bg-red-600"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ✅ Copyright -->
+    <div class="text-center text-gray-500 text-sm mt-8 border-t border-gray-700 pt-4">
+        &copy; 2025 Your Agency Name. All Rights Reserved.
+    </div>
+</footer>
 
 
 </body>
