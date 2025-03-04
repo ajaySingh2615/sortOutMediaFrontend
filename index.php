@@ -75,7 +75,7 @@
                 >Portfolio</a
               >
             </li> -->
-            <li><a href="/pages/career.html" class="nav-link">Career</a></li>
+            <li><a href="/pages/career.html" class="nav-link">Jobs</a></li>
             <li>
               <a href="/pages/talent.page/talent.html" class="nav-link"
                 >Find Talent</a
@@ -89,6 +89,11 @@
             <li>
               <a href="/pages/contact-page/contact-page.html" class="nav-link"
                 >Contact</a
+              >
+            </li>
+            <li>
+              <a href="/blog/index.php" class="nav-link"
+                >Blog</a
               >
             </li>
           </ul>

@@ -344,7 +344,7 @@
                 <!-- 🔹 Right: Add Client Button -->
                 <div class="flex items-center">
                     <button onclick="toggleModal()" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
-                        + Add Client
+                        + Create Profile
                     </button>
 
                     <!-- ✅ Hamburger Menu for Mobile -->
