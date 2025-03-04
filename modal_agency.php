@@ -373,9 +373,19 @@
         <button onclick="toggleModal()" class="absolute top-2 right-2 text-red-600 text-2xl font-bold">&times;</button>
         <h2 class="text-xl font-semibold mb-4 text-center text-red-600">Add New Client</h2>
 
-        <!-- ✅ Form -->
-        <form id="addClientForm" enctype="multipart/form-data">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+         <!-- Form -->
+         <form id="addClientForm" enctype="multipart/form-data">
+            
+            <!-- ✅ Professional Field (Moved to Top) -->
+            <div class="mt-2">
+                <label class="block font-medium">Professional:</label>
+                <select id="professionalField" name="professional" class="w-full p-2 border rounded focus:ring focus:ring-red-300" onchange="toggleFollowersField()">
+                    <option value="Artist">Artist</option>
+                    <option value="Employee">Employee</option>
+                </select>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
                 <div>
                     <label class="block font-medium">Name:</label>
                     <input type="text" name="name" class="w-full p-2 border rounded focus:ring focus:ring-red-300" required>
@@ -384,18 +394,20 @@
                     <label class="block font-medium">Age:</label>
                     <input type="number" name="age" class="w-full p-2 border rounded focus:ring focus:ring-red-300" required>
                 </div>
+            </div>
 
-                <div>
-                    <label class="block font-medium">Gender:</label>
-                    <select name="gender" class="w-full p-2 border rounded focus:ring focus:ring-red-300">
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block font-medium">Followers:</label>
-                    <input type="text" name="followers" class="w-full p-2 border rounded focus:ring focus:ring-red-300" required>
-                </div>
+            <div class="mt-2">
+                <label class="block font-medium">Gender:</label>
+                <select name="gender" class="w-full p-2 border rounded focus:ring focus:ring-red-300">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+
+            <!-- ✅ Followers Field (Disabled for Employee) -->
+            <div class="mt-2">
+                <label class="block font-medium">Followers:</label>
+                <input type="text" id="followersField" name="followers" class="w-full p-2 border rounded focus:ring focus:ring-red-300" required>
             </div>
 
             <div class="mt-2">
@@ -421,21 +433,6 @@
                     <option value="Bengali">Bengali</option>
                     <option value="Telugu">Telugu</option>
                     <option value="Marathi">Marathi</option>
-                    <option value="Tamil">Tamil</option>
-                    <option value="Urdu">Urdu</option>
-                    <option value="Gujarati">Gujarati</option>
-                    <option value="Malayalam">Malayalam</option>
-                    <option value="Kannada">Kannada</option>
-                    <option value="Odia">Odia</option>
-                    <option value="Punjabi">Punjabi</option>
-                </select>
-            </div>
-
-            <div class="mt-2">
-                <label class="block font-medium">Professional:</label>
-                <select name="professional" class="w-full p-2 border rounded focus:ring focus:ring-red-300">
-                    <option value="Artist">Artist</option>
-                    <option value="Employee">Employee</option>
                 </select>
             </div>
 
@@ -454,6 +451,26 @@
         <button onclick="toggleModal()" class="mt-4 text-red-500 w-full text-center">Cancel</button>
     </div>
 </div>
+
+<script>
+    function toggleFollowersField() {
+        let professionalField = document.getElementById("professionalField");
+        let followersField = document.getElementById("followersField");
+
+        if (professionalField.value === "Employee") {
+            followersField.value = ""; // Clear the input
+            followersField.disabled = true; // Disable the field
+        } else {
+            followersField.disabled = false; // Enable the field for Artists
+        }
+    }
+
+    // ✅ Call function on page load in case default selection is Employee
+    document.addEventListener("DOMContentLoaded", function() {
+        toggleFollowersField();
+    });
+</script>
+
 
 <!-- ✅ Hero Section -->
 <div class="relative w-full overflow-hidden">
@@ -684,6 +701,29 @@
             clientsContainer.innerHTML = "";
 
             data.clients.forEach(client => {
+                // ✅ Set content conditionally based on professional type
+                let additionalInfo = client.professional === "Employee"
+                    ? `<p class="font-poppins">Age: <strong>${client.age}</strong></p>` // Only show age for Employee
+                    : `<p class="font-poppins">Followers: <strong>${client.followers}</strong></p>`; // Show followers for Artist
+                
+                let hoverContent = `
+                    <div class="absolute inset-0 bg-pink-600 bg-opacity-90 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 p-6 text-center hover-content">
+                        <h3 class="font-montserrat">${client.name}</h3>
+                        <p class="font-poppins mt-1">${client.category}</p>
+                        ${client.professional === "Employee" ? "" : `<p class="font-poppins">Followers: <strong>${client.followers}</strong></p>`} 
+                        <p class="font-poppins">Age: ${client.age} | ${client.gender}</p>
+                        <p class="font-poppins">Languages: ${client.language}</p>
+                        <p class="font-poppins">Profession: ${client.professional}</p>
+
+                        <!-- ✅ Book Now Button -->
+                        <div class="flex gap-4 mt-4">
+                            <button class="px-5 py-2 bg-white text-pink-600 font-semibold rounded-lg hover:bg-gray-200 shadow-md btn-primary">
+                                <i class="fas fa-user-check mr-2"></i> Book Now
+                            </button>
+                        </div>
+                    </div>
+                `;
+
                 let clientCard = `
                     <div class="relative group overflow-hidden rounded-lg shadow-lg transition hover:shadow-xl bg-white">
                         <div class="relative">
@@ -691,32 +731,18 @@
                             <img src="${client.image_url}" alt="${client.name}" class="w-full h-[450px] object-cover rounded-md">
                             
                             <!-- ✅ Hover Overlay -->
-                            <div class="absolute inset-0 bg-pink-600 bg-opacity-90 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 p-6 text-center hover-content">
-                                <h3 class="font-montserrat">${client.name}</h3>
-                                <p class="font-poppins mt-1">${client.category}</p>
-                                <p class="font-poppins">Followers: <strong>${client.followers}</strong></p>
-                                <p class="font-poppins">Age: ${client.age} | ${client.gender}</p>
-                                <p class="font-poppins">Languages: ${client.language}</p>
-                                <p class="font-poppins">Profession: ${client.professional}</p>
-
-                                <!-- ✅ Icons for View Profile & Booking -->
-                                <div class="flex gap-4 mt-4">
-                                    
-                                    <button class="px-5 py-2 bg-white text-pink-600 font-semibold rounded-lg hover:bg-gray-200 shadow-md btn-primary">
-                                        <i class="fas fa-user-check mr-2"></i> Book Now
-                                    </button>
-                                </div>
-                            </div>
+                            ${hoverContent}
                         </div>
 
-                        <!-- ✅ Name, Category, and Followers (Always Visible) -->
+                        <!-- ✅ Name, Category, and Conditional Info -->
                         <div class="p-4 text-center">
                             <h3 class="client-name font-montserrat">${client.name}</h3>
                             <p class="client-category font-poppins">${client.category}</p>
-                            <p class="client-followers font-poppins">Followers: <strong>${client.followers}</strong></p>
+                            ${additionalInfo}
                         </div>
                     </div>
                 `;
+
                 clientsContainer.innerHTML += clientCard;
             });
 
@@ -734,6 +760,7 @@
 
     window.onload = () => fetchClients(1);
 </script>
+
 
 <script>
     const heroCarousel = document.getElementById("heroCarousel");

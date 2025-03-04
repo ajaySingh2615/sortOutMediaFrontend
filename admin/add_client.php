@@ -3,7 +3,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 header('Content-Type: application/json'); // Ensure JSON response
 
-// ✅ Fix file paths
 require '../includes/db_connect.php';
 require '../includes/config.php'; // Cloudinary config
 require '../vendor/autoload.php';
@@ -21,13 +20,18 @@ try {
     $name = isset($_POST['name']) ? trim($_POST['name']) : "";
     $age = isset($_POST['age']) ? intval($_POST['age']) : 0;
     $gender = isset($_POST['gender']) ? trim($_POST['gender']) : "";
-    $followers = isset($_POST['followers']) ? intval($_POST['followers']) : 0;
+    $followers = isset($_POST['followers']) ? trim($_POST['followers']) : "";
     $category = isset($_POST['category']) ? trim($_POST['category']) : "";
     $languages = isset($_POST['language']) ? implode(", ", $_POST['language']) : "";
     $professional = isset($_POST['professional']) ? trim($_POST['professional']) : "";
 
     if (empty($name) || empty($category) || empty($professional)) {
         throw new Exception("Missing required fields.");
+    }
+
+    // ✅ Prevent storing followers for Employees (Set empty string "")
+    if ($professional === "Employee") {
+        $followers = ""; // Empty string instead of NULL
     }
 
     // ✅ Handle Image Upload to Cloudinary
@@ -56,7 +60,6 @@ try {
     $response = ["status" => "error", "message" => $e->getMessage()];
 }
 
-// ✅ Always return JSON response
 echo json_encode($response);
 exit;
 ?>
