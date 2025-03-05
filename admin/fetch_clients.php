@@ -14,7 +14,7 @@ $limit = 16;
 $offset = ($page - 1) * $limit;
 
 // ✅ Build SQL Query with Filters
-$sql = "SELECT id, name, age, gender, followers, category, language, professional, image_url FROM clients WHERE 1=1";
+$sql = "SELECT id, name, age, gender, followers, experience, category, language, professional, image_url FROM clients WHERE 1=1";
 
 if (!empty($category)) $sql .= " AND category = ?";
 if (!empty($gender)) $sql .= " AND gender = ?";
@@ -47,9 +47,11 @@ $result = $stmt->get_result();
 
 $clients = [];
 while ($row = $result->fetch_assoc()) {
-    // ✅ Hide Followers for Employees (Check if it's an empty string)
-    if ($row['professional'] === 'Employee' || empty($row['followers'])) {
+    // ✅ Show Experience for Employees, Followers for Artists
+    if ($row['professional'] === 'Employee') {
         $row['followers'] = null;
+    } else {
+        $row['experience'] = null;
     }
     $clients[] = $row;
 }
