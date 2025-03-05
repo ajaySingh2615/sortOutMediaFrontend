@@ -151,6 +151,7 @@ $approvedResult = mysqli_query($conn, $approvedQuery);
                 <th>Professional</th>
                 <th>Profile Image</th>
                 <th>Actions</th>
+                <th>Phone Number</th>
             </tr>
             <?php while ($row = mysqli_fetch_assoc($pendingResult)) : ?>
                 <tr>
@@ -162,6 +163,7 @@ $approvedResult = mysqli_query($conn, $approvedQuery);
                     <td><?= htmlspecialchars($row['category']) ?></td>
                     <td><?= htmlspecialchars($row['language']) ?></td>
                     <td><?= $row['professional'] ?></td>
+                    <td><?= htmlspecialchars($row['phone']) ?></td>
                     <td>
                         <img src="../uploads/<?= htmlspecialchars($row['image_url']) ?>" width="50" height="50">
                     </td>
@@ -188,6 +190,7 @@ $approvedResult = mysqli_query($conn, $approvedQuery);
                 <th>Professional</th>
                 <th>Profile Image</th>
                 <th>Actions</th>
+                <th>Phone Number</th>
             </tr>
             <?php while ($row = mysqli_fetch_assoc($approvedResult)) : ?>
                 <tr>
@@ -199,6 +202,7 @@ $approvedResult = mysqli_query($conn, $approvedQuery);
                     <td><?= htmlspecialchars($row['category']) ?></td>
                     <td><?= htmlspecialchars($row['language']) ?></td>
                     <td><?= $row['professional'] ?></td>
+                    <td><?= htmlspecialchars($row['phone']) ?></td>
                     <td>
                         <img src="../uploads/<?= htmlspecialchars($row['image_url']) ?>" width="50" height="50">
                     </td>

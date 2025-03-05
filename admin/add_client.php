@@ -19,6 +19,7 @@ try {
     // ✅ Get form data safely
     $name = isset($_POST['name']) ? trim($_POST['name']) : "";
     $age = isset($_POST['age']) ? intval($_POST['age']) : 0;
+    $phone = isset($_POST['phone']) ? trim($_POST['phone']) : "";
     $gender = isset($_POST['gender']) ? trim($_POST['gender']) : "";
     $category = isset($_POST['category']) ? trim($_POST['category']) : "";
     $languages = isset($_POST['language']) ? implode(", ", $_POST['language']) : "";
@@ -53,13 +54,23 @@ try {
         }
     }
 
-    // ✅ Insert Data into Database with "pending" approval_status
-    $stmt = $conn->prepare("INSERT INTO clients (name, age, gender, followers, experience, category, language, professional, image_url, approval_status) 
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending')");
-    $stmt->bind_param("sisssssss", $name, $age, $gender, $followers, $experience, $category, $languages, $professional, $image_url);
+    // ✅ Prepare SQL Query
+    $query = "INSERT INTO clients (name, age, phone, gender, followers, experience, category, language, professional, image_url, approval_status) 
+              VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending')";
 
+    $stmt = $conn->prepare($query);
+    if (!$stmt) {
+        echo json_encode(["status" => "error", "message" => "SQL Prepare Error: " . $conn->error]);
+        exit();
+    }
+
+    // ✅ Bind Parameters
+    $stmt->bind_param("sissssssss", $name, $age, $phone, $gender, $followers, $experience, $category, $languages, $professional, $image_url);
+
+    // ✅ Execute Query
     if (!$stmt->execute()) {
-        throw new Exception("Database Insert Error: " . $stmt->error);
+        echo json_encode(["status" => "error", "message" => "Database Insert Error: " . $stmt->error]);
+        exit();
     }
 
     // ✅ Success response

@@ -599,6 +599,16 @@ body.modal-open {
             </div>
 
             <div>
+    <label class="block text-sm font-medium text-gray-700">Phone Number</label>
+    <input type="tel" name="phone" 
+           class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-300 focus:border-red-500"
+           placeholder="Enter phone number"
+           pattern="[0-9]{10}" 
+           required>
+</div>
+
+
+            <div>
                 <label class="block text-sm font-medium text-gray-700">Gender</label>
                 <select name="gender" 
                         class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-300 focus:border-red-500">
