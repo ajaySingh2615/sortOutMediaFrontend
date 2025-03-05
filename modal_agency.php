@@ -5,25 +5,184 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Models Agency</title>
     <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CSS -->
+      <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-    /* ✅ Ensure Modal Appears on Top */
-    #addClientModal {
-        z-index: 99999;
-    }
 
-    /* ✅ Modal Content Styling */
+  /* ✅ Ensure modals are hidden on page load */
+#profileSelectionModal,
+#addClientModal {
+    display: none; /* Hide initially */
+}
+
+/* ✅ Fix modal positioning and ensure it's above all content */
+#profileSelectionModal,
+#addClientModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999; /* Keep modal always on top */
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    display: none; /* Hide until triggered */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* ✅ Show modal when it's active */
+#profileSelectionModal.flex,
+#addClientModal.flex {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ✅ Ensure modal content is centered */
+#profileSelectionModal > div,
+#addClientModal > div {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    text-align: center;
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* ✅ Ensure smooth scale-in effect */
+#profileSelectionModal.flex > div,
+#addClientModal.flex > div {
+    transform: scale(1);
+}
+
+/* ✅ Button Styling */
+.modal-button {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    width: 100%;
+}
+
+/* ✅ Hover Effects */
+.modal-button:hover {
+    transform: scale(1.05);
+}
+
+/* ✅ Close Button */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #e63946;
+    cursor: pointer;
+}
+
+/* ✅ Prevent background scrolling when modal is open */
+body.modal-open {
+    overflow: hidden;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+    #profileSelectionModal > div,
     #addClientModal > div {
-        max-height: 85vh;
-        overflow-y: auto;
-        border-radius: 12px;
-        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+        max-width: 90%;
     }
+}
 
-    /* ✅ Prevent Background Scroll When Modal is Open */
-    body.modal-open {
-        overflow: hidden;
+/* ✅ Center Modal & Enhance Appearance */
+#addClientModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* ✅ Show Modal */
+#addClientModal.flex {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ✅ Stylish Form Container */
+#addClientModal > div {
+    background: white;
+    padding: 28px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    max-width: 450px;
+    text-align: center;
+    transform: scale(0.9);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* ✅ Animate Modal Appearance */
+#addClientModal.flex > div {
+    transform: scale(1);
+}
+
+/* ✅ Improve Input & Select Fields */
+#addClientModal input,
+#addClientModal select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border 0.2s ease-in-out;
+}
+
+/* ✅ Focus Effect on Inputs */
+#addClientModal input:focus,
+#addClientModal select:focus {
+    border: 1px solid #ff4757;
+    outline: none;
+    box-shadow: 0 0 6px rgba(255, 71, 87, 0.2);
+}
+
+/* ✅ Submit Button Styling */
+#addClientModal button[type="submit"] {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #28a745;
+    color: white;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+}
+
+#addClientModal button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+    #addClientModal > div {
+        max-width: 90%;
     }
+}
+
+
+
+
      /* ✅ Hero Section Styling */
     #heroCarousel {
         display: flex;
@@ -343,9 +502,14 @@
 
                 <!-- 🔹 Right: Add Client Button -->
                 <div class="flex items-center">
-                    <button onclick="toggleModal()" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
-                        + Create Profile
-                    </button>
+                    <!-- ✅ Create Profile Button in Navbar -->
+<!-- ✅ Create Profile Button in Navbar -->
+<button id="createProfileBtn" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+    Create Profile
+</button>
+
+
+
 
                     <!-- ✅ Hamburger Menu for Mobile -->
                     <button onclick="toggleMobileMenu()" class="md:hidden ml-4">
@@ -367,52 +531,78 @@
         </div>
     </nav>
 
-   <!-- ✅ Fully Responsive Add Client Modal - Now Above All Content -->
-<div id="addClientModal" class="fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center z-[9999] hidden">
-    <div class="bg-white p-6 rounded-lg shadow-lg w-full max-w-md max-h-[90vh] overflow-y-auto relative">
-        <button onclick="toggleModal()" class="absolute top-2 right-2 text-red-600 text-2xl font-bold">&times;</button>
-        <h2 class="text-xl font-semibold mb-4 text-center text-red-600">Add New Client</h2>
+   <!-- ✅ Create Profile Selection Modal -->
+<div id="profileSelectionModal" class="fixed inset-0 bg-gray-800 bg-opacity-60 flex justify-center items-center hidden">
+    <div class="bg-white p-6 rounded-xl shadow-xl w-full max-w-sm md:max-w-md lg:max-w-lg transform scale-95 transition duration-300">
+        <h2 class="text-2xl font-bold text-gray-800 text-center mb-4">Choose Profile Type</h2>
 
-         <!-- Form -->
-         <form id="addClientForm" enctype="multipart/form-data">
+        <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <button onclick="openClientForm('Artist')" class="w-full md:w-1/2 px-6 py-3 bg-red-500 text-white font-semibold rounded-lg shadow-md hover:bg-red-600 transition-all duration-200">
+                🎭 Artist
+            </button>
+            <button onclick="openClientForm('Employee')" class="w-full md:w-1/2 px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition-all duration-200">
+                💼 Employee
+            </button>
+        </div>
+
+        <button onclick="closeSelectionModal()" class="mt-6 w-full text-red-500 font-semibold hover:underline text-center">Cancel</button>
+    </div>
+</div>
+
+
+<!-- ✅ Stylish Add Profile Form Modal -->
+<div id="addClientModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4">
+    <div class="bg-white p-6 rounded-2xl shadow-xl w-full max-w-lg max-h-[85vh] overflow-y-auto relative">
+        <button onclick="closeAddClientForm()" class="absolute top-4 right-4 text-gray-600 hover:text-red-500 text-2xl font-bold">&times;</button>
+        
+        <h2 class="text-2xl font-bold mb-6 text-center text-red-600">Add Profile</h2>
+
+        <!-- ✅ Form -->
+        <form id="addClientForm" enctype="multipart/form-data" class="space-y-4">
             
-            <!-- ✅ Professional Field (Moved to Top) -->
-            <div class="mt-2">
-                <label class="block font-medium">Professional:</label>
-                <select id="professionalField" name="professional" class="w-full p-2 border rounded focus:ring focus:ring-red-300" onchange="toggleFollowersField()">
-                    <option value="Artist">Artist</option>
-                    <option value="Employee">Employee</option>
-                </select>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                <div>
-                    <label class="block font-medium">Name:</label>
-                    <input type="text" name="name" class="w-full p-2 border rounded focus:ring focus:ring-red-300" required>
-                </div>
-                <div>
-                    <label class="block font-medium">Age:</label>
-                    <input type="number" name="age" class="w-full p-2 border rounded focus:ring focus:ring-red-300" required>
+            <!-- ✅ Professional Field (Locked) -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Professional</label>
+                <div class="relative">
+                    <input type="text" id="professionalField" name="professional" 
+                           class="w-full p-3 border border-gray-300 rounded-lg bg-gray-100 text-gray-700 focus:ring-red-300 focus:border-red-500" readonly>
+                    <span class="absolute right-4 top-3 text-gray-500"><i class="fas fa-user-tie"></i></span>
                 </div>
             </div>
 
-            <div class="mt-2">
-                <label class="block font-medium">Gender:</label>
-                <select name="gender" class="w-full p-2 border rounded focus:ring focus:ring-red-300">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Name</label>
+                    <input type="text" name="name" 
+                           class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-300 focus:border-red-500" required>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Age</label>
+                    <input type="number" name="age" 
+                           class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-300 focus:border-red-500" required>
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Gender</label>
+                <select name="gender" 
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-300 focus:border-red-500">
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>
             </div>
 
-            <!-- ✅ Followers Field (Disabled for Employee) -->
-            <div class="mt-2">
-                <label class="block font-medium">Followers:</label>
-                <input type="text" id="followersField" name="followers" class="w-full p-2 border rounded focus:ring focus:ring-red-300" required>
+            <!-- ✅ Dynamic Field: Followers for Artist, Experience for Employee -->
+            <div>
+                <label class="block text-sm font-medium text-gray-700" id="dynamicFieldLabel">Followers</label>
+                <input type="text" id="dynamicField" name="followers" 
+                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-300 focus:border-red-500" required>
             </div>
 
-            <div class="mt-2">
-                <label class="block font-medium">Category:</label>
-                <select name="category" class="w-full p-2 border rounded focus:ring focus:ring-red-300">
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Category</label>
+                <select name="category" 
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-300 focus:border-red-500">
                     <option value="Live Streaming Host">Live Streaming Host</option>
                     <option value="YouTubers">YouTubers</option>
                     <option value="Social Media Influencers">Social Media Influencers</option>
@@ -425,51 +615,153 @@
                 </select>
             </div>
 
-            <div class="mt-2">
-                <label class="block font-medium">Languages:</label>
-                <select name="language[]" class="w-full p-2 border rounded focus:ring focus:ring-red-300" multiple>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Languages</label>
+                <select name="language[]" 
+                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-300 focus:border-red-500" multiple>
                     <option value="Hindi">Hindi</option>
                     <option value="English">English</option>
                     <option value="Bengali">Bengali</option>
                     <option value="Telugu">Telugu</option>
-                    <option value="Marathi">Marathi</option>
                 </select>
             </div>
 
-            <div class="mt-2">
-                <label class="block font-medium">Upload Image:</label>
-                <input type="file" name="image" class="w-full p-2 border rounded focus:ring focus:ring-red-300" accept="image/*" required>
+            <div>
+                <label class="block text-sm font-medium text-gray-700">Upload Image</label>
+                <input type="file" name="image" 
+                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-300 focus:border-red-500" 
+                       accept="image/*" required>
             </div>
 
-            <div class="mt-4">
-                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded w-full hover:bg-green-600">
+            <div class="mt-6">
+                <button type="submit" 
+                        class="w-full py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600">
                     Submit
                 </button>
             </div>
         </form>
 
-        <button onclick="toggleModal()" class="mt-4 text-red-500 w-full text-center">Cancel</button>
+        <button onclick="closeAddClientForm()" 
+                class="mt-4 w-full text-red-500 font-semibold hover:underline text-center">
+            Cancel
+        </button>
     </div>
 </div>
 
-<script>
-    function toggleFollowersField() {
-        let professionalField = document.getElementById("professionalField");
-        let followersField = document.getElementById("followersField");
 
-        if (professionalField.value === "Employee") {
-            followersField.value = ""; // Clear the input
-            followersField.disabled = true; // Disable the field
-        } else {
-            followersField.disabled = false; // Enable the field for Artists
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // ✅ Hide modals on page load
+        document.getElementById("profileSelectionModal").classList.add("hidden");
+        document.getElementById("addClientModal").classList.add("hidden");
+
+        // ✅ Remove any "flex" class that might cause auto-opening
+        document.getElementById("profileSelectionModal").classList.remove("flex");
+        document.getElementById("addClientModal").classList.remove("flex");
+
+        // ✅ Attach event listener to "Create Profile" button
+        document.getElementById("createProfileBtn").addEventListener("click", function () {
+            showSelectionModal();
+        });
+    });
+
+    // ✅ Show Selection Modal
+    function showSelectionModal() {
+        const modal = document.getElementById("profileSelectionModal");
+        if (modal) {
+            modal.classList.remove("hidden");
+            modal.classList.add("flex");
+            modal.style.opacity = "1";
+            modal.style.visibility = "visible";
+            document.body.classList.add("modal-open");
         }
     }
 
-    // ✅ Call function on page load in case default selection is Employee
-    document.addEventListener("DOMContentLoaded", function() {
-        toggleFollowersField();
+    // ✅ Close Selection Modal
+    function closeSelectionModal() {
+        const modal = document.getElementById("profileSelectionModal");
+        if (modal) {
+            modal.classList.add("hidden");
+            modal.classList.remove("flex");
+            modal.style.opacity = "0";
+            modal.style.visibility = "hidden";
+            document.body.classList.remove("modal-open");
+        }
+    }
+
+    // ✅ Open Add Profile Form Based on Selection
+    function openClientForm(type) {
+        closeSelectionModal();
+        const clientModal = document.getElementById("addClientModal");
+
+        if (clientModal) {
+            clientModal.classList.remove("hidden");
+            clientModal.classList.add("flex");
+            clientModal.style.opacity = "1";
+            clientModal.style.visibility = "visible";
+        }
+
+        // ✅ Set Professional Type (Readonly)
+        const professionalField = document.getElementById("professionalField");
+        if (professionalField) {
+            professionalField.value = type;
+            professionalField.setAttribute("readonly", true);
+        }
+
+        // ✅ Adjust Dynamic Field (Followers or Experience)
+        let dynamicField = document.getElementById("dynamicField");
+        let dynamicFieldLabel = document.getElementById("dynamicFieldLabel");
+
+        if (type === "Employee") {
+            dynamicFieldLabel.innerText = "Experience (Years):";
+            dynamicField.name = "experience";
+            dynamicField.placeholder = "Enter Experience in Years";
+        } else {
+            dynamicFieldLabel.innerText = "Followers:";
+            dynamicField.name = "followers";
+            dynamicField.placeholder = "Enter Followers Count";
+        }
+    }
+
+    // ✅ Close Add Profile Form
+    function closeAddClientForm() {
+        const clientModal = document.getElementById("addClientModal");
+        if (clientModal) {
+            clientModal.classList.add("hidden");
+            clientModal.classList.remove("flex");
+            clientModal.style.opacity = "0";
+            clientModal.style.visibility = "hidden";
+        }
+    }
+
+    // ✅ Close modals when clicking outside
+    window.addEventListener("click", function (event) {
+        const profileModal = document.getElementById("profileSelectionModal");
+        const clientModal = document.getElementById("addClientModal");
+
+        if (event.target === profileModal) {
+            closeSelectionModal();
+        }
+        if (event.target === clientModal) {
+            closeAddClientForm();
+        }
+    });
+
+    // ✅ Close modals when pressing Escape key
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            closeSelectionModal();
+            closeAddClientForm();
+        }
     });
 </script>
+
+
+
+
+
+
+
 
 
 <!-- ✅ Hero Section -->
@@ -614,34 +906,6 @@
 
 
     <script>
-       function toggleModal() {
-        const modal = document.getElementById("addClientModal");
-        const body = document.body;
-
-        if (modal.classList.contains("hidden")) {
-            modal.classList.remove("hidden");
-            body.classList.add("modal-open"); // ✅ Prevent background scrolling
-        } else {
-            modal.classList.add("hidden");
-            body.classList.remove("modal-open");
-        }
-    }
-
-    // ✅ Close modal when clicking outside the form
-    window.addEventListener("click", function (event) {
-        const modal = document.getElementById("addClientModal");
-        if (event.target === modal) {
-            toggleModal();
-        }
-    });
-
-    // ✅ Close modal with Escape Key
-    document.addEventListener("keydown", function (event) {
-        if (event.key === "Escape") {
-            toggleModal();
-        }
-    });
-
         // ✅ Toggle Mobile Menu
         function toggleMobileMenu() {
             document.getElementById('mobileMenu').classList.toggle('hidden');
