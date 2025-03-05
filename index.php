@@ -77,7 +77,7 @@
             </li> -->
             <li><a href="/pages/career.html" class="nav-link">Jobs</a></li>
             <li>
-              <a href="/pages/talent.page/talent.html" class="nav-link"
+              <a href="/modal_agency.php" class="nav-link"
                 >Find Talent</a
               >
             </li>
