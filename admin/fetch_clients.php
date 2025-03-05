@@ -13,8 +13,10 @@ $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 $limit = 16;
 $offset = ($page - 1) * $limit;
 
-// ✅ Build SQL Query with Filters
-$sql = "SELECT id, name, age, gender, followers, experience, category, language, professional, image_url FROM clients WHERE 1=1";
+// ✅ Build SQL Query with Filters (Only Fetch Approved Clients)
+$sql = "SELECT id, name, age, gender, followers, experience, category, language, professional, image_url 
+        FROM clients 
+        WHERE approval_status = 'approved'";  // ✅ Ensure only approved clients are shown
 
 if (!empty($category)) $sql .= " AND category = ?";
 if (!empty($gender)) $sql .= " AND gender = ?";
@@ -56,8 +58,9 @@ while ($row = $result->fetch_assoc()) {
     $clients[] = $row;
 }
 
-// ✅ Get Total Clients Count for Pagination
-$total_clients_query = "SELECT COUNT(id) as total FROM clients WHERE 1=1";
+// ✅ Get Total Clients Count for Pagination (Only Approved Clients)
+$total_clients_query = "SELECT COUNT(id) as total FROM clients WHERE approval_status = 'approved'";
+
 if (!empty($category)) $total_clients_query .= " AND category = '$category'";
 if (!empty($gender)) $total_clients_query .= " AND gender = '$gender'";
 if (!empty($language)) $total_clients_query .= " AND FIND_IN_SET('$language', language)";

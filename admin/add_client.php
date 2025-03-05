@@ -26,15 +26,19 @@ try {
     $followers = isset($_POST['followers']) ? trim($_POST['followers']) : "";
     $experience = isset($_POST['experience']) ? trim($_POST['experience']) : "";
 
+    // ✅ Basic validation
     if (empty($name) || empty($category) || empty($professional)) {
-        throw new Exception("Missing required fields.");
+        throw new Exception("Missing required fields: Name, Category, and Professional type are required.");
+    }
+    if ($age < 18 || $age > 99) {
+        throw new Exception("Invalid age. Age must be between 18 and 99.");
     }
 
     // ✅ Ensure correct values for "Followers" and "Experience"
     if ($professional === "Employee") {
-        $followers = ""; // Set empty string instead of NULL
+        $followers = ""; // Employees don't have followers
     } else {
-        $experience = ""; // Set empty string instead of NULL
+        $experience = ""; // Artists don't have experience
     }
 
     // ✅ Handle Image Upload to Cloudinary
@@ -49,20 +53,24 @@ try {
         }
     }
 
-    // ✅ Insert Data into Database (Include "Experience")
-    $stmt = $conn->prepare("INSERT INTO clients (name, age, gender, followers, experience, category, language, professional, image_url) 
-                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+    // ✅ Insert Data into Database with "pending" approval_status
+    $stmt = $conn->prepare("INSERT INTO clients (name, age, gender, followers, experience, category, language, professional, image_url, approval_status) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending')");
     $stmt->bind_param("sisssssss", $name, $age, $gender, $followers, $experience, $category, $languages, $professional, $image_url);
 
     if (!$stmt->execute()) {
         throw new Exception("Database Insert Error: " . $stmt->error);
     }
 
-    $response = ["status" => "success", "message" => "Client added successfully"];
+    // ✅ Success response
+    $response = [
+        "status" => "success",
+        "message" => "Profile submitted successfully. It will be visible after admin approval."
+    ];
 } catch (Exception $e) {
     $response = ["status" => "error", "message" => $e->getMessage()];
 }
 
+// ✅ Send JSON response
 echo json_encode($response);
 exit;
-?>

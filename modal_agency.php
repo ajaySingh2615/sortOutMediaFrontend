@@ -1,3 +1,12 @@
+<?php
+session_start();
+require './includes/db_connect.php';
+
+// ✅ Store success message (if any)
+$message = isset($_SESSION['message']) ? $_SESSION['message'] : "";
+unset($_SESSION['message']); // Clear the session message after displaying
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -473,12 +482,20 @@ body.modal-open {
         }
     }
 
+
     
 </style>
 
 
 </head>
 <body class="bg-gray-100">
+
+    <!-- ✅ Success Message Div (Initially Hidden) -->
+<div id="successMessage" 
+    class="hidden fixed top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white text-lg font-semibold px-6 py-3 rounded-lg shadow-lg z-[9999]">
+    <strong>Success!</strong> Your profile has been submitted successfully. It will be visible after admin approval.
+</div>
+
 
     <!-- ✅ Navbar -->
     <nav class="bg-white shadow-md fixed top-0 left-0 right-0 z-50">
@@ -549,16 +566,14 @@ body.modal-open {
     </div>
 </div>
 
+ <!-- ✅ Profile Submission Form Modal -->
+ <div id="addClientModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4">
+        <div class="bg-white p-6 rounded-2xl shadow-xl w-full max-w-lg max-h-[85vh] overflow-y-auto relative">
+            <button onclick="closeAddClientForm()" class="absolute top-4 right-4 text-gray-600 hover:text-red-500 text-2xl font-bold">&times;</button>
+            
+            <h2 class="text-2xl font-bold mb-6 text-center text-red-600">Add Profile</h2>
 
-<!-- ✅ Stylish Add Profile Form Modal -->
-<div id="addClientModal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-50 flex items-center justify-center p-4">
-    <div class="bg-white p-6 rounded-2xl shadow-xl w-full max-w-lg max-h-[85vh] overflow-y-auto relative">
-        <button onclick="closeAddClientForm()" class="absolute top-4 right-4 text-gray-600 hover:text-red-500 text-2xl font-bold">&times;</button>
-        
-        <h2 class="text-2xl font-bold mb-6 text-center text-red-600">Add Profile</h2>
-
-        <!-- ✅ Form -->
-        <form id="addClientForm" enctype="multipart/form-data" class="space-y-4">
+            <form id="addClientForm" enctype="multipart/form-data" class="space-y-4">
             
             <!-- ✅ Professional Field (Locked) -->
             <div>
@@ -633,12 +648,15 @@ body.modal-open {
                        accept="image/*" required>
             </div>
 
-            <div class="mt-6">
-                <button type="submit" 
-                        class="w-full py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600">
-                    Submit
-                </button>
-            </div>
+            <!-- ✅ Submit Button with Loading -->
+<div class="mt-6">
+    <button type="submit" id="submitBtn" 
+            class="w-full py-3 bg-green-500 text-white font-semibold rounded-lg hover:bg-green-600 flex items-center justify-center">
+        <span id="submitText">Submit</span>
+        <span id="loadingSpinner" class="hidden ml-2 w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+    </button>
+</div>
+
         </form>
 
         <button onclick="closeAddClientForm()" 
@@ -913,117 +931,148 @@ body.modal-open {
     </script>
 
 <script>
-    document.getElementById("addClientForm").addEventListener("submit", async function (event) {
-    event.preventDefault(); // Prevent default form submission
+    document.addEventListener("DOMContentLoaded", function () {
+        const addClientForm = document.getElementById("addClientForm");
+        const submitBtn = document.getElementById("submitBtn");
+        const submitText = document.getElementById("submitText");
+        const loadingSpinner = document.getElementById("loadingSpinner");
+        const successMessage = document.getElementById("successMessage"); // ✅ Ensure this exists
 
-    let formData = new FormData(this);
+        if (!addClientForm) {
+            console.error("❌ addClientForm not found!");
+            return;
+        }
 
-    try {
-        const response = await fetch("/admin/add_client.php", {
-            method: "POST",
-            body: formData
+        addClientForm.addEventListener("submit", async function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // ✅ Show Loading Spinner & Disable Button
+            submitText.textContent = "Submitting...";
+            loadingSpinner.classList.remove("hidden");
+            submitBtn.disabled = true;
+            submitBtn.classList.add("opacity-50", "cursor-not-allowed");
+
+            let formData = new FormData(addClientForm);
+
+            try {
+                const response = await fetch("/admin/add_client.php", {
+                    method: "POST",
+                    body: formData
+                });
+
+                const textResponse = await response.text();
+                console.log("Raw response:", textResponse);
+
+                const result = JSON.parse(textResponse);
+                if (result.status === "success") {
+                    // ✅ Show Success Message
+                    successMessage.classList.remove("hidden");
+                    successMessage.innerHTML = `<strong>Success!</strong> Your profile has been submitted successfully. It will be visible after admin approval.`;
+
+                    // ✅ Hide Success Message After 5 Seconds
+                    setTimeout(() => {
+                        successMessage.classList.add("hidden");
+                    }, 5000);
+
+                    // ✅ Reset Form Fields
+                    addClientForm.reset();
+
+                    // ✅ Close Add Profile Form
+                    closeAddClientForm();
+
+                    // ✅ Fetch Only Approved Clients
+                    fetchClients();
+                } else {
+                    alert("❌ Error: " + result.message);
+                }
+            } catch (error) {
+                console.error("❌ Fetch Error:", error);
+                alert("❌ Unexpected error. Check the console for details.");
+            } finally {
+                // ✅ Reset Button After Submission
+                submitText.textContent = "Submit";
+                loadingSpinner.classList.add("hidden");
+                submitBtn.disabled = false;
+                submitBtn.classList.remove("opacity-50", "cursor-not-allowed");
+            }
         });
 
-        const textResponse = await response.text(); // Debug raw response
-        console.log("Raw response:", textResponse);
+        // ✅ Fetch Approved Clients Function
+        async function fetchClients(page = 1) {
+            const clientsContainer = document.getElementById("clientsList");
+            const paginationControls = document.getElementById("paginationControls");
 
-        const result = JSON.parse(textResponse); // Convert to JSON
-        if (result.status === "success") {
-            alert("✅ Client added successfully!");
-            location.reload();
-        } else {
-            alert("❌ Error: " + result.message);
+            if (!clientsContainer) {
+                console.error("❌ clientsList element not found!");
+                return;
+            }
+
+            let url = `/admin/fetch_clients.php?page=${page}`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                clientsContainer.innerHTML = "";
+
+                if (data.clients.length === 0) {
+                    clientsContainer.innerHTML = `<p class="text-center text-gray-600">No approved profiles available yet.</p>`;
+                } else {
+                    data.clients.forEach(client => {
+                        let additionalInfo = client.professional === "Employee"
+                            ? `<p class="font-poppins">Experience: <strong>${client.experience}-Years</strong></p>` 
+                            : `<p class="font-poppins">Followers: <strong>${client.followers}</strong></p>`; 
+
+                        let clientCard = `
+                            <div class="relative group overflow-hidden rounded-lg shadow-lg transition hover:shadow-xl bg-white">
+                                <div class="relative">
+                                    <img src="${client.image_url}" alt="${client.name}" class="w-full h-[400px] object-cover rounded-md">
+                                    <div class="absolute inset-0 bg-pink-600 bg-opacity-90 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 p-6 text-center">
+                                        <h3 class="font-montserrat">${client.name}</h3>
+                                        <p class="font-poppins mt-1">${client.category}</p>
+                                        <p class="font-poppins">Age: ${client.age} | ${client.gender}</p>
+                                        <p class="font-poppins">Languages: ${client.language}</p>
+                                        <p class="font-poppins">Profession: ${client.professional}</p>
+                                        ${additionalInfo}
+                                        <button class="px-5 py-2 mt-3 bg-white text-pink-600 font-semibold rounded-lg hover:bg-gray-200 shadow-md btn-primary">
+                                            <i class="fas fa-user-check mr-2"></i> Book Now
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="p-4 text-center">
+                                    <h3 class="client-name font-montserrat">${client.name}</h3>
+                                    <p class="client-category font-poppins">${client.category}</p>
+                                    ${additionalInfo}
+                                </div>
+                            </div>
+                        `;
+
+                        clientsContainer.innerHTML += clientCard;
+                    });
+                }
+            } catch (error) {
+                console.error("Error fetching clients:", error);
+            }
         }
-    } catch (error) {
-        console.error("❌ Fetch Error:", error);
-        alert("❌ Unexpected error. Check the console for details.");
-    }
-});
 
+        // ✅ Close Add Profile Form
+        function closeAddClientForm() {
+            const clientModal = document.getElementById("addClientModal");
+            if (clientModal) {
+                clientModal.classList.add("hidden");
+                clientModal.classList.remove("flex");
+                clientModal.style.opacity = "0";
+                clientModal.style.visibility = "hidden";
+            }
+        }
+
+        // ✅ Fetch Clients on Page Load
+        fetchClients();
+    });
 </script>
 
-<script>
-    let currentPage = 1;
-    
-    async function fetchClients(page = 1) {
-        currentPage = page;
 
-        const category = document.getElementById("filterCategory").value;
-        const gender = document.getElementById("filterGender").value;
-        const age = document.getElementById("filterAge").value;
-        const language = document.getElementById("filterLanguage").value;
-        const professional = document.getElementById("filterProfessional").value;
 
-        let url = `admin/fetch_clients.php?page=${page}&category=${category}&gender=${gender}&age_group=${age}&language=${language}&professional=${professional}`;
-        
-        try {
-            const response = await fetch(url);
-            const data = await response.json();
-
-            let clientsContainer = document.getElementById("clientsList");
-            let paginationControls = document.getElementById("paginationControls");
-            clientsContainer.innerHTML = "";
-
-            data.clients.forEach(client => {
-                // ✅ Set content conditionally based on professional type
-                let additionalInfo = client.professional === "Employee"
-                    ? `<p class="font-poppins">Age: <strong>${client.age}</strong></p>` // Only show age for Employee
-                    : `<p class="font-poppins">Followers: <strong>${client.followers}</strong></p>`; // Show followers for Artist
-                
-                let hoverContent = `
-                    <div class="absolute inset-0 bg-pink-600 bg-opacity-90 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 p-6 text-center hover-content">
-                        <h3 class="font-montserrat">${client.name}</h3>
-                        <p class="font-poppins mt-1">${client.category}</p>
-                        ${client.professional === "Employee" ? "" : `<p class="font-poppins">Followers: <strong>${client.followers}</strong></p>`} 
-                        <p class="font-poppins">Age: ${client.age} | ${client.gender}</p>
-                        <p class="font-poppins">Languages: ${client.language}</p>
-                        <p class="font-poppins">Profession: ${client.professional}</p>
-
-                        <!-- ✅ Book Now Button -->
-                        <div class="flex gap-4 mt-4">
-                            <button class="px-5 py-2 bg-white text-pink-600 font-semibold rounded-lg hover:bg-gray-200 shadow-md btn-primary">
-                                <i class="fas fa-user-check mr-2"></i> Book Now
-                            </button>
-                        </div>
-                    </div>
-                `;
-
-                let clientCard = `
-                    <div class="relative group overflow-hidden rounded-lg shadow-lg transition hover:shadow-xl bg-white">
-                        <div class="relative">
-                            <!-- ✅ Image -->
-                            <img src="${client.image_url}" alt="${client.name}" class="w-full h-[450px] object-cover rounded-md">
-                            
-                            <!-- ✅ Hover Overlay -->
-                            ${hoverContent}
-                        </div>
-
-                        <!-- ✅ Name, Category, and Conditional Info -->
-                        <div class="p-4 text-center">
-                            <h3 class="client-name font-montserrat">${client.name}</h3>
-                            <p class="client-category font-poppins">${client.category}</p>
-                            ${additionalInfo}
-                        </div>
-                    </div>
-                `;
-
-                clientsContainer.innerHTML += clientCard;
-            });
-
-            // ✅ Pagination controls
-            let totalPages = Math.ceil(data.total_clients / 10);
-            paginationControls.innerHTML = `
-                <button onclick="fetchClients(${Math.max(1, currentPage - 1)})" class="px-3 py-2 bg-red-600 text-white rounded-lg mx-1 ${currentPage === 1 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-red-700'}">Prev</button>
-                <span class="px-4 py-2 text-lg font-semibold">${currentPage} / ${totalPages}</span>
-                <button onclick="fetchClients(${Math.min(totalPages, currentPage + 1)})" class="px-3 py-2 bg-red-600 text-white rounded-lg mx-1 ${currentPage === totalPages ? 'opacity-50 cursor-not-allowed' : 'hover:bg-red-700'}">Next</button>
-            `;
-        } catch (error) {
-            console.error("Error fetching clients:", error);
-        }
-    }
-
-    window.onload = () => fetchClients(1);
-</script>
 
 
 <script>

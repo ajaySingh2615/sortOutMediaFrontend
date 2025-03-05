@@ -139,6 +139,7 @@ if ($_SESSION['role'] === 'super_admin') {
                 <li class="nav-item"><a class="nav-link fw-semibold px-3" href="../blog/index.php">Blogs</a></li>
                 <li class="nav-item"><a class="nav-link fw-semibold px-3" href="../pages/our-services-page/service.html">Services</a></li>
                 <li class="nav-item"><a class="nav-link fw-semibold px-3" href="device_dashboard.php">Manage Devices</a></li>
+                <li class="nav-item"><a class="nav-link fw-semibold px-3" href="model_agency_dashboard.php">Manage Talents</a></li>
                 <!-- ✅ Display Logged-in User Info -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle fw-semibold px-3" href="#" role="button" data-bs-toggle="dropdown">
