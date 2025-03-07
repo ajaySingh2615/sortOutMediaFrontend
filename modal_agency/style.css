@@ -1,0 +1,530 @@
+/* ✅ Ensure modals are hidden on page load */
+#profileSelectionModal,
+#addClientModal {
+  display: none; /* Hide initially */
+}
+
+/* ✅ Fix modal positioning and ensure it's above all content */
+#profileSelectionModal,
+#addClientModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999; /* Keep modal always on top */
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  display: none; /* Hide until triggered */
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* ✅ Show modal when it's active */
+#profileSelectionModal.flex,
+#addClientModal.flex {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ✅ Ensure modal content is centered */
+#profileSelectionModal > div,
+#addClientModal > div {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  text-align: center;
+  transform: scale(0.9);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ✅ Ensure smooth scale-in effect */
+#profileSelectionModal.flex > div,
+#addClientModal.flex > div {
+  transform: scale(1);
+}
+
+/* ✅ Button Styling */
+.modal-button {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 12px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+  width: 100%;
+}
+
+/* ✅ Hover Effects */
+.modal-button:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ Close Button */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #e63946;
+  cursor: pointer;
+}
+
+/* ✅ Prevent background scrolling when modal is open */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  #profileSelectionModal > div,
+  #addClientModal > div {
+    max-width: 90%;
+  }
+}
+
+/* ✅ Center Modal & Enhance Appearance */
+#addClientModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+/* ✅ Show Modal */
+#addClientModal.flex {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ✅ Stylish Form Container */
+#addClientModal > div {
+  background: white;
+  padding: 28px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+  max-width: 450px;
+  text-align: center;
+  transform: scale(0.9);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ✅ Animate Modal Appearance */
+#addClientModal.flex > div {
+  transform: scale(1);
+}
+
+/* ✅ Improve Input & Select Fields */
+#addClientModal input,
+#addClientModal select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: border 0.2s ease-in-out;
+}
+
+/* ✅ Focus Effect on Inputs */
+#addClientModal input:focus,
+#addClientModal select:focus {
+  border: 1px solid #ff4757;
+  outline: none;
+  box-shadow: 0 0 6px rgba(255, 71, 87, 0.2);
+}
+
+/* ✅ Submit Button Styling */
+#addClientModal button[type="submit"] {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #28a745;
+  color: white;
+  border-radius: 8px;
+  transition: background 0.3s ease-in-out;
+}
+
+#addClientModal button[type="submit"]:hover {
+  background-color: #218838;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+  #addClientModal > div {
+    max-width: 90%;
+  }
+}
+
+/* ✅ Full-Width Hero Section */
+.hero-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* ✅ Carousel Wrapper */
+.carousel {
+  display: flex;
+  transition: transform 0.8s ease-in-out;
+}
+
+/* ✅ Ensure uniform slide size */
+.hero-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%; /* ✅ 4 images per row on Desktop */
+  height: 85vh; /* Large images */
+  flex-shrink: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* ✅ Ensure images fit without zooming */
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* ✅ NO CROPPING, NO ZOOMING */
+  display: block;
+}
+
+/* ✅ Navigation Buttons */
+.hero-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 14px 20px;
+  border-radius: 50%;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+.hero-btn:hover {
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* ✅ Left & Right Button Position */
+.left-btn {
+  left: 20px;
+}
+
+.right-btn {
+  right: 20px;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 1024px) {
+  .hero-slide {
+    width: 50%; /* ✅ 2 images per row on Tablets */
+    height: 75vh; /* Adjust height for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-slide {
+    width: 100%; /* ✅ 1 image per row on Mobile */
+    height: 70vh; /* Adjust height for mobile */
+  }
+
+  .hero-btn {
+    padding: 10px 14px;
+    font-size: 20px;
+  }
+}
+
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ✅ Premium Styling */
+.client-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #333;
+}
+.client-category {
+  font-size: 16px;
+  font-weight: 500;
+  color: #777;
+}
+.client-followers {
+  font-size: 14px;
+  font-weight: 400;
+  color: #555;
+}
+
+/* ✅ Hover Effect Styling */
+.hover-content h3 {
+  font-size: 28px;
+  font-weight: 700;
+}
+.hover-content p {
+  font-size: 18px;
+  font-weight: 500;
+}
+.hover-content strong {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* ✅ Button Styling */
+.btn-primary {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 16px;
+  transition: 0.3s;
+}
+.btn-primary:hover {
+  transform: scale(1.05);
+}
+
+/* ✅ Stylish Dropdowns */
+.filter-dropdown {
+  appearance: none;
+  background-color: white;
+  border: 2px solid #e5e7eb;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  transition: 0.3s;
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+  cursor: pointer;
+}
+
+.filter-dropdown:hover,
+.filter-dropdown:focus {
+  border-color: #ff4757;
+  /* box-shadow: 0 4px 8px rgba(255, 71, 87, 0.2); */
+  outline: none;
+}
+
+/* ✅ Center the Filters & Add Spacing */
+.filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ Apply Filters Button */
+.apply-filter-btn {
+  background-color: #ff4757;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: 0.3s;
+  box-shadow: 0 4px 6px rgba(255, 71, 87, 0.2);
+}
+
+.apply-filter-btn:hover {
+  background-color: #e63946;
+  box-shadow: 0 6px 12px rgba(255, 71, 87, 0.3);
+}
+
+/* ✅ Modern Fonts */
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ✅ Font Styles */
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ✅ Animations */
+.animate-fade-in {
+  animation: fadeIn 1.5s ease-in-out;
+}
+.animate-slide-up {
+  animation: slideUp 1.2s ease-in-out;
+}
+.animate-bounce {
+  animation: bounce 1.5s infinite;
+}
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* ✅ Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ✅ Elegant Fonts */
+.font-montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+.font-dancing {
+  font-family: "Dancing Script", cursive;
+}
+.font-poppins {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ✅ Client Logo Styling */
+.client-logo {
+  max-width: 150px;
+  height: auto;
+  opacity: 0.8;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.client-logo:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+/* ✅ Auto Scrolling Animation for Mobile */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide {
+  display: flex;
+  animation: slide 10s linear infinite;
+}
+
+/* ✅ Category Box Styling */
+.category-box {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 16px;
+  border-radius: 12px;
+  transition: all 0.3s ease-in-out;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* ✅ Unique Random Styling for Placement */
+.category-box:nth-child(odd) {
+  transform: rotate(-3deg);
+}
+
+.category-box:nth-child(even) {
+  transform: rotate(3deg);
+}
+
+.category-box:hover {
+  transform: scale(1.05) rotate(0deg);
+  box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* ✅ Responsive Fixes */
+@media (max-width: 768px) {
+  .category-box {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .category-box:nth-child(odd),
+  .category-box:nth-child(even) {
+    transform: rotate(0);
+  }
+}
+
+/* ✅ Social Media Icon Styling */
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* ✅ Responsive Fixes */
+@media (max-width: 768px) {
+  .grid-cols-4 {
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+  }
+
+  .flex.space-x-4 {
+    justify-content: center;
+  }
+}

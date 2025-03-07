@@ -17,476 +17,8 @@ unset($_SESSION['message']); // Clear the session message after displaying
       <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
-<style>
 
-  /* ✅ Ensure modals are hidden on page load */
-#profileSelectionModal,
-#addClientModal {
-    display: none; /* Hide initially */
-}
-
-/* ✅ Fix modal positioning and ensure it's above all content */
-#profileSelectionModal,
-#addClientModal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 99999; /* Keep modal always on top */
-    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
-    display: none; /* Hide until triggered */
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-}
-
-/* ✅ Show modal when it's active */
-#profileSelectionModal.flex,
-#addClientModal.flex {
-    display: flex;
-    opacity: 1;
-    visibility: visible;
-}
-
-/* ✅ Ensure modal content is centered */
-#profileSelectionModal > div,
-#addClientModal > div {
-    background: white;
-    padding: 24px;
-    border-radius: 12px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
-    max-width: 400px;
-    text-align: center;
-    transform: scale(0.9);
-    transition: transform 0.3s ease-in-out;
-}
-
-/* ✅ Ensure smooth scale-in effect */
-#profileSelectionModal.flex > div,
-#addClientModal.flex > div {
-    transform: scale(1);
-}
-
-/* ✅ Button Styling */
-.modal-button {
-    font-size: 18px;
-    font-weight: 600;
-    padding: 12px;
-    transition: all 0.3s ease-in-out;
-    border-radius: 8px;
-    width: 100%;
-}
-
-/* ✅ Hover Effects */
-.modal-button:hover {
-    transform: scale(1.05);
-}
-
-/* ✅ Close Button */
-.modal-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #e63946;
-    cursor: pointer;
-}
-
-/* ✅ Prevent background scrolling when modal is open */
-body.modal-open {
-    overflow: hidden;
-}
-
-/* ✅ Responsive Design */
-@media (max-width: 768px) {
-    #profileSelectionModal > div,
-    #addClientModal > div {
-        max-width: 90%;
-    }
-}
-
-/* ✅ Center Modal & Enhance Appearance */
-#addClientModal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 99999;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-}
-
-/* ✅ Show Modal */
-#addClientModal.flex {
-    opacity: 1;
-    visibility: visible;
-}
-
-/* ✅ Stylish Form Container */
-#addClientModal > div {
-    background: white;
-    padding: 28px;
-    border-radius: 15px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
-    max-width: 450px;
-    text-align: center;
-    transform: scale(0.9);
-    transition: transform 0.3s ease-in-out;
-}
-
-/* ✅ Animate Modal Appearance */
-#addClientModal.flex > div {
-    transform: scale(1);
-}
-
-/* ✅ Improve Input & Select Fields */
-#addClientModal input,
-#addClientModal select {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    transition: border 0.2s ease-in-out;
-}
-
-/* ✅ Focus Effect on Inputs */
-#addClientModal input:focus,
-#addClientModal select:focus {
-    border: 1px solid #ff4757;
-    outline: none;
-    box-shadow: 0 0 6px rgba(255, 71, 87, 0.2);
-}
-
-/* ✅ Submit Button Styling */
-#addClientModal button[type="submit"] {
-    padding: 12px;
-    font-size: 16px;
-    font-weight: bold;
-    background-color: #28a745;
-    color: white;
-    border-radius: 8px;
-    transition: background 0.3s ease-in-out;
-}
-
-#addClientModal button[type="submit"]:hover {
-    background-color: #218838;
-}
-
-/* ✅ Responsive Design */
-@media (max-width: 768px) {
-    #addClientModal > div {
-        max-width: 90%;
-    }
-}
-
-
-
-
-     /* ✅ Hero Section Styling */
-    #heroCarousel {
-        display: flex;
-        transition: transform 0.6s ease-in-out;
-    }
-
-    .hero-img {
-        width: calc(100% / 4); /* ✅ Default: 4 images per row */
-        height: 80vh;
-        object-fit: cover;
-        flex-shrink: 0;
-    }
-
-    /* ✅ Navigation Button Styling */
-    .hero-btn {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        padding: 12px 16px;
-        border-radius: 50%;
-        font-size: 24px;
-        transition: 0.3s;
-    }
-
-    .hero-btn:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-  /* ✅ Responsive Design */
-  @media (max-width: 1024px) {
-        .hero-img {
-            width: calc(100% / 2); /* ✅ Tablet: 2 images per row */
-        }
-    }
-
-    @media (max-width: 768px) {
-        .hero-img {
-            width: 100%; /* ✅ Mobile: 1 image per row */
-        }
-    }
-
-    .font-poppins { font-family: 'Poppins', sans-serif; }
-    .font-montserrat { font-family: 'Montserrat', sans-serif; }
-
-    /* ✅ Premium Styling */
-    .client-name {
-        font-size: 22px;
-        font-weight: 700;
-        color: #333;
-    }
-    .client-category {
-        font-size: 16px;
-        font-weight: 500;
-        color: #777;
-    }
-    .client-followers {
-        font-size: 14px;
-        font-weight: 400;
-        color: #555;
-    }
-
-    /* ✅ Hover Effect Styling */
-    .hover-content h3 {
-        font-size: 28px;
-        font-weight: 700;
-    }
-    .hover-content p {
-        font-size: 18px;
-        font-weight: 500;
-    }
-    .hover-content strong {
-        font-size: 20px;
-        font-weight: 600;
-    }
-
-    /* ✅ Button Styling */
-    .btn-primary {
-        font-size: 16px;
-        font-weight: 600;
-        padding: 10px 16px;
-        transition: 0.3s;
-    }
-    .btn-primary:hover {
-        transform: scale(1.05);
-    }
-
-    /* ✅ Stylish Dropdowns */
-    .filter-dropdown {
-        appearance: none;
-        background-color: white;
-        border: 2px solid #e5e7eb;
-        padding: 10px 16px;
-        border-radius: 8px;
-        font-size: 16px;
-        font-weight: 500;
-        color: #333;
-        transition: 0.3s;
-        /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
-        cursor: pointer;
-    }
-
-    .filter-dropdown:hover, .filter-dropdown:focus {
-        border-color: #ff4757;
-        /* box-shadow: 0 4px 8px rgba(255, 71, 87, 0.2); */
-        outline: none;
-    }
-
-    /* ✅ Center the Filters & Add Spacing */
-    .filters-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        background: white;
-        padding: 16px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    /* ✅ Apply Filters Button */
-    .apply-filter-btn {
-        background-color: #ff4757;
-        color: white;
-        font-weight: 600;
-        font-size: 16px;
-        padding: 10px 16px;
-        border-radius: 8px;
-        transition: 0.3s;
-        box-shadow: 0 4px 6px rgba(255, 71, 87, 0.2);
-    }
-
-    .apply-filter-btn:hover {
-        background-color: #e63946;
-        box-shadow: 0 6px 12px rgba(255, 71, 87, 0.3);
-    }
-
-     /* ✅ Modern Fonts */
-     .font-montserrat {
-        font-family: 'Montserrat', sans-serif;
-    }
-    .font-poppins {
-        font-family: 'Poppins', sans-serif;
-    }
-
-    /* ✅ Font Styles */
-    .font-montserrat {
-        font-family: 'Montserrat', sans-serif;
-    }
-    .font-poppins {
-        font-family: 'Poppins', sans-serif;
-    }
-
-    /* ✅ Animations */
-    .animate-fade-in {
-        animation: fadeIn 1.5s ease-in-out;
-    }
-    .animate-slide-up {
-        animation: slideUp 1.2s ease-in-out;
-    }
-    .animate-bounce {
-        animation: bounce 1.5s infinite;
-    }
-    .animate-pulse {
-        animation: pulse 2s infinite;
-    }
-
-    /* ✅ Keyframes */
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-    @keyframes slideUp {
-        from { transform: translateY(20px); opacity: 0; }
-        to { transform: translateY(0); opacity: 1; }
-    }
-    @keyframes bounce {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-8px); }
-    }
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.1); }
-        100% { transform: scale(1); }
-    }
-
-      /* ✅ Elegant Fonts */
-    .font-montserrat {
-        font-family: 'Montserrat', sans-serif;
-    }
-    .font-dancing {
-        font-family: 'Dancing Script', cursive;
-    }
-    .font-poppins {
-        font-family: 'Poppins', sans-serif;
-    }
-
-    /* ✅ Client Logo Styling */
-    .client-logo {
-        max-width: 150px;
-        height: auto;
-        opacity: 0.8;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    .client-logo:hover {
-        transform: scale(1.1);
-        opacity: 1;
-    }
-
-    /* ✅ Auto Scrolling Animation for Mobile */
-    @keyframes slide {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-100%); }
-    }
-
-    .animate-slide {
-        display: flex;
-        animation: slide 10s linear infinite;
-    }
-
-    /* ✅ Category Box Styling */
-    .category-box {
-        font-size: 1.25rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        padding: 16px;
-        border-radius: 12px;
-        transition: all 0.3s ease-in-out;
-        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-        box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
-    }
-
-    /* ✅ Unique Random Styling for Placement */
-    .category-box:nth-child(odd) {
-        transform: rotate(-3deg);
-    }
-
-    .category-box:nth-child(even) {
-        transform: rotate(3deg);
-    }
-
-    .category-box:hover {
-        transform: scale(1.05) rotate(0deg);
-        box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.2);
-    }
-
-    /* ✅ Responsive Fixes */
-    @media (max-width: 768px) {
-        .category-box {
-            font-size: 1rem;
-            padding: 12px;
-        }
-
-        .category-box:nth-child(odd),
-        .category-box:nth-child(even) {
-            transform: rotate(0);
-        }
-    }
-
-    /* ✅ Social Media Icon Styling */
-    .social-icon {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        color: white;
-        font-size: 1.2rem;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .social-icon:hover {
-        transform: scale(1.1);
-        box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
-    }
-
-    /* ✅ Responsive Fixes */
-    @media (max-width: 768px) {
-        .grid-cols-4 {
-            grid-template-columns: 1fr 1fr;
-            text-align: center;
-        }
-
-        .flex.space-x-4 {
-            justify-content: center;
-        }
-    }
-
-
-    
-</style>
-
-
+    <link rel="stylesheet" href="/modal_agency/style.css">
 </head>
 <body class="bg-gray-100">
 
@@ -652,11 +184,17 @@ body.modal-open {
             </div>
 
             <div>
-                <label class="block text-sm font-medium text-gray-700">Upload Image</label>
-                <input type="file" name="image" 
-                       class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-300 focus:border-red-500" 
-                       accept="image/*" required>
-            </div>
+    <label class="block text-sm font-medium text-gray-700">
+        Upload Image <span class="text-red-500">*</span>
+    </label>
+    <input type="file" name="image"
+           class="w-full p-3 border border-gray-300 rounded-lg focus:ring-red-300 focus:border-red-500"
+           accept="image/*" required>
+    <p class="mt-2 text-sm text-gray-500">
+        Please upload an image with a resolution of <strong>720 × 1280 px</strong> (9:16 aspect ratio) to ensure proper display.
+    </p>
+</div>
+
 
             <!-- ✅ Submit Button with Loading -->
 <div class="mt-6">
@@ -793,29 +331,38 @@ body.modal-open {
 
 
 <!-- ✅ Hero Section -->
-<div class="relative w-full overflow-hidden">
-    <div id="heroCarousel" class="flex transition-transform duration-700 ease-in-out">
-        <img src="/images/Artist-images/slot-1/Ambika_Arora.png" class="hero-img">
-        <img src="/images/Artist-images/slot-1/Anchal_Thakur.png" class="hero-img">
-        <img src="/images/Artist-images/slot-1/Annupriya_singh.png" class="hero-img">
-        <img src="/images/Artist-images/slot-1/Shereen_A_Bannsal.png" class="hero-img">
-        <img src="/images/Artist-images/slot-1/Shivangi_Ghosh.png" class="hero-img">
-        <img src="/images/Artist-images/slot-1/Vinuja.png" class="hero-img">
-        <img src="/images/Artist-images/slot-2/Aishwarya_Sanglikar.png" class="hero-img">
-        <img src="/images/Artist-images/slot-2/Arnav_Mathur.png" class="hero-img">
-        <img src="/images/Artist-images/slot-2/Iris_Vatrana.png" class="hero-img">
-        <img src="/images/Artist-images/slot-2/Manav_Mongia.png" class="hero-img">
-        <img src="/images/Artist-images/slot-2/Manisha_sharma.png" class="hero-img">
-        <img src="/images/Artist-images/slot-2/Moumita_Mukherjee.png" class="hero-img">
-        <img src="/images/Artist-images/slot-2/Naveena_Kapoor.png" class="hero-img">
-        <img src="/images/Artist-images/slot-2/Pooja_Singh.png" class="hero-img">
-        <img src="/images/Artist-images/slot-2/Shambhavi_Sharma-2.png" class="hero-img">
+<div class="hero-container">
+    <div id="heroCarousel" class="carousel">
+        <!-- ✅ Wrapping each image inside a container to prevent distortion -->
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized-update/Ambika_Arora.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized-update/Anchal_Thakur.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized-update/Madhu.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized-update/Nancy_Khatri.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized-update/Priyanka_Taras.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized-update/Shereen_A_Bannsal.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized-update/Shivangi_Ghosh.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized-update/Twinkle_Sharma.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized-update/Vinuja.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized_new/Aishwarya_Sanglikar.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized_new/Arnav_Mathur.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized_new/Dia_Bajaj.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized_new/Iris_Vatrana.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized_new/Manav_Mongia.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized_new/Manisha_sharma.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized_new/Moumita_Mukherjee.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized_new/Naveena_Kapoor.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized_new/Niharika_shara.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized_new/Pooja_Singh.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized_new/Shambhavi_Sharma-2.png" class="hero-img"></div>
+        <div class="hero-slide"><img src="/images/Artist-images/iloveimg-resized_new/Shambhavi_Sharma.png" class="hero-img"></div>
+        
     </div>
 
-    <!-- ✅ Navigation Buttons -->
-    <button id="prevHero" class="hero-btn left-4">❮</button>
-    <button id="nextHero" class="hero-btn right-4">❯</button>
+     <!-- ✅ Navigation Buttons -->
+     <button id="prevHero" class="hero-btn left-btn">❮</button>
+    <button id="nextHero" class="hero-btn right-btn">❯</button>
 </div>
+
 
 <!-- ✅ Clients Logo Section -->
 <div class="w-full bg-gray-100 py-12">
@@ -918,10 +465,10 @@ body.modal-open {
 </div>
 
 
-     <!-- ✅ Clients Grid -->
-     <div id="clientsList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <!-- Clients will be loaded here dynamically -->
-    </div>
+    <!-- ✅ Clients Grid -->
+<div id="clientsList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <!-- Clients will be loaded here dynamically -->
+</div>
 
 
 
@@ -1033,29 +580,30 @@ body.modal-open {
                             ? `<p class="font-poppins">Experience: <strong>${client.experience}-Years</strong></p>` 
                             : `<p class="font-poppins">Followers: <strong>${client.followers}</strong></p>`; 
 
-                        let clientCard = `
-                            <div class="relative group overflow-hidden rounded-lg shadow-lg transition hover:shadow-xl bg-white">
-                                <div class="relative">
-                                    <img src="${client.image_url}" alt="${client.name}" class="w-full h-[400px] object-cover rounded-md">
-                                    <div class="absolute inset-0 bg-pink-600 bg-opacity-90 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 p-6 text-center">
-                                        <h3 class="font-montserrat">${client.name}</h3>
-                                        <p class="font-poppins mt-1">${client.category}</p>
-                                        <p class="font-poppins">Age: ${client.age} | ${client.gender}</p>
-                                        <p class="font-poppins">Languages: ${client.language}</p>
-                                        <p class="font-poppins">Profession: ${client.professional}</p>
-                                        ${additionalInfo}
-                                        <button class="px-5 py-2 mt-3 bg-white text-pink-600 font-semibold rounded-lg hover:bg-gray-200 shadow-md btn-primary">
-                                            <i class="fas fa-user-check mr-2"></i> Book Now
-                                        </button>
-                                    </div>
-                                </div>
-                                <div class="p-4 text-center">
-                                    <h3 class="client-name font-montserrat">${client.name}</h3>
-                                    <p class="client-category font-poppins">${client.category}</p>
-                                    ${additionalInfo}
-                                </div>
-                            </div>
-                        `;
+                            let clientCard = `
+    <div class="relative group overflow-hidden rounded-lg shadow-lg transition hover:shadow-xl bg-white">
+        <div class="relative w-full aspect-[9/16]">
+            <img src="${client.image_url}" alt="${client.name}" class="w-full h-full object-contain rounded-md">
+            <div class="absolute inset-0 bg-pink-600 bg-opacity-90 text-white flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 p-6 text-center">
+                <h3 class="font-montserrat">${client.name}</h3>
+                <p class="font-poppins mt-1">${client.category}</p>
+                <p class="font-poppins">Age: ${client.age} | ${client.gender}</p>
+                <p class="font-poppins">Languages: ${client.language}</p>
+                <p class="font-poppins">Profession: ${client.professional}</p>
+                ${additionalInfo}
+                <button class="px-5 py-2 mt-3 bg-white text-pink-600 font-semibold rounded-lg hover:bg-gray-200 shadow-md btn-primary">
+                    <i class="fas fa-user-check mr-2"></i> Book Now
+                </button>
+            </div>
+        </div>
+        <div class="p-4 text-center">
+            <h3 class="client-name font-montserrat">${client.name}</h3>
+            <p class="client-category font-poppins">${client.category}</p>
+            ${additionalInfo}
+        </div>
+    </div>
+`;
+
 
                         clientsContainer.innerHTML += clientCard;
                     });
@@ -1087,62 +635,76 @@ body.modal-open {
 
 <script>
     const heroCarousel = document.getElementById("heroCarousel");
-    const heroImages = document.querySelectorAll(".hero-img");
-    const totalSlides = heroImages.length;
-    let currentHeroIndex = 0;
-    let visibleSlides = getVisibleSlides(); // ✅ Detect screen size
+const heroSlides = document.querySelectorAll(".hero-slide");
+const totalSlides = heroSlides.length;
+let currentHeroIndex = 0;
+let visibleSlides = 4; // ✅ 4 images per row
 
-    function getVisibleSlides() {
-        if (window.innerWidth < 768) return 1; // ✅ Mobile: 1 image per scroll
-        if (window.innerWidth < 1024) return 2; // ✅ Tablet: 2 images per scroll
-        return 4; // ✅ PC: 4 images per scroll
+function updateHeroSlide() {
+    heroCarousel.style.transform = `translateX(-${currentHeroIndex * (100 / visibleSlides)}%)`;
+}
+
+/* ✅ Auto-Scroll One Image at a Time */
+function autoScrollHero() {
+    if (currentHeroIndex < totalSlides - visibleSlides) {
+        currentHeroIndex++;
+    } else {
+        currentHeroIndex = 0; // ✅ Reset to first slide
     }
+    updateHeroSlide();
+}
 
-    function updateHeroSlide() {
-        heroCarousel.style.transform = `translateX(-${currentHeroIndex * (100 / visibleSlides)}%)`;
+let heroInterval = setInterval(autoScrollHero, 3000); // ✅ Auto-scroll every 3s
+
+/* ✅ Manual Navigation (Previous & Next Buttons) */
+document.getElementById("prevHero").addEventListener("click", () => {
+    if (currentHeroIndex > 0) {
+        currentHeroIndex--;
+    } else {
+        currentHeroIndex = totalSlides - visibleSlides;
     }
+    updateHeroSlide();
+    resetInterval();
+});
 
-    function autoScrollHero() {
-        if (currentHeroIndex < totalSlides - visibleSlides) {
-            currentHeroIndex++;
-        } else {
-            currentHeroIndex = 0;
-        }
-        updateHeroSlide();
+document.getElementById("nextHero").addEventListener("click", () => {
+    if (currentHeroIndex < totalSlides - visibleSlides) {
+        currentHeroIndex++;
+    } else {
+        currentHeroIndex = 0;
     }
+    updateHeroSlide();
+    resetInterval();
+});
 
-    let heroInterval = setInterval(autoScrollHero, 5000); // ✅ Change slide every 5 seconds
+/* ✅ Reset Auto-Scroll Interval After Manual Interaction */
+function resetInterval() {
+    clearInterval(heroInterval);
+    heroInterval = setInterval(autoScrollHero, 3000);
+}
 
-    document.getElementById("prevHero").addEventListener("click", () => {
-        if (currentHeroIndex > 0) {
-            currentHeroIndex--;
-        } else {
-            currentHeroIndex = totalSlides - visibleSlides;
-        }
-        updateHeroSlide();
-        resetInterval();
-    });
-
-    document.getElementById("nextHero").addEventListener("click", () => {
-        if (currentHeroIndex < totalSlides - visibleSlides) {
-            currentHeroIndex++;
-        } else {
-            currentHeroIndex = 0;
-        }
-        updateHeroSlide();
-        resetInterval();
-    });
-
-    function resetInterval() {
-        clearInterval(heroInterval);
-        heroInterval = setInterval(autoScrollHero, 5000);
+/* ✅ Handle Screen Resize */
+window.addEventListener("resize", () => {
+    if (window.innerWidth < 768) {
+        visibleSlides = 1; // ✅ 1 image per row (Mobile)
+    } else if (window.innerWidth < 1024) {
+        visibleSlides = 2; // ✅ 2 images per row (Tablet)
+    } else {
+        visibleSlides = 4; // ✅ 4 images per row (Desktop)
     }
+    updateHeroSlide();
+});
 
-    // ✅ Detect screen resize and adjust visible slides dynamically
-    window.addEventListener("resize", () => {
-        visibleSlides = getVisibleSlides();
-        updateHeroSlide();
-    });
+/* ✅ Add Keyboard Navigation */
+document.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowRight") {
+        document.getElementById("nextHero").click();
+    }
+    if (event.key === "ArrowLeft") {
+        document.getElementById("prevHero").click();
+    }
+});
+
 </script>
 
 <!-- ✅ Fully Responsive About Section -->
